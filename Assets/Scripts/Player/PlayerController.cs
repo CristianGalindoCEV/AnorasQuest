@@ -18,6 +18,7 @@ public class PlayerController : PhysicsCollision
     [SerializeField] private float m_playerspeed = 5;
     private Vector3 movePlayer;
     [SerializeField] private bool iamdead = false;
+    public PhysicsCollision pysicsCollision;
 
     //Camara
     [SerializeField] private Transform m_cameraTransform;
@@ -94,7 +95,7 @@ public class PlayerController : PhysicsCollision
 
     private void LateUpdate()
     {
-        if (!isGrounded)
+        if (!pysicsCollision.isGrounded)
         {
             RaycastGround();
 
@@ -191,6 +192,7 @@ public class PlayerController : PhysicsCollision
         heal = 10f;
         StartCoroutine(Healty());
     }
+   
     //EnemyMele
     public void Enemymele()
     {
@@ -198,8 +200,20 @@ public class PlayerController : PhysicsCollision
         StartCoroutine(Golpe());
     }
 
+    //Shadow Raycast
+    void RaycastGround()
+    {
+        Ray ray = new Ray(m_transform.position, Vector3.down);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit, 100f, m_groundLayer))
+        {
+            m_shadowTransform.position = hit.point;
+            m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
 
+        }
+    }
+   
     //Corutina de golpe
     IEnumerator Golpe()
     {
@@ -236,17 +250,4 @@ public class PlayerController : PhysicsCollision
         //Particulas
     }
 
-    //Shadow Raycast
-    void RaycastGround()
-    {
-        Ray ray = new Ray(m_transform.position, Vector3.down);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100f, m_groundLayer))
-        {
-            m_shadowTransform.position = hit.point;
-            m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
-
-        }
-    }
 }

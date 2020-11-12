@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private GameObject Espada;
     public bool BauculoItem = false;
     public bool EspadaItem = true;
-    public Bauculo bauculospawn;
+    public Bauculo gunspawn;
     private float f_timetospawn = 0;
    
     //HUD
@@ -66,7 +66,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && BauculoItem == true)
         {
-            bauculospawn.SpawnVFX();
+            gunspawn.Fire();
         }
 
         //Salto

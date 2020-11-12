@@ -10,7 +10,7 @@ public class Bauculo : MonoBehaviour
     public float speed;
 
 
-   
+
     void Start()
     {
 
@@ -21,11 +21,8 @@ public class Bauculo : MonoBehaviour
         
     }
 
-    public void SpawnVFX()
+    public void Fire()
     {
-        GameObject instBullet = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
-        Rigidbody instbulletrigidbody = instBullet.GetComponent<Rigidbody>();
-        instbulletrigidbody.AddForce(Vector3.forward * speed);
+        Debug.DrawRay(transform.position, transform.forward * 100, Color.red, 2f);
     }
-
 }
