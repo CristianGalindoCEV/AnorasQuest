@@ -73,7 +73,10 @@ public class InputManager : MonoBehaviour
         //player.SetAxis(Input.GetAxis("Horizontal"));
 
         if (Input.GetButtonDown("Jump"))
-            player.Jump();
+            player.JumpStart();
+
+        if (Input.GetButtonUp("Jump"))
+            player.JumpRelased();
 
         //Canvas
         if (Input.GetKeyDown(KeyCode.Escape))

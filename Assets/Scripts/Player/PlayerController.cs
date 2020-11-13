@@ -34,15 +34,16 @@ public class PlayerController : PhysicsCollision
     [SerializeField] private float f_jumpForce = 20f;
     private float m_internGravity;
 
-    /*
+    
     private float f_jumpButtonPressTime;
-    public bool jumpMinAirTime;
-    public bool jumpMaxAirTime;
+    public float jumpMinAirTime;
+    public float jumpMaxAirTime;
     private bool b_jumpButtonReleased;
-    private bool b_jumping;
+    [SerializeField]
     private float f_jumpReleaseForce;
+    [SerializeField]
     private float f_jumpDefaultForce;
-    */
+    private bool b_jumping;
 
 
     //Canvas
@@ -84,19 +85,20 @@ public class PlayerController : PhysicsCollision
 
         m_rigidbody.velocity = movePlayer;
 
-       /* if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
-            Time.time -) f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime && !m_checker.isGrounded)
+       if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
+            Time.time - f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime >= jumpMaxAirTime && !isGrounded)
         {
             b_jumpButtonReleased = false;
-            JumpRelase();
-        }*/
+            JumpRelased();
+        }
 
     }
 
     private void LateUpdate()
     {
-        if (!pysicsCollision.isGrounded)
+        if (!isGrounded)
         {
+            m_shadowGO.SetActive(true);
             RaycastGround();
 
         }
@@ -144,24 +146,27 @@ public class PlayerController : PhysicsCollision
     }*/
 
     //Salto
+    /*
     public void ReleaseJump()
     {
         m_internGravity -= Time.deltaTime;
         m_fallVelocity += m_internGravity * Time.deltaTime;
     }
+    
     public void Jump()
     {
         if (!isGrounded)
             return;
 
         m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    }
+    }*/
 
-    /*private void Jump (float force)
+    private void Jump (float force)
     {
 
         f_jumpForce = force;
         m_rigidbody.velocity = Vector3.zero;
+        m_rigidbody.AddForce(f_jumpForce * Vector3.up);
         b_jumping = true;
     }
 
@@ -175,7 +180,7 @@ public class PlayerController : PhysicsCollision
 
     public void JumpStart()
     {
-        if (!m_checker.isGrounded)
+        if (!isGrounded)
         {
             return;
         }
@@ -184,7 +189,7 @@ public class PlayerController : PhysicsCollision
         b_jumpButtonReleased = false;
 
         Jump(f_jumpDefaultForce);
-    }*/
+    }
     
     //HealItem
     public void HealItem()
@@ -208,6 +213,7 @@ public class PlayerController : PhysicsCollision
 
         if (Physics.Raycast(ray, out hit, 100f, m_groundLayer))
         {
+            Debug.Log("Holieis :3");
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
 

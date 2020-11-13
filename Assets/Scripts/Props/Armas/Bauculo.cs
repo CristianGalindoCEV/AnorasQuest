@@ -10,7 +10,6 @@ public class Bauculo : MonoBehaviour
     public float speed;
 
 
-
     void Start()
     {
 
@@ -23,6 +22,6 @@ public class Bauculo : MonoBehaviour
 
     public void Fire()
     {
-        Debug.DrawRay(transform.position, transform.forward * 100, Color.red, 2f);
+        Debug.DrawRay(transform.position, transform.up * 100, Color.red, 2f);
     }
 }
