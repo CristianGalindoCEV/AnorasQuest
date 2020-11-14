@@ -8,17 +8,21 @@ public class PlayerController : PhysicsCollision
    
     //Player
     private Rigidbody m_rigidbody;
-    public float jumpForce = 5;
     private float m_horizontalMove;
     private float m_verticalMove;
     private Vector3 playerInput;
     private Transform m_transform;
-    public float damage;
-    public float heal;
+    private float damage;
+    private float heal;
     [SerializeField] private float m_playerspeed = 5;
     private Vector3 movePlayer;
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
+
+    //Dash
+
+    [SerializeField] private float f_dashSpeed;
+    [SerializeField] private float f_dashDuration;
 
     //Camara
     [SerializeField] private Transform m_cameraTransform;
@@ -27,14 +31,7 @@ public class PlayerController : PhysicsCollision
     private Vector3 camRight;
 
     //Gravedad y salto
-    [SerializeField] private float f_jumpTime = 0.5f;
-    [SerializeField] private float m_gravityForce = 3f;
-    [SerializeField] private float gravity = 70f;
-    public float m_fallVelocity;
     [SerializeField] private float f_jumpForce = 20f;
-    private float m_internGravity;
-
-    
     private float f_jumpButtonPressTime;
     public float jumpMinAirTime;
     public float jumpMaxAirTime;
@@ -79,8 +76,6 @@ public class PlayerController : PhysicsCollision
 
         m_transform.LookAt(m_transform.position + movePlayer);
 
-       // SetGravity();
-
         movePlayer.y = m_rigidbody.velocity.y;
 
         m_rigidbody.velocity = movePlayer;
@@ -121,46 +116,6 @@ public class PlayerController : PhysicsCollision
         camRight = camRight.normalized;
     }
 
-    /*void SetGravity()
-    {
-
-        if (isGrounded)
-        {
-            m_fallVelocity = 0;
-
-            m_internGravity = gravity * m_jumpTime;
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
-        }
-
-        if (Input.GetButton("Jump") && m_fallVelocity != 0)
-        {
-            ReleaseJump();
-        }
-
-        m_fallVelocity -= gravity * Time.deltaTime * m_gravityForce;
-        movePlayer.y = m_fallVelocity;
-    }*/
-
-    //Salto
-    /*
-    public void ReleaseJump()
-    {
-        m_internGravity -= Time.deltaTime;
-        m_fallVelocity += m_internGravity * Time.deltaTime;
-    }
-    
-    public void Jump()
-    {
-        if (!isGrounded)
-            return;
-
-        m_rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    }*/
-
     private void Jump (float force)
     {
 
@@ -174,7 +129,6 @@ public class PlayerController : PhysicsCollision
     {
         if (b_jumpButtonReleased)
             return;
-        Debug.Log("Released");
         Jump(-f_jumpReleaseForce);
     }
 
@@ -213,13 +167,17 @@ public class PlayerController : PhysicsCollision
 
         if (Physics.Raycast(ray, out hit, 100f, m_groundLayer))
         {
-            Debug.Log("Holieis :3");
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
 
         }
     }
    
+    public void CastDash()
+    {
+        StartCoroutine(Dash());
+    }
+
     //Corutina de golpe
     IEnumerator Golpe()
     {
@@ -256,4 +214,12 @@ public class PlayerController : PhysicsCollision
         //Particulas
     }
 
+    IEnumerator Dash()
+    {
+        m_rigidbody.AddForce(Camera.main.transform.forward * f_dashSpeed, ForceMode.VelocityChange);
+
+        yield return new WaitForSeconds(f_dashDuration);
+
+        m_rigidbody.velocity = Vector3.zero;
+    }
 }

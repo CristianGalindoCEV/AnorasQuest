@@ -70,13 +70,19 @@ public class InputManager : MonoBehaviour
         }
 
         //Salto
-        //player.SetAxis(Input.GetAxis("Horizontal"));
 
         if (Input.GetButtonDown("Jump"))
             player.JumpStart();
 
         if (Input.GetButtonUp("Jump"))
             player.JumpRelased();
+
+        //Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            player.CastDash();
+        }
+
 
         //Canvas
         if (Input.GetKeyDown(KeyCode.Escape))
