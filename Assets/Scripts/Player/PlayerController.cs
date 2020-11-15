@@ -178,7 +178,7 @@ public class PlayerController : PhysicsCollision
    
     public void CastDash()
     {
-        if (staminabar.currentStamina >= 10)
+        if (staminabar.currentStamina >= 20)
         {
             StartCoroutine(Dash());
         }
