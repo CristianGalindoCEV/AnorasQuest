@@ -46,6 +46,8 @@ public class PlayerController : PhysicsCollision
     //Canvas
     public GameObject healthbar;
     public GameMaster gamemaster;
+    public GameObject stamina;
+    public StaminaBar staminabar;
 
     //Sombra
     [SerializeField] GameObject m_shadowGO;
@@ -103,7 +105,7 @@ public class PlayerController : PhysicsCollision
         }
     }
 
-    //Camara
+    //Camera
     void camDirection()
     {
         camForward = m_cameraTransform.forward;
@@ -116,6 +118,7 @@ public class PlayerController : PhysicsCollision
         camRight = camRight.normalized;
     }
 
+    //Jump
     private void Jump (float force)
     {
 
@@ -175,7 +178,10 @@ public class PlayerController : PhysicsCollision
    
     public void CastDash()
     {
-        StartCoroutine(Dash());
+        if (staminabar.currentStamina >= 10)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     //Corutina de golpe
@@ -217,7 +223,7 @@ public class PlayerController : PhysicsCollision
     IEnumerator Dash()
     {
         m_rigidbody.AddForce(Camera.main.transform.forward * f_dashSpeed, ForceMode.VelocityChange);
-
+        stamina.SendMessage("UseStamina", 20f);
         yield return new WaitForSeconds(f_dashDuration);
 
         m_rigidbody.velocity = Vector3.zero;
