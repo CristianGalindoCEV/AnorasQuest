@@ -89,6 +89,7 @@ public class MenuManager : MonoBehaviour
         inputmanager.pausemenu.SetActive(false);
         inputmanager.menuon = false;
         pausemanager.Resume();
+        Debug.Log("Resume");
     }
 
     public void PulsaOptions()
