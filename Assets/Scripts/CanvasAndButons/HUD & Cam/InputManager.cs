@@ -78,9 +78,19 @@ public class InputManager : MonoBehaviour
             player.JumpRelased();
 
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             player.CastDash();
+        }
+        //Sprint
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            player.sprinting = true;
+            player.Run();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            player.sprinting = false;
         }
 
 

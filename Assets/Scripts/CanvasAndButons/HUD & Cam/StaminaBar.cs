@@ -41,6 +41,25 @@ public class StaminaBar : MonoBehaviour
         }
 
     }
+    public void RunStamina( int amount)
+    {
+        if(currentStamina - amount >= 0)
+        {
+            currentStamina -= amount * Time.deltaTime;
+            staminaBar.value = currentStamina;
+
+            if (regen != null)
+                StopCoroutine(regen);
+
+            regen = StartCoroutine(RegenStamina());
+        }
+        else
+        {
+            Debug.Log("No stamina");
+        }
+        
+    }
+
 
     private IEnumerator RegenStamina()
     {

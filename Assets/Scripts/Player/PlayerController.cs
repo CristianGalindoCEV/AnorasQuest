@@ -19,10 +19,12 @@ public class PlayerController : PhysicsCollision
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
 
-    //Dash
+    //Dash y sprint
 
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
+    [SerializeField] private float f_sprint;
+    public bool sprinting = false;
 
     //Camara
     [SerializeField] private Transform m_cameraTransform;
@@ -81,12 +83,19 @@ public class PlayerController : PhysicsCollision
         movePlayer.y = m_rigidbody.velocity.y;
 
         m_rigidbody.velocity = movePlayer;
-
+        
+        //Jump
        if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
             Time.time - f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime >= jumpMaxAirTime && !isGrounded)
         {
             b_jumpButtonReleased = false;
             JumpRelased();
+        }
+
+        //Run
+        if (sprinting == false)
+        {
+            m_playerspeed = 5;
         }
 
     }
@@ -176,11 +185,20 @@ public class PlayerController : PhysicsCollision
         }
     }
    
+    //Dash
     public void CastDash()
     {
         if (staminabar.currentStamina >= 20)
         {
             StartCoroutine(Dash());
+        }
+    }
+    //Run
+    public void Run()
+    {
+        if (staminabar.currentStamina >= 5 && sprinting == true)
+        {
+            StartCoroutine(Sprint());
         }
     }
 
@@ -219,7 +237,7 @@ public class PlayerController : PhysicsCollision
         //Sonido
         //Particulas
     }
-
+    //Corutina Dash
     IEnumerator Dash()
     {
         m_rigidbody.AddForce(Camera.main.transform.forward * f_dashSpeed, ForceMode.VelocityChange);
@@ -227,5 +245,15 @@ public class PlayerController : PhysicsCollision
         yield return new WaitForSeconds(f_dashDuration);
 
         m_rigidbody.velocity = Vector3.zero;
+    }
+    //Corutina Sprint
+    IEnumerator Sprint()
+    {
+
+        stamina.SendMessage("RunStamina", 5f);
+        m_playerspeed = 10;
+        yield return new WaitForSeconds(0);
+
+       // m_rigidbody.velocity = Vector3.zero;
     }
 }
