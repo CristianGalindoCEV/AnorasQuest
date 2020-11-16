@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4361428362036848040}
   - component: {fileID: 4361428362036848041}
   - component: {fileID: 175899981}
+  - component: {fileID: 2069543245}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,15 +62,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae94bdee6c4ed444a7cd1c1aee346e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bauculo: {fileID: 0}
+  Gun: {fileID: 0}
   Espada: {fileID: 0}
   BauculoItem: 0
   EspadaItem: 1
+  gunspawn: {fileID: 0}
   hud: {fileID: 0}
-  ingamemenu: {fileID: 0}
+  pausemenu: {fileID: 0}
   mirilla: {fileID: 0}
   menuon: 0
   gamemaster: {fileID: 4361428362036848040}
+  menumanager: {fileID: 0}
 --- !u!114 &175899981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +86,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausemenuUI: {fileID: 0}
+--- !u!114 &2069543245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361428362036848086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c9a466a48b3a44190b197b151ef3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  justGrounded: 0
+  wasGrounded: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  touchWall: 0
+  touchedWall: 0
+  justTouchWall: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isFacingRight: 1
+  graphicTransform: {fileID: 0}
