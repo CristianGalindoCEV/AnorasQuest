@@ -25,7 +25,8 @@ public class MenuManager : MonoBehaviour
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
         optionsmenu.SetActive(false);
-
+        
+        
 
         resolutions = Screen.resolutions;
 
@@ -47,6 +48,7 @@ public class MenuManager : MonoBehaviour
         }
 
         resolutionDropdown.AddOptions(options);
+        
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
