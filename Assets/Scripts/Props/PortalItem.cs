@@ -14,7 +14,7 @@ public class PortalItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("FirtsBoss");
+            SceneManager.LoadScene("StaticBoss");
             m_firtsPortal = true;
         }
     }

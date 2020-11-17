@@ -29,8 +29,8 @@ public class MiniBossScript : MonoBehaviour
             TimeCounter =0;
             randomNumber = Random.Range (1,10);
 
-            if (randomNumber < 6) { SpikeAttack(); Debug.Log("SpikeAttack");}
-            else {SpikeCage(); Debug.Log("SpikeCage"); }
+            if (randomNumber < 6) { SpikeAttack(); /*Debug.Log("SpikeAttack")*/;}
+            else {SpikeCage(); /*Debug.Log("SpikeCage")*/; }
             
         }
         //Muere
@@ -45,7 +45,7 @@ public class MiniBossScript : MonoBehaviour
 
     IEnumerator Death()
     {
-        Debug.Log("BossMuerto");
+       // Debug.Log("BossMuerto");
         isDead = true;
         //Animacion
         //Particulas
