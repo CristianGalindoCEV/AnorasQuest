@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7343679318414742037}
   - component: {fileID: 4787289202851237825}
   - component: {fileID: 6893408501302313368}
-  - component: {fileID: 82873475172350401}
   - component: {fileID: 771844675301357717}
   m_Layer: 0
   m_Name: 3D
@@ -81,18 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &82873475172350401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106904260751485925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35eae5a180e3d746a9a8967d4ee4059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &771844675301357717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8633920052706899833}
+  - component: {fileID: 7671677823626160686}
   m_Layer: 0
   m_Name: Spike Cage
   m_TagString: Untagged
@@ -137,3 +125,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7671677823626160686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8579976944536929613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35eae5a180e3d746a9a8967d4ee4059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

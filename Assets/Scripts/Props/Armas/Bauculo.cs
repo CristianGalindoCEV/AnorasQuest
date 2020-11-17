@@ -22,6 +22,7 @@ public class Bauculo : MonoBehaviour
 
     public void Fire()
     {
+        Instantiate (bullet, transform.position, transform.rotation);
         Debug.DrawRay(transform.position, transform.up * 100, Color.red, 2f);
     }
 }
