@@ -55,12 +55,12 @@ public class MiniBossScript : MonoBehaviour
     }
     void SpikeAttack ()
     {
-        Instantiate(spikePrefab, player.transform.position, transform.rotation);
+        Instantiate(spikePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
     }
 
     void SpikeCage ()
     {
-        Instantiate(spikeCagePrefab, player.transform.position, transform.rotation);
+        Instantiate(spikeCagePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
     }
     
     

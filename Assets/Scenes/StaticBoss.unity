@@ -121,6 +121,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10525464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10525468}
+  - component: {fileID: 10525467}
+  - component: {fileID: 10525466}
+  - component: {fileID: 10525465}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &10525465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10525464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &10525466
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10525464}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &10525467
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10525464}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &10525468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10525464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.607452, y: 0.51, z: 42.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &587003954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
@@ -1035,6 +1128,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
+      propertyPath: pysicsCollision
+      value: 
+      objectReference: {fileID: 963190782}
+    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
+        type: 3}
+      propertyPath: m_cameraTransform
+      value: 
+      objectReference: {fileID: 587003954}
+    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
+        type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1511921574}
@@ -1063,16 +1166,6 @@ PrefabInstance:
       propertyPath: m_shadowTransform
       value: 
       objectReference: {fileID: 770992711}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: pysicsCollision
-      value: 
-      objectReference: {fileID: 963190782}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_cameraTransform
-      value: 
-      objectReference: {fileID: 587003954}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 331082425c039f5419f4c37addbcd296, type: 3}
 --- !u!114 &1561849053 stripped
@@ -1117,6 +1210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miniboss_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 6605089018259211201, guid: 6fda7b7a369261a4ebcb50093564bb52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6605089018259211202, guid: 6fda7b7a369261a4ebcb50093564bb52,
         type: 3}
       propertyPath: player
@@ -1126,7 +1224,13 @@ PrefabInstance:
         type: 3}
       propertyPath: spikePrefab
       value: 
-      objectReference: {fileID: 7581962261453318365, guid: a388349774e5992478211dc1e1ba6111,
+      objectReference: {fileID: 8579976944536929613, guid: ca5ceeab8b8a1a94f95b45f481e5b5f2,
+        type: 3}
+    - target: {fileID: 6605089018259211202, guid: 6fda7b7a369261a4ebcb50093564bb52,
+        type: 3}
+      propertyPath: spikeCagePrefab
+      value: 
+      objectReference: {fileID: 8579976944536929613, guid: fb73909ff8230fd41b9193ea6a8e36dc,
         type: 3}
     - target: {fileID: 6605089018259211214, guid: 6fda7b7a369261a4ebcb50093564bb52,
         type: 3}
