@@ -93,6 +93,20 @@ public class InputManager : MonoBehaviour
             player.sprinting = false;
         }
 
+        //GOOD MODE
+        if (Input.GetKeyUp(KeyCode.F10))
+        {
+            if (player.good == true)
+            {
+                player.good = false;
+                player.NoGood();
+            }
+            else
+            {
+                player.good = true;
+                player.Good();
+            }
+        }
 
         //Canvas
         if (Input.GetKeyDown(KeyCode.Escape))

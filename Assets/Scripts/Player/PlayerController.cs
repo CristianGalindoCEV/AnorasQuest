@@ -18,6 +18,7 @@ public class PlayerController : PhysicsCollision
     private Vector3 movePlayer;
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
+    public bool good = false;
 
     //Dash y sprint
 
@@ -43,7 +44,6 @@ public class PlayerController : PhysicsCollision
     [SerializeField]
     private float f_jumpDefaultForce;
     private bool b_jumping;
-
 
     //Canvas
     public GameObject healthbar;
@@ -96,6 +96,26 @@ public class PlayerController : PhysicsCollision
         if (sprinting == false)
         {
             m_playerspeed = 5;
+        }
+
+        // GOOD MODE
+        if (good == true)
+        {
+            if (Input.GetKey(KeyCode.Alpha1))
+            {
+                SceneManager.LoadScene("StaticBoss");
+            }
+            
+            if (Input.GetKey(KeyCode.Alpha9))
+            {
+                SceneManager.LoadScene("MainScene");
+            }
+        
+            while ( gamemaster.hp < gamemaster.maxhp)
+            {
+                gamemaster.hp++;
+            }
+
         }
 
     }
@@ -184,7 +204,23 @@ public class PlayerController : PhysicsCollision
 
         }
     }
-   
+
+    //GOOD MODE
+    public void Good()
+    {
+       
+        //velocidad alta
+       
+        m_playerspeed = 15f;
+
+    }
+
+    public void NoGood()
+    {
+        m_playerspeed = 5f;
+    }
+
+
     //Dash
     public void CastDash()
     {
