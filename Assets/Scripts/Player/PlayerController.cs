@@ -93,7 +93,7 @@ public class PlayerController : PhysicsCollision
         }
 
         //Run
-        if (sprinting == false)
+        if (sprinting == false && good == false)
         {
             m_playerspeed = 5;
         }
