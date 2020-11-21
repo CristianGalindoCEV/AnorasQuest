@@ -12,6 +12,7 @@ public class EnemyMeele : MonoBehaviour
     private float speed = 6f;
     public EnemyHealth enemyhealth;
     public PlayerController playerController;
+    public GameMaster gamemaster;
 
     //Rango
     [SerializeField] float rangeDistanceMin;
@@ -59,7 +60,7 @@ public class EnemyMeele : MonoBehaviour
 
         if (other.tag == "Bullet")
         {
-            damage = 10f;
+            damage = gamemaster.bulletDamage;
             enemyhealth.healtbarUI.SetActive(true);
             StartCoroutine(TakeDamage());
         }

@@ -204,15 +204,16 @@ MonoBehaviour:
   m_playerspeed: 5
   iamdead: 0
   pysicsCollision: {fileID: 0}
+  good: 0
   f_dashSpeed: 100
   f_dashDuration: 2
   f_sprint: 1
   sprinting: 0
   m_cameraTransform: {fileID: 0}
   camForward: {x: 0, y: 0, z: 0}
-  f_jumpForce: 20
-  jumpMinAirTime: 0.2
-  jumpMaxAirTime: 0.5
+  f_jumpForce: 30
+  jumpMinAirTime: 0.3
+  jumpMaxAirTime: 0.6
   f_jumpReleaseForce: 300
   f_jumpDefaultForce: 500
   healthbar: {fileID: 0}

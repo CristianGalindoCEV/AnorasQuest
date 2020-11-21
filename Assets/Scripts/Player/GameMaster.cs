@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
     public InputManager inputManager;
     public float maxhp = 100;
     public float hp = 100;
+    public int bulletDamage = 15;
     // Start is called before the first frame update
     void Start()
     {

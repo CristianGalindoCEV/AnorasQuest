@@ -10,49 +10,41 @@ public class MiniBossScript : MonoBehaviour
     [SerializeField] Transform player;
 
     private int randomNumber;
-    public int bossHP = 100;
+    public float damage;
     bool isDead = false;
-    
+    public GameMaster gamemaster;
 
+    public MinibossHP minibosshp;
 
-    void Update()
+    void Start()
     {
         
-        if(!isDead)
-        {
-            TimeCounter += Time.deltaTime;
+    }
+    void Update()
+    {
 
-        
         //Ataques
         if (TimeCounter > 3)
         {
-            TimeCounter =0;
+            TimeCounter = 0;
             randomNumber = Random.Range (1,10);
 
             if (randomNumber < 6) { SpikeAttack(); /*Debug.Log("SpikeAttack")*/;}
             else {SpikeCage(); /*Debug.Log("SpikeCage")*/; }
-            
         }
-        //Muere
-        if (bossHP <= 0)
-        {
-            StartCoroutine(Death());
-        }
-
-        }
-
     }
 
-    IEnumerator Death()
+    private void OnTriggerEnter(Collider other)
     {
-       // Debug.Log("BossMuerto");
-        isDead = true;
-        //Animacion
-        //Particulas
-        yield return new WaitForSeconds(5);
-        Destroy(gameObject);
+    
+        if ( other.tag  == "Bullet")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.bulletDamage;
+        }
 
     }
+
     void SpikeAttack ()
     {
         Instantiate(spikePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
@@ -62,7 +54,11 @@ public class MiniBossScript : MonoBehaviour
     {
         Instantiate(spikeCagePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
     }
-    
-    
+
+    IEnumerator Damage()
+    {
+        minibosshp.hp = minibosshp.hp - damage;
+        yield return new WaitForSeconds(1.0f);
+    }
 
 }
