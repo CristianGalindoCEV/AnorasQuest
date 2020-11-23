@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
@@ -8,11 +10,13 @@ public class GameMaster : MonoBehaviour
     public InputManager inputManager;
     public float maxhp = 100;
     public float hp = 100;
-    public int bulletDamage = 15;
-    // Start is called before the first frame update
+    public int bulletDamage;
+    public int bulletGood = 100000;
+    public int bulletNoGood = 15;
+
     void Start()
     {
-        
+        bulletDamage = bulletNoGood;
     }
 
     // Update is called once per frame
@@ -25,4 +29,7 @@ public class GameMaster : MonoBehaviour
     {
         unlocked = true;
     }   
+
+  
+
 }

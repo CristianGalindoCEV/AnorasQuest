@@ -208,16 +208,18 @@ public class PlayerController : PhysicsCollision
     //GOOD MODE
     public void Good()
     {
-       
+
         //velocidad alta
-       
+        gamemaster.bulletDamage = 100000;
         m_playerspeed = 15f;
+        gamemaster.bulletDamage = gamemaster.bulletGood;
 
     }
 
     public void NoGood()
     {
         m_playerspeed = 5f;
+        gamemaster.bulletDamage = gamemaster.bulletNoGood;
     }
 
 
