@@ -8,6 +8,7 @@ public class CanvasMainMenu : MonoBehaviour
 
     public GameObject options;
     public GameObject mainmenu;
+    public GameObject loading;
     public bool b_optionson = false;
 
 
@@ -44,6 +45,15 @@ public class CanvasMainMenu : MonoBehaviour
     }
     public void PulsaPlay()
     {
+        StartCoroutine(Play());
+        
+    }
+
+    IEnumerator Play()
+    {
+        
+        loading.SetActive(true);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MainScene");
     }
 }

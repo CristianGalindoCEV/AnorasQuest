@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class PortalItem : MonoBehaviour
 {
     public PlayerController playercontroller;
-    private bool m_firtsPortal;
+    private bool m_firtsPortal = false;
+    public GameObject loading;
 
 
 
@@ -14,8 +15,15 @@ public class PortalItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("StaticBoss");
             m_firtsPortal = true;
+            StartCoroutine(Play());
         }
+    }
+    IEnumerator Play()
+    {
+
+        loading.SetActive(true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("StaticBoss");
     }
 }
