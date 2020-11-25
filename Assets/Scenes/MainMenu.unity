@@ -3866,6 +3866,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2570300108913415936}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &946947477 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 946947477, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2570300108913415936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &946947478 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 946947478, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2570300108913415936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &974853054
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,7 +5615,10 @@ MonoBehaviour:
   options: {fileID: 1708516554}
   mainmenu: {fileID: 2009884668}
   loading: {fileID: 946947476}
+  loadingGroup: {fileID: 946947477}
   b_optionson: 0
+  tranistion: {fileID: 946947478}
+  f_time: 0
 --- !u!114 &1493961252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7827,19 +7842,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1226298054}
     m_Modifications:
-    - target: {fileID: 407087450, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1165328450682222112, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
         type: 3}
       propertyPath: m_Name
       value: loadingScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165328450682222112, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1893165826296261204, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
         type: 3}

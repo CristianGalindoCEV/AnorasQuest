@@ -21,7 +21,6 @@ public class PlayerController : PhysicsCollision
     public bool good = false;
 
     //Dash y sprint
-
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
     [SerializeField] private float f_sprint;

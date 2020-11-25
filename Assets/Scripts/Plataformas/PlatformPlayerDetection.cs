@@ -14,7 +14,6 @@ public class PlatformPlayerDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("aa");
         if (other.tag == "Player" && b_playerenter == false)
         {
 
@@ -25,7 +24,6 @@ public class PlatformPlayerDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("pooo");
         if (other.tag == "Player" && b_playerenter == true)
         {
             other.transform.parent = null;

@@ -9,8 +9,14 @@ public class CanvasMainMenu : MonoBehaviour
     public GameObject options;
     public GameObject mainmenu;
     public GameObject loading;
+    public CanvasGroup loadingGroup;
     public bool b_optionson = false;
 
+    public Animator tranistion;
+
+    //Fade
+    [SerializeField] private float f_time = 1;
+    private bool b_Faded= false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +25,6 @@ public class CanvasMainMenu : MonoBehaviour
         options.SetActive(false);
     }
 
-    private void Update()
-    {
-       
-    }
     public void PulsaOpciones()
     {
         options.SetActive (true);
@@ -46,14 +48,15 @@ public class CanvasMainMenu : MonoBehaviour
     public void PulsaPlay()
     {
         StartCoroutine(Play());
-        
     }
+
 
     IEnumerator Play()
     {
         
-        loading.SetActive(true);
-        yield return new WaitForSeconds(2);
+        tranistion.SetBool("PressPlay" ,true);
+        mainmenu.SetActive(false);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("MainScene");
     }
 }

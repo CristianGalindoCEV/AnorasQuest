@@ -63,12 +63,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    /* public void SetResolution (int resolutionIndex)
-     {
-         Resolution resolution = resolution[resolutionIndex];
-         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-     }*/
-
     //Botones de los settings
     public void SetVolume (float volume)
     {
