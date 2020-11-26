@@ -458,7 +458,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedChase: 5.5
   damage: 0
-  enemyhealth: {fileID: 0}
+  enemyhealth: {fileID: 8937444084744884007}
+  playerController: {fileID: 0}
+  gamemaster: {fileID: 0}
   rangeDistanceMin: 6
   rangeDistanceMax: 8
   player: {fileID: 0}
@@ -482,6 +484,7 @@ MonoBehaviour:
   maxHealth: 100
   healtbarUI: {fileID: 745266704}
   slider: {fileID: 2066794560}
+  m_renderer: {fileID: 7977793195642740361}
 --- !u!54 &7977793195410221697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -592,7 +595,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a56a6c99567eb134eb350198f538b83e, type: 2}
+  - {fileID: 2100000, guid: 3b1506c9190792d41a8e191f8429d071, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -51,6 +51,11 @@ public class EnemyMeele : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * speed);
             
         }
+
+        if (enemyhealth.health <= 0)
+        {
+            speed = 0f;
+        }
     }
 
     //Trigers
@@ -70,7 +75,7 @@ public class EnemyMeele : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             StartCoroutine(Atack());
-            Debug.Log("attack");
+           // Debug.Log("attack");
         }
     }
 

@@ -50,6 +50,10 @@ MonoBehaviour:
   inputManager: {fileID: 4361428362036848041}
   maxhp: 100
   hp: 100
+  bulletDamage: 0
+  bulletGood: 100000
+  bulletNoGood: 15
+  value: 0
 --- !u!114 &4361428362036848041
 MonoBehaviour:
   m_ObjectHideFlags: 0
