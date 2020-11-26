@@ -221,7 +221,6 @@ public class PlayerController : PhysicsCollision
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
     }
 
-
     //Dash
     public void CastDash()
     {

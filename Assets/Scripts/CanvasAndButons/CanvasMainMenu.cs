@@ -9,14 +9,10 @@ public class CanvasMainMenu : MonoBehaviour
     public GameObject options;
     public GameObject mainmenu;
     public GameObject loading;
-    public CanvasGroup loadingGroup;
     public bool b_optionson = false;
 
     public Animator tranistion;
 
-    //Fade
-    [SerializeField] private float f_time = 1;
-    private bool b_Faded= false;
 
     // Start is called before the first frame update
     void Start()

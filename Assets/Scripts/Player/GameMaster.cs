@@ -14,22 +14,42 @@ public class GameMaster : MonoBehaviour
     public int bulletGood = 100000;
     public int bulletNoGood = 15;
 
+    //PlayerPref
+    private string s_currentlife = "CurrentLife";
+    private string s_maxLife = "MaxLife";
+
+    private void Awake()
+    {
+        LoadData();
+    }
     void Start()
     {
         bulletDamage = bulletNoGood;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    //OnDestroy
+    private void OnDestroy()
     {
-
+        SaveData();
     }
 
     public void UnlockWeapon()
     {
         unlocked = true;
-    }   
+    }
 
-  
+    //SaveData
+    private void SaveData()
+    {
+        PlayerPrefs.SetFloat(s_currentlife, hp);
+        PlayerPrefs.SetFloat(s_maxLife, maxhp);
+    }
+    //LoadData
+    private void LoadData()
+    {
+        hp = PlayerPrefs.GetFloat(s_currentlife, hp);
+        maxhp = PlayerPrefs.GetFloat(s_maxLife, maxhp);
+    }
+
 
 }
