@@ -212,6 +212,7 @@ public class PlayerController : PhysicsCollision
         gamemaster.bulletDamage = 100000;
         m_playerspeed = 15f;
         gamemaster.bulletDamage = gamemaster.bulletGood;
+        gamemaster.unlocked = true;
 
     }
 
@@ -219,6 +220,12 @@ public class PlayerController : PhysicsCollision
     {
         m_playerspeed = 5f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
+        
+        if(gamemaster.value == 1)
+        {
+            gamemaster.unlocked = true;
+        }
+        gamemaster.unlocked = false;
     }
 
     //Dash

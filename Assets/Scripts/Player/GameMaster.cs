@@ -14,9 +14,12 @@ public class GameMaster : MonoBehaviour
     public int bulletGood = 100000;
     public int bulletNoGood = 15;
 
+    public int value = 0;
+
     //PlayerPref
     private string s_currentlife = "CurrentLife";
     private string s_maxLife = "MaxLife";
+    private string s_unlock = "Unlock";
 
     private void Awake()
     {
@@ -26,7 +29,15 @@ public class GameMaster : MonoBehaviour
     {
         bulletDamage = bulletNoGood;
     }
-    
+
+    private void Update()
+    {
+        if (value == 1)
+        {
+            unlocked = true;
+        }
+    }
+   
     //OnDestroy
     private void OnDestroy()
     {
@@ -35,7 +46,7 @@ public class GameMaster : MonoBehaviour
 
     public void UnlockWeapon()
     {
-        unlocked = true;
+        value = 1;
     }
 
     //SaveData
@@ -43,12 +54,15 @@ public class GameMaster : MonoBehaviour
     {
         PlayerPrefs.SetFloat(s_currentlife, hp);
         PlayerPrefs.SetFloat(s_maxLife, maxhp);
+        PlayerPrefs.SetInt("Unlock", (unlocked ? 1 : 0));
     }
+  
     //LoadData
     private void LoadData()
     {
         hp = PlayerPrefs.GetFloat(s_currentlife, hp);
         maxhp = PlayerPrefs.GetFloat(s_maxLife, maxhp);
+        unlocked = (PlayerPrefs.GetInt("Unlock") != 0);
     }
 
 

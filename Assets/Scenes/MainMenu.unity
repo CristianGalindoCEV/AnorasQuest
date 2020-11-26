@@ -3866,12 +3866,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2570300108913415936}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &946947477 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 946947477, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2570300108913415936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &946947478 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 946947478, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
@@ -5615,10 +5609,10 @@ MonoBehaviour:
   options: {fileID: 1708516554}
   mainmenu: {fileID: 2009884668}
   loading: {fileID: 946947476}
-  loadingGroup: {fileID: 946947477}
   b_optionson: 0
   tranistion: {fileID: 946947478}
-  f_time: 0
+  m_text1: {fileID: 0}
+  m_image1: {fileID: 0}
 --- !u!114 &1493961252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7842,6 +7836,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1226298054}
     m_Modifications:
+    - target: {fileID: 185735656, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 845084088, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 946947477, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1165328450682222112, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
         type: 3}
       propertyPath: m_Name
@@ -7951,6 +7957,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657976390181000397, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349117976692489776, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802520259297888938, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927137199922082995, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543302974462111019, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
