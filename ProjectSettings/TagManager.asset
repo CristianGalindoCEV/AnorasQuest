@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyMele
   - Bullet
+  - PlayerStats
   layers:
   - Default
   - TransparentFX

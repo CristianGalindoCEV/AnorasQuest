@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PortalItem : MonoBehaviour
 {
     public PlayerController playercontroller;
+    public GameMaster gameMaster;
     private bool m_firtsPortal = false;
     public GameObject loading;
     public Animator tranistion;
@@ -15,7 +16,8 @@ public class PortalItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            m_firtsPortal = true;
+            gameMaster.portal = true;
+
             StartCoroutine(Play());
         }
     }

@@ -8,26 +8,38 @@ public class GameMaster : MonoBehaviour
 {
     public bool unlocked;
     public InputManager inputManager;
-    public float maxhp = 100;
-    public float hp = 100;
+    public float maxhp;
+    public float hp;
     public int bulletDamage;
-    public int bulletGood = 100000;
-    public int bulletNoGood = 15;
+    public int bulletGood;
+    public int bulletNoGood;
+    public bool portal = false;
+    public PlayerStats playerStats;
 
     public int value = 0;
 
     //PlayerPref
+    /*
     private string s_currentlife = "CurrentLife";
     private string s_maxLife = "MaxLife";
     private string s_unlock = "Unlock";
-
+    */
     private void Awake()
     {
-        LoadData();
+        playerStats = FindObjectOfType<PlayerStats>();
+        maxhp = playerStats.maxhp_stat;
+        hp = playerStats.hp_stat;
+        bulletDamage = playerStats.bulletDamage_stat;
+        bulletGood = playerStats.bulletGood_stat;
+        bulletNoGood = playerStats.bulletNoGood_stat;
+        
+        //  LoadData();
     }
     void Start()
     {
         bulletDamage = bulletNoGood;
+
+
     }
 
     private void Update()
@@ -36,12 +48,21 @@ public class GameMaster : MonoBehaviour
         {
             unlocked = true;
         }
+
+        if (portal == true)
+        {
+            TakePortal();
+        }
+
     }
    
-    //OnDestroy
-    private void OnDestroy()
+    public void TakePortal()
     {
-        SaveData();
+        playerStats.maxhp_stat = maxhp;
+        playerStats.hp_stat = hp;
+        playerStats.bulletDamage_stat = bulletDamage;
+        playerStats.bulletGood_stat = bulletGood;
+        playerStats.bulletNoGood_stat = bulletNoGood;
     }
 
     public void UnlockWeapon()
@@ -50,7 +71,7 @@ public class GameMaster : MonoBehaviour
     }
 
     //SaveData
-    private void SaveData()
+   /* private void SaveData()
     {
         PlayerPrefs.SetFloat(s_currentlife, hp);
         PlayerPrefs.SetFloat(s_maxLife, maxhp);
@@ -63,7 +84,7 @@ public class GameMaster : MonoBehaviour
         hp = PlayerPrefs.GetFloat(s_currentlife, hp);
         maxhp = PlayerPrefs.GetFloat(s_maxLife, maxhp);
         unlocked = (PlayerPrefs.GetInt("Unlock") != 0);
-    }
+    }*/
 
 
 }
