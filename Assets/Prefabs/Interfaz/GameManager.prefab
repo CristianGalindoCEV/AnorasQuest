@@ -53,6 +53,8 @@ MonoBehaviour:
   bulletDamage: 0
   bulletGood: 100000
   bulletNoGood: 15
+  portal: 0
+  playerStats: {fileID: 0}
   value: 0
 --- !u!114 &4361428362036848041
 MonoBehaviour:

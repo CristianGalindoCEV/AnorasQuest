@@ -16,7 +16,7 @@ public class CanvasMainMenu : MonoBehaviour
     public Animator tranistion;
 
     //loading random
-    private int i_number;
+    public int i_number;
     private GameObject m_text1;
     private GameObject m_text2;
     private GameObject m_text3;
@@ -77,20 +77,26 @@ public class CanvasMainMenu : MonoBehaviour
 
         i_number = Random.Range(1, 3);
 
-        if (i_number == 1)
+        switch (i_number)
         {
-            m_image1.SetActive(true);
-            m_text1.SetActive(true);
-        }
-        if (i_number == 2)
-        {
-            m_image2.SetActive(true);
-            m_text2.SetActive(true);
-        }
-        if (i_number == 3)
-        {
-            m_image3.SetActive(true);
-            m_text3.SetActive(true);
+            case 1:
+                m_image1.SetActive(true);
+                m_text1.SetActive(true);
+                break;
+            
+            case 2:
+                m_image2.SetActive(true);
+                m_text2.SetActive(true);
+                break;
+
+            case 3:
+                m_image3.SetActive(true);
+                m_text3.SetActive(true);
+                break;
+
+            default:
+                Debug.Log("Switch error");
+                break;
         }
 
         tranistion.SetBool("PressPlay" ,true);

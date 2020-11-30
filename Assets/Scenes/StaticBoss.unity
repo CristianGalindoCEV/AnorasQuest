@@ -1113,7 +1113,7 @@ PrefabInstance:
     - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
       propertyPath: BauculoItem
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4361428362036848086, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
