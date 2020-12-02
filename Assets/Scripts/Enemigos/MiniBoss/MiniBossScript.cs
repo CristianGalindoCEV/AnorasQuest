@@ -22,7 +22,7 @@ public class MiniBossScript : MonoBehaviour
     }
     void Update()
     {
-
+        TimeCounter += Time.deltaTime;
         //Ataques
         if (TimeCounter > 3)
         {
@@ -32,6 +32,8 @@ public class MiniBossScript : MonoBehaviour
             if (randomNumber < 6) { SpikeAttack(); /*Debug.Log("SpikeAttack")*/;}
             else {SpikeCage(); /*Debug.Log("SpikeCage")*/; }
         }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
