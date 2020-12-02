@@ -8,6 +8,7 @@ public class MinibossHP : MonoBehaviour
     public Slider bossBar;
     public float maxHp = 3000;
     public float hp;
+    private GameObject portal;
 
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class MinibossHP : MonoBehaviour
     {
         hp = maxHp;
         bossBar.value = CalculateHealth();
+        portal = GameObject.Find("Portal_Prop");
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class MinibossHP : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("SeMuere");
+            portal.SetActive(true);
         }
       
         if (hp > maxHp)

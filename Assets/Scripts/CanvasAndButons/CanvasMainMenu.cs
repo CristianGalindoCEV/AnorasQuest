@@ -24,6 +24,8 @@ public class CanvasMainMenu : MonoBehaviour
     private GameObject m_image2;
     private GameObject m_image3;
 
+    //FadeOut
+    private GameObject fadeOut;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class CanvasMainMenu : MonoBehaviour
         m_image1 = GameObject.Find("Image 1");
         m_image2 = GameObject.Find("Image 2");
         m_image3 = GameObject.Find("Image 3");
+        fadeOut = GameObject.Find("FadeOut");
 
         m_image1.SetActive(false);
         m_text1.SetActive(false);
@@ -44,6 +47,7 @@ public class CanvasMainMenu : MonoBehaviour
         m_text2.SetActive(false);
         m_image3.SetActive(false);
         m_text3.SetActive(false);
+
     }
 
     public void PulsaOpciones()

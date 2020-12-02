@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PortalItem : MonoBehaviour
+public class PortalBoss : MonoBehaviour
 {
     public PlayerController playercontroller;
     public GameMaster gameMaster;
@@ -28,6 +28,6 @@ public class PortalItem : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         loading.SetActive(true);
         yield return new WaitForSeconds(4);
-        SceneManager.LoadScene("StaticBoss");
+        SceneManager.LoadScene("MainScene");
     }
 }
