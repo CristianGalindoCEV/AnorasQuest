@@ -17,6 +17,7 @@ public class MinibossHP : MonoBehaviour
         hp = maxHp;
         bossBar.value = CalculateHealth();
         portal = GameObject.Find("Portal_Prop");
+        portal.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +27,6 @@ public class MinibossHP : MonoBehaviour
 
         if (hp <= 0)
         {
-            Debug.Log("SeMuere");
             portal.SetActive(true);
         }
       

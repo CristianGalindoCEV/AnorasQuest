@@ -13,18 +13,19 @@ public class MiniBossScript : MonoBehaviour
     public float damage;
     bool isDead = false;
     public GameMaster gamemaster;
+    private GameObject m_boss;
 
     public MinibossHP minibosshp;
 
     void Start()
     {
-        
+        m_boss = GameObject.Find("Miniboss_Static");
     }
     void Update()
     {
         TimeCounter += Time.deltaTime;
         //Ataques
-        if (TimeCounter > 3)
+        if (TimeCounter > 3 && minibosshp.hp > 0)
         {
             TimeCounter = 0;
             randomNumber = Random.Range (1,10);
@@ -33,6 +34,10 @@ public class MiniBossScript : MonoBehaviour
             else {SpikeCage(); /*Debug.Log("SpikeCage")*/; }
         }
 
+        if( minibosshp.hp <= 0)
+        {
+            m_boss.SetActive(false);
+        }
         
     }
 
