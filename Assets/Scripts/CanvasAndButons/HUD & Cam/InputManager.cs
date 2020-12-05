@@ -67,6 +67,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && BauculoItem == true)
         {
             gunspawn.Fire();
+            FindObjectOfType<AudioManager>().Play("MagicShot");
         }
 
         //Salto
