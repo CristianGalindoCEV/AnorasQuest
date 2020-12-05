@@ -72,6 +72,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(false);
         panelresolution.SetActive(true);
         panelsound.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void PulsaSound()
@@ -79,6 +80,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void PulsaGraphics()
@@ -86,6 +88,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(true);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 }
 

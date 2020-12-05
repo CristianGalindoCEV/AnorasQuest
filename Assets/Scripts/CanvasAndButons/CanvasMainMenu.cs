@@ -48,6 +48,7 @@ public class CanvasMainMenu : MonoBehaviour
         m_image3.SetActive(false);
         m_text3.SetActive(false);
 
+       // FindObjectOfType<AudioManager>().Play("MenuBGM");
     }
 
     public void PulsaOpciones()
@@ -55,12 +56,14 @@ public class CanvasMainMenu : MonoBehaviour
         options.SetActive (true);
         mainmenu.SetActive(false);
         b_optionson = true;
+        FindObjectOfType<AudioManager>().Play("Button");
     }
     public void PulsaBack()
     {
         options.SetActive(false);
         mainmenu.SetActive(true);
         b_optionson = false;
+        FindObjectOfType<AudioManager>().Play("Button");
     }
     public void PulsaExit()
     {
@@ -68,10 +71,12 @@ public class CanvasMainMenu : MonoBehaviour
     }
     public void PulsaCredits()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         SceneManager.LoadScene("Credits");
     }
     public void PulsaPlay()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         StartCoroutine(Play());
     }
 
@@ -106,6 +111,7 @@ public class CanvasMainMenu : MonoBehaviour
         tranistion.SetBool("PressPlay" ,true);
         mainmenu.SetActive(false);
         yield return new WaitForSeconds(4);
+
         SceneManager.LoadScene("MainScene");
     }
 }
