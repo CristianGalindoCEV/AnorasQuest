@@ -13,6 +13,7 @@ public class EnemyMeele : MonoBehaviour
     public EnemyHealth enemyhealth;
     public PlayerController playerController;
     public GameMaster gamemaster;
+    private Collider m_collider;
 
     //Rango
     [SerializeField] float rangeDistanceMin;
@@ -26,6 +27,7 @@ public class EnemyMeele : MonoBehaviour
     private void Awake()
     {
         rangeDistance = rangeDistanceMin;
+        m_collider = this.GetComponent<CapsuleCollider>();
        
     }
     void Update()
@@ -54,6 +56,7 @@ public class EnemyMeele : MonoBehaviour
 
         if (enemyhealth.health <= 0)
         {
+            m_collider.enabled = false;
             speed = 0f;
         }
     }
@@ -61,7 +64,12 @@ public class EnemyMeele : MonoBehaviour
     //Trigers
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Sword")
+        {
+            damage = gamemaster.swordDamage;
+            enemyhealth.healtbarUI.SetActive(true);
+            StartCoroutine(TakeDamage());
+        }
 
         if (other.tag == "Bullet")
         {
@@ -85,7 +93,6 @@ public class EnemyMeele : MonoBehaviour
         speedChase = 0f;
         playerController.Enemymele();
         //Animacion
-        //Sonido = FindObjectOfType<AudioManager>().Play("nombredelaudio");
         yield return new WaitForSeconds(2.0f);
         speedChase = 5.5f;
     }

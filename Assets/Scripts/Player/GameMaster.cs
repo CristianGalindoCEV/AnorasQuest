@@ -8,11 +8,18 @@ public class GameMaster : MonoBehaviour
 {
     public bool unlocked;
     public InputManager inputManager;
+    
     public float maxhp;
     public float hp;
+   
+    public int swordDamage;
+    public int swordDamageGood;
+    public int swordDamageNoGood;
+    
     public int bulletDamage;
     public int bulletGood;
     public int bulletNoGood;
+    
     public bool portal = false;
     public PlayerStats playerStats;
 
@@ -27,18 +34,24 @@ public class GameMaster : MonoBehaviour
     private void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+       
         maxhp = playerStats.maxhp_stat;
         hp = playerStats.hp_stat;
+       
         bulletDamage = playerStats.bulletDamage_stat;
         bulletGood = playerStats.bulletGood_stat;
         bulletNoGood = playerStats.bulletNoGood_stat;
+        
+        swordDamage = playerStats.swordDamage_stat;
+        swordDamageGood = playerStats.swordDamageGood_stat;
+        swordDamageNoGood = playerStats.swordDamageNoGood_stat;
         
         //  LoadData();
     }
     void Start()
     {
         bulletDamage = bulletNoGood;
-
+        swordDamage = swordDamageNoGood;
 
     }
 
@@ -60,9 +73,14 @@ public class GameMaster : MonoBehaviour
     {
         playerStats.maxhp_stat = maxhp;
         playerStats.hp_stat = hp;
+        
         playerStats.bulletDamage_stat = bulletDamage;
         playerStats.bulletGood_stat = bulletGood;
         playerStats.bulletNoGood_stat = bulletNoGood;
+
+        playerStats.swordDamageNoGood_stat = swordDamageNoGood;
+        playerStats.swordDamage_stat = swordDamage;
+        playerStats.swordDamageGood_stat = swordDamageGood;
     }
 
     public void UnlockWeapon()

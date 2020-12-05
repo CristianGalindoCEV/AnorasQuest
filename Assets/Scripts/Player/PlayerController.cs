@@ -100,12 +100,12 @@ public class PlayerController : PhysicsCollision
         // GOOD MODE
         if (good == true)
         {
-            if (Input.GetKey(KeyCode.Alpha1))
+            if (Input.GetKey(KeyCode.F1))
             {
                 SceneManager.LoadScene("StaticBoss");
             }
             
-            if (Input.GetKey(KeyCode.Alpha9))
+            if (Input.GetKey(KeyCode.F2))
             {
                 SceneManager.LoadScene("MainScene");
             }
@@ -207,12 +207,13 @@ public class PlayerController : PhysicsCollision
     //GOOD MODE
     public void Good()
     {
-
-        //velocidad alta
-        gamemaster.bulletDamage = 100000;
         m_playerspeed = 15f;
+        
         gamemaster.bulletDamage = gamemaster.bulletGood;
         gamemaster.unlocked = true;
+
+        gamemaster.swordDamage = gamemaster.swordDamageGood;
+
 
     }
 
@@ -220,6 +221,8 @@ public class PlayerController : PhysicsCollision
     {
         m_playerspeed = 5f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
+        gamemaster.swordDamage = gamemaster.swordDamageNoGood;
+
         
         if(gamemaster.value == 1)
         {
