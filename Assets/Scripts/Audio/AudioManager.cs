@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
 
     private float randomPitch;
     //public float minPitch;
-   // public float maxPitch;
+    //public float maxPitch;
 
     // Start is called before the first frame update
     void Awake()
@@ -46,13 +46,8 @@ public class AudioManager : MonoBehaviour
               s.source.minDistance = ;
               s.source.maxDistance = ;
             */
-
-         
-
             s.source.dopplerLevel = 0.5f;
             s.source.spread = 120f;
-            
-
         }
     }
 
@@ -83,8 +78,6 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Stop();
-        Debug.Log("hola");
-
     }
     void Update()
     {
