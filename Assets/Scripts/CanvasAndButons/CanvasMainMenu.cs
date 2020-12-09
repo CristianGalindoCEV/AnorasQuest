@@ -48,7 +48,7 @@ public class CanvasMainMenu : MonoBehaviour
         m_image3.SetActive(false);
         m_text3.SetActive(false);
 
-       // FindObjectOfType<AudioManager>().Play("MenuBGM");
+       FindObjectOfType<AudioManager>().Play("MenuBGM");
     }
 
     public void PulsaOpciones()
@@ -112,6 +112,7 @@ public class CanvasMainMenu : MonoBehaviour
         mainmenu.SetActive(false);
         yield return new WaitForSeconds(4);
 
+        FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("MainScene");
     }
 }

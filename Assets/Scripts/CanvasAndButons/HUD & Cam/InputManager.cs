@@ -7,8 +7,8 @@ public class InputManager : MonoBehaviour
    //Armas
     [SerializeField] private GameObject Gun;
     [SerializeField] private GameObject Espada;
-    public bool BauculoItem = false;
-    public bool EspadaItem = true;
+    public bool bauculoItem = false;
+    public bool swordItem = true;
     public Bauculo gunspawn;
     private float f_timetospawn = 0;
    
@@ -50,24 +50,30 @@ public class InputManager : MonoBehaviour
         
         if (Input.GetKey("1"))
         {
-            EspadaItem = true;
-            BauculoItem = false;
+            swordItem = true;
+            bauculoItem = false;
             ChangeWeapon();
             mirilla.SetActive(false);
         }
         
         if (Input.GetKey("2") && gamemaster.unlocked == true)
          {
-            BauculoItem = true;
-            EspadaItem = false;
+            bauculoItem = true;
+            swordItem = false;
             ChangeWeapon();
             mirilla.SetActive(true);
          }
 
-        if (Input.GetButtonDown("Fire1") && BauculoItem == true)
+        if (Input.GetButtonDown("Fire1") && bauculoItem == true)
         {
             gunspawn.Fire();
             FindObjectOfType<AudioManager>().Play("MagicShot");
+        }
+
+        if (Input.GetButtonDown("Fire1") && swordItem == true)
+        {
+            //AnimacionEspada
+            FindObjectOfType<AudioManager>().Play("Attack_1");
         }
 
         //Salto
@@ -143,22 +149,22 @@ public class InputManager : MonoBehaviour
 
     public void ChangeWeapon()
     {
-        if (BauculoItem == true)
+        if (bauculoItem == true)
         {
             Espada.SetActive(false);
             Gun.SetActive(true);
-            EspadaItem = (false);
+            swordItem = (false);
             if (Input.GetButtonDown("Fire1"))
             {
                 //Bauculo.Fire();
             }
         }
 
-        else if (EspadaItem == true)
+        else if (swordItem == true)
         {
             Espada.SetActive(true);
             Gun.SetActive(false);
-            BauculoItem = (false);
+            bauculoItem = (false);
             if (Input.GetButtonDown("Fire1"))
             {
                 //Espada.Fire();

@@ -1386,51 +1386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2e6d07a2996a83c41bca8980d61752c9, type: 3}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: MagicShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4aafdaf1b8c03e34d9a3eaa8d83ab4af, type: 3}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6487891527698991640, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
-        type: 3}
-      propertyPath: sounds.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6487891527698991641, guid: 6bbe41cf45276b349a38f8ac2ce14d49,
         type: 3}
       propertyPath: m_LocalPosition.x

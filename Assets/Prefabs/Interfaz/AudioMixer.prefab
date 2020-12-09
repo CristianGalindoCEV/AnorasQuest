@@ -43,4 +43,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9761a27461efcb44486f5d89202969a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Button
+    clip: {fileID: 8300000, guid: 2e6d07a2996a83c41bca8980d61752c9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MagicShot
+    clip: {fileID: 8300000, guid: 4aafdaf1b8c03e34d9a3eaa8d83ab4af, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Attack_1
+    clip: {fileID: 8300000, guid: 9021f9b63c487ff439f4387a90427ece, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: cfbed8d3eb9ace649b716d9467acb97d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuBGM
+    clip: {fileID: 8300000, guid: c04622364b484744b9478d679fb3fad4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

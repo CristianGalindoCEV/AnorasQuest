@@ -289,7 +289,7 @@ public class PlayerController : PhysicsCollision
         m_rigidbody.AddForce(Camera.main.transform.forward * f_dashSpeed, ForceMode.VelocityChange);
         stamina.SendMessage("UseStamina", 20f);
         yield return new WaitForSeconds(f_dashDuration);
-
+        FindObjectOfType<AudioManager>().Play("Dash");
         m_rigidbody.velocity = Vector3.zero;
     }
     //Corutina Sprint
