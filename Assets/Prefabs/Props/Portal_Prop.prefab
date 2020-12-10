@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7464485017130809712}
-  - {fileID: 291243262469935427}
+  - {fileID: 4451755423870165098}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5549441518531917377}
   - component: {fileID: 5504163894834129039}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: Portal_Shader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &252216187323315880
+--- !u!1001 &4201144344298538881
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -271,13 +271,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3c5a45f0be384944aaaf073a5df10549,
         type: 3}
       propertyPath: m_Name
-      value: Portal (1)
+      value: Portal_Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5a45f0be384944aaaf073a5df10549, type: 3}
---- !u!4 &291243262469935427 stripped
+--- !u!4 &4451755423870165098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3c5a45f0be384944aaaf073a5df10549,
     type: 3}
-  m_PrefabInstance: {fileID: 252216187323315880}
+  m_PrefabInstance: {fileID: 4201144344298538881}
   m_PrefabAsset: {fileID: 0}
