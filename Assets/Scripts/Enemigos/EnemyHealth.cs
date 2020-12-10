@@ -15,13 +15,15 @@ public class EnemyHealth: MonoBehaviour
     public Renderer m_renderer;
     private MaterialPropertyBlock m_materialProperty;
     private float m_disolve = -1f;
+    //rivate GameObject m_burn;
 
     void Start()
     {
         health = maxHealth;
         slider.value = CalculateHealth();
         healtbarUI.SetActive(false);
-        //m_renderer = GetComponent<Renderer>();
+        //m_burn = this.GetComponent<>(); Pillar el BURN
+        
     }
 
 
