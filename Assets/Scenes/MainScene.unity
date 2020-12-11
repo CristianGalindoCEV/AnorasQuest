@@ -2479,6 +2479,11 @@ PrefabInstance:
       propertyPath: transtion
       value: 
       objectReference: {fileID: 1095354840}
+    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
+        type: 3}
+      propertyPath: cadencia
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1344188101613610515, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
       propertyPath: m_LocalPosition.y

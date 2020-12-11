@@ -20,6 +20,8 @@ public class PlayerController : PhysicsCollision
     public PhysicsCollision pysicsCollision;
     public bool god = false;
     public Animator transtion;
+    public float cadencia;
+    private float tiempoCadencia =0;
 
     //Dash y sprint
     [SerializeField] private float f_dashSpeed;
@@ -83,10 +85,10 @@ public class PlayerController : PhysicsCollision
         if (!god)
             movePlayer.y = m_rigidbody.velocity.y;
 
+        tiempoCadencia += Time.deltaTime;
 
-        
         //Jump
-       if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
+        if (f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
             Time.time - f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime >= jumpMaxAirTime && !isGrounded)
         {
             b_jumpButtonReleased = false;
@@ -263,7 +265,13 @@ public class PlayerController : PhysicsCollision
     //MeleAttack
     public void PlayerMeleAttack() 
     {
-        StartCoroutine(MeleAttack());
+        if (tiempoCadencia > cadencia)
+        {
+            tiempoCadencia = 0;
+            StartCoroutine(MeleAttack()); 
+        
+        }    
+        
     }
 
     //Corutina de golpe
