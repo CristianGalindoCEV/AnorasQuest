@@ -73,6 +73,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && swordItem == true)
         {
             //AnimacionEspada
+            transition.SetBool("Pegar", true);
             FindObjectOfType<AudioManager>().Play("Attack_1");
         }
 
