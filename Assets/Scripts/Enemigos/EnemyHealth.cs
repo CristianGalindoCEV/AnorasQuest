@@ -70,7 +70,7 @@ public class EnemyHealth: MonoBehaviour
     //Disolve
     private IEnumerator UpdateDisolve()
     {
-        while (m_disolve < 1.5f)
+        while (m_disolve < 1f)
         {
             m_disolve += Time.deltaTime;
 

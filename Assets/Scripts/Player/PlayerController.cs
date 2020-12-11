@@ -283,7 +283,7 @@ public class PlayerController : PhysicsCollision
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
         //Player pushed
-        m_rigidbody.AddForce(-transform.forward * 100f, ForceMode.Impulse);
+        m_rigidbody.AddForce(-transform.forward * 200f, ForceMode.Impulse);
         m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
 
         if (gamemaster.hp <= 0)
