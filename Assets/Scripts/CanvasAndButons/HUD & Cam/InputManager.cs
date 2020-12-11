@@ -103,15 +103,15 @@ public class InputManager : MonoBehaviour
         //GOOD MODE
         if (Input.GetKeyUp(KeyCode.F10))
         {
-            if (player.good == true)
+            if (player.god == true)
             {
-                player.good = false;
-                player.NoGood();
+                player.god = false;
+                player.NoGod();
             }
             else
             {
-                player.good = true;
-                player.Good();
+                player.god = true;
+                player.God();
             }
         }
 

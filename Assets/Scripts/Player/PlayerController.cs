@@ -18,7 +18,7 @@ public class PlayerController : PhysicsCollision
     private Vector3 movePlayer;
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
-    public bool good = false;
+    public bool god = false;
 
     //Dash y sprint
     [SerializeField] private float f_dashSpeed;
@@ -78,10 +78,11 @@ public class PlayerController : PhysicsCollision
         movePlayer = movePlayer * m_playerspeed;
 
         m_transform.LookAt(m_transform.position + movePlayer);
+        
+        if (!god)
+            movePlayer.y = m_rigidbody.velocity.y;
 
-        movePlayer.y = m_rigidbody.velocity.y;
 
-        m_rigidbody.velocity = movePlayer;
         
         //Jump
        if(f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
@@ -92,13 +93,13 @@ public class PlayerController : PhysicsCollision
         }
 
         //Run
-        if (sprinting == false && good == false)
+        if (sprinting == false && god == false)
         {
             m_playerspeed = 5;
         }
 
         // GOOD MODE
-        if (good == true)
+        if (god == true)
         {
             if (Input.GetKey(KeyCode.F1))
             {
@@ -109,13 +110,23 @@ public class PlayerController : PhysicsCollision
             {
                 SceneManager.LoadScene("MainScene");
             }
-        
+
+            if (Input.GetKey(KeyCode.M))
+                movePlayer.y += 20;
+
+            if (Input.GetKey(KeyCode.N))
+                movePlayer.y -= 20;
+
             while ( gamemaster.hp < gamemaster.maxhp)
             {
                 gamemaster.hp++;
             }
 
         }
+
+        m_rigidbody.velocity = movePlayer;
+
+        m_rigidbody.useGravity = !god;
 
     }
 
@@ -158,14 +169,14 @@ public class PlayerController : PhysicsCollision
 
     public void JumpRelased()
     {
-        if (b_jumpButtonReleased)
+        if (b_jumpButtonReleased || god)
             return;
         Jump(-f_jumpReleaseForce);
     }
 
     public void JumpStart()
     {
-        if (!isGrounded)
+        if (!isGrounded || god)
         {
             return;
         }
@@ -205,7 +216,7 @@ public class PlayerController : PhysicsCollision
     }
 
     //GOOD MODE
-    public void Good()
+    public void God()
     {
         m_playerspeed = 15f;
         
@@ -217,7 +228,7 @@ public class PlayerController : PhysicsCollision
 
     }
 
-    public void NoGood()
+    public void NoGod()
     {
         m_playerspeed = 5f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;

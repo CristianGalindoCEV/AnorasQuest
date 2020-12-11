@@ -8,12 +8,13 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
-
+    public Sound sound;
     public static AudioManager instance;
 
+    
+
     private float randomPitch;
-    //public float minPitch;
-    //public float maxPitch;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -39,8 +40,8 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch /*+ randomPitch*/;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = s.audioMixer.outputAudioMixerGroup;
             /*
-              s.source.outputAudioMixerGroup = s.outp
               s.source.spatialBlend = s.spatialBlend;
               s.source.rolloffMode = s.rolloffMode;
               s.source.minDistance = ;
@@ -81,6 +82,6 @@ public class AudioManager : MonoBehaviour
     }
     void Update()
     {
-      //  randomPitch = Random.Range(minPitch, maxPitch);
+        randomPitch = UnityEngine.Random.Range(sound.minPitch, sound.maxPitch);
     }
 }

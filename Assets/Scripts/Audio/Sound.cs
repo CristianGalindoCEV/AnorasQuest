@@ -7,6 +7,9 @@ public class Sound
     public string name;
 
     public AudioClip clip;
+    public AudioMixer audioMixer;
+    public float minPitch;
+    public float maxPitch;
 
     [Range(0f, 1f)]
     public float volume;

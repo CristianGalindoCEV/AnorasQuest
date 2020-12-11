@@ -711,6 +711,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: []
+  sound:
+    name: 
+    clip: {fileID: 0}
+    audioMixer: {fileID: 0}
+    minPitch: 0
+    maxPitch: 0
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &1188938975
 Transform:
   m_ObjectHideFlags: 0
@@ -936,10 +946,40 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090807460169344227, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43653
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090807460169344227, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1864332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090807460169344227, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1864332
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090807460169344227, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1864332
+      objectReference: {fileID: 0}
     - target: {fileID: 2889951452466759700, guid: 8a4d52ca51b8eb9439b71765f9209c95,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889951452466759700, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344264998945815735, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7977793195410221708, guid: 8a4d52ca51b8eb9439b71765f9209c95,
         type: 3}
@@ -1031,11 +1071,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8937444084744884007, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+        type: 3}
+      propertyPath: m_burn
+      value: 
+      objectReference: {fileID: 1357468076}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a4d52ca51b8eb9439b71765f9209c95, type: 3}
 --- !u!4 &1357468075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7977793195410221711, guid: 8a4d52ca51b8eb9439b71765f9209c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1357468074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1357468076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7344264998945815735, guid: 8a4d52ca51b8eb9439b71765f9209c95,
     type: 3}
   m_PrefabInstance: {fileID: 1357468074}
   m_PrefabAsset: {fileID: 0}

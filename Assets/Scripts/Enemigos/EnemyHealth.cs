@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.UI;
 
 public class EnemyHealth: MonoBehaviour
@@ -15,15 +16,13 @@ public class EnemyHealth: MonoBehaviour
     public Renderer m_renderer;
     private MaterialPropertyBlock m_materialProperty;
     private float m_disolve = -1f;
-    //rivate GameObject m_burn;
+    [SerializeField]private GameObject m_burn;
 
     void Start()
     {
         health = maxHealth;
         slider.value = CalculateHealth();
-        healtbarUI.SetActive(false);
-        //m_burn = this.GetComponent<>(); Pillar el BURN
-        
+        healtbarUI.SetActive(false); 
     }
 
 
@@ -39,15 +38,12 @@ public class EnemyHealth: MonoBehaviour
 
         if (health <= 0)
         {
+            m_burn.SetActive(true);
             ActivateDisolve();
         }
         if (health > maxHealth)
         {
             health = maxHealth;
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ActivateDisolve();
         }
     }
 
@@ -68,7 +64,7 @@ public class EnemyHealth: MonoBehaviour
     //Disolve
     private IEnumerator UpdateDisolve()
     {
-        while (m_disolve < 1f)
+        while (m_disolve < 1.5f)
         {
             m_disolve += Time.deltaTime;
 

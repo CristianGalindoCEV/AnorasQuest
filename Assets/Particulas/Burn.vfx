@@ -136,12 +136,11 @@ VisualEffectResource:
       PARTICLE_PER_STRIP_COUNT);\r\n\t\tInitStripAttributes(particleIndex, attributes,
       stripData);\r\n\t\t// TODO Change seed to be sure we're deterministic on random
       with strip\r\n#endif\r\n        \r\n        {\n            SetAttribute_E6295C0(
-      /*inout */attributes.velocity,  /*inout */attributes.seed, float3(-0.333000004,
-      0.200000003, -0.333000004), float3(0.333000004, 1, 0.333000004));\n       
-      }\n        {\n            SetAttribute_F01429A3( /*inout */attributes.lifetime, 
-      /*inout */attributes.seed, (float)1, (float)3);\n        }\n        {\n           
-      uint tmp_y = attributes.particleId ^ asuint(uniform_a);\n            float
-      tmp_z = FixedRand(tmp_y);\n            float tmp_bb = tmp_z * (float)355;\n           
+      /*inout */attributes.velocity,  /*inout */attributes.seed, float3(1.5, 4, 1.5),
+      float3(1.5, 4, 1.5));\n        }\n        {\n            SetAttribute_F01429A3(
+      /*inout */attributes.lifetime,  /*inout */attributes.seed, (float)1, (float)3);\n       
+      }\n        {\n            uint tmp_y = attributes.particleId ^ asuint(uniform_a);\n           
+      float tmp_z = FixedRand(tmp_y);\n            float tmp_bb = tmp_z * (float)355;\n           
       float tmp_bc = (float)5 + tmp_bb;\n            float3 tmp_bd = float3(tmp_bc,
       tmp_bc, tmp_bc);\n            SetAttribute_48A7BEFF( /*inout */attributes.angleX, 
       /*inout */attributes.angleY,  /*inout */attributes.angleZ, tmp_bd);\n       
@@ -355,7 +354,7 @@ VisualEffectResource:
       = asfloat(attributeBuffer.Load((index * 0x8 + 0x124) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t\t\t//
       Initialize built-in needed attributes\n\t\t\t\t\t\t#if HAS_STRIPS\n\t\t\t\t\t\tInitStripAttributes(index,
       attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_3278B22F( /*inout */attributes.size, (float)0.5);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\tif
+      SetAttribute_3278B22F( /*inout */attributes.size, (float)0.699999988);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\tif
       (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t\t\n\t\t\t\to.VFX_VARYING_UV.xy
       = i.uv;\n\t\t\t    \n\t\t\t    #if VFX_SHADERGRAPH_HAS_UV1\n\t\t\t    o.uv1
       = i.uv1;\n\t\t\t    #endif\n\t\t\t    #if VFX_SHADERGRAPH_HAS_UV2\n\t\t\t   
@@ -410,11 +409,12 @@ VisualEffectResource:
       = float4(1, 1, 1, 0);\n\t\t\t    }\n\t\t\t    o.Color_ = Color___;float AlphaClip___
       = (float)0;{\n\t\t\t        \n\t\t\t        AlphaClip___ = (float)0.00100000005;\n\t\t\t   
       }\n\t\t\t    o.AlphaClip_ = AlphaClip___;float DisolveAmount___ = (float)0;{\n\t\t\t       
-      float tmp_y = attributes.age / attributes.lifetime;\n\t\t\t        float tmp_z
-      = saturate(tmp_y);\n\t\t\t        \n\t\t\t        DisolveAmount___ = tmp_z;\n\t\t\t   
-      }\n\t\t\t    o.DisolveAmount_ = DisolveAmount___;float DisolveWidth___ = (float)0;{\n\t\t\t       
-      uint tmp_z = attributes.particleId ^ asuint(uniform_a);\n\t\t\t        float
-      tmp_ba = FixedRand(tmp_z);\n\t\t\t        float tmp_bc = tmp_ba * (float)0.699999988;\n\t\t\t       
+      float tmp_y = attributes.age / attributes.lifetime;\n\t\t\t        float tmp_ba
+      = max(tmp_y, (float)0);\n\t\t\t        float tmp_bc = min(tmp_ba, (float)1);\n\t\t\t       
+      \n\t\t\t        DisolveAmount___ = tmp_bc;\n\t\t\t    }\n\t\t\t    o.DisolveAmount_
+      = DisolveAmount___;float DisolveWidth___ = (float)0;{\n\t\t\t        uint tmp_z
+      = attributes.particleId ^ asuint(uniform_a);\n\t\t\t        float tmp_ba =
+      FixedRand(tmp_z);\n\t\t\t        float tmp_bc = tmp_ba * (float)0.699999988;\n\t\t\t       
       float tmp_bd = (float)0.300000012 + tmp_bc;\n\t\t\t        \n\t\t\t       
       DisolveWidth___ = tmp_bd;\n\t\t\t    }\n\t\t\t    o.DisolveWidth_ = DisolveWidth___;float4
       DisolveColor___ = (float4)0;{\n\t\t\t        \n\t\t\t        DisolveColor___
@@ -602,7 +602,7 @@ VisualEffectResource:
       = asfloat(attributeBuffer.Load((index * 0x8 + 0x124) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t\t\t//
       Initialize built-in needed attributes\n\t\t\t\t\t\t#if HAS_STRIPS\n\t\t\t\t\t\tInitStripAttributes(index,
       attributes, stripData);\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_3278B22F( /*inout */attributes.size, (float)0.5);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\tif
+      SetAttribute_3278B22F( /*inout */attributes.size, (float)0.699999988);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\tif
       (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t\t\n\t\t\t\to.VFX_VARYING_UV.xy
       = i.uv;\n\t\t\t    \n\t\t\t    #if VFX_SHADERGRAPH_HAS_UV1\n\t\t\t    o.uv1
       = i.uv1;\n\t\t\t    #endif\n\t\t\t    #if VFX_SHADERGRAPH_HAS_UV2\n\t\t\t   
@@ -657,11 +657,12 @@ VisualEffectResource:
       = float4(1, 1, 1, 0);\n\t\t\t    }\n\t\t\t    o.Color_ = Color___;float AlphaClip___
       = (float)0;{\n\t\t\t        \n\t\t\t        AlphaClip___ = (float)0.00100000005;\n\t\t\t   
       }\n\t\t\t    o.AlphaClip_ = AlphaClip___;float DisolveAmount___ = (float)0;{\n\t\t\t       
-      float tmp_y = attributes.age / attributes.lifetime;\n\t\t\t        float tmp_z
-      = saturate(tmp_y);\n\t\t\t        \n\t\t\t        DisolveAmount___ = tmp_z;\n\t\t\t   
-      }\n\t\t\t    o.DisolveAmount_ = DisolveAmount___;float DisolveWidth___ = (float)0;{\n\t\t\t       
-      uint tmp_z = attributes.particleId ^ asuint(uniform_a);\n\t\t\t        float
-      tmp_ba = FixedRand(tmp_z);\n\t\t\t        float tmp_bc = tmp_ba * (float)0.699999988;\n\t\t\t       
+      float tmp_y = attributes.age / attributes.lifetime;\n\t\t\t        float tmp_ba
+      = max(tmp_y, (float)0);\n\t\t\t        float tmp_bc = min(tmp_ba, (float)1);\n\t\t\t       
+      \n\t\t\t        DisolveAmount___ = tmp_bc;\n\t\t\t    }\n\t\t\t    o.DisolveAmount_
+      = DisolveAmount___;float DisolveWidth___ = (float)0;{\n\t\t\t        uint tmp_z
+      = attributes.particleId ^ asuint(uniform_a);\n\t\t\t        float tmp_ba =
+      FixedRand(tmp_z);\n\t\t\t        float tmp_bc = tmp_ba * (float)0.699999988;\n\t\t\t       
       float tmp_bd = (float)0.300000012 + tmp_bc;\n\t\t\t        \n\t\t\t       
       DisolveWidth___ = tmp_bd;\n\t\t\t    }\n\t\t\t    o.DisolveWidth_ = DisolveWidth___;float4
       DisolveColor___ = (float4)0;{\n\t\t\t        \n\t\t\t        DisolveColor___
@@ -886,61 +887,61 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 4
+        data[3]: 1
+      - op: 1
+        valueIndex: 11
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 3
       - op: 1
         valueIndex: 14
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
-      - op: 1
-        valueIndex: 17
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
+        data[3]: 4
       - op: 1
         valueIndex: 18
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 7
+        data[3]: 6
       - op: 1
         valueIndex: 19
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 4
-      - op: 1
-        valueIndex: 23
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
+        data[3]: 15
       - op: 6
-        valueIndex: 24
+        valueIndex: 20
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: -1
       - op: 1
-        valueIndex: 25
+        valueIndex: 21
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: 3
       - op: 1
+        valueIndex: 24
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 4
+      - op: 1
         valueIndex: 28
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 15
+        data[3]: 7
       - op: 1
         valueIndex: 29
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 6
+        data[3]: 1
       - op: 1
         valueIndex: 30
         data[0]: -1
@@ -949,18 +950,6 @@ VisualEffectResource:
         data[3]: 3
       - op: 1
         valueIndex: 33
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 34
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 3
-      - op: 1
-        valueIndex: 37
         data[0]: -1
         data[1]: -1
         data[2]: -1
@@ -974,48 +963,44 @@ VisualEffectResource:
         - m_ExpressionIndex: 3
           m_Value: 355
         - m_ExpressionIndex: 4
-          m_Value: 0.7
+          m_Value: 0
         - m_ExpressionIndex: 5
-          m_Value: 5
+          m_Value: 0.7
         - m_ExpressionIndex: 6
-          m_Value: 20
+          m_Value: 5
         - m_ExpressionIndex: 7
-          m_Value: 0.3
+          m_Value: 20
         - m_ExpressionIndex: 8
-          m_Value: 40
-        - m_ExpressionIndex: 9
           m_Value: 1
-        - m_ExpressionIndex: 12
+        - m_ExpressionIndex: 9
+          m_Value: 0.3
+        - m_ExpressionIndex: 10
+          m_Value: 40
+        - m_ExpressionIndex: 19
           m_Value: 0.001
-        - m_ExpressionIndex: 15
-          m_Value: 0.5
         - m_ExpressionIndex: 21
           m_Value: 3
-        - m_ExpressionIndex: 23
-          m_Value: 8
       m_Vector2f:
         m_Array: []
       m_Vector3f:
         m_Array:
         - m_ExpressionIndex: 11
-          m_Value: {x: 0, y: 1, z: 0}
-        - m_ExpressionIndex: 17
+          m_Value: {x: 1.5, y: 4, z: 1.5}
+        - m_ExpressionIndex: 16
           m_Value: {x: 2, y: 3, z: 2}
         - m_ExpressionIndex: 20
-          m_Value: {x: -0.333, y: 0.2, z: -0.333}
-        - m_ExpressionIndex: 22
-          m_Value: {x: 0.333, y: 1, z: 0.333}
+          m_Value: {x: 0, y: 1, z: 0}
       m_Vector4f:
         m_Array:
-        - m_ExpressionIndex: 10
+        - m_ExpressionIndex: 12
           m_Value: {x: 2.1830463, y: 0.6469962, z: 0.07208176, w: 0}
-        - m_ExpressionIndex: 14
+        - m_ExpressionIndex: 17
           m_Value: {x: 1, y: 1, z: 1, w: 0}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 0
           m_Value: 0
-        - m_ExpressionIndex: 19
+        - m_ExpressionIndex: 13
           m_Value: 4294967295
       m_Int:
         m_Array: []
@@ -1027,9 +1012,9 @@ VisualEffectResource:
         m_Array: []
       m_NamedObject:
         m_Array:
-        - m_ExpressionIndex: 13
-          m_Value: {fileID: 0}
         - m_ExpressionIndex: 18
+          m_Value: {fileID: 0}
+        - m_ExpressionIndex: 14
           m_Value: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
       m_Bool:
         m_Array: []
@@ -1173,7 +1158,7 @@ VisualEffectResource:
       temporaryBuffers: []
       values:
       - nameId: Rate
-        index: 23
+        index: 7
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: -1
@@ -1194,9 +1179,9 @@ VisualEffectResource:
       index: 1
     values:
     - nameId: bounds_center
-      index: 11
+      index: 20
     - nameId: bounds_size
-      index: 17
+      index: 16
     tasks:
     - type: 536870912
       buffers:
@@ -1214,9 +1199,9 @@ VisualEffectResource:
         index: 2
       params:
       - nameId: bounds_center
-        index: 11
+        index: 20
       - nameId: bounds_size
-        index: 17
+        index: 16
       processor: {fileID: 0}
       shaderSourceIndex: 0
     - type: 805306368
@@ -1228,7 +1213,7 @@ VisualEffectResource:
       temporaryBuffers: []
       values:
       - nameId: deltaTime_a
-        index: 16
+        index: 15
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 1
@@ -1241,12 +1226,12 @@ VisualEffectResource:
       - nameId: uniform_a
         index: 2
       - nameId: MainTex_
-        index: 13
+        index: 18
       params:
       - nameId: mesh
-        index: 18
+        index: 14
       - nameId: subMeshMask
-        index: 19
+        index: 13
       - nameId: sortPriority
         index: 0
       processor: {fileID: 0}
@@ -1329,7 +1314,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 8
+      m_SerializableObject: 20
     m_Space: 2147483647
   m_Property:
     name: Rate
@@ -1788,7 +1773,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":-0.3330000042915344,"y":0.20000000298023225,"z":-0.3330000042915344}}'
+      m_SerializableObject: '{"vector":{"x":1.5,"y":4.0,"z":1.5}}'
     m_Space: 0
   m_Property:
     name: A
@@ -1970,7 +1955,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.3330000042915344,"y":1.0,"z":0.3330000042915344}}'
+      m_SerializableObject: '{"vector":{"x":1.5,"y":4.0,"z":1.5}}'
     m_Space: 0
   m_Property:
     name: B
@@ -2250,7 +2235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 942, y: 619}
+  m_UIPosition: {x: 942, y: 790}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2284,7 +2269,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614611}
-  m_UIPosition: {x: 942, y: 879}
+  m_UIPosition: {x: 942, y: 1050}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2460,7 +2445,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
+      m_SerializableObject: 0.7
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -3143,7 +3128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 666, y: 1042}
+  m_UIPosition: {x: 668, y: 1042}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
