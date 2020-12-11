@@ -9,7 +9,7 @@ public class EnemyMeele : MonoBehaviour
     //Player
     [SerializeField] private float speedChase = 5.5f;
     public float damage;
-    private float speed = 6f;
+    private float m_speed = 6f;
     public EnemyHealth enemyhealth;
     public PlayerController playerController;
     public GameMaster gamemaster;
@@ -40,7 +40,7 @@ public class EnemyMeele : MonoBehaviour
         }
 
         //Detecta Player
-        if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance)
+        if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance && enemyhealth.health > 0)
         {
             rangeDistance = rangeDistanceMax;    
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
@@ -50,14 +50,14 @@ public class EnemyMeele : MonoBehaviour
         else
         {
             rangeDistance = rangeDistanceMin;
-            transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
             
         }
 
         if (enemyhealth.health <= 0)
         {
             m_collider.enabled = false;
-            speed = 0f;
+            m_speed = 0f;
         }
     }
 

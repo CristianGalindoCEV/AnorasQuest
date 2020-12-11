@@ -45,6 +45,12 @@ public class EnemyHealth: MonoBehaviour
         {
             health = maxHealth;
         }
+      /* if (Input.GetKey(KeyCode.M))
+        {
+            ActivateDisolve();
+        }
+      */
+      
     }
 
     float CalculateHealth()
