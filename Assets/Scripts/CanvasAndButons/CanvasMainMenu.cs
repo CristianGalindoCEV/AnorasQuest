@@ -109,6 +109,7 @@ public class CanvasMainMenu : MonoBehaviour
         }
 
         tranistion.SetBool("PressPlay" ,true);
+        FindObjectOfType<AudioManager>().FadeVolume("MenuBGM");
         mainmenu.SetActive(false);
         yield return new WaitForSeconds(4);
 
