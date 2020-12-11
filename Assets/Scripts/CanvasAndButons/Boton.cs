@@ -14,7 +14,7 @@ public class Boton : MonoBehaviour
 
     public void PulsaRetry()
     {
-        SceneManager.LoadScene("EscenarioFinal");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void PulsaExit()
@@ -23,7 +23,7 @@ public class Boton : MonoBehaviour
     }
     public void PulsaPlay()
     {
-        SceneManager.LoadScene("EscenarioFinal");
+        SceneManager.LoadScene("MainScene");
     }
     public void ExitToMenu()
     {

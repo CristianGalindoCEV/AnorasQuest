@@ -19,6 +19,7 @@ public class PlayerController : PhysicsCollision
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
     public bool god = false;
+    public Animator transtion;
 
     //Dash y sprint
     [SerializeField] private float f_dashSpeed;
@@ -259,6 +260,12 @@ public class PlayerController : PhysicsCollision
         }
     }
 
+    //MeleAttack
+    public void PlayerMeleAttack() 
+    {
+        StartCoroutine(MeleAttack());
+    }
+
     //Corutina de golpe
     IEnumerator Golpe()
     {
@@ -312,5 +319,13 @@ public class PlayerController : PhysicsCollision
         yield return new WaitForSeconds(0);
 
        // m_rigidbody.velocity = Vector3.zero;
+    }
+    //MeleAttackCorutine
+    IEnumerator MeleAttack()
+    {
+        transtion.SetBool("PlayMeleAttack", true);
+        FindObjectOfType<AudioManager>().Play("Attack_1");
+        yield return new WaitForSeconds(1.0f);
+        transtion.SetBool("PlayMeleAttack", false);
     }
 }

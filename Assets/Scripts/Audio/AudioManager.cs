@@ -77,8 +77,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        while(s.source.volume < 1f)
-        s.source.volume -= Time.deltaTime;
+       /* while (s.source.volume > 0f)
+        {
+            s.source.volume -= Time.deltaTime;
+        }
+       */
     }
 
     public void Stop(string name)

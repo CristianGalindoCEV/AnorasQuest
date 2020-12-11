@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
     public MenuManager menumanager;
 
     //Player
-    private PlayerController player;
+    private PlayerController m_player;
 
     //Cursor
     private bool m_islocked;
@@ -31,7 +31,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         Gun.SetActive(false);
-        player = FindObjectOfType<PlayerController>();
+        m_player = FindObjectOfType<PlayerController>();
         
         //Canvas
         menuon = false;
@@ -72,47 +72,45 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && swordItem == true)
         {
-            //AnimacionEspada
-            transition.SetBool("Pegar", true);
-            FindObjectOfType<AudioManager>().Play("Attack_1");
+            m_player.PlayerMeleAttack();
         }
 
         //Salto
 
         if (Input.GetButtonDown("Jump"))
-            player.JumpStart();
+            m_player.JumpStart();
 
         if (Input.GetButtonUp("Jump"))
-            player.JumpRelased();
+            m_player.JumpRelased();
 
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            player.CastDash();
+            m_player.CastDash();
         }
         //Sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            player.sprinting = true;
-            player.Run();
+            m_player.sprinting = true;
+            m_player.Run();
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            player.sprinting = false;
+            m_player.sprinting = false;
         }
 
         //GOOD MODE
         if (Input.GetKeyUp(KeyCode.F10))
         {
-            if (player.god == true)
+            if (m_player.god == true)
             {
-                player.god = false;
-                player.NoGod();
+                m_player.god = false;
+                m_player.NoGod();
             }
             else
             {
-                player.god = true;
-                player.God();
+                m_player.god = true;
+                m_player.God();
             }
         }
 

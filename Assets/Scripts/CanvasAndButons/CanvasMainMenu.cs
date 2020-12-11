@@ -13,7 +13,7 @@ public class CanvasMainMenu : MonoBehaviour
 
 
     //Loading Animator
-    public Animator tranistion;
+    public Animator transtion;
 
     //loading random
     public int i_number;
@@ -108,8 +108,8 @@ public class CanvasMainMenu : MonoBehaviour
                 break;
         }
 
-        tranistion.SetBool("PressPlay" ,true);
-        FindObjectOfType<AudioManager>().FadeVolume("MenuBGM");
+        transtion.SetBool("PressPlay" ,true);
+        //FindObjectOfType<AudioManager>().FadeVolume("MenuBGM");
         mainmenu.SetActive(false);
         yield return new WaitForSeconds(4);
 
