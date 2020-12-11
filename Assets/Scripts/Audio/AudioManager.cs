@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
-    public Sound sound;
     public static AudioManager instance;
 
     
@@ -82,6 +81,6 @@ public class AudioManager : MonoBehaviour
     }
     void Update()
     {
-        randomPitch = UnityEngine.Random.Range(sound.minPitch, sound.maxPitch);
+       // randomPitch = UnityEngine.Random.Range(sound.minPitch, sound.maxPitch);
     }
 }
