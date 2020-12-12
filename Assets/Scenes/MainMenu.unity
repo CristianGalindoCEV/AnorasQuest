@@ -7999,24 +7999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1226298054}
     m_Modifications:
-    - target: {fileID: 946947477, guid: bb8d110e79bad9c4db19abed0ec0bfd4, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 133220188339248315, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1165328450682222112, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
         type: 3}
       propertyPath: m_Name
       value: loadingScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165328450682222112, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1893165826296261204, guid: bb8d110e79bad9c4db19abed0ec0bfd4,
         type: 3}
