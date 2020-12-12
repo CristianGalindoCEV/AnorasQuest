@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 1344188100929735381}
   - component: {fileID: 1344188100929735382}
   - component: {fileID: 1344188100929735383}
+  - component: {fileID: 1095354840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,6 +158,8 @@ MonoBehaviour:
   iamdead: 0
   pysicsCollision: {fileID: 0}
   god: 0
+  transtion: {fileID: 1095354840}
+  cadencia: 1
   f_dashSpeed: 100
   f_dashDuration: 2
   f_sprint: 1
@@ -164,10 +167,10 @@ MonoBehaviour:
   m_cameraTransform: {fileID: 0}
   camForward: {x: 0, y: 0, z: 0}
   f_jumpForce: 30
-  jumpMinAirTime: 0.3
-  jumpMaxAirTime: 0.6
+  jumpMinAirTime: 0.4
+  jumpMaxAirTime: 0.4
   f_jumpReleaseForce: 300
-  f_jumpDefaultForce: 500
+  f_jumpDefaultForce: 300
   healthbar: {fileID: 0}
   gamemaster: {fileID: 0}
   stamina: {fileID: 0}
@@ -177,6 +180,25 @@ MonoBehaviour:
   m_groundLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!95 &1095354840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344188100929735376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c674e6fd933208a4ebb8b73c1ac88817, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1344188101613610524
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344188101613610524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6529999, y: 1.761, z: 0}
+  m_LocalPosition: {x: 0.6529999, y: 0.815, z: 0}
   m_LocalScale: {x: 0.182, y: 2.1880307, z: 0.182}
   m_Children:
   - {fileID: 1779514311}
@@ -306,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 6663071606020524911, guid: 7a6b786718d16724d84fd0fc947112ce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7980001
+      value: 1.015
       objectReference: {fileID: 0}
     - target: {fileID: 6663071606020524911, guid: 7a6b786718d16724d84fd0fc947112ce,
         type: 3}
@@ -352,6 +374,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663071606020524911, guid: 7a6b786718d16724d84fd0fc947112ce,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4532076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663071606020524911, guid: 7a6b786718d16724d84fd0fc947112ce,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4532076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663071606020524911, guid: 7a6b786718d16724d84fd0fc947112ce,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4532076
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6b786718d16724d84fd0fc947112ce, type: 3}

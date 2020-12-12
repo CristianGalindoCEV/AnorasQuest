@@ -3,7 +3,12 @@ guid: 4d0544b0d6e85f64197bb6c81cc02395
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plataforma_wire_028149178
+    second: {fileID: 2100000, guid: c1dbf8987a31b4e45b845a5bfcb1754f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

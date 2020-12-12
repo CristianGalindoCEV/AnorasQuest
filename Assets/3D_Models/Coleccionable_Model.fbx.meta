@@ -3,7 +3,12 @@ guid: 1a8e1d9703d5b4f429688592f9a18441
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coleccionable_2_wire_228184154
+    second: {fileID: 2100000, guid: c1dbf8987a31b4e45b845a5bfcb1754f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

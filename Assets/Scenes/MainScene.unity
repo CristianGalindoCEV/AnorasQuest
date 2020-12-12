@@ -827,31 +827,6 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1357468074}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1095354839 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1344188100929735376, guid: 331082425c039f5419f4c37addbcd296,
-    type: 3}
-  m_PrefabInstance: {fileID: 1344188100211388139}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1095354840
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095354839}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c674e6fd933208a4ebb8b73c1ac88817, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1143446540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320012878427755687, guid: b30f2d830388dd549bd22d0d52973ad5,
@@ -2089,7 +2064,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1344188100211388139}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095354839}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78d38e9a887e58b4fb25a8175a240525, type: 3}
@@ -2533,71 +2508,6 @@ PrefabInstance:
       propertyPath: m_shadowTransform
       value: 
       objectReference: {fileID: 1175797431}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: jumpMaxAirTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: f_jumpDefaultForce
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: jumpMinAirTime
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: transtion
-      value: 
-      objectReference: {fileID: 1095354840}
-    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: cadencia
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101613610515, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.815
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515889, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515889, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515890, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_TagString
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515894, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4532076
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515894, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4532076
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515894, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4532076
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344188101819515894, guid: 331082425c039f5419f4c37addbcd296,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.015
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 331082425c039f5419f4c37addbcd296, type: 3}
 --- !u!1001 &2839317385237820521
