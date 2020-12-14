@@ -76,12 +76,15 @@ public class InputManager : MonoBehaviour
         }
 
         //Salto
+        /*
+            if (Input.GetButtonDown("Jump"))
+                m_player.JumpStart();
 
-        if (Input.GetButtonDown("Jump"))
-            m_player.JumpStart();
-
-        if (Input.GetButtonUp("Jump"))
-            m_player.JumpRelased();
+            if (Input.GetButtonUp("Jump"))
+                m_player.JumpRelased();
+        */
+        if (Input.GetButton("Jump"))
+            m_player.Jump();
 
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl))

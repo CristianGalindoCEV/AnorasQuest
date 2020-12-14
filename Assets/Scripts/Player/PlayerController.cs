@@ -21,7 +21,7 @@ public class PlayerController : PhysicsCollision
     public bool god = false;
     public Animator transtion;
     public float cadencia;
-    private float tiempoCadencia =0;
+    private float m_tiempoCadencia = 0;
 
     //Dash y sprint
     [SerializeField] private float f_dashSpeed;
@@ -85,16 +85,17 @@ public class PlayerController : PhysicsCollision
         if (!god)
             movePlayer.y = m_rigidbody.velocity.y;
 
-        tiempoCadencia += Time.deltaTime;
+        m_tiempoCadencia += Time.deltaTime;
 
-        //Jump
+       /* //Jump
         if (f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
             Time.time - f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime >= jumpMaxAirTime && !isGrounded)
         {
             b_jumpButtonReleased = false;
             JumpRelased();
         }
-
+       */
+       
         //Run
         if (sprinting == false && god == false)
         {
@@ -161,6 +162,7 @@ public class PlayerController : PhysicsCollision
     }
 
     //Jump
+    /*
     private void Jump (float force)
     {
 
@@ -189,7 +191,13 @@ public class PlayerController : PhysicsCollision
 
         Jump(f_jumpDefaultForce);
     }
-    
+    */
+   
+    public void Jump()
+    {
+        m_rigidbody.AddForce(Vector3.up * f_jumpForce, ForceMode.Impulse);
+    }
+
     //HealItem
     public void HealItem()
     {
@@ -265,9 +273,9 @@ public class PlayerController : PhysicsCollision
     //MeleAttack
     public void PlayerMeleAttack() 
     {
-        if (tiempoCadencia > cadencia)
+        if (m_tiempoCadencia > cadencia)
         {
-            tiempoCadencia = 0;
+            m_tiempoCadencia = 0;
             StartCoroutine(MeleAttack()); 
         
         }    
