@@ -20,8 +20,8 @@ public class PlayerController : PhysicsCollision
     public PhysicsCollision pysicsCollision;
     public bool god = false;
     public Animator transtion;
-    public float cadencia;
-    private float m_tiempoCadencia = 0;
+    [SerializeField] private float f_cadence;
+    private float f_cadenceTime = 0;
 
     //Dash y sprint
     [SerializeField] private float f_dashSpeed;
@@ -36,7 +36,7 @@ public class PlayerController : PhysicsCollision
     private Vector3 camRight;
 
     //Gravedad y salto
-    [SerializeField] private float f_jumpForce = 20f;
+    [SerializeField] private float f_jumpForce = 0.5f;
     [SerializeField] private CapsuleCollider m_playerCol;
 
 
@@ -79,7 +79,7 @@ public class PlayerController : PhysicsCollision
         if (!god)
             movePlayer.y = m_rigidbody.velocity.y;
 
-        m_tiempoCadencia += Time.deltaTime;
+        f_cadenceTime += Time.deltaTime;
 
        
         //Run
@@ -157,7 +157,7 @@ public class PlayerController : PhysicsCollision
     public bool IsGrounded()
     {
       return Physics.CheckCapsule(m_playerCol.bounds.center, new Vector3(m_playerCol.bounds.center.x,
-            m_playerCol.bounds.min.y, m_playerCol.bounds.center.z), m_playerCol.radius * 0.9f, m_groundLayer);
+            m_playerCol.bounds.min.y, m_playerCol.bounds.center.z), m_playerCol.radius * 0.25f, m_groundLayer);
     }
 
     //HealItem
@@ -235,9 +235,9 @@ public class PlayerController : PhysicsCollision
     //MeleAttack
     public void PlayerMeleAttack() 
     {
-        if (m_tiempoCadencia > cadencia)
+        if (f_cadenceTime > f_cadence)
         {
-            m_tiempoCadencia = 0;
+            f_cadenceTime = 0;
             StartCoroutine(MeleAttack()); 
         
         }    
