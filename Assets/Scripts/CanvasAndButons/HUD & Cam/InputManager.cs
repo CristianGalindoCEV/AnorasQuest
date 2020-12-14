@@ -74,16 +74,10 @@ public class InputManager : MonoBehaviour
         {
             m_player.PlayerMeleAttack();
         }
+        
+        //Jump
 
-        //Salto
-        /*
-            if (Input.GetButtonDown("Jump"))
-                m_player.JumpStart();
-
-            if (Input.GetButtonUp("Jump"))
-                m_player.JumpRelased();
-        */
-        if (Input.GetButton("Jump"))
+        if ( m_player.IsGrounded() && Input.GetButton("Jump"))
             m_player.Jump();
 
         //Dash

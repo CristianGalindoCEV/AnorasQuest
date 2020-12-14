@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2839317384104190632}
   - component: {fileID: 2839317384104190635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2839317384565326672}
   - component: {fileID: 2839317384565326675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2839317384567617081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plataforma_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d0544b0d6e85f64197bb6c81cc02395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d0544b0d6e85f64197bb6c81cc02395, type: 3}

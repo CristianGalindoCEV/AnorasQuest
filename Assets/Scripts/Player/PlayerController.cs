@@ -37,15 +37,8 @@ public class PlayerController : PhysicsCollision
 
     //Gravedad y salto
     [SerializeField] private float f_jumpForce = 20f;
-    private float f_jumpButtonPressTime;
-    public float jumpMinAirTime;
-    public float jumpMaxAirTime;
-    private bool b_jumpButtonReleased;
-    [SerializeField]
-    private float f_jumpReleaseForce;
-    [SerializeField]
-    private float f_jumpDefaultForce;
-    private bool b_jumping;
+    [SerializeField] private CapsuleCollider m_playerCol;
+
 
     //Canvas
     public GameObject healthbar;
@@ -63,6 +56,7 @@ public class PlayerController : PhysicsCollision
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_transform = transform;
+        m_playerCol = GetComponent<CapsuleCollider>();
 
     }
 
@@ -87,14 +81,6 @@ public class PlayerController : PhysicsCollision
 
         m_tiempoCadencia += Time.deltaTime;
 
-       /* //Jump
-        if (f_jumpButtonPressTime != 0 && Time.time - f_jumpButtonPressTime >= jumpMinAirTime &&
-            Time.time - f_jumpButtonPressTime <= jumpMaxAirTime && b_jumpButtonReleased || Time.time - f_jumpButtonPressTime >= jumpMaxAirTime && !isGrounded)
-        {
-            b_jumpButtonReleased = false;
-            JumpRelased();
-        }
-       */
        
         //Run
         if (sprinting == false && god == false)
@@ -162,40 +148,16 @@ public class PlayerController : PhysicsCollision
     }
 
     //Jump
-    /*
-    private void Jump (float force)
-    {
-
-        f_jumpForce = force;
-        m_rigidbody.velocity = Vector3.zero;
-        m_rigidbody.AddForce(f_jumpForce * Vector3.up);
-        b_jumping = true;
-    }
-
-    public void JumpRelased()
-    {
-        if (b_jumpButtonReleased || god)
-            return;
-        Jump(-f_jumpReleaseForce);
-    }
-
-    public void JumpStart()
-    {
-        if (!isGrounded || god)
-        {
-            return;
-        }
-
-        f_jumpButtonPressTime = Time.time;
-        b_jumpButtonReleased = false;
-
-        Jump(f_jumpDefaultForce);
-    }
-    */
    
     public void Jump()
     {
         m_rigidbody.AddForce(Vector3.up * f_jumpForce, ForceMode.Impulse);
+    }
+
+    public bool IsGrounded()
+    {
+      return Physics.CheckCapsule(m_playerCol.bounds.center, new Vector3(m_playerCol.bounds.center.x,
+            m_playerCol.bounds.min.y, m_playerCol.bounds.center.z), m_playerCol.radius * 0.9f, m_groundLayer);
     }
 
     //HealItem
