@@ -45,17 +45,22 @@ public class MainMenuManager : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
-
-    void Update()
+ 
+    //Sound Voids
+    public void SetVolume (float sliderValue)
     {
-       
+        audioMixer.SetFloat("Volume", Mathf.Log10 (sliderValue) * 20 );
     }
-
+    public void SetVolumeMusic(float sliderValue)
+    {
+        audioMixer.SetFloat("Music", Mathf.Log10(sliderValue) * 20);
+    }
+    public void SetVolumeSound(float sliderValue)
+    {
+        audioMixer.SetFloat("Sound", Mathf.Log10(sliderValue) * 20);
+    }
+   
     //Botones de los settings
-    public void SetVolume (float volume)
-    {
-        audioMixer.SetFloat("volume", volume);
-    }
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -72,7 +77,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(false);
         panelresolution.SetActive(true);
         panelsound.SetActive(false);
-        FindObjectOfType<AudioManager>().Play("Button");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Button");
     }
 
     public void PulsaSound()
@@ -80,7 +85,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(true);
-        FindObjectOfType<AudioManager>().Play("Button");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Button");
     }
 
     public void PulsaGraphics()
@@ -88,7 +93,7 @@ public class MainMenuManager : MonoBehaviour
         panelgraphics.SetActive(true);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
-        FindObjectOfType<AudioManager>().Play("Button");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Button");
     }
 }
 

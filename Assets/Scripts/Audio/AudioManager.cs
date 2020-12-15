@@ -35,11 +35,11 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-
             s.source.volume = s.volume;
-            s.source.pitch = s.pitch /*+ randomPitch*/;
+            s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-            //s.source.outputAudioMixerGroup = s.audioMixer.outputAudioMixerGroup;
+            s.source.outputAudioMixerGroup = s.audioMixer.FindMatchingGroups(s.outputMixer)[0];
+
             /*
               s.source.spatialBlend = s.spatialBlend;
               s.source.rolloffMode = s.rolloffMode;
@@ -63,12 +63,11 @@ public class AudioManager : MonoBehaviour
         if (PauseManager.gameispaused)
         {
             s.source.volume *= .5f;
-        }
-
+        } 
         s.source.Play();
     }
 
-    public void FadeVolume (string name)
+    public void PlayRandomPitch(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -77,11 +76,12 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-       /* while (s.source.volume > 0f)
+        if (PauseManager.gameispaused)
         {
-            s.source.volume -= Time.deltaTime;
+            s.source.volume *= .5f;
         }
-       */
+        s.source.pitch = UnityEngine.Random.Range(s.minPitch, s.maxPitch);
+        s.source.Play();
     }
 
     public void Stop(string name)
@@ -95,8 +95,5 @@ public class AudioManager : MonoBehaviour
 
         s.source.Stop();
     }
-    void Update()
-    {
-       // randomPitch = UnityEngine.Random.Range(sound.minPitch, sound.maxPitch);
-    }
+
 }

@@ -67,7 +67,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && bauculoItem == true)
         {
             gunspawn.Fire();
-            FindObjectOfType<AudioManager>().Play("MagicShot");
+            FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
         }
 
         if (Input.GetButtonDown("Fire1") && swordItem == true)

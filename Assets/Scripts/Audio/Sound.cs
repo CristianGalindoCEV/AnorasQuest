@@ -15,6 +15,7 @@ public class Sound
     public float volume;
     [Range (-3f, 3f)]
     public float pitch;
+    public string outputMixer;
 
 
 
