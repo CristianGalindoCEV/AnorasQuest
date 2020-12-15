@@ -77,7 +77,7 @@ public class InputManager : MonoBehaviour
         
         //Jump
 
-        if ( m_player.IsGrounded() && Input.GetButton("Jump"))
+        if ( m_player.IsGrounded() && Input.GetButtonDown("Jump"))
             m_player.Jump();
 
         //Dash

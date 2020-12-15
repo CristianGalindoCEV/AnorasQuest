@@ -152,6 +152,9 @@ public class PlayerController : PhysicsCollision
     public void Jump()
     {
         m_rigidbody.AddForce(Vector3.up * f_jumpForce, ForceMode.Impulse);
+        Vector3 velocity = m_rigidbody.velocity;
+        velocity.y = 0;
+        m_rigidbody.velocity = velocity;
     }
 
     public bool IsGrounded()
@@ -180,7 +183,7 @@ public class PlayerController : PhysicsCollision
         Ray ray = new Ray(m_transform.position, Vector3.down);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f, m_groundLayer))
+        if (Physics.Raycast(ray, out hit, 10f, m_groundLayer))
         {
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
