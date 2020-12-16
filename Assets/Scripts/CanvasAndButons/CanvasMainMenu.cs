@@ -51,6 +51,7 @@ public class CanvasMainMenu : MonoBehaviour
        FindObjectOfType<AudioManager>().Play("MenuBGM");
     }
 
+
     public void PulsaOpciones()
     {
         options.SetActive (true);
