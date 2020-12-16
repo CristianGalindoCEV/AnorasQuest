@@ -53,11 +53,11 @@ public class MainMenuManager : MonoBehaviour
     }
     public void SetVolumeMusic(float sliderValue)
     {
-        audioMixer.SetFloat("Music", Mathf.Log10(sliderValue) * 20);
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
     }
     public void SetVolumeSound(float sliderValue)
     {
-        audioMixer.SetFloat("Sound", Mathf.Log10(sliderValue) * 20);
+        audioMixer.SetFloat("SoundsVol", Mathf.Log10(sliderValue) * 20);
     }
    
     //Botones de los settings
