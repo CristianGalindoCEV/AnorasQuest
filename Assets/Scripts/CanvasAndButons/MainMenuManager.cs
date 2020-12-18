@@ -49,7 +49,7 @@ public class MainMenuManager : MonoBehaviour
     //Sound Voids
     public void SetVolume (float sliderValue)
     {
-        audioMixer.SetFloat("Volume", Mathf.Log10 (sliderValue) * 20 );
+        audioMixer.SetFloat("Volume", Mathf.Log10 (sliderValue) * 20);
     }
     public void SetVolumeMusic(float sliderValue)
     {

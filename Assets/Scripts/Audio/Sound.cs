@@ -11,7 +11,7 @@ public class Sound
     public float minPitch;
     public float maxPitch;
 
-    [Range(0.1f, 1f)]
+    [Range(0f, 1f)]
     public float volume;
     [Range (-3f, 3f)]
     public float pitch;

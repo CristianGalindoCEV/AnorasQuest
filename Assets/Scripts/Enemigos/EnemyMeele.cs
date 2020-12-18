@@ -23,6 +23,8 @@ public class EnemyMeele : MonoBehaviour
     public SpacePoint[] puntos;
     int currentPoint = 0;
 
+    //Idle
+    [SerializeField] private float f_stop;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class EnemyMeele : MonoBehaviour
         
         //Miramos si hemos llegado al punto actual
         if(Vector3.Distance(transform.position, puntos[currentPoint].transform.position)< 0.2f){
+            StartCoroutine(StopMove());
             currentPoint++;
             currentPoint %= puntos.Length;
         }
@@ -49,6 +52,8 @@ public class EnemyMeele : MonoBehaviour
         //Patrulla siguiente punto
         else
         {
+           
+
             rangeDistance = rangeDistanceMin;
             transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
             
@@ -85,6 +90,15 @@ public class EnemyMeele : MonoBehaviour
             StartCoroutine(Atack());
            // Debug.Log("attack");
         }
+    }
+
+    IEnumerator StopMove()
+    {
+        f_stop = Random.Range(1f, 2.5f);
+        m_speed = 0;
+        //Idle Aimation
+        yield return new WaitForSeconds(f_stop);
+        m_speed = 6f;
     }
 
     //Ataque

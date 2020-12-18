@@ -50,6 +50,9 @@ MonoBehaviour:
   inputManager: {fileID: 4361428362036848041}
   maxhp: 100
   hp: 100
+  swordDamage: 0
+  swordDamageGood: 0
+  swordDamageNoGood: 0
   bulletDamage: 0
   bulletGood: 100000
   bulletNoGood: 15
@@ -70,8 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gun: {fileID: 0}
   Espada: {fileID: 0}
-  BauculoItem: 0
-  EspadaItem: 1
+  bauculoItem: 0
+  swordItem: 1
   gunspawn: {fileID: 0}
   hud: {fileID: 0}
   pausemenu: {fileID: 0}
@@ -79,6 +82,7 @@ MonoBehaviour:
   menuon: 0
   gamemaster: {fileID: 4361428362036848040}
   menumanager: {fileID: 0}
+  pauseManager: {fileID: 175899981}
 --- !u!114 &175899981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be751627452c09944a862115ce686db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
   pausemenuUI: {fileID: 0}
   ingameMenu: {fileID: 0}
 --- !u!114 &2069543245
