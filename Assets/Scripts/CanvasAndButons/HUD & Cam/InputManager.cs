@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     public bool menuon;
     public GameMaster gamemaster;
     public MenuManager menumanager;
+    public PauseManager pauseManager;
 
     //Player
     private PlayerController m_player;
@@ -64,10 +65,9 @@ public class InputManager : MonoBehaviour
             mirilla.SetActive(true);
          }
 
-        if (Input.GetButtonDown("Fire1") && bauculoItem == true)
+        if (Input.GetButtonDown("Fire1") && bauculoItem == true && pauseManager.paused == false)
         {
             gunspawn.Fire();
-            FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
         }
 
         if (Input.GetButtonDown("Fire1") && swordItem == true)
@@ -77,16 +77,16 @@ public class InputManager : MonoBehaviour
         
         //Jump
 
-        if ( m_player.IsGrounded() && Input.GetButtonDown("Jump"))
+        if ( m_player.IsGrounded() && Input.GetButtonDown("Jump") && pauseManager.paused == false)
             m_player.Jump();
 
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false)
         {
             m_player.CastDash();
         }
         //Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && pauseManager.paused == false)
         {
             m_player.sprinting = true;
             m_player.Run();

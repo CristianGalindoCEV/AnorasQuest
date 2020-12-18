@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     public static bool gameispaused = false;
-
+    public bool paused;
     public GameObject pausemenuUI;
     public GameObject ingameMenu;
 
@@ -32,7 +32,7 @@ public class PauseManager : MonoBehaviour
 
         Time.timeScale = 1f;
         gameispaused = false;
-        
+        paused = false;
     }
 
     public void Pause()
@@ -40,5 +40,6 @@ public class PauseManager : MonoBehaviour
         pausemenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameispaused = true;
+        paused = true;
     }
 }
