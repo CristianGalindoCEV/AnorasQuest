@@ -63,11 +63,20 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    //Botones de los settings
-    public void SetVolume (float volume)
+    //Volumenes de audio
+    public void SetVolume(float sliderValue)
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("Volume", Mathf.Log10(sliderValue) * 20);
     }
+    public void SetVolumeMusic(float sliderValue)
+    {
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+    }
+    public void SetVolumeSound(float sliderValue)
+    {
+        audioMixer.SetFloat("SoundsVol", Mathf.Log10(sliderValue) * 20);
+    }
+    //Botones de los settings
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
