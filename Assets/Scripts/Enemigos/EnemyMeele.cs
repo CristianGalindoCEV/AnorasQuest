@@ -40,6 +40,7 @@ public class EnemyMeele : MonoBehaviour
             StartCoroutine(StopMove());
             currentPoint++;
             currentPoint %= puntos.Length;
+            //transform.LookAt ();
         }
 
         //Detecta Player
@@ -47,12 +48,12 @@ public class EnemyMeele : MonoBehaviour
         {
             rangeDistance = rangeDistanceMax;    
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
+            transform.LookAt(player);
         }
 
         //Patrulla siguiente punto
         else
         {
-           
 
             rangeDistance = rangeDistanceMin;
             transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);

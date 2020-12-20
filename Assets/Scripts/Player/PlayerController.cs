@@ -23,19 +23,19 @@ public class PlayerController : PhysicsCollision
     [SerializeField] private float f_cadence;
     private float f_cadenceTime = 0;
 
-    //Dash y sprint
+    //Dash & sprint
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
     [SerializeField] private float f_sprint;
     public bool sprinting = false;
 
-    //Camara
+    //Camera
     [SerializeField] private Transform m_cameraTransform;
     [SerializeField]
     private Vector3 camForward;
     private Vector3 camRight;
 
-    //Gravedad y salto
+    //Jump & Gravity
     [SerializeField] private float f_jumpForce = 0.5f;
     [SerializeField] private CapsuleCollider m_playerCol;
 
@@ -46,7 +46,7 @@ public class PlayerController : PhysicsCollision
     public GameObject stamina;
     public StaminaBar staminabar;
 
-    //Sombra
+    //Shadow
     [SerializeField] GameObject m_shadowGO;
     [SerializeField] Transform m_shadowTransform;
     [SerializeField] LayerMask m_groundLayer;
