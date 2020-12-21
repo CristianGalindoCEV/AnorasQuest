@@ -134,6 +134,19 @@ public class PlayerController : PhysicsCollision
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Wall" && isGrounded == false) // esta bien
+        {
+            movePlayer.x = 0;
+            Vector3 velocity = m_rigidbody.velocity;
+            velocity.x = 0;
+            //velocity.y = -100; te empuja para abajo pero queda raro
+            m_rigidbody.velocity = velocity;
+            m_playerspeed = 0;
+        }
+    }
+
     //Camera
     void camDirection()
     {
@@ -148,7 +161,6 @@ public class PlayerController : PhysicsCollision
     }
 
     //Jump
-   
     public void Jump()
     {
         m_rigidbody.AddForce(Vector3.up * f_jumpForce, ForceMode.Impulse);
