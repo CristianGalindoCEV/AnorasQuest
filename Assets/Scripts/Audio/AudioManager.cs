@@ -9,11 +9,10 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
     public static AudioManager instance;
-
-    
-
     private float randomPitch;
 
+    //FadeIN/Out
+    private float timeCounter;
 
     // Start is called before the first frame update
     void Awake()
@@ -51,7 +50,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-   public void Play (string name)
+    private void Update()
+    {
+        
+    }
+
+    public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -95,5 +99,25 @@ public class AudioManager : MonoBehaviour
 
         s.source.Stop();
     }
+    
+    /*
+    public void Fade(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        StartCoroutine(FadeVolume());
+    }
 
+     IEnumerator FadeVolume()
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        while (s.volume > 0.01f)
+        {
+            Debug.Log("lol");
+            s.volume -= Time.deltaTime / 1.0f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        s.volume = 0;
+        s.source.Stop();
+    }
+    */
 }

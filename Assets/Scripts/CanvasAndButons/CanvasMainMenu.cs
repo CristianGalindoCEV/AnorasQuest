@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class CanvasMainMenu : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class CanvasMainMenu : MonoBehaviour
     private GameObject m_image3;
 
     //FadeOut
-    private GameObject fadeOut;
-
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot nopaused;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class CanvasMainMenu : MonoBehaviour
         m_image1 = GameObject.Find("Image 1");
         m_image2 = GameObject.Find("Image 2");
         m_image3 = GameObject.Find("Image 3");
-        fadeOut = GameObject.Find("FadeOut");
+        
 
         m_image1.SetActive(false);
         m_text1.SetActive(false);
@@ -110,10 +111,13 @@ public class CanvasMainMenu : MonoBehaviour
         }
 
         transtion.SetBool("PressPlay" ,true);
-        //FindObjectOfType<AudioManager>().FadeVolume("MenuBGM");
         mainmenu.SetActive(false);
+        paused.TransitionTo(4f);
+        
         yield return new WaitForSeconds(4);
-
+        
+        nopaused.TransitionTo(0.1f);
+        //FindObjectOfType<AudioManager>().Fade("MenuBGM");
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("MainScene");
     }

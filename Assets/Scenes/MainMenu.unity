@@ -6374,6 +6374,8 @@ MonoBehaviour:
   b_optionson: 0
   transtion: {fileID: 946947478}
   i_number: 0
+  paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+  nopaused: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
 --- !u!114 &1493961252
 MonoBehaviour:
   m_ObjectHideFlags: 0
