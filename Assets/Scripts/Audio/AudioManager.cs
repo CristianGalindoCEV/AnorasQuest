@@ -100,47 +100,4 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
     
-   
-    /*
-    public void VolumeFade (string name)
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning("Sound: " + name + "not found!");
-            return;
-        }
-
-        while (s.volume > 0.01f)
-        {
-            Debug.Log("lol");
-            s.volume -= Time.deltaTime / 1.0f;
-            //yield return new WaitForSeconds(0.1f);
-        }
-        s.volume = 0;
-        s.source.Stop();
-
-    }
-    */
-
-    /*
-    public void Fade(string name)
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        StartCoroutine(FadeVolume());
-    }
-
-     IEnumerator FadeVolume()
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        while (s.volume > 0.01f)
-        {
-            Debug.Log("lol");
-            s.volume -= Time.deltaTime / 1.0f;
-            yield return new WaitForSeconds(0.1f);
-        }
-        s.volume = 0;
-        s.source.Stop();
-    }
-    */
 }
