@@ -51,6 +51,10 @@ MonoBehaviour:
     maxPitch: 0
     volume: 1
     pitch: 1
+    outputMixer: Musica
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
     loop: 1
     source: {fileID: 0}
   - name: Button
@@ -60,6 +64,10 @@ MonoBehaviour:
     maxPitch: 0
     volume: 1
     pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
     loop: 0
     source: {fileID: 0}
   - name: Attack_1
@@ -69,6 +77,10 @@ MonoBehaviour:
     maxPitch: 0
     volume: 1
     pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
     loop: 0
     source: {fileID: 0}
   - name: Dash
@@ -78,6 +90,10 @@ MonoBehaviour:
     maxPitch: 0
     volume: 1
     pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
     loop: 0
     source: {fileID: 0}
   - name: MagicShot
@@ -87,5 +103,9 @@ MonoBehaviour:
     maxPitch: 0
     volume: 1
     pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
     loop: 0
     source: {fileID: 0}

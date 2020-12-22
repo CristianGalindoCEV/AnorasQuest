@@ -9,6 +9,7 @@ public class PortalBoss : MonoBehaviour
     public GameMaster gameMaster;
     private GameObject loading;
     public Animator tranistion;
+    public CanvasGroup hud;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class PortalBoss : MonoBehaviour
     IEnumerator Play()
     {
         tranistion.SetBool("PressPlay", true);
+        hud.alpha = 0;
         loading.SetActive(true);
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("MainScene");

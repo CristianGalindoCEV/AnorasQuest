@@ -108,8 +108,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.24746722
-  m_Height: 2.8174202
+  m_Radius: 0.25
+  m_Height: 2.8
   m_Direction: 1
   m_Center: {x: 0.010731459, y: 0.41845787, z: -0.027350128}
 --- !u!54 &1344188100929735382
@@ -159,18 +159,15 @@ MonoBehaviour:
   pysicsCollision: {fileID: 0}
   god: 0
   transtion: {fileID: 1095354840}
-  cadencia: 1
+  f_cadence: 2
   f_dashSpeed: 100
   f_dashDuration: 2
   f_sprint: 1
   sprinting: 0
   m_cameraTransform: {fileID: 0}
   camForward: {x: 0, y: 0, z: 0}
-  f_jumpForce: 30
-  jumpMinAirTime: 0.4
-  jumpMaxAirTime: 0.4
-  f_jumpReleaseForce: 300
-  f_jumpDefaultForce: 300
+  f_jumpForce: 10
+  m_playerCol: {fileID: 1344188100929735381}
   healthbar: {fileID: 0}
   gamemaster: {fileID: 0}
   stamina: {fileID: 0}
