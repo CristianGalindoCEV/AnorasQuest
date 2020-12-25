@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MinibossHP : MonoBehaviour
 {
     public Slider bossBar;
-    public float maxHp = 3000;
+    public float maxHp = 2000;
     public float hp;
     private GameObject portal;
 

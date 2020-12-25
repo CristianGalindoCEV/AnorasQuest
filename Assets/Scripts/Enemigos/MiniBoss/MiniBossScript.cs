@@ -4,41 +4,60 @@ using UnityEngine;
 
 public class MiniBossScript : MonoBehaviour
 {
-    private float TimeCounter = 0;
+    //Boss
+    private float f_TimeCounter = 0;
     [SerializeField] GameObject spikePrefab;
     [SerializeField] GameObject spikeCagePrefab;
     [SerializeField] Transform player;
-
     private int randomNumber;
     public float damage;
-    bool isDead = false;
-    public GameMaster gamemaster;
+    
+    //WallBoss
     private GameObject m_boss;
-
+    public WallBoss wallBoss;
+    private GameObject m_bossWall;
+    
+    //HP
     public MinibossHP minibosshp;
+    public GameMaster gamemaster;
 
     void Start()
     {
         m_boss = GameObject.Find("Miniboss_Static");
+        m_bossWall = GameObject.Find("Wall");
     }
     void Update()
     {
-        TimeCounter += Time.deltaTime;
+        f_TimeCounter += Time.deltaTime;
+       
         //Ataques
-        if (TimeCounter > 3 && minibosshp.hp > 0)
+        if (f_TimeCounter > 3 && minibosshp.hp > 0)
         {
-            TimeCounter = 0;
+            f_TimeCounter = 0;
             randomNumber = Random.Range (1,10);
 
-            if (randomNumber < 6) { SpikeAttack(); /*Debug.Log("SpikeAttack")*/;}
-            else {SpikeCage(); /*Debug.Log("SpikeCage")*/; }
+            if (randomNumber < 6) 
+            {    
+                SpikeAttack();
+            }
+            else 
+            {
+                SpikeCage(); 
+            }
+        }
+
+        if (wallBoss.destroyWall == false && minibosshp.hp <= 1000)
+        {
+            minibosshp.hp = 1000;
+            //gameObject.GetComponent<Collider>().enabled = false;
+            BossWall();
         }
 
         if( minibosshp.hp <= 0)
         {
             m_boss.SetActive(false);
         }
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +68,20 @@ public class MiniBossScript : MonoBehaviour
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;
         }
+        if (other.tag == "Sword")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.swordDamage;
+        }
 
+    }
+
+    private void BossWall()
+    {
+        if (m_bossWall.transform.position.y <= -0.1f)
+        {
+            m_bossWall.transform.Translate(Vector3.up * Time.deltaTime);
+        }
     }
 
     void SpikeAttack ()
