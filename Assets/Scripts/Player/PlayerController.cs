@@ -10,12 +10,12 @@ public class PlayerController : PhysicsCollision
     private Rigidbody m_rigidbody;
     private float m_horizontalMove;
     private float m_verticalMove;
-    private Vector3 playerInput;
+    private Vector3 m_playerInput;
     private Transform m_transform;
     private float damage;
     private float heal;
     [SerializeField] private float m_playerspeed = 5;
-    private Vector3 movePlayer;
+    private Vector3 m_movePlayer;
     [SerializeField] private bool iamdead = false;
     public PhysicsCollision pysicsCollision;
     public bool god = false;
@@ -38,7 +38,6 @@ public class PlayerController : PhysicsCollision
     //Jump & Gravity
     [SerializeField] private float f_jumpForce = 0.5f;
     [SerializeField] private CapsuleCollider m_playerCol;
-
 
     //Canvas
     public GameObject healthbar;
@@ -65,19 +64,19 @@ public class PlayerController : PhysicsCollision
         m_horizontalMove = Input.GetAxis("Horizontal");
         m_verticalMove = Input.GetAxis("Vertical");
 
-        playerInput = new Vector3(m_horizontalMove, 0, m_verticalMove);
-        playerInput = Vector3.ClampMagnitude(playerInput, 1);
+        m_playerInput = new Vector3(m_horizontalMove, 0, m_verticalMove);
+        m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
 
         camDirection();
 
-        movePlayer = playerInput.x * camRight + playerInput.z * camForward;
+        m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
 
-        movePlayer = movePlayer * m_playerspeed;
+        m_movePlayer = m_movePlayer * m_playerspeed;
 
-        m_transform.LookAt(m_transform.position + movePlayer);
+        m_transform.LookAt(m_transform.position + m_movePlayer);
         
         if (!god)
-            movePlayer.y = m_rigidbody.velocity.y;
+            m_movePlayer.y = m_rigidbody.velocity.y;
 
         f_cadenceTime += Time.deltaTime;
 
@@ -102,10 +101,10 @@ public class PlayerController : PhysicsCollision
             }
 
             if (Input.GetKey(KeyCode.M))
-                movePlayer.y += 20;
+                m_movePlayer.y += 20;
 
             if (Input.GetKey(KeyCode.N))
-                movePlayer.y -= 20;
+                m_movePlayer.y -= 20;
 
             while ( gamemaster.hp < gamemaster.maxhp)
             {
@@ -114,7 +113,7 @@ public class PlayerController : PhysicsCollision
 
         }
 
-        m_rigidbody.velocity = movePlayer;
+        m_rigidbody.velocity = m_movePlayer;
 
         m_rigidbody.useGravity = !god;
 
@@ -138,7 +137,7 @@ public class PlayerController : PhysicsCollision
     {
         if(collision.gameObject.tag == "Wall" && isGrounded == false) // esta bien
         {
-            movePlayer.x = 0;
+            m_movePlayer.x = 0;
             Vector3 velocity = m_rigidbody.velocity;
             velocity.x = 0;
             //velocity.y = -100; te empuja para abajo pero queda raro
@@ -262,19 +261,22 @@ public class PlayerController : PhysicsCollision
     //Corutina de golpe
     IEnumerator Golpe()
     {
-        //Indico que estoy muerto
+        //Indico que recibo daño
         iamdead = true;
+        
         //Indicamos al score que hemos perdido HP
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
+        
+        if(gamemaster.hp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
         //Player pushed
         m_rigidbody.AddForce(-transform.forward * 200f, ForceMode.Impulse);
         m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
 
-        if (gamemaster.hp <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
         yield return new WaitForSeconds(1.0f);
         iamdead = false;
     }

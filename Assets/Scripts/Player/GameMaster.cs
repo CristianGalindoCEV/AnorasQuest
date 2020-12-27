@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
-    public bool unlocked;
+    private GameObject m_playerObject;
     public InputManager inputManager;
-    
+
+    public bool unlocked;
     public float maxhp;
     public float hp;
    
@@ -20,8 +21,9 @@ public class GameMaster : MonoBehaviour
     public int bulletGood;
     public int bulletNoGood;
     
-    public bool portal = false;
     public PlayerStats playerStats;
+
+    public Vector3 playerPosition;
 
     public int value = 0;
 
@@ -45,7 +47,17 @@ public class GameMaster : MonoBehaviour
         swordDamage = playerStats.swordDamage_stat;
         swordDamageGood = playerStats.swordDamageGood_stat;
         swordDamageNoGood = playerStats.swordDamageNoGood_stat;
-        
+
+        playerPosition = playerStats.playerPosition_stat;
+
+        m_playerObject = GameObject.FindWithTag("Player");
+
+        if (playerStats.revive == true)
+        {
+            PlayerRevive();
+            playerStats.revive = false;
+        }
+
         //  LoadData();
     }
     void Start()
@@ -54,22 +66,16 @@ public class GameMaster : MonoBehaviour
         swordDamage = swordDamageNoGood;
 
     }
-
+    
     private void Update()
     {
         if (value == 1)
         {
             unlocked = true;
         }
-
-        if (portal == true)
-        {
-            TakePortal();
-        }
-
     }
    
-    public void TakePortal()
+    public void SavePlayerStats()
     {
         playerStats.maxhp_stat = maxhp;
         playerStats.hp_stat = hp;
@@ -81,11 +87,37 @@ public class GameMaster : MonoBehaviour
         playerStats.swordDamageNoGood_stat = swordDamageNoGood;
         playerStats.swordDamage_stat = swordDamage;
         playerStats.swordDamageGood_stat = swordDamageGood;
+
+
     }
 
     public void UnlockWeapon()
     {
         value = 1;
+    }
+
+    public void SavePoint()
+    {
+        playerStats.maxhp_stat = maxhp;
+        playerStats.hp_stat = hp;
+
+        playerStats.bulletDamage_stat = bulletDamage;
+        playerStats.bulletGood_stat = bulletGood;
+        playerStats.bulletNoGood_stat = bulletNoGood;
+
+        playerStats.swordDamageNoGood_stat = swordDamageNoGood;
+        playerStats.swordDamage_stat = swordDamage;
+        playerStats.swordDamageGood_stat = swordDamageGood;
+
+        playerStats.playerPosition_stat = playerPosition;
+    }
+
+    public void PlayerRevive()
+    {
+        hp = playerStats.hp_stat;
+
+        m_playerObject.transform.position = playerPosition;
+        
     }
 
     //SaveData

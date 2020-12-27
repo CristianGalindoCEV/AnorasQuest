@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class Boton : MonoBehaviour
 {
+    private PlayerStats playerStats;
 
     void Start()
     {
         UnlockMouse();
+        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     public void PulsaRetry()
     {
+        playerStats.revive = true;
         SceneManager.LoadScene("MainScene");
     }
 

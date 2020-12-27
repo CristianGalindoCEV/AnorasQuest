@@ -16,7 +16,12 @@ public class PlayerStats : MonoBehaviour
     public int bulletGood_stat = 100000;
     public int bulletNoGood_stat = 15;
 
+    public Vector3 playerPosition_stat;
+    public bool revive = false;
+
     public static PlayerStats inst;
+    
+    
     // Start is called before the first frame update
     private void Awake()
     {
@@ -29,8 +34,6 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-       
     }
 
 }

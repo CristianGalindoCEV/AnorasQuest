@@ -19,8 +19,6 @@ public class PortalBoss : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameMaster.portal = true;
-
             StartCoroutine(Play());
         }
     }
@@ -29,6 +27,7 @@ public class PortalBoss : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         loading.SetActive(true);
+        gameMaster.SavePlayerStats();
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("MainScene");
     }
