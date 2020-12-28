@@ -117,7 +117,6 @@ public class CanvasMainMenu : MonoBehaviour
         yield return new WaitForSeconds(4);
         
         nopaused.TransitionTo(0.1f);
-        //FindObjectOfType<AudioManager>().Fade("MenuBGM");
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("MainScene");
     }

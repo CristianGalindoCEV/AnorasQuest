@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PortalItem : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class PortalItem : MonoBehaviour
     private GameObject loading;
     public Animator tranistion;
     public CanvasGroup hud;
+
+    //Audio
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot nopaused;
 
     private void Start()
     {
@@ -28,7 +33,11 @@ public class PortalItem : MonoBehaviour
         hud.alpha = 0;
         loading.SetActive(true);
         gameMaster.SavePlayerStats();
+        paused.TransitionTo(4f);
+       
         yield return new WaitForSeconds(4);
+        nopaused.TransitionTo(0.1f);
+        FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("StaticBoss");
     }
 }
