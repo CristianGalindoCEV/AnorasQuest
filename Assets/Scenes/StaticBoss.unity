@@ -908,7 +908,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18601476
+      value: -0.18601474
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -918,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17003268
+      value: 0.17003267
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -1364,6 +1364,8 @@ MonoBehaviour:
   gameMaster: {fileID: 963190781}
   tranistion: {fileID: 1511921576}
   hud: {fileID: 1511921593}
+  paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+  nopaused: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
 --- !u!1 &1066113872
 GameObject:
   m_ObjectHideFlags: 0
