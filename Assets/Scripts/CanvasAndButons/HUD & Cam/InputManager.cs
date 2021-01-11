@@ -81,12 +81,12 @@ public class InputManager : MonoBehaviour
             m_player.Jump();
 
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_player.IsGrounded())
         {
             m_player.CastDash();
         }
         //Sprint
-        if (Input.GetKey(KeyCode.LeftShift) && pauseManager.paused == false)
+        if (Input.GetKey(KeyCode.LeftShift) && pauseManager.paused == false && m_player.IsGrounded())
         {
             m_player.sprinting = true;
             m_player.Run();

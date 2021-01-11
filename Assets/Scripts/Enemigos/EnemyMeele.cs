@@ -48,7 +48,11 @@ public class EnemyMeele : MonoBehaviour
         {
             rangeDistance = rangeDistanceMax;    
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
-            transform.LookAt(player);
+            //transform.LookAt(player);
+            
+            Vector3 loockAtPosition = player.position;
+            loockAtPosition.y = transform.position.y;
+            transform.LookAt(loockAtPosition);
         }
 
         //Patrulla siguiente punto
