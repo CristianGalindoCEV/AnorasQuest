@@ -38,16 +38,14 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.outputAudioMixerGroup = s.audioMixer.FindMatchingGroups(s.outputMixer)[0];
+            s.source.dopplerLevel = 0.5f;
+            s.source.spread = 120f;
 
+            //3D Sound
             s.source.spatialBlend = s.spatialBlend; 
             s.source.rolloffMode = s.rolloffMode;
             s.source.dopplerLevel = s.dopplerLevel;
-            /*
-            s.source.minDistance = ;
-            s.source.maxDistance = ;
-            */
-            s.source.dopplerLevel = 0.5f;
-            s.source.spread = 120f;
+            s.source.maxDistance = s.maxDistance;
         }
     }
 

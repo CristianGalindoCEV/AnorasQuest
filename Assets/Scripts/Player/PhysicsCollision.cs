@@ -17,7 +17,7 @@ public class PhysicsCollision : MonoBehaviour
     public bool justTouchWall;
     public LayerMask wallLayer;
     public bool isFacingRight = true;
-    private Vector3 direction = Vector3.right; // esta variable definira la direccion donde miraran estos rayos
+    private Vector3 direction = Vector3.forward; // esta variable definira la direccion donde miraran estos rayos
     public Transform graphicTransform;
 
     private Ray ray;
@@ -73,13 +73,14 @@ public class PhysicsCollision : MonoBehaviour
     {
         Vector3 position = transform.position;
         int sign = 1;
+        direction = transform.forward;
 
         touchedWall = touchWall;
         justTouchWall = false;
 
         for (int i = 0; i < 3; i++)
         {
-            position.y += i * 0.5f * sign;
+            position.x += i * 0.25f * sign;
             ray = new Ray(position, direction);
             hit = new RaycastHit();
 
@@ -126,7 +127,7 @@ public class PhysicsCollision : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            pos.y += 0.5f * i * sign;
+            pos.x += 0.25f * i * sign;
             sign *= -1; // es para trandformar la poscion de los rayos por cada loop
 
             Gizmos.DrawRay(pos, direction * 0.5f); // es para que dibuje lo anterior

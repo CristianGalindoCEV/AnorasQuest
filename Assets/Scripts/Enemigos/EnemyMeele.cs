@@ -40,15 +40,15 @@ public class EnemyMeele : MonoBehaviour
             StartCoroutine(StopMove());
             currentPoint++;
             currentPoint %= puntos.Length;
-            //transform.LookAt ();
         }
+
+
 
         //Detecta Player
         if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance && enemyhealth.health > 0)
         {
             rangeDistance = rangeDistanceMax;    
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
-            //transform.LookAt(player);
             
             Vector3 loockAtPosition = player.position;
             loockAtPosition.y = transform.position.y;
@@ -58,7 +58,7 @@ public class EnemyMeele : MonoBehaviour
         //Patrulla siguiente punto
         else
         {
-
+            transform.LookAt(puntos[currentPoint].transform.position);
             rangeDistance = rangeDistanceMin;
             transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
             

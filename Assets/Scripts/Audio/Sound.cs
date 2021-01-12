@@ -20,6 +20,7 @@ public class Sound
     public float spatialBlend;
     public AudioRolloffMode rolloffMode;
     public float dopplerLevel;
+    public float maxDistance;
 
 
     public bool loop;

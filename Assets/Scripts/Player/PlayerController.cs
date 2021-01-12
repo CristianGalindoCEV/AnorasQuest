@@ -74,6 +74,12 @@ public class PlayerController : PhysicsCollision
         m_movePlayer = m_movePlayer * m_playerspeed;
 
         m_transform.LookAt(m_transform.position + m_movePlayer);
+
+        if (touchWall)
+        {
+            m_movePlayer.x = 0;
+            m_movePlayer.z = 0;
+        }
         
         if (!god)
             m_movePlayer.y = m_rigidbody.velocity.y;
@@ -130,19 +136,6 @@ public class PlayerController : PhysicsCollision
         else
         {
             m_shadowGO.SetActive(false);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Wall" && isGrounded == false) // esta bien
-        {
-            m_movePlayer.x = 0;
-            Vector3 velocity = m_rigidbody.velocity;
-            velocity.x = 0;
-            //velocity.y = -100; te empuja para abajo pero queda raro
-            m_rigidbody.velocity = velocity;
-            m_playerspeed = 0;
         }
     }
 
