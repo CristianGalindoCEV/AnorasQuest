@@ -21,10 +21,11 @@ public class FlyMiniBoss : MonoBehaviour
     public Transform player;
 
     //Easing
-    private float f_currentTime = 0;
+    [SerializeField]private float f_currentTime = 0;
     private float f_initValue;
     private float f_finalValue;
     private float f_maxTime = 2f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,16 +37,19 @@ public class FlyMiniBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        f_currentTime += Time.deltaTime;
+       
 
         if (b_startFight == true) 
         {
-            /*Vector3 loockAtPosition = player.position;
-            loockAtPosition.x = transform.position.x;
+            f_currentTime += Time.deltaTime;
+            
+            //Hay que retocarlo
+            Vector3 loockAtPosition = player.position;
+            loockAtPosition.x = transform.rotation.eulerAngles.y;
             transform.LookAt(loockAtPosition);
-            */
+            
 
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f) //Miramos si hemos llegado al punto
+           if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f) //Miramos si hemos llegado al punto
             {
                 StartCoroutine(StopMove());
                 i_currentPoint++;
@@ -54,15 +58,16 @@ public class FlyMiniBoss : MonoBehaviour
             else // Pasamos al siguiente punto
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
-                Debug.Log("meMuevo");
+                
             }
 
             if (f_currentTime == 10f)
             {
                 StartCoroutine(FirtsAttack());
             }
-
+           
         }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -70,20 +75,33 @@ public class FlyMiniBoss : MonoBehaviour
         if(other.tag == "Player" && b_startFight == false)
         {
             b_startFight = true;
-
-            m_triger.enabled = false;
+            StartCoroutine(StartRound());          
             
-            //transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
-            Easing.CircEaseOut(f_currentTime, f_initValue, f_finalValue - f_initValue, f_maxTime);
+           
         }
     }
 
+    IEnumerator StartRound()
+    {
+        m_triger.enabled = false;
+        Easing.CircEaseOut(f_currentTime, f_initValue, f_finalValue - f_initValue, f_maxTime);
+        
+        Debug.Log("Empieza la pelea");
+        yield return new WaitForSeconds(2f);
+    }
     IEnumerator FirtsAttack()
     {
+        Debug.Log("FirtsAttack");
+        float range1;
+        float range2;
+        
         for (int i = 0; i < 10; i++)
         {
             Vector3 bulletPosition = (transform.position);
-            bulletPosition.y = Random.Range(3,10);
+            range1 = Random.Range(2,4);
+            range2 = Random.Range(-2, -4);
+            
+            bulletPosition.y = Random.Range(range1,range2);
             Instantiate(insect, bulletPosition, transform.rotation);
         }
        
