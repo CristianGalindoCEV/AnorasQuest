@@ -30,15 +30,12 @@ public class FlyMiniBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         my_transform = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
         if (b_startFight == true) 
         {
             f_currentTime += Time.deltaTime;
@@ -48,7 +45,6 @@ public class FlyMiniBoss : MonoBehaviour
             loockAtPosition.x = transform.rotation.eulerAngles.y;
             transform.LookAt(loockAtPosition);
             
-
            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f) //Miramos si hemos llegado al punto
             {
                 StartCoroutine(StopMove());
@@ -58,16 +54,13 @@ public class FlyMiniBoss : MonoBehaviour
             else // Pasamos al siguiente punto
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
-                
             }
-
-            if (f_currentTime == 10f)
+            if (f_currentTime > 5f)
             {
                 StartCoroutine(FirtsAttack());
+                f_currentTime = 0f;
             }
-           
         }
-       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,9 +68,7 @@ public class FlyMiniBoss : MonoBehaviour
         if(other.tag == "Player" && b_startFight == false)
         {
             b_startFight = true;
-            StartCoroutine(StartRound());          
-            
-           
+            StartCoroutine(StartRound());           
         }
     }
 
@@ -85,26 +76,26 @@ public class FlyMiniBoss : MonoBehaviour
     {
         m_triger.enabled = false;
         Easing.CircEaseOut(f_currentTime, f_initValue, f_finalValue - f_initValue, f_maxTime);
-        
+        //Meter Audio
         Debug.Log("Empieza la pelea");
         yield return new WaitForSeconds(2f);
     }
     IEnumerator FirtsAttack()
     {
         Debug.Log("FirtsAttack");
-        float range1;
-        float range2;
-        
-        for (int i = 0; i < 10; i++)
-        {
-            Vector3 bulletPosition = (transform.position);
-            range1 = Random.Range(2,4);
-            range2 = Random.Range(-2, -4);
-            
-            bulletPosition.y = Random.Range(range1,range2);
+        Vector3 bulletPosition = (transform.position);
+        for (int i = 0; i < 5; i++)
+        {            
+            bulletPosition.x = Random.Range(3 + transform.position.x ,6 + transform.position.x);
+            bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
             Instantiate(insect, bulletPosition, transform.rotation);
         }
-       
+        for (int i = 0; i < 5; i++)
+        {
+            bulletPosition.x = Random.Range(-3 + transform.position.x, -6 + transform.position.x);
+            bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
+            Instantiate(insect, bulletPosition, transform.rotation);
+        }
         yield return new WaitForSeconds(0f);
     }
     IEnumerator StopMove()

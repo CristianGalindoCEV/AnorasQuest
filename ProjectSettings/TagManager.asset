@@ -9,6 +9,7 @@ TagManager:
   - PlayerStats
   - Sword
   - Wall
+  - Insect
   layers:
   - Default
   - TransparentFX
