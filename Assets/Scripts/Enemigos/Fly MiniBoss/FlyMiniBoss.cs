@@ -26,7 +26,6 @@ public class FlyMiniBoss : MonoBehaviour
     private float f_finalValue;
     private float f_maxTime = 2f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +74,8 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator StartRound()
     {
         m_triger.enabled = false;
-        Easing.CircEaseOut(f_currentTime, f_initValue, f_finalValue - f_initValue, f_maxTime);
+        //Easing.CircEaseOut(f_currentTime, transform.position.y, points[i_currentPoint].transform.position.y - transform.position.y, f_maxTime);
+        
         //Meter Audio
         Debug.Log("Empieza la pelea");
         yield return new WaitForSeconds(2f);
@@ -84,16 +84,12 @@ public class FlyMiniBoss : MonoBehaviour
     {
         Debug.Log("FirtsAttack");
         Vector3 bulletPosition = (transform.position);
-        for (int i = 0; i < 5; i++)
+
+        for (int i = 0; i < 10; i++)
         {            
-            bulletPosition.x = Random.Range(3 + transform.position.x ,6 + transform.position.x);
-            bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
-            Instantiate(insect, bulletPosition, transform.rotation);
-        }
-        for (int i = 0; i < 5; i++)
-        {
-            bulletPosition.x = Random.Range(-3 + transform.position.x, -6 + transform.position.x);
-            bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
+            bulletPosition.x =  Random.Range(-3 + transform.position.x, 6 + transform.position.x);
+            bulletPosition.y =  Random.Range(-6 + transform.position.y, 6 + transform.position.y);
+            bulletPosition.z = transform.position.z + 1;
             Instantiate(insect, bulletPosition, transform.rotation);
         }
         yield return new WaitForSeconds(0f);
