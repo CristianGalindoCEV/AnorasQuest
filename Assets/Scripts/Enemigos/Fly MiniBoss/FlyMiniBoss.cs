@@ -12,19 +12,24 @@ public class FlyMiniBoss : MonoBehaviour
     private int i_currentPoint = 0;
 
     //Boss
+    
     [SerializeField] private float f_speed = 3;
     Transform my_transform;
     public GameObject insect;
     public Collider m_triger;
+    private Vector3[] totalPoints;
+    [SerializeField] private Collider m_collider;
 
     //Player
     public Transform player;
 
+    //HP
+    public MinibossHP minibosshp;
+    public GameMaster gamemaster;
+    public float damage;
+
     //Easing
     [SerializeField]private float f_currentTime = 0;
-    private float f_initValue;
-    private float f_finalValue;
-    private float f_maxTime = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -54,11 +59,12 @@ public class FlyMiniBoss : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
             }
-            if (f_currentTime > 5f)
+           /* if (f_currentTime > 5f)
             {
                 StartCoroutine(FirtsAttack());
                 f_currentTime = 0f;
             }
+           */
         }
     }
 
@@ -69,29 +75,53 @@ public class FlyMiniBoss : MonoBehaviour
             b_startFight = true;
             StartCoroutine(StartRound());           
         }
+        if (other.tag == "Bullet")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.bulletDamage;
+        }
+        if (other.tag == "Sword")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.swordDamage;
+        }
     }
 
     IEnumerator StartRound()
     {
+        float initValue = my_transform.position.y;
+        float finalValue = my_transform.position.y + 10;
+        float currentValue = initValue;
+        float maxTime = 5f;
+
         m_triger.enabled = false;
-        //Easing.CircEaseOut(f_currentTime, transform.position.y, points[i_currentPoint].transform.position.y - transform.position.y, f_maxTime);
-        
+        currentValue = Easing.CubicEaseIn(f_currentTime, initValue, finalValue - initValue, maxTime);
+        my_transform.position = new Vector3(my_transform.position.x,currentValue,my_transform.position.z);
+
         //Meter Audio
         Debug.Log("Empieza la pelea");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(7f);
     }
     IEnumerator FirtsAttack()
     {
         Debug.Log("FirtsAttack");
         Vector3 bulletPosition = (transform.position);
+        Vector3 currentPosition = bulletPosition;
 
         for (int i = 0; i < 10; i++)
-        {            
-            bulletPosition.x =  Random.Range(-3 + transform.position.x, 6 + transform.position.x);
-            bulletPosition.y =  Random.Range(-6 + transform.position.y, 6 + transform.position.y);
+        {
+            while (currentPosition.x == totalPoints[i].x && currentPosition.y == totalPoints[i].y)
+            {
+                Debug.Log("while");
+                bulletPosition.x = Random.Range(-3 + transform.position.x, 6 + transform.position.x);
+                bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
+            }
             bulletPosition.z = transform.position.z + 1;
+            currentPosition = bulletPosition;
+            totalPoints[i] = bulletPosition;
             Instantiate(insect, bulletPosition, transform.rotation);
         }
+
         yield return new WaitForSeconds(0f);
     }
     IEnumerator StopMove()
@@ -105,5 +135,14 @@ public class FlyMiniBoss : MonoBehaviour
         
         yield return new WaitForSeconds(f_stop);
         f_speed = 6f;
+    }
+    IEnumerator Damage()
+    {
+        minibosshp.hp = minibosshp.hp - damage;
+        if(minibosshp.hp <= 0)
+        {
+            m_collider.enabled = false;
+        }
+        yield return new WaitForSeconds(1.0f);
     }
 }

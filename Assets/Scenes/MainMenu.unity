@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8730,15 +8730,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1318910244}
     m_Modifications:
+    - target: {fileID: 1418395138426759938, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2ca706ce331d7bf4790a08950a02aa39,
+      objectReference: {fileID: 21300000, guid: 9ba10ccbd8521e0459ec121b0bca9aed,
         type: 3}
     - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511157841485271720, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1511157841485271727, guid: ccf35d4e69508f84cb5bd7ad815a1018,
@@ -8855,6 +8880,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978639317963274446, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978639317963274446, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978639317963274446, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccf35d4e69508f84cb5bd7ad815a1018, type: 3}

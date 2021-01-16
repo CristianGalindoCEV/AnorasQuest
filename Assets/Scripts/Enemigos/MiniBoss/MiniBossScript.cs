@@ -49,7 +49,6 @@ public class MiniBossScript : MonoBehaviour
         if (wallBoss.destroyWall == false && minibosshp.hp <= 1000)
         {
             minibosshp.hp = 1000;
-            //gameObject.GetComponent<Collider>().enabled = false;
             BossWall();
         }
 

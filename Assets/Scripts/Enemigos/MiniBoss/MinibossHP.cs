@@ -41,9 +41,9 @@ public class MinibossHP : MonoBehaviour
         return hp / maxHp;
     }
   
-    public void TakeDamage(int amount)
+   /* public void TakeDamage(int amount)
     {
         hp -= amount;
 
-    }
+    }*/
 }
