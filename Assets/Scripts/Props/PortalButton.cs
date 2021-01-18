@@ -14,6 +14,11 @@ public class PortalButton : MonoBehaviour
     float currentValue;
     float maxTime = 5f;
     private Vector3 upPortal;
+
+    float button_initValue;
+    float button_finalValue;
+    float button_currentValue;
+    float button_maxTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +28,10 @@ public class PortalButton : MonoBehaviour
         initValue = upPortal.y;
         finalValue = upPortal.y + 10;
         currentValue = initValue;
+
+        button_currentValue = button_initValue;
+        button_finalValue = transform.position.y - 1;
+        button_initValue = transform.position.y;
     }
 
     // Update is called once per frame
@@ -36,7 +45,12 @@ public class PortalButton : MonoBehaviour
             {
                 currentValue = Easing.CubicEaseIn(currentTime, initValue, finalValue - initValue, maxTime);
             }
+            if (currentTime <= button_maxTime)
+            {
+                button_currentValue = Easing.CubicEaseIn(currentTime, button_initValue, button_finalValue - button_initValue, button_maxTime);
+            }
             wallPortal.position = new Vector3(wallPortal.position.x, currentValue, wallPortal.position.z);
+            transform.position = new Vector3(transform.position.x, button_currentValue, transform.position.z);
         }
     }
 
@@ -44,7 +58,6 @@ public class PortalButton : MonoBehaviour
     {
         if(other.tag == "Player" && pulse == false)
         {
-            transform.position = new Vector3(transform.position.x,transform.position.y - 1,transform.position.z);
             pulse = true;
         }
     }
