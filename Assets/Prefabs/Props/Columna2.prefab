@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &5191710711060354041
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947241989620229268}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6878128, y: 4.735494, z: 1.6878128}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5527817917401369172
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501257732779145386}
-  m_Layer: 0
+  - component: {fileID: 533461511}
+  m_Layer: 8
   m_Name: Columna2
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -38,12 +26,25 @@ Transform:
   m_GameObject: {fileID: 5527817917401369172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5397, y: 1.5397, z: 1.5397}
   m_Children:
   - {fileID: 1174928132423663150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &533461511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527817917401369172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6354318, y: 4.730848, z: 1.7533197}
+  m_Center: {x: 0.024822662, y: 0.021201478, z: 0.026112618}
 --- !u!1001 &1712660421007432133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,14 +123,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Columna2_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09e21746e41deb040b2acc3cd868c373,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e21746e41deb040b2acc3cd868c373, type: 3}
---- !u!1 &1947241989620229268 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 09e21746e41deb040b2acc3cd868c373,
-    type: 3}
-  m_PrefabInstance: {fileID: 1712660421007432133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1174928132423663150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 09e21746e41deb040b2acc3cd868c373,

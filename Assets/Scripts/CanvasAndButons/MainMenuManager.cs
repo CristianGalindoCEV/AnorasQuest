@@ -15,12 +15,15 @@ public class MainMenuManager : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
+    public float GammaCorrection = 0.5f;
+
+    
+
     void Start()
     {
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
-
 
         resolutions = Screen.resolutions;
 
@@ -76,8 +79,13 @@ public class MainMenuManager : MonoBehaviour
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        //QualitySettings.antiAliasing
     }
-
+    public void SetGamma(float sliderValue)
+    {
+        RenderSettings.ambientLight = new Color(GammaCorrection, sliderValue, sliderValue,1);
+        Debug.Log(sliderValue);
+    }
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
@@ -107,5 +115,6 @@ public class MainMenuManager : MonoBehaviour
         panelsound.SetActive(false);
         FindObjectOfType<AudioManager>().PlayRandomPitch("Button");
     }
+   
 }
 
