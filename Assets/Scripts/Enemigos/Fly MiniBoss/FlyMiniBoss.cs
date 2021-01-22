@@ -12,10 +12,9 @@ public class FlyMiniBoss : MonoBehaviour
     private int i_currentPoint = 0;
 
     //Boss
-    
     [SerializeField] private float f_speed = 3;
     Transform my_transform;
-    public GameObject insect;
+    public GameObject insectPack;
     public Collider m_triger;
     private Vector3[] totalPoints;
     [SerializeField] private Collider m_collider;
@@ -47,7 +46,9 @@ public class FlyMiniBoss : MonoBehaviour
             //Hay que retocarlo
             Vector3 loockAtPosition = player.position;
             loockAtPosition.x = transform.rotation.eulerAngles.y;
-            transform.LookAt(loockAtPosition);
+            transform.LookAt(player);
+
+            //Mathf.Clamp(transform.eulerAngles.x, 20,90);
             
            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f) //Miramos si hemos llegado al punto
             {
@@ -59,12 +60,12 @@ public class FlyMiniBoss : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
             }
-           /* if (f_currentTime > 5f)
+            if (f_currentTime > 5f)
             {
                 StartCoroutine(FirtsAttack());
                 f_currentTime = 0f;
             }
-           */
+           
         }
     }
 
@@ -105,22 +106,9 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator FirtsAttack()
     {
         Debug.Log("FirtsAttack");
-        Vector3 bulletPosition = (transform.position);
-        Vector3 currentPosition = bulletPosition;
-
-        for (int i = 0; i < 10; i++)
-        {
-            while (currentPosition.x == totalPoints[i].x && currentPosition.y == totalPoints[i].y)
-            {
-                Debug.Log("while");
-                bulletPosition.x = Random.Range(-3 + transform.position.x, 6 + transform.position.x);
-                bulletPosition.y = Random.Range(-6 + transform.position.y, 6 + transform.position.y);
-            }
-            bulletPosition.z = transform.position.z + 1;
-            currentPosition = bulletPosition;
-            totalPoints[i] = bulletPosition;
-            Instantiate(insect, bulletPosition, transform.rotation);
-        }
+        Vector3 bulletPosition = transform.position;
+        bulletPosition.z = transform.position.z + 1;
+        Instantiate(insectPack, transform.position, transform.rotation);
 
         yield return new WaitForSeconds(0f);
     }

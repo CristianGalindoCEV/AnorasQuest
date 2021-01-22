@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -14,10 +14,10 @@ public class MainMenuManager : MonoBehaviour
     public GameObject panelgraphics;
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
+    [Range(0f,255f)]
+    public float GammaCorrection;
 
-    public float GammaCorrection = 0.5f;
-
-    
+    public Slider sliderRef;
 
     void Start()
     {
@@ -83,9 +83,11 @@ public class MainMenuManager : MonoBehaviour
     }
     public void SetGamma(float sliderValue)
     {
-        RenderSettings.ambientLight = new Color(GammaCorrection, sliderValue, sliderValue,1);
-        Debug.Log(sliderValue);
+        GammaCorrection = sliderValue;
+        RenderSettings.ambientLight = new Color (sliderValue, sliderValue, sliderValue, 1);
+        Debug.Log(RenderSettings.ambientLight);
     }
+
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
