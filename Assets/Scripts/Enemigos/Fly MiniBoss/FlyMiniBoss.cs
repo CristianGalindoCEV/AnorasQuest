@@ -10,6 +10,7 @@ public class FlyMiniBoss : MonoBehaviour
     //SpacePoints
     public SpacePoint [] points;
     private int i_currentPoint = 0;
+    private bool b_move = true;
 
     //Boss
     [SerializeField] private float f_speed = 3;
@@ -21,6 +22,7 @@ public class FlyMiniBoss : MonoBehaviour
 
     //Player
     public Transform player;
+    private Vector3 m_attackposition;
 
     //HP
     public MinibossHP minibosshp;
@@ -42,30 +44,49 @@ public class FlyMiniBoss : MonoBehaviour
         if (b_startFight == true) 
         {
             f_currentTime += Time.deltaTime;
-            
-            //Hay que retocarlo
-            Vector3 loockAtPosition = player.position;
-            loockAtPosition.x = transform.rotation.eulerAngles.y;
-            transform.LookAt(player);
 
-            //Mathf.Clamp(transform.eulerAngles.x, 20,90);
-            
-           if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f) //Miramos si hemos llegado al punto
+            //Hay que retocarlo
+            if (b_move == true)
+            {
+                Vector3 loockAtPosition = player.position;
+                loockAtPosition.x = transform.rotation.eulerAngles.y;
+                transform.LookAt(player);
+            }
+
+            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
             {
                 StartCoroutine(StopMove());
                 i_currentPoint++;
                 i_currentPoint %= points.Length;
             }
-            else // Pasamos al siguiente punto
+            else if (b_move == true) // Pasamos al siguiente punto
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
             }
-            if (f_currentTime > 5f)
+            
+            if (f_currentTime > 7f && b_move == true)
             {
-                StartCoroutine(FirtsAttack());
-                f_currentTime = 0f;
+                int i = Random.Range(1, 3);
+
+                switch (i)
+                {
+                    case 1:
+                    StartCoroutine(SecondAttack());
+                    break;
+
+                    case 2:
+                    StartCoroutine(SecondAttack());
+                    break;
+                    
+                    default:
+                    print("Falla el switch");
+                    break;
+                }
             }
-           
+            if (b_move == false)
+            {
+                transform.position = Vector3.MoveTowards(transform.position,m_attackposition, Time.deltaTime * 15);
+            }
         }
     }
 
@@ -111,6 +132,17 @@ public class FlyMiniBoss : MonoBehaviour
         Instantiate(insectPack, transform.position, transform.rotation);
 
         yield return new WaitForSeconds(0f);
+        f_currentTime = 0f;
+        b_move = true;
+    }
+    IEnumerator SecondAttack()
+    {
+        Debug.Log("SecondAttack");
+        Vector3 attackposition = player.position;
+        b_move = false;
+        yield return new WaitForSeconds(7f);
+        f_currentTime = 0f;
+        b_move = true;
     }
     IEnumerator StopMove()
     {
@@ -120,7 +152,6 @@ public class FlyMiniBoss : MonoBehaviour
         f_speed = 0;
         
         //Idle Aimation
-        
         yield return new WaitForSeconds(f_stop);
         f_speed = 6f;
     }
