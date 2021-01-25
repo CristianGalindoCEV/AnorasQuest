@@ -17,8 +17,8 @@ public class FlyMiniBoss : MonoBehaviour
     Transform my_transform;
     public GameObject insectPack;
     public Collider m_triger;
-    private Vector3[] totalPoints;
     [SerializeField] private Collider m_collider;
+    private int myRandom;
 
     //Player
     public Transform player;
@@ -66,12 +66,13 @@ public class FlyMiniBoss : MonoBehaviour
             
             if (f_currentTime > 7f && b_move == true)
             {
-                int i = Random.Range(1, 3);
+                myRandom = Random.Range(1, 3);
+                Debug.Log(myRandom);
 
-                switch (i)
+                switch (myRandom)
                 {
                     case 1:
-                    StartCoroutine(SecondAttack());
+                    StartCoroutine(FirtsAttack());
                     break;
 
                     case 2:
@@ -83,7 +84,7 @@ public class FlyMiniBoss : MonoBehaviour
                     break;
                 }
             }
-            if (b_move == false)
+            if (b_move == false && myRandom == 2)
             {
                 transform.position = Vector3.MoveTowards(transform.position,m_attackposition, Time.deltaTime * 15);
             }
