@@ -13,6 +13,7 @@ public class FlyMiniBoss : MonoBehaviour
     private bool b_move = true;
 
     //Boss
+    public GameObject m_boss;
     [SerializeField] private float f_speed = 3;
     Transform my_transform;
     public GameObject insectPack;
@@ -52,7 +53,6 @@ public class FlyMiniBoss : MonoBehaviour
                 loockAtPosition.x = transform.rotation.eulerAngles.y;
                 transform.LookAt(player);
             }
-
             if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
             {
                 StartCoroutine(StopMove());
@@ -64,7 +64,7 @@ public class FlyMiniBoss : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
             }
             
-            if (f_currentTime > 7f && b_move == true)
+            if (f_currentTime >= 7f && b_move == true)
             {
                 myRandom = Random.Range(1, 3);
                 Debug.Log(myRandom);
@@ -141,7 +141,7 @@ public class FlyMiniBoss : MonoBehaviour
         Debug.Log("SecondAttack");
         Vector3 attackposition = player.position;
         b_move = false;
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         f_currentTime = 0f;
         b_move = true;
     }
@@ -162,7 +162,9 @@ public class FlyMiniBoss : MonoBehaviour
         if(minibosshp.hp <= 0)
         {
             m_collider.enabled = false;
+            f_speed = 0;
+            yield return new WaitForSeconds(1.0f);
+            m_boss.SetActive(false);
         }
-        yield return new WaitForSeconds(1.0f);
     }
 }
