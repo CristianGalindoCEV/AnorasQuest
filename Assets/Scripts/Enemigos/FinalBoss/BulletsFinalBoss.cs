@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class BulletsFinalBoss : MonoBehaviour
 {
-    private float speed = 10;
     private float f_timeCounter = 0;
-    private float dietime = 7f;
     private Transform m_player;
     private Vector3 playerVector;
 

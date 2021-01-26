@@ -13,9 +13,12 @@ public class FinalBoss : MonoBehaviour
     private float f_speed = 8f;
     private float f_currentTime = 0;
     private bool b_onAttack = false;
+    public GameObject m_boss;
+    [SerializeField] private Collider m_collider;
+    private bool b_startFight = false;
 
     //HP
-    //public MinibossHP minibosshp;
+    public MinibossHP minibosshp;
     public GameMaster gamemaster;
     public float damage;
     public GameObject bullets;
@@ -33,23 +36,44 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        f_currentTime += Time.deltaTime;
-        if (b_onAttack == false)
+        if (b_startFight == true)
         {
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
+            f_currentTime += Time.deltaTime;
+            if (b_onAttack == false)
             {
-                StartCoroutine(StopMove());
-                i_currentPoint++;
-                i_currentPoint %= points.Length;
+                if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
+                {
+                    StartCoroutine(StopMove());
+                    i_currentPoint++;
+                    i_currentPoint %= points.Length;
+                }
+                else if (b_move == true) // Pasamos al siguiente punto
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                }
             }
-            else if (b_move == true) // Pasamos al siguiente punto
+            if (b_onAttack == true)
             {
-                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                transform.LookAt(player);
             }
         }
-        if(b_onAttack == true)
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && b_startFight == false)
         {
-            transform.LookAt(player);
+            b_startFight = true;
+            //StartCoroutine(StartRound());
+        }
+        if (other.tag == "Bullet")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.bulletDamage;
+        }
+        if (other.tag == "Sword")
+        {
+            StartCoroutine(Damage());
+            damage = gamemaster.swordDamage;
         }
     }
     IEnumerator StopMove()
@@ -90,5 +114,15 @@ public class FinalBoss : MonoBehaviour
         }
         b_onAttack = false;
     }
-    
+    IEnumerator Damage()
+    {
+        minibosshp.hp = minibosshp.hp - damage;
+        if (minibosshp.hp <= 0)
+        {
+            m_collider.enabled = false;
+            f_speed = 0;
+            yield return new WaitForSeconds(1.0f);
+            m_boss.SetActive(false);
+        }
+    }
 }
