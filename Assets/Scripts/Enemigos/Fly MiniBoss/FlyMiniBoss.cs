@@ -67,8 +67,6 @@ public class FlyMiniBoss : MonoBehaviour
             if (f_currentTime >= 7f && b_move == true)
             {
                 myRandom = Random.Range(1, 3);
-                Debug.Log(myRandom);
-
                 switch (myRandom)
                 {
                     case 1:
