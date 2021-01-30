@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : PhysicsCollision
 {
-   
     //Player
     private Rigidbody m_rigidbody;
     private float m_horizontalMove;
@@ -56,7 +55,6 @@ public class PlayerController : PhysicsCollision
         m_rigidbody = GetComponent<Rigidbody>();
         m_transform = transform;
         m_playerCol = GetComponent<CapsuleCollider>();
-
     }
 
     private void Update()
@@ -70,7 +68,6 @@ public class PlayerController : PhysicsCollision
         camDirection();
 
         m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
-
         m_movePlayer = m_movePlayer * m_playerspeed;
 
         m_transform.LookAt(m_transform.position + m_movePlayer);
@@ -80,13 +77,12 @@ public class PlayerController : PhysicsCollision
             m_movePlayer.x = 0;
             m_movePlayer.z = 0;
         }
-        
+
         if (!god)
+        {
             m_movePlayer.y = m_rigidbody.velocity.y;
-
-        f_cadenceTime += Time.deltaTime;
-
-       
+            f_cadenceTime += Time.deltaTime;
+        }
         //Run
         if (sprinting == false && god == false)
         {
@@ -118,11 +114,8 @@ public class PlayerController : PhysicsCollision
             }
 
         }
-
         m_rigidbody.velocity = m_movePlayer;
-
         m_rigidbody.useGravity = !god;
-
     }
 
     private void LateUpdate()
@@ -151,7 +144,6 @@ public class PlayerController : PhysicsCollision
         camForward = camForward.normalized;
         camRight = camRight.normalized;
     }
-
     //Jump
     public void Jump()
     {
@@ -191,7 +183,6 @@ public class PlayerController : PhysicsCollision
         {
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
-
         }
     }
 
@@ -199,13 +190,9 @@ public class PlayerController : PhysicsCollision
     public void God()
     {
         m_playerspeed = 15f;
-        
         gamemaster.bulletDamage = gamemaster.bulletGood;
         gamemaster.unlocked = true;
-
         gamemaster.swordDamage = gamemaster.swordDamageGood;
-
-
     }
 
     public void NoGod()
@@ -213,15 +200,12 @@ public class PlayerController : PhysicsCollision
         m_playerspeed = 5f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
         gamemaster.swordDamage = gamemaster.swordDamageNoGood;
-
-        
         if(gamemaster.value == 1)
         {
             gamemaster.unlocked = true;
         }
         gamemaster.unlocked = false;
     }
-
     //Dash
     public void CastDash()
     {
@@ -238,7 +222,6 @@ public class PlayerController : PhysicsCollision
             StartCoroutine(Sprint());
         }
     }
-
     //MeleAttack
     public void PlayerMeleAttack() 
     {
@@ -246,30 +229,23 @@ public class PlayerController : PhysicsCollision
         {
             f_cadenceTime = 0;
             StartCoroutine(MeleAttack()); 
-        
         }    
-        
     }
-
     //Corutina de golpe
     IEnumerator Golpe()
     {
-        //Indico que recibo daño
         iamdead = true;
-        
         //Indicamos al score que hemos perdido HP
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
-        
         if(gamemaster.hp <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
-
         //Player pushed
         m_rigidbody.AddForce(-transform.forward * 200f, ForceMode.Impulse);
         m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
-
+        //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
         iamdead = false;
     }
@@ -301,12 +277,9 @@ public class PlayerController : PhysicsCollision
     //Corutina Sprint
     IEnumerator Sprint()
     {
-
         stamina.SendMessage("RunStamina", 5f);
         m_playerspeed = 10;
         yield return new WaitForSeconds(0);
-
-       // m_rigidbody.velocity = Vector3.zero;
     }
     //MeleAttackCorutine
     IEnumerator MeleAttack()

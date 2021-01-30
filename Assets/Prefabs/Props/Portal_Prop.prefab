@@ -109,11 +109,11 @@ GameObject:
   - component: {fileID: 7705533102893453998}
   - component: {fileID: 5701234369986621854}
   - component: {fileID: 360592221146314139}
-  - component: {fileID: 4447274108020852935}
   - component: {fileID: 6777192545778194131}
   - component: {fileID: 3575054065087345274}
   - component: {fileID: 5659026614170777556}
   - component: {fileID: 5493679741663034801}
+  - component: {fileID: 4447274108020852935}
   m_Layer: 0
   m_Name: Portal_Prop
   m_TagString: Untagged
@@ -239,25 +239,6 @@ CapsuleCollider:
   m_Height: 5.782834
   m_Direction: 1
   m_Center: {x: -1.5769439, y: -0.18385768, z: 0.066159256}
---- !u!114 &4447274108020852935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447274108020852934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca3fc64ec5c9f44e8278ce798a8c674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playercontroller: {fileID: 0}
-  gameMaster: {fileID: 0}
-  tranistion: {fileID: 0}
-  hud: {fileID: 0}
-  portal2: 0
-  paused: {fileID: 0}
-  nopaused: {fileID: 0}
 --- !u!136 &6777192545778194131
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -314,6 +295,25 @@ CapsuleCollider:
   m_Height: 2.860409
   m_Direction: 1
   m_Center: {x: -1.91, y: -1.710123, z: -0.4995356}
+--- !u!114 &4447274108020852935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447274108020852934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca3fc64ec5c9f44e8278ce798a8c674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playercontroller: {fileID: 0}
+  gameMaster: {fileID: 0}
+  tranistion: {fileID: 0}
+  hud: {fileID: 0}
+  portal2: 0
+  paused: {fileID: 0}
+  nopaused: {fileID: 0}
 --- !u!1 &5717706257636685738
 GameObject:
   m_ObjectHideFlags: 0
