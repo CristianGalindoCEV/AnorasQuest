@@ -84,8 +84,8 @@ public class MainMenuManager : MonoBehaviour
     public void SetGamma(float sliderValue)
     {
         GammaCorrection = sliderValue;
-        RenderSettings.ambientLight = new Color (sliderValue, sliderValue, sliderValue, 1);
-        Debug.Log(RenderSettings.ambientLight);
+        RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
+        RenderSettings.ambientIntensity = sliderValue;
     }
 
     public void SetFullscreen (bool isFullscreen)

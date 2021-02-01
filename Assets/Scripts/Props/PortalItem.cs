@@ -12,7 +12,9 @@ public class PortalItem : MonoBehaviour
     public Animator tranistion;
     public CanvasGroup hud;
 
-    public bool portal2;
+    [SerializeField]private bool portal2;
+    [SerializeField]private bool portal3;
+    
     //Audio
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot nopaused;
@@ -39,9 +41,12 @@ public class PortalItem : MonoBehaviour
         yield return new WaitForSeconds(4);
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
-        if(portal2 == true)
+        if (portal2 == true)
         {
             SceneManager.LoadScene("FlyBoss");
+        } else if (portal3 == true)
+        {
+            SceneManager.LoadScene("Credits");
         }
         SceneManager.LoadScene("StaticBoss");
     }

@@ -14,7 +14,6 @@ public class EnemyMeele : MonoBehaviour
     public PlayerController playerController;
     public GameMaster gamemaster;
     private Collider m_collider;
-
     //Rango
     [SerializeField] float rangeDistanceMin;
     [SerializeField] float rangeDistanceMax;
@@ -30,19 +29,15 @@ public class EnemyMeele : MonoBehaviour
     {
         rangeDistance = rangeDistanceMin;
         m_collider = this.GetComponent<CapsuleCollider>();
-       
     }
     void Update()
     {
-        
         //Miramos si hemos llegado al punto actual
         if(Vector3.Distance(transform.position, puntos[currentPoint].transform.position)< 0.2f){
             StartCoroutine(StopMove());
             currentPoint++;
             currentPoint %= puntos.Length;
         }
-
-
 
         //Detecta Player
         if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance && enemyhealth.health > 0)
@@ -61,7 +56,6 @@ public class EnemyMeele : MonoBehaviour
             transform.LookAt(puntos[currentPoint].transform.position);
             rangeDistance = rangeDistanceMin;
             transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
-            
         }
 
         if (enemyhealth.health <= 0)

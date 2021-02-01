@@ -243,8 +243,8 @@ public class PlayerController : PhysicsCollision
             SceneManager.LoadScene("GameOver");
         }
         //Player pushed
-        m_rigidbody.AddForce(-transform.forward * 200f, ForceMode.Impulse);
-        m_rigidbody.AddForce(transform.up * 5f, ForceMode.Impulse);
+        m_rigidbody.AddForce(-transform.forward * 150f, ForceMode.Impulse);
+        m_rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
         iamdead = false;
