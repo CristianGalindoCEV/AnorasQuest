@@ -18,6 +18,7 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private float m_currentTime;
     private float m_maxTime = 1;
     [SerializeField]private bool myanimation = false;
+    RectTransform rect;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         m_finalMove = selector.transform.position.x + 3;
         m_currentMove = m_initMove;
         selector.enabled = false;
+        rect = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
             /*
             m_currentScale = Easing.CircEaseInOut(m_currentTime, m_initScale, m_finalScale - m_initScale, m_maxTime);
-            transform.localScale = new Vector3(m_currentScale, m_currentScale, m_currentScale);
+            rect.localScale = new Vector3(m_currentScale, m_currentScale, m_currentScale);
             */
             m_currentMove = Easing.CubicEaseInOut(m_currentTime, m_initMove, m_finalMove - m_initMove, m_maxTime);
             selector.transform.position = new Vector3(m_currentMove, selector.transform.position.y,1);
