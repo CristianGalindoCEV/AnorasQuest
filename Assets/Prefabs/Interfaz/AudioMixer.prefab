@@ -55,6 +55,7 @@ MonoBehaviour:
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0
+    maxDistance: 0
     loop: 1
     source: {fileID: 0}
   - name: Button
@@ -68,6 +69,7 @@ MonoBehaviour:
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0
+    maxDistance: 0
     loop: 0
     source: {fileID: 0}
   - name: Attack_1
@@ -81,6 +83,7 @@ MonoBehaviour:
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0
+    maxDistance: 0
     loop: 0
     source: {fileID: 0}
   - name: Dash
@@ -94,6 +97,7 @@ MonoBehaviour:
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0
+    maxDistance: 0
     loop: 0
     source: {fileID: 0}
   - name: MagicShot
@@ -107,5 +111,34 @@ MonoBehaviour:
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MonsterRoar
+    clip: {fileID: 8300000, guid: 0d1ce17f67cde004eb2e0baf6de0d818, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 1
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: MainSceneBGM
+    clip: {fileID: 8300000, guid: b4e42cd4b3a7f694ca094aa2c31aef5e, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 1
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
     loop: 0
     source: {fileID: 0}
