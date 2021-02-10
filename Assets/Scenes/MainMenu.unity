@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -864,6 +864,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009884672}
     m_Modifications:
+    - target: {fileID: 2109965139, guid: ccf35d4e69508f84cb5bd7ad815a1018, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1511157840806096902, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_text
@@ -1345,6 +1349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009884672}
     m_Modifications:
+    - target: {fileID: 2109965139, guid: ccf35d4e69508f84cb5bd7ad815a1018, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1511157840806096902, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_text
@@ -5140,6 +5148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009884672}
     m_Modifications:
+    - target: {fileID: 2109965139, guid: ccf35d4e69508f84cb5bd7ad815a1018, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1511157840806096902, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_text
@@ -5609,7 +5621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60.7, y: 304.8945}
+  m_AnchoredPosition: {x: 60.69995, y: 304.8945}
   m_SizeDelta: {x: 305, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!95 &1241594436
@@ -6107,6 +6119,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318910243}
   m_CullTransparentMesh: 0
+--- !u!224 &1336144866 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5509173014546747223, guid: ccf35d4e69508f84cb5bd7ad815a1018,
+    type: 3}
+  m_PrefabInstance: {fileID: 1511157840509113804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1342544963
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,6 +9106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2009884672}
     m_Modifications:
+    - target: {fileID: 2109965139, guid: ccf35d4e69508f84cb5bd7ad815a1018, type: 3}
+      propertyPath: rectTransform
+      value: 
+      objectReference: {fileID: 1336144866}
     - target: {fileID: 1511157841485271726, guid: ccf35d4e69508f84cb5bd7ad815a1018,
         type: 3}
       propertyPath: m_AnchoredPosition.x
