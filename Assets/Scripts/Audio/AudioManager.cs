@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
 
         if (PauseManager.gameispaused)
         {
-            s.source.volume *= .5f;
+            //s.source.volume *= .5f;
         } 
         s.source.Play();
     }

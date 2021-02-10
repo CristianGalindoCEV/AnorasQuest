@@ -3,31 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private float m_initScale = 1;
-    private float m_finalScale = 2;
-    private float m_currentScale;
-
     public Image selector;
     private float m_initMove;
     private float m_finalMove;
     private float m_currentMove;
 
+    public RectTransform rectTransform;
+    [SerializeField]private Vector3 m_startPosition;
+    private float m_duration = 1f;
+
     private float m_currentTime;
     private float m_maxTime = 1;
     [SerializeField]private bool myanimation = false;
-    RectTransform rect;
+
     // Start is called before the first frame update
     void Start()
     {
-        m_currentScale = m_initScale;
         m_initMove = selector.transform.position.x - 10;
         m_finalMove = selector.transform.position.x + 3;
         m_currentMove = m_initMove;
         selector.enabled = false;
-        rect = GetComponent<RectTransform>();
+        
+        m_startPosition = rectTransform.position;
     }
 
     // Update is called once per frame
@@ -36,19 +37,14 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if(myanimation == true)
         {
             m_currentTime += Time.deltaTime;
-
-            /*
-            m_currentScale = Easing.CircEaseInOut(m_currentTime, m_initScale, m_finalScale - m_initScale, m_maxTime);
-            rect.localScale = new Vector3(m_currentScale, m_currentScale, m_currentScale);
-            */
+            
             m_currentMove = Easing.CubicEaseInOut(m_currentTime, m_initMove, m_finalMove - m_initMove, m_maxTime);
             selector.transform.position = new Vector3(m_currentMove, selector.transform.position.y,1);
+            
+            //rectTransform.DOMoveX(0.5f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo);
 
             if (m_currentTime >= m_maxTime)
             {
-                m_finalScale = m_initScale;
-                m_initScale = m_currentScale;
-                
                 m_finalMove = m_initMove;
                 m_initMove = m_currentMove;
 
@@ -60,15 +56,13 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         selector.enabled = true;
         myanimation = true;
+
     }
     public void OnPointerExit(PointerEventData eventData)
     {
+       // rectTransform.localPosition = m_startPosition;
         myanimation = false;
-        m_currentScale = 0;
         m_currentTime = 0;
-        m_initScale = 1;
-        m_finalScale = 2;
-        transform.localScale = new Vector3(1,1,1);
         selector.enabled = false;
     }
 }
