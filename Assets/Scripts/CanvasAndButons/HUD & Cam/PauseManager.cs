@@ -24,7 +24,6 @@ public class PauseManager : MonoBehaviour
             }
         }
     }
-
     public void Resume()
     {
         pausemenuUI.SetActive(false);
@@ -34,7 +33,6 @@ public class PauseManager : MonoBehaviour
         gameispaused = false;
         paused = false;
     }
-
     public void Pause()
     {
         pausemenuUI.SetActive(true);

@@ -106,11 +106,12 @@ public class MenuManager : MonoBehaviour
         inputmanager.pausemenu.SetActive(false);
         inputmanager.menuon = false;
         pausemanager.Resume();
-
+        FindObjectOfType<AudioManager>().Play("Button");
     }
 
     public void PulsaOptions()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         optionsmenu.SetActive(true);
         inputmanager.pausemenu.SetActive(false);
     }
@@ -123,6 +124,7 @@ public class MenuManager : MonoBehaviour
     //Botones del menu Ingame
     public void PulsaResolution()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         panelgraphics.SetActive(false);
         panelresolution.SetActive(true);
         panelsound.SetActive(false);
@@ -130,6 +132,7 @@ public class MenuManager : MonoBehaviour
 
     public void PulsaSound()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(true);
@@ -137,6 +140,7 @@ public class MenuManager : MonoBehaviour
 
     public void PulsaGraphics()
     {
+        FindObjectOfType<AudioManager>().Play("Button");
         panelgraphics.SetActive(true);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
