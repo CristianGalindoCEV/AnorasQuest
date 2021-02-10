@@ -1408,6 +1408,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1302150549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1309251193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 474383826768434376, guid: 331082425c039f5419f4c37addbcd296,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344188100211388139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1354531468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2318,24 +2324,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 76375306}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1939097847 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1344188101613610524, guid: 331082425c039f5419f4c37addbcd296,
-    type: 3}
-  m_PrefabInstance: {fileID: 1344188100211388139}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1939097852 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1939097852, guid: 331082425c039f5419f4c37addbcd296,
-    type: 3}
-  m_PrefabInstance: {fileID: 1344188100211388139}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939097847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0938fbe510a27d45824b2cb67f19c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1999379543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,12 +2470,12 @@ PrefabInstance:
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -248.24033
+      value: -248.305
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -117.288734
+      value: -117.072
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
@@ -2537,7 +2525,7 @@ PrefabInstance:
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1712539
+      value: 2.040048
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
@@ -3055,7 +3043,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Gun
       value: 
-      objectReference: {fileID: 1939097847}
+      objectReference: {fileID: 1309251193}
     - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
       propertyPath: Espada
@@ -3065,7 +3053,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gunspawn
       value: 
-      objectReference: {fileID: 1939097852}
+      objectReference: {fileID: 0}
     - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
       propertyPath: hud
