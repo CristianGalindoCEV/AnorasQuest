@@ -10,11 +10,12 @@ public class FinalBoss : MonoBehaviour
     private bool b_move = true;
 
     //Boss
-    private float f_speed = 8f;
+    public float speed = 8f;
     private float f_currentTime = 0;
     private bool b_onAttack = false;
     public GameObject m_boss;
     [SerializeField] private Collider m_collider;
+    public Collider starRound;
     private bool b_startFight = false;
     private bool b_returnPoint = false; // bool para comprovar si ha llegado el boss a un punto despues de atacar
     private int i_myattack;
@@ -29,6 +30,7 @@ public class FinalBoss : MonoBehaviour
     //Player
     public Transform player;
     private Vector3 m_attackposition;
+    private Vector3 playerPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,7 @@ public class FinalBoss : MonoBehaviour
             f_currentTime += Time.deltaTime;
             if (b_onAttack == false)
             {
-                if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
+                if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 4f && b_move == true) //Miramos si hemos llegado al punto
                 {
                     i_currentPoint++;
                     i_currentPoint %= points.Length;
@@ -52,14 +54,11 @@ public class FinalBoss : MonoBehaviour
                 }
                 else if (b_move == true) // Pasamos al siguiente punto
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                    transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * speed);
+                    transform.LookAt(points[i_currentPoint].transform.position);
                 }
             }
-            if (b_onAttack == true)
-            {
-                transform.LookAt(player);
-            }
-
+   
             if(f_currentTime >= f_randomTimeAttack && b_onAttack == false)
             {
                 if (b_returnPoint == false)
@@ -72,10 +71,8 @@ public class FinalBoss : MonoBehaviour
         // Parte del attackTwo
         if (b_onAttack == true && i_myattack == 2) 
         {
-            Vector3 playerPosition = player.transform.position;
-            playerPosition.y = transform.position.y; 
             transform.LookAt(playerPosition);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * 15);
+            transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * 7);
             //Mirar si cuando reproduce una animacion se sigue moviendo
         }
     }
@@ -84,19 +81,19 @@ public class FinalBoss : MonoBehaviour
         if (other.tag == "Player" && b_startFight == false)
         {
             b_startFight = true;
+            starRound.enabled = false;
             //StartCoroutine(StartRound());
-
         }
         else if (other.tag == "Player" && b_startFight == true)
         {
             StartCoroutine(AttackTwo());
         }
-        if (other.tag == "Bullet")
+        if (other.tag == "Bullet" && b_startFight == true)
         {
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;
         }
-        if (other.tag == "Sword")
+        if (other.tag == "Sword" && b_startFight == true)
         {
             StartCoroutine(Damage());
             damage = gamemaster.swordDamage;
@@ -125,6 +122,7 @@ public class FinalBoss : MonoBehaviour
         for (int i = 0; i<=4; i++)
         {
             Instantiate(bullets, transform.position, transform.rotation);
+            transform.LookAt(player);
             yield return new WaitForSeconds(1f);
         }
         f_currentTime = 0;
@@ -132,6 +130,8 @@ public class FinalBoss : MonoBehaviour
     }
     IEnumerator AttackTwo()
     {
+        Vector3 playerPosition = player.transform.position;
+        playerPosition.y = transform.position.y;
         b_returnPoint = true;
         //AnimacionAtaque
         yield return new WaitForSeconds(3f);
@@ -144,7 +144,7 @@ public class FinalBoss : MonoBehaviour
         if (minibosshp.hp <= 0)
         {
             m_collider.enabled = false;
-            f_speed = 0;
+            speed = 0;
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

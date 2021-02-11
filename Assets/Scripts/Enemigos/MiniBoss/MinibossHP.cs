@@ -9,7 +9,13 @@ public class MinibossHP : MonoBehaviour
     public float maxHp = 2000;
     public float hp;
     private GameObject portal;
+    public FinalBoss finalBoss;
 
+    //Disolve
+    public Renderer m_renderer;
+    private MaterialPropertyBlock m_materialProperty;
+    private float m_disolve = -1f;
+    private bool b_activateDisolve = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +31,10 @@ public class MinibossHP : MonoBehaviour
     {
         bossBar.value = CalculateHealth();
 
-        if (hp <= 0)
+        if (hp <= 0 && b_activateDisolve == false)
         {
-            portal.SetActive(true);
+            ActivateDisolve();
         }
-      
         if (hp > maxHp)
         {
             hp = maxHp;
@@ -40,10 +45,26 @@ public class MinibossHP : MonoBehaviour
     {
         return hp / maxHp;
     }
-  
-   /* public void TakeDamage(int amount)
+    public void ActivateDisolve()
     {
-        hp -= amount;
+        m_materialProperty = new MaterialPropertyBlock();
+        m_disolve = -1;
+        b_activateDisolve = true;
+        finalBoss.speed = 0f;
+        StartCoroutine(UpdateDisolve());
+    }
 
-    }*/
+    //Disolve
+    private IEnumerator UpdateDisolve()
+    {
+        while (m_disolve <= 1f)
+        {
+            m_disolve += Time.deltaTime;
+            m_materialProperty.SetFloat("_Disolve", m_disolve);
+            m_renderer.SetPropertyBlock(m_materialProperty);
+            yield return null;
+        }
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
+    }
 }

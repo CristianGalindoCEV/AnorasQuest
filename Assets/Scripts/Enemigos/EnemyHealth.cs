@@ -17,6 +17,7 @@ public class EnemyHealth: MonoBehaviour
     private MaterialPropertyBlock m_materialProperty;
     private float m_disolve = -1f;
     [SerializeField]private GameObject m_burn;
+    private bool b_activateDisolve = false;
 
     void Start()
     {
@@ -25,18 +26,15 @@ public class EnemyHealth: MonoBehaviour
         healtbarUI.SetActive(false); 
     }
 
-
     void Update()
     {
-
         slider.value = CalculateHealth();
 
         if (health < maxHealth)
         {
             healtbarUI.SetActive(true);
         }
-
-        if (health <= 0)
+        if (health <= 0 && b_activateDisolve == false)
         {
             m_burn.SetActive(true);
             ActivateDisolve();
@@ -44,13 +42,7 @@ public class EnemyHealth: MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
-        }
-      /* if (Input.GetKey(KeyCode.M))
-        {
-            ActivateDisolve();
-        }
-      */
-      
+        }  
     }
 
     float CalculateHealth()
@@ -63,6 +55,7 @@ public class EnemyHealth: MonoBehaviour
     {
         m_materialProperty = new MaterialPropertyBlock();
         m_disolve = -1;
+        b_activateDisolve = true;
 
         StartCoroutine(UpdateDisolve());
     }
@@ -70,19 +63,14 @@ public class EnemyHealth: MonoBehaviour
     //Disolve
     private IEnumerator UpdateDisolve()
     {
-        while (m_disolve < 1f)
+        while (m_disolve <= 1f)
         {
             m_disolve += Time.deltaTime;
-
             m_materialProperty.SetFloat("_Disolve", m_disolve);
             m_renderer.SetPropertyBlock(m_materialProperty);
-
             yield return null;
         }
-
         yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
-
     }
-
 }
