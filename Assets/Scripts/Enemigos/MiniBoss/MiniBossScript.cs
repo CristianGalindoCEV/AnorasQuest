@@ -11,6 +11,8 @@ public class MiniBossScript : MonoBehaviour
     [SerializeField] Transform player;
     private int randomNumber;
     public float damage;
+    private bool b_startBatle = false;
+    public Collider myStart;
     
     //WallBoss
     private GameObject m_boss;
@@ -28,41 +30,47 @@ public class MiniBossScript : MonoBehaviour
     }
     void Update()
     {
-        f_TimeCounter += Time.deltaTime;
-       
-        //Ataques
-        if (f_TimeCounter > 3 && minibosshp.hp > 0)
+       if(b_startBatle == true)
         {
-            f_TimeCounter = 0;
-            randomNumber = Random.Range (1,10);
+            f_TimeCounter += Time.deltaTime;
 
-            if (randomNumber < 6) 
-            {    
-                SpikeAttack();
-            }
-            else 
+            //Ataques
+            if (f_TimeCounter > 3 && minibosshp.hp > 0)
             {
-                SpikeCage(); 
+                f_TimeCounter = 0;
+                randomNumber = Random.Range(1, 10);
+
+                if (randomNumber < 6)
+                {
+                    SpikeAttack();
+                }
+                else
+                {
+                    SpikeCage();
+                }
+            }
+
+            if (wallBoss.destroyWall == false && minibosshp.hp <= 1000)
+            {
+                minibosshp.hp = 1000;
+                BossWall();
+            }
+
+            if (minibosshp.hp <= 0)
+            {
+                m_boss.SetActive(false);
             }
         }
-
-        if (wallBoss.destroyWall == false && minibosshp.hp <= 1000)
-        {
-            minibosshp.hp = 1000;
-            BossWall();
-        }
-
-        if( minibosshp.hp <= 0)
-        {
-            m_boss.SetActive(false);
-        }
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
-    
-        if ( other.tag  == "Bullet")
+        if(other.tag == "Player" && b_startBatle == false)
+        {
+            b_startBatle = true;
+            myStart.enabled = false;
+        }
+        if ( other.tag  == "Bullet" && b_startBatle == true)
         {
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;

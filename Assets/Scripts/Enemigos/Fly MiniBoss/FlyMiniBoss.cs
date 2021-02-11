@@ -10,7 +10,7 @@ public class FlyMiniBoss : MonoBehaviour
     //SpacePoints
     public SpacePoint [] points;
     private int i_currentPoint = 0;
-    private bool b_move = true;
+    private bool b_move = true; // Para saber cuando el enemy se mueve
 
     //Boss
     public GameObject m_boss;
@@ -20,6 +20,7 @@ public class FlyMiniBoss : MonoBehaviour
     public Collider m_triger;
     [SerializeField] private Collider m_collider;
     private int myRandom;
+    private bool b_returnAttack = true; //Cuando el enemy ha vuelto a su punto depsues de atacar
 
     //Player
     public Transform player;
@@ -46,14 +47,16 @@ public class FlyMiniBoss : MonoBehaviour
         {
             f_currentTime += Time.deltaTime;
 
-            //Hay que retocarlo
+            // Loock Player
             if (b_move == true)
             {
                 Vector3 loockAtPosition = player.position;
                 loockAtPosition.x = transform.rotation.eulerAngles.y;
                 transform.LookAt(player);
             }
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) //Miramos si hemos llegado al punto
+            
+            //Miramos si hemos llegado al punto
+            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) 
             {
                 StartCoroutine(StopMove());
                 i_currentPoint++;
@@ -64,7 +67,8 @@ public class FlyMiniBoss : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
             }
             
-            if (f_currentTime >= 7f && b_move == true)
+            //Generate Attack
+            if (f_currentTime >= 7f && b_returnAttack == true) 
             {
                 myRandom = Random.Range(1, 3);
                 switch (myRandom)
@@ -82,6 +86,7 @@ public class FlyMiniBoss : MonoBehaviour
                     break;
                 }
             }
+            // Move attack 2
             if (b_move == false && myRandom == 2)
             {
                 transform.position = Vector3.MoveTowards(transform.position,m_attackposition, Time.deltaTime * 15);
@@ -123,25 +128,29 @@ public class FlyMiniBoss : MonoBehaviour
         Debug.Log("Empieza la pelea");
         yield return new WaitForSeconds(7f);
     }
-    IEnumerator FirtsAttack()
+    IEnumerator FirtsAttack() //This instance bullets
     {
         Debug.Log("FirtsAttack");
         Vector3 bulletPosition = transform.position;
         bulletPosition.z = transform.position.z + 1;
         Instantiate(insectPack, transform.position, transform.rotation);
-
-        yield return new WaitForSeconds(0f);
+        b_returnAttack = false;
+        yield return new WaitForSeconds(4f);
         f_currentTime = 0f;
         b_move = true;
+        b_returnAttack = true;
     }
     IEnumerator SecondAttack()
     {
         Debug.Log("SecondAttack");
         Vector3 attackposition = player.position;
         b_move = false;
+        b_returnAttack = false;
         yield return new WaitForSeconds(5f);
         f_currentTime = 0f;
         b_move = true;
+        yield return new WaitForSeconds(12f); // Enemy return to the point
+        b_returnAttack = true;
     }
     IEnumerator StopMove()
     {

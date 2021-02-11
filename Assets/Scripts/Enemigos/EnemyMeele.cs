@@ -33,7 +33,7 @@ public class EnemyMeele : MonoBehaviour
     void Update()
     {
         //Miramos si hemos llegado al punto actual
-        if(Vector3.Distance(transform.position, puntos[currentPoint].transform.position)< 0.2f){
+        if(Vector3.Distance(transform.position, puntos[currentPoint].transform.position)< 2f){
             StartCoroutine(StopMove());
             currentPoint++;
             currentPoint %= puntos.Length;
