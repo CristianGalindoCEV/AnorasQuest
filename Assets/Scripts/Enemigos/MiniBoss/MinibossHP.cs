@@ -9,7 +9,6 @@ public class MinibossHP : MonoBehaviour
     public float maxHp = 2000;
     public float hp;
     private GameObject portal;
-    public FinalBoss finalBoss;
 
     //Disolve
     public Renderer m_renderer;
@@ -50,7 +49,6 @@ public class MinibossHP : MonoBehaviour
         m_materialProperty = new MaterialPropertyBlock();
         m_disolve = -1;
         b_activateDisolve = true;
-        finalBoss.speed = 0f;
         StartCoroutine(UpdateDisolve());
     }
 

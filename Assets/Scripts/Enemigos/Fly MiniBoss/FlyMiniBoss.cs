@@ -168,6 +168,7 @@ public class FlyMiniBoss : MonoBehaviour
         minibosshp.hp = minibosshp.hp - damage;
         if(minibosshp.hp <= 0)
         {
+            b_startFight = false;
             m_collider.enabled = false;
             f_speed = 0;
             yield return new WaitForSeconds(1.0f);
