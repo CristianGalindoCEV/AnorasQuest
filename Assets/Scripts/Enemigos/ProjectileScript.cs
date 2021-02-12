@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    private float TimeCounter = 0;
+    private float f_TimeCounter = 0;
 
     void Start()
     {
@@ -14,13 +14,8 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeCounter += Time.deltaTime;
-
-        
+        f_TimeCounter += Time.deltaTime;        
         transform.Translate(Vector3.forward * Time.deltaTime*15);
-        
-        
-       
-        if (TimeCounter > 3){Destroy(gameObject);}
+        if (f_TimeCounter > 3){Destroy(gameObject);}
     }
 }

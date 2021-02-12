@@ -165,19 +165,24 @@ public class PlayerController : PhysicsCollision
         heal = 10f;
         StartCoroutine(Healty());
     }
-   
-    //EnemyMele
-    public void Enemymele()
-    {
-        damage = 15f;
-        StartCoroutine(Golpe());
-    }
 
-    public void Spike()
-    {
-        damage = 5f;
-        StartCoroutine(Golpe());
-    }
+    #region Damages
+     public void Enemymele()
+     {
+         damage = 15f;
+         StartCoroutine(Golpe());
+     }
+     public void Spike()
+     {
+         damage = 5f;
+         StartCoroutine(Golpe());
+     }
+    public void Insect()
+     {
+         damage = 5f;
+         StartCoroutine(Golpe());
+     }
+    #endregion
 
     //Shadow Raycast
     void RaycastGround()
@@ -251,6 +256,7 @@ public class PlayerController : PhysicsCollision
         //Player pushed
         m_rigidbody.AddForce(-transform.forward * 150f, ForceMode.Impulse);
         m_rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
+        
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
         iamdead = false;
