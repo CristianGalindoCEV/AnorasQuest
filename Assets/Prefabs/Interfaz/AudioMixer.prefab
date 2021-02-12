@@ -135,7 +135,7 @@ MonoBehaviour:
     maxPitch: 0
     volume: 0.2
     pitch: 1
-    outputMixer: Sonidos
+    outputMixer: Musica
     spatialBlend: 0
     rolloffMode: 0
     dopplerLevel: 0

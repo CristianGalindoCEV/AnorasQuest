@@ -636,6 +636,33 @@ PrefabInstance:
       propertyPath: gameMaster
       value: 
       objectReference: {fileID: 1115802949}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: tranistion
+      value: 
+      objectReference: {fileID: 1072640851}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1728147798}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: paused
+      value: 
+      objectReference: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a,
+        type: 2}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: nopaused
+      value: 
+      objectReference: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a,
+        type: 2}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: portal2
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39cffee9570fc1641be85a74f998968f, type: 3}
