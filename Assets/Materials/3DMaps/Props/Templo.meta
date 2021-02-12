@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Materials/3DMaps/Props/Templo.meta
 guid: ee777229f6b6fb24ba3e5ac0362b3412
+=======
+guid: 97cedb8e5bd86704e94ecd32d7477c00
+>>>>>>> Stashed changes:Assets/Materials/3DMaps/Props/Columna3.meta
+=======
+guid: ee777229f6b6fb24ba3e5ac0362b3412
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
