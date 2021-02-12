@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-public class PortalItem : MonoBehaviour
+public class PortalBoss3 : MonoBehaviour
 {
     public PlayerController playercontroller;
     public GameMaster gameMaster;
     private GameObject loading;
     public Animator tranistion;
     public CanvasGroup hud;
-    
+
     //Audio
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot nopaused;
@@ -34,10 +34,10 @@ public class PortalItem : MonoBehaviour
         loading.SetActive(true);
         gameMaster.SavePlayerStats();
         paused.TransitionTo(4f);
-       
+
         yield return new WaitForSeconds(4);
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
-        SceneManager.LoadScene("StaticBoss");
+        SceneManager.LoadScene("FinalBoss");
     }
 }

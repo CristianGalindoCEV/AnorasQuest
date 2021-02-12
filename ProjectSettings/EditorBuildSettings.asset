@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 7769f33fb4fa2e5458344a36556ad760
   - enabled: 1
+    path: Assets/Scenes/FlyBoss.unity
+    guid: efc40aeb978c7c24ea6542c1f1cad624
+  - enabled: 1
     path: Assets/Scenes/StaticBoss.unity
     guid: d2c8858f59e57e64cbb75f7577b0dc20
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: 3ef31891ecf1baa41b74a858d9683247
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2922e20583064ef4ebbdf14d228a8f62

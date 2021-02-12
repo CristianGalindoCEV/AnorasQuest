@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5841046303103420135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Escalera_Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
