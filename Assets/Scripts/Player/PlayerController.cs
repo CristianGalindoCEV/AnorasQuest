@@ -173,6 +173,12 @@ public class PlayerController : PhysicsCollision
         StartCoroutine(Golpe());
     }
 
+    public void Spike()
+    {
+        damage = 5f;
+        StartCoroutine(Golpe());
+    }
+
     //Shadow Raycast
     void RaycastGround()
     {
