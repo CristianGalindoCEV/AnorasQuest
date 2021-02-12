@@ -104,7 +104,13 @@ public class MiniBossScript : MonoBehaviour
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
-        yield return new WaitForSeconds(1.0f);
+        if (minibosshp.hp <= 0)
+        {
+            b_startBatle = false;
+            //m_collider.enabled = false;
+            yield return new WaitForSeconds(2.0f);
+            m_boss.SetActive(false);
+        }
     }
 
 }

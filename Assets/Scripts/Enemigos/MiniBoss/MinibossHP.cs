@@ -32,6 +32,7 @@ public class MinibossHP : MonoBehaviour
 
         if (hp <= 0 && b_activateDisolve == false)
         {
+            portal.SetActive(true);
             ActivateDisolve();
         }
         if (hp > maxHp)
