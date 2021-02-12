@@ -59,6 +59,7 @@ public class PortalButton : MonoBehaviour
         if(other.tag == "Player" && pulse == false)
         {
             pulse = true;
+            FindObjectOfType<AudioManager>().Play("UnlockPortal");
         }
     }
 

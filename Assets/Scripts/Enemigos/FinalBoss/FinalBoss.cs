@@ -122,6 +122,7 @@ public class FinalBoss : MonoBehaviour
         for (int i = 0; i<=4; i++)
         {
             Instantiate(bullets, transform.position, transform.rotation);
+            FindObjectOfType<AudioManager>().Play("BossShot");
             transform.LookAt(player);
             yield return new WaitForSeconds(1f);
         }

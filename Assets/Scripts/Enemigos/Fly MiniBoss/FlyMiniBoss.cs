@@ -134,6 +134,7 @@ public class FlyMiniBoss : MonoBehaviour
         Vector3 bulletPosition = transform.position;
         bulletPosition.z = transform.position.z + 1;
         Instantiate(insectPack, transform.position, transform.rotation);
+        FindObjectOfType<AudioManager>().Play("FlyBossAttack");
         b_returnAttack = false;
         yield return new WaitForSeconds(4f);
         f_currentTime = 0f;

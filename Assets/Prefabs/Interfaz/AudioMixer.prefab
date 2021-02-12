@@ -142,3 +142,59 @@ MonoBehaviour:
     maxDistance: 0
     loop: 1
     source: {fileID: 0}
+  - name: UnlockPortal
+    clip: {fileID: 8300000, guid: 60e75a3272bc3f147bc561b9f41f0f28, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: BossShot
+    clip: {fileID: 8300000, guid: 39a4f82358181194b858ed3ef5210620, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: FlyBossAttack
+    clip: {fileID: 8300000, guid: e5f4cd9a07930e1408e1e487215a9780, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Collector
+    clip: {fileID: 8300000, guid: e8e60d9f08db03f4f8bac50461a84822, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0
+    maxPitch: 0
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
