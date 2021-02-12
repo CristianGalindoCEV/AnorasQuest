@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 3f77f69a80947564e8fc2108805cc49e
+guid: 90da277d5eafcf34ab00b13ac759f73d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: columnas_wire_153228215
-    second: {fileID: 2100000, guid: c1dbf8987a31b4e45b845a5bfcb1754f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

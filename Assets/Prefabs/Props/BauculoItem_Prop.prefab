@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 245433982260609196}
   - component: {fileID: 245433982260609195}
   m_Layer: 0
-  m_Name: BauculoItem
+  m_Name: BauculoItem_Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
