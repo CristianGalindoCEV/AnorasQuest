@@ -113,7 +113,7 @@ public class CanvasMainMenu : MonoBehaviour
         transtion.SetBool("PressPlay" ,true);
         mainmenu.SetActive(false);
         paused.TransitionTo(4f);
-        
+        Cursor.visible = false;
         yield return new WaitForSeconds(4);
         
         nopaused.TransitionTo(0.1f);

@@ -37,7 +37,7 @@ public class PortalBoss : MonoBehaviour
        
         gameMaster.SavePlayerStats();
         paused.TransitionTo(4f);
-
+        Cursor.visible = false;
         yield return new WaitForSeconds(4);
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");

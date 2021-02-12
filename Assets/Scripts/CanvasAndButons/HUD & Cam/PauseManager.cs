@@ -28,7 +28,7 @@ public class PauseManager : MonoBehaviour
     {
         pausemenuUI.SetActive(false);
         ingameMenu.SetActive(false);
-
+        Cursor.visible = false;
         Time.timeScale = 1f;
         gameispaused = false;
         paused = false;
