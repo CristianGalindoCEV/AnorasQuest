@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8230867379180346946}
+  - component: {fileID: 8167770243059044974}
+  - component: {fileID: 1042787289706173873}
   m_Layer: 0
   m_Name: Tronco_Prop
   m_TagString: Untagged
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8167770243059044974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521443231673626171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2808166, y: 3.5486927, z: 1.8110759}
+  m_Center: {x: -0.65725255, y: -0.16847324, z: -0.051021695}
+--- !u!65 &1042787289706173873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521443231673626171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.222053, y: 1.3051891, z: 1}
+  m_Center: {x: 2.111026, y: 1.2136698, z: 0}
 --- !u!1001 &2579758024146945325
 PrefabInstance:
   m_ObjectHideFlags: 0

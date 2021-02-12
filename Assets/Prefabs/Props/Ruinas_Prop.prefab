@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8437840988846934606}
+  - component: {fileID: 6441140480112287267}
+  - component: {fileID: 6399243495874359109}
   m_Layer: 0
   m_Name: Ruinas_Prop
   m_TagString: Untagged
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6441140480112287267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575161475454270683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4682765, y: 2.9307165, z: 0.53558373}
+  m_Center: {x: 0.14873481, y: 0.47690392, z: 0.23220813}
+--- !u!65 &6399243495874359109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575161475454270683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.54576015, y: 2.922266, z: 1.9981482}
+  m_Center: {x: -1.2591164, y: 0.48273993, z: 0.93410146}
 --- !u!1001 &4656470573830523866
 PrefabInstance:
   m_ObjectHideFlags: 0

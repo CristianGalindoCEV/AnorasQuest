@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7672669805163444297}
+  - component: {fileID: 4902883163930138343}
   m_Layer: 0
   m_Name: Cristal_Prop
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4902883163930138343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184961169531996229}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1937077, y: 1.6695106, z: 1.4181551}
+  m_Center: {x: -0.09685385, y: -0.063082576, z: 0.103093445}
 --- !u!1001 &1505214299953221440
 PrefabInstance:
   m_ObjectHideFlags: 0

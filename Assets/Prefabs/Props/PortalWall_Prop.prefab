@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 3692037436724150179}
   - component: {fileID: 3692037436724150178}
   - component: {fileID: 3692037436724150204}
+  - component: {fileID: 589168594667277778}
+  - component: {fileID: 7377933833529576652}
+  - component: {fileID: 4629681401883099217}
   m_Layer: 0
   m_Name: PortalWall_Prop
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,8 +58,47 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 14.334636, y: 1, z: 2.9035535}
+  m_Center: {x: -0.5909238, y: 0, z: 0.19377065}
+--- !u!65 &589168594667277778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692037436724150207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0821401, y: 5.5105157, z: 1}
+  m_Center: {x: -0.7689299, y: -3.2394693, z: 0}
+--- !u!65 &7377933833529576652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692037436724150207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0108528, y: 4.8111567, z: 1}
+  m_Center: {x: 4.7578497, y: -3.2028434, z: 0}
+--- !u!65 &4629681401883099217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692037436724150207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.010853, y: 4.811157, z: 1}
+  m_Center: {x: -6.11, y: -3.202843, z: 0}
 --- !u!1001 &3692037436220650994
 PrefabInstance:
   m_ObjectHideFlags: 0
