@@ -9,7 +9,6 @@ public class PortalBoss : MonoBehaviour
     public PlayerController playercontroller;
     public GameMaster gameMaster;
     private GameObject m_loading;
-    public GameObject bossName;
     public Animator tranistion;
     public CanvasGroup hud;
 
@@ -33,7 +32,6 @@ public class PortalBoss : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         m_loading.SetActive(true);
-        bossName.SetActive(false);
        
         gameMaster.SavePlayerStats();
         paused.TransitionTo(4f);
@@ -41,6 +39,6 @@ public class PortalBoss : MonoBehaviour
         yield return new WaitForSeconds(4);
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("StaticBoss");
     }
 }
