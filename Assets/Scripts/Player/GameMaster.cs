@@ -48,8 +48,6 @@ public class GameMaster : MonoBehaviour
         swordDamageGood = playerStats.swordDamageGood_stat;
         swordDamageNoGood = playerStats.swordDamageNoGood_stat;
 
-        playerPosition = playerStats.playerPosition_stat;
-
         m_playerObject = GameObject.FindWithTag("Player");
 
         if (playerStats.revive == true)
@@ -87,8 +85,6 @@ public class GameMaster : MonoBehaviour
         playerStats.swordDamageNoGood_stat = swordDamageNoGood;
         playerStats.swordDamage_stat = swordDamage;
         playerStats.swordDamageGood_stat = swordDamageGood;
-
-
     }
 
     public void UnlockWeapon()
@@ -115,9 +111,7 @@ public class GameMaster : MonoBehaviour
     public void PlayerRevive()
     {
         hp = playerStats.hp_stat;
-
-        m_playerObject.transform.position = playerPosition;
-        
+        playerPosition = playerStats.playerPosition_stat;
     }
 
     //SaveData
