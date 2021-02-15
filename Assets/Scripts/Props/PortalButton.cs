@@ -26,7 +26,7 @@ public class PortalButton : MonoBehaviour
         m_transform = transform;
 
         initValue = upPortal.y;
-        finalValue = upPortal.y + 10;
+        finalValue = upPortal.y - 10;
         currentValue = initValue;
 
         button_currentValue = button_initValue;
