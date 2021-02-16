@@ -8,13 +8,11 @@ public class InsectAttack : MonoBehaviour
     private float f_timeCounter = 0;
     private float dietime = 7f;
     private Transform m_player;
-    private PlayerController m_playerController;
 
     // Start is called before the first frame update
     void Start()
     {
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
-        m_playerController = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -33,14 +31,6 @@ public class InsectAttack : MonoBehaviour
         }
         //Destroy bullet
         if (f_timeCounter > dietime) { Destroy(gameObject); }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            m_playerController.Insect();
-            Destroy(gameObject);
-        }
     }
 }
 

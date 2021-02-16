@@ -3,40 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : PhysicsCollision
+public class PlayerController : MonoBehaviour
 {
     //Player
-    private Rigidbody m_rigidbody;
+    public CharacterController player;
+    public Transform playerTransform;
+
     private float m_horizontalMove;
     private float m_verticalMove;
+    [SerializeField] private float f_speed;
+    
     private Vector3 m_playerInput;
-    private Transform m_transform;
-    private float damage;
-    private float heal;
-    [SerializeField] private float m_playerspeed = 5;
     private Vector3 m_movePlayer;
-    [SerializeField] private bool iamdead = false;
-    public PhysicsCollision pysicsCollision;
+    
+    private bool iamdead = false;
     public bool god = false;
     public Animator transtion;
-    [SerializeField] private float f_cadence;
-    private float f_cadenceTime = 0;
-
-    //Dash & sprint
+    public float damage;
+    //Dash
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
-    [SerializeField] private float f_sprint;
-    public bool sprinting = false;
 
     //Camera
-    [SerializeField] private Transform m_cameraTransform;
-    [SerializeField]
+    //[SerializeField] private Transform m_cameraTransform;
+    public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
 
-    //Jump & Gravity
-    [SerializeField] private float f_jumpForce = 0.5f;
-    [SerializeField] private CapsuleCollider m_playerCol;
+    //Gravedad y salto
+    [SerializeField] private float m_jumpTime = 0.5f;
+    [SerializeField] private float m_gravityForce = 3f;
+    [SerializeField] private float gravity = 70f;
+    public float m_fallVelocity;
+    [SerializeField] private float m_jumpForce = 20f;
+    private float m_internGravity;
 
     //Canvas
     public GameObject healthbar;
@@ -52,9 +52,7 @@ public class PlayerController : PhysicsCollision
     // Start is called before the first frame update
     void Start()
     {
-        m_rigidbody = GetComponent<Rigidbody>();
-        m_transform = transform;
-        m_playerCol = GetComponent<CapsuleCollider>();
+
     }
 
     private void Update()
@@ -64,32 +62,23 @@ public class PlayerController : PhysicsCollision
 
         m_playerInput = new Vector3(m_horizontalMove, 0, m_verticalMove);
         m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
-
+        
         camDirection();
 
         m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
-        m_movePlayer = m_movePlayer * m_playerspeed;
+        m_movePlayer = m_movePlayer * f_speed;
 
-        m_transform.LookAt(m_transform.position + m_movePlayer);
-
-        if (touchWall)
-        {
-            m_movePlayer.x = 0;
-            m_movePlayer.z = 0;
-        }
-
+        player.transform.LookAt(player.transform.position + m_movePlayer);
+        SetGravity();
+        
+        player.Move(m_movePlayer * Time.deltaTime);
+        
+        // GOOD MODE
         if (!god)
         {
-            m_movePlayer.y = m_rigidbody.velocity.y;
-            f_cadenceTime += Time.deltaTime;
+            //m_movePlayer.y = m_rigidbody.velocity.y;
+            //f_cadenceTime += Time.deltaTime;
         }
-        //Run
-        if (sprinting == false && god == false)
-        {
-            m_playerspeed = 5;
-        }
-
-        // GOOD MODE
         if (god == true)
         {
             if (Input.GetKey(KeyCode.F1))
@@ -103,10 +92,10 @@ public class PlayerController : PhysicsCollision
             }
 
             if (Input.GetKey(KeyCode.M))
-                m_movePlayer.y += 20;
+                //m_movePlayer.y += 20;
 
             if (Input.GetKey(KeyCode.N))
-                m_movePlayer.y -= 20;
+                //m_movePlayer.y -= 20;
 
             while ( gamemaster.hp < gamemaster.maxhp)
             {
@@ -114,17 +103,17 @@ public class PlayerController : PhysicsCollision
             }
 
         }
-        m_rigidbody.velocity = m_movePlayer;
-        m_rigidbody.useGravity = !god;
     }
-
+    private void FixedUpdate ()
+    {
+        player.Move(new Vector3(m_horizontalMove, 0, m_verticalMove) * f_speed * Time.deltaTime);
+    }
     private void LateUpdate()
     {
-        if (!isGrounded)
+        if (!player.isGrounded)
         {
             m_shadowGO.SetActive(true);
             RaycastGround();
-
         }
         else
         {
@@ -132,11 +121,34 @@ public class PlayerController : PhysicsCollision
         }
     }
 
+    //Funcion de gravedad
+    void SetGravity()
+    {
+        if (player.isGrounded)
+        {
+            m_fallVelocity = 0;
+            m_internGravity = gravity * m_jumpTime;
+            if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            m_fallVelocity -= gravity * Time.deltaTime  * m_gravityForce ;
+            m_movePlayer.y = m_fallVelocity;
+        }
+        if (Input.GetButton("Jump") && m_fallVelocity != 0)
+        {
+            ReleaseJump();
+        }
+    }
+
     //Camera
     void camDirection()
     {
-        camForward = m_cameraTransform.forward;
-        camRight = m_cameraTransform.right;
+        camForward = mainCamera.transform.forward;
+        camRight = mainCamera.transform.right;
 
         camForward.y = 0;
         camRight.y = 0;
@@ -144,50 +156,22 @@ public class PlayerController : PhysicsCollision
         camForward = camForward.normalized;
         camRight = camRight.normalized;
     }
-    //Jump
+
     public void Jump()
     {
-        m_rigidbody.AddForce(Vector3.up * f_jumpForce, ForceMode.Impulse);
-        Vector3 velocity = m_rigidbody.velocity;
-        velocity.y = 0;
-        m_rigidbody.velocity = velocity;
+        m_fallVelocity = m_jumpForce;
+        m_shadowGO.SetActive(true);
     }
-
-    public bool IsGrounded()
+    public void ReleaseJump()
     {
-      return Physics.CheckCapsule(m_playerCol.bounds.center, new Vector3(m_playerCol.bounds.center.x,
-            m_playerCol.bounds.min.y, m_playerCol.bounds.center.z), m_playerCol.radius * 0.25f, m_groundLayer);
+        m_internGravity -= Time.deltaTime;
+        m_fallVelocity += m_internGravity * Time.deltaTime;
     }
-
-    //HealItem
-    public void HealItem()
-    {
-        heal = 10f;
-        StartCoroutine(Healty());
-    }
-
-    #region Damages
-     public void Enemymele()
-     {
-         damage = 15f;
-         StartCoroutine(Golpe());
-     }
-     public void Spike()
-     {
-         damage = 5f;
-         StartCoroutine(Golpe());
-     }
-    public void Insect()
-     {
-         damage = 5f;
-         StartCoroutine(Golpe());
-     }
-    #endregion
 
     //Shadow Raycast
     void RaycastGround()
     {
-        Ray ray = new Ray(m_transform.position, Vector3.down);
+        Ray ray = new Ray(playerTransform.position, Vector3.down);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 10f, m_groundLayer))
@@ -200,7 +184,7 @@ public class PlayerController : PhysicsCollision
     //GOOD MODE
     public void God()
     {
-        m_playerspeed = 15f;
+        f_speed = 15f;
         gamemaster.bulletDamage = gamemaster.bulletGood;
         gamemaster.unlocked = true;
         gamemaster.swordDamage = gamemaster.swordDamageGood;
@@ -208,7 +192,7 @@ public class PlayerController : PhysicsCollision
 
     public void NoGod()
     {
-        m_playerspeed = 5f;
+        f_speed = 5f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
         gamemaster.swordDamage = gamemaster.swordDamageNoGood;
         if(gamemaster.value == 1)
@@ -225,23 +209,7 @@ public class PlayerController : PhysicsCollision
             StartCoroutine(Dash());
         }
     }
-    //Run
-    public void Run()
-    {
-        if (staminabar.currentStamina >= 5 && sprinting == true)
-        {
-            StartCoroutine(Sprint());
-        }
-    }
-    //MeleAttack
-    public void PlayerMeleAttack() 
-    {
-        if (f_cadenceTime > f_cadence)
-        {
-            f_cadenceTime = 0;
-            StartCoroutine(MeleAttack()); 
-        }    
-    }
+
     //Corutina de golpe
     IEnumerator Golpe()
     {
@@ -253,52 +221,17 @@ public class PlayerController : PhysicsCollision
         {
             SceneManager.LoadScene("GameOver");
         }
-        //Player pushed
-        m_rigidbody.AddForce(-transform.forward * 150f, ForceMode.Impulse);
-        m_rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
         
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
         iamdead = false;
     }
-    //Corutina curacion
-    IEnumerator Healty()
-    {
-        if (gamemaster.hp >= gamemaster.maxhp)
-        {
-            gamemaster.hp = gamemaster.maxhp;
-        }
-        else
-        {
-            gamemaster.hp = gamemaster.hp + heal;
-        }
-        healthbar.SendMessage("TakeLife", heal);
-        yield return new WaitForSeconds(1.0f);
-        //Sonido
-        //Particulas
-    }
+
     //Corutina Dash
     IEnumerator Dash()
     {
-        m_rigidbody.AddForce(Camera.main.transform.forward * f_dashSpeed, ForceMode.VelocityChange);
         stamina.SendMessage("UseStamina", 20f);
         FindObjectOfType<AudioManager>().Play("Dash");
         yield return new WaitForSeconds(f_dashDuration);
-        m_rigidbody.velocity = Vector3.zero;
-    }
-    //Corutina Sprint
-    IEnumerator Sprint()
-    {
-        stamina.SendMessage("RunStamina", 5f);
-        m_playerspeed = 10;
-        yield return new WaitForSeconds(0);
-    }
-    //MeleAttackCorutine
-    IEnumerator MeleAttack()
-    {
-        transtion.SetBool("PlayMeleAttack", true);
-        FindObjectOfType<AudioManager>().Play("Attack_1");
-        yield return new WaitForSeconds(1.0f);
-        transtion.SetBool("PlayMeleAttack", false);
     }
 }

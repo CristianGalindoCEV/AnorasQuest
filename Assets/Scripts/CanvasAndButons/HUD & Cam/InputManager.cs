@@ -72,28 +72,17 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && swordItem == true)
         {
-            m_player.PlayerMeleAttack();
+            //m_player.PlayerMeleAttack();
         }
         
         //Jump
-
-        if ( m_player.IsGrounded() && Input.GetButtonDown("Jump") && pauseManager.paused == false)
+        if (m_player.player.isGrounded && Input.GetButtonDown("Jump") && pauseManager.paused == false)
             m_player.Jump();
 
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_player.IsGrounded())
+        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_player.player.isGrounded)
         {
             m_player.CastDash();
-        }
-        //Sprint
-        if (Input.GetKey(KeyCode.LeftShift) && pauseManager.paused == false && m_player.IsGrounded())
-        {
-            m_player.sprinting = true;
-            m_player.Run();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            m_player.sprinting = false;
         }
 
         //GOOD MODE

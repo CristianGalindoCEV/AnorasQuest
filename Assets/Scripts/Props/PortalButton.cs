@@ -30,7 +30,7 @@ public class PortalButton : MonoBehaviour
         currentValue = initValue;
 
         button_currentValue = button_initValue;
-        button_finalValue = transform.position.y - 1;
+        button_finalValue = transform.position.y - 5;
         button_initValue = transform.position.y;
     }
 

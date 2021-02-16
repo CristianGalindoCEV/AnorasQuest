@@ -104,7 +104,7 @@ public class EnemyMeele : MonoBehaviour
     IEnumerator Atack()
     {
         speedChase = 0f;
-        playerController.Enemymele();
+        //playerController.Enemymele();
         //Animacion
         yield return new WaitForSeconds(2.0f);
         speedChase = 5.5f;
