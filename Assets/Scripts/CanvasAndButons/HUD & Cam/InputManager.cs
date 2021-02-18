@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_playerController.player.isGrounded)
         {
-            //m_player.CastDash();
+            m_playerController.CastDash();
         }
         
         //GOOD MODE
