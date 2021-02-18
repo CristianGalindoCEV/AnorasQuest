@@ -77,14 +77,14 @@ public class InputManager : MonoBehaviour
         
         //Jump
         if (m_player.player.isGrounded && Input.GetButtonDown("Jump") && pauseManager.paused == false)
-            m_player.Jump();
+            //m_player.Jump();
 
         //Dash
         if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_player.player.isGrounded)
         {
-            m_player.CastDash();
+            //m_player.CastDash();
         }
-
+        /*
         //GOOD MODE
         if (Input.GetKeyUp(KeyCode.F10))
         {
@@ -99,7 +99,7 @@ public class InputManager : MonoBehaviour
                 m_player.God();
             }
         }
-
+        */
         //Canvas
         if (Input.GetKeyDown(KeyCode.Escape))
         {

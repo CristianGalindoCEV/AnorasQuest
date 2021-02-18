@@ -7,43 +7,40 @@ public class PlayerController : MonoBehaviour
 {
     //Player
     public CharacterController player;
-    public Transform playerTransform;
-
-    private float m_horizontalMove;
-    private float m_verticalMove;
-    [SerializeField] private float f_speed;
-    
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
-    
-    private bool iamdead = false;
-    public bool god = false;
-    public Animator transtion;
-    public float damage;
+    public Transform playerTransform;
+    private float f_horizontalMove;
+    private float f_verticalMove;
+    [SerializeField]private float f_speed;
+
+
+    //public bool god = false;
+    //public Animator transtion;
+    //public float damage;
+    /*
     //Dash
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
-
+    */
+    
     //Camera
-    //[SerializeField] private Transform m_cameraTransform;
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
 
     //Gravedad y salto
-    [SerializeField] private float m_jumpTime = 0.5f;
-    [SerializeField] private float m_gravityForce = 3f;
-    [SerializeField] private float gravity = 70f;
-    public float m_fallVelocity;
-    [SerializeField] private float m_jumpForce = 20f;
-    private float m_internGravity;
-
+    [SerializeField] private float f_gravity = 9.8f;
+    private float f_fallVelocity;
+    [SerializeField] private float f_jumpForce;
+    
+    /*
     //Canvas
     public GameObject healthbar;
     public GameMaster gamemaster;
     public GameObject stamina;
     public StaminaBar staminabar;
-
+    */
     //Shadow
     [SerializeField] GameObject m_shadowGO;
     [SerializeField] Transform m_shadowTransform;
@@ -52,27 +49,29 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
-    private void Update()
+    void Update()
     {
-        m_horizontalMove = Input.GetAxis("Horizontal");
-        m_verticalMove = Input.GetAxis("Vertical");
+        f_horizontalMove = Input.GetAxis("Horizontal");
+        f_verticalMove = Input.GetAxis("Vertical");
 
-        m_playerInput = new Vector3(m_horizontalMove, 0, m_verticalMove);
+        m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
         m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
-        
-        camDirection();
 
+        camDirection();
         m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
         m_movePlayer = m_movePlayer * f_speed;
 
         player.transform.LookAt(player.transform.position + m_movePlayer);
         SetGravity();
-        
+        Jump();
+
         player.Move(m_movePlayer * Time.deltaTime);
-        
+
+
+        /*
         // GOOD MODE
         if (!god)
         {
@@ -101,13 +100,10 @@ public class PlayerController : MonoBehaviour
             {
                 gamemaster.hp++;
             }
-
         }
+        */
     }
-    private void FixedUpdate ()
-    {
-        player.Move(new Vector3(m_horizontalMove, 0, m_verticalMove) * f_speed * Time.deltaTime);
-    }
+    
     private void LateUpdate()
     {
         if (!player.isGrounded)
@@ -120,27 +116,29 @@ public class PlayerController : MonoBehaviour
             m_shadowGO.SetActive(false);
         }
     }
+    
+    
+    public void Jump()
+    {
+        if (player.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            f_fallVelocity = f_jumpForce;
+            m_movePlayer.y = f_fallVelocity;
+        }
+    }
 
     //Funcion de gravedad
     void SetGravity()
     {
         if (player.isGrounded)
         {
-            m_fallVelocity = 0;
-            m_internGravity = gravity * m_jumpTime;
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
+            f_fallVelocity = -f_gravity * Time.deltaTime;
+            m_movePlayer.y = f_fallVelocity;
         }
         else
         {
-            m_fallVelocity -= gravity * Time.deltaTime  * m_gravityForce ;
-            m_movePlayer.y = m_fallVelocity;
-        }
-        if (Input.GetButton("Jump") && m_fallVelocity != 0)
-        {
-            ReleaseJump();
+            f_fallVelocity -= f_gravity * Time.deltaTime;
+            m_movePlayer.y = f_fallVelocity;
         }
     }
 
@@ -157,18 +155,8 @@ public class PlayerController : MonoBehaviour
         camRight = camRight.normalized;
     }
 
-    public void Jump()
-    {
-        m_fallVelocity = m_jumpForce;
-        m_shadowGO.SetActive(true);
-    }
-    public void ReleaseJump()
-    {
-        m_internGravity -= Time.deltaTime;
-        m_fallVelocity += m_internGravity * Time.deltaTime;
-    }
-
     //Shadow Raycast
+    
     void RaycastGround()
     {
         Ray ray = new Ray(playerTransform.position, Vector3.down);
@@ -180,9 +168,10 @@ public class PlayerController : MonoBehaviour
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
         }
     }
-
+    
     //GOOD MODE
-    public void God()
+    /*
+        public void God(
     {
         f_speed = 15f;
         gamemaster.bulletDamage = gamemaster.bulletGood;
@@ -201,6 +190,7 @@ public class PlayerController : MonoBehaviour
         }
         gamemaster.unlocked = false;
     }
+       
     //Dash
     public void CastDash()
     {
@@ -234,4 +224,5 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Dash");
         yield return new WaitForSeconds(f_dashDuration);
     }
+     */
 }
