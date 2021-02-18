@@ -5,12 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
    //Armas
-    [SerializeField] private GameObject Gun;
-    [SerializeField] private GameObject Espada;
-    public bool bauculoItem = false;
-    public bool swordItem = true;
     public Bauculo gunspawn;
-    private float f_timetospawn = 0;
    
     //HUD
     public GameObject hud;
@@ -22,17 +17,15 @@ public class InputManager : MonoBehaviour
     public PauseManager pauseManager;
 
     //Player
-    private PlayerController m_player;
+    private PlayerController m_playerController;
 
     //Cursor
     private bool m_islocked;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        Gun.SetActive(false);
-        m_player = FindObjectOfType<PlayerController>();
+        m_playerController = FindObjectOfType<PlayerController>();
         
         //Canvas
         menuon = false;
@@ -46,60 +39,32 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Combate y armas
-
-        
-        if (Input.GetKey("1"))
-        {
-            swordItem = true;
-            bauculoItem = false;
-            ChangeWeapon();
-            mirilla.SetActive(false);
-        }
-        
-        if (Input.GetKey("2") && gamemaster.unlocked == true)
-         {
-            bauculoItem = true;
-            swordItem = false;
-            ChangeWeapon();
-            mirilla.SetActive(true);
-         }
-
-        if (Input.GetButtonDown("Fire1") && bauculoItem == true && pauseManager.paused == false)
+        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false)
         {
             gunspawn.Fire();
         }
-
-        if (Input.GetButtonDown("Fire1") && swordItem == true)
-        {
-            //m_player.PlayerMeleAttack();
-        }
         
-        //Jump
-        if (m_player.player.isGrounded && Input.GetButtonDown("Jump") && pauseManager.paused == false)
-            //m_player.Jump();
-
         //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_player.player.isGrounded)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_playerController.player.isGrounded)
         {
             //m_player.CastDash();
         }
-        /*
+        
         //GOOD MODE
         if (Input.GetKeyUp(KeyCode.F10))
         {
-            if (m_player.god == true)
+            if (m_playerController.god == true)
             {
-                m_player.god = false;
-                m_player.NoGod();
+                m_playerController.god = false;
+                m_playerController.NoGod();
             }
             else
             {
-                m_player.god = true;
-                m_player.God();
+                m_playerController.god = true;
+                m_playerController.God();
             }
         }
-        */
+        
         //Canvas
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -129,31 +94,6 @@ public class InputManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = (false);
-        }
-    }
-
-    public void ChangeWeapon()
-    {
-        if (bauculoItem == true)
-        {
-            Espada.SetActive(false);
-            Gun.SetActive(true);
-            swordItem = (false);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //Bauculo.Fire();
-            }
-        }
-
-        else if (swordItem == true)
-        {
-            Espada.SetActive(true);
-            Gun.SetActive(false);
-            bauculoItem = (false);
-            if (Input.GetButtonDown("Fire1"))
-            {
-                //Espada.Fire();
-            }
         }
     }
 }

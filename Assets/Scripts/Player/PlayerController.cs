@@ -14,15 +14,13 @@ public class PlayerController : MonoBehaviour
     private float f_verticalMove;
     [SerializeField]private float f_speed;
 
-
-    //public bool god = false;
-    //public Animator transtion;
-    //public float damage;
-    /*
+    public bool god = false;
+    public Animator transtion;
+    public float damage;
+    
     //Dash
     [SerializeField] private float f_dashSpeed;
     [SerializeField] private float f_dashDuration;
-    */
     
     //Camera
     public Camera mainCamera;
@@ -33,14 +31,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float f_gravity = 9.8f;
     private float f_fallVelocity;
     [SerializeField] private float f_jumpForce;
-    
-    /*
+   
     //Canvas
     public GameObject healthbar;
     public GameMaster gamemaster;
     public GameObject stamina;
     public StaminaBar staminabar;
-    */
+    
     //Shadow
     [SerializeField] GameObject m_shadowGO;
     [SerializeField] Transform m_shadowTransform;
@@ -70,12 +67,9 @@ public class PlayerController : MonoBehaviour
 
         player.Move(m_movePlayer * Time.deltaTime);
 
-
-        /*
         // GOOD MODE
         if (!god)
         {
-            //m_movePlayer.y = m_rigidbody.velocity.y;
             //f_cadenceTime += Time.deltaTime;
         }
         if (god == true)
@@ -91,17 +85,17 @@ public class PlayerController : MonoBehaviour
             }
 
             if (Input.GetKey(KeyCode.M))
-                //m_movePlayer.y += 20;
+                m_movePlayer.y += 20;
 
             if (Input.GetKey(KeyCode.N))
-                //m_movePlayer.y -= 20;
+                m_movePlayer.y -= 20;
 
             while ( gamemaster.hp < gamemaster.maxhp)
             {
                 gamemaster.hp++;
             }
         }
-        */
+        
     }
     
     private void LateUpdate()
@@ -114,9 +108,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             m_shadowGO.SetActive(false);
+            
         }
     }
-    
     
     public void Jump()
     {
@@ -170,8 +164,7 @@ public class PlayerController : MonoBehaviour
     }
     
     //GOOD MODE
-    /*
-        public void God(
+    public void God()
     {
         f_speed = 15f;
         gamemaster.bulletDamage = gamemaster.bulletGood;
@@ -181,7 +174,7 @@ public class PlayerController : MonoBehaviour
 
     public void NoGod()
     {
-        f_speed = 5f;
+        f_speed = 8f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
         gamemaster.swordDamage = gamemaster.swordDamageNoGood;
         if(gamemaster.value == 1)
@@ -203,7 +196,6 @@ public class PlayerController : MonoBehaviour
     //Corutina de golpe
     IEnumerator Golpe()
     {
-        iamdead = true;
         //Indicamos al score que hemos perdido HP
         gamemaster.hp = gamemaster.hp - damage;
         healthbar.SendMessage("TakeDamage", damage);
@@ -214,7 +206,6 @@ public class PlayerController : MonoBehaviour
         
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
-        iamdead = false;
     }
 
     //Corutina Dash
@@ -224,5 +215,4 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Dash");
         yield return new WaitForSeconds(f_dashDuration);
     }
-     */
 }
