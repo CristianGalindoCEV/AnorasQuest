@@ -30,4 +30,11 @@ public class EnemyDistanceBullet : MonoBehaviour
         //Destroy bullet
         if (f_timeCounter > f_dietime) { Destroy(gameObject); }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

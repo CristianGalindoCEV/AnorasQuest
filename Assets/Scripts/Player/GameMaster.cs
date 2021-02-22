@@ -55,16 +55,13 @@ public class GameMaster : MonoBehaviour
             PlayerRevive();
             playerStats.revive = false;
         }
-
         //  LoadData();
     }
     void Start()
     {
         bulletDamage = bulletNoGood;
         swordDamage = swordDamageNoGood;
-
     }
-    
     private void Update()
     {
         if (value == 1)
@@ -72,7 +69,6 @@ public class GameMaster : MonoBehaviour
             unlocked = true;
         }
     }
-   
     public void SavePlayerStats()
     {
         playerStats.maxhp_stat = maxhp;
@@ -86,12 +82,10 @@ public class GameMaster : MonoBehaviour
         playerStats.swordDamage_stat = swordDamage;
         playerStats.swordDamageGood_stat = swordDamageGood;
     }
-
     public void UnlockWeapon()
     {
         value = 1;
     }
-
     public void SavePoint()
     {
         playerStats.maxhp_stat = maxhp;
@@ -107,7 +101,6 @@ public class GameMaster : MonoBehaviour
 
         playerStats.playerPosition_stat = playerPosition;
     }
-
     public void PlayerRevive()
     {
         hp = playerStats.hp_stat;
@@ -129,6 +122,4 @@ public class GameMaster : MonoBehaviour
         maxhp = PlayerPrefs.GetFloat(s_maxLife, maxhp);
         unlocked = (PlayerPrefs.GetInt("Unlock") != 0);
     }*/
-
-
 }

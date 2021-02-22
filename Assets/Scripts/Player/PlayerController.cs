@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     //Player
     public CharacterController player;
+    public Rigidbody playerBody;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
     public Transform playerTransform;
@@ -16,11 +17,12 @@ public class PlayerController : MonoBehaviour
 
     public bool god = false;
     public Animator transtion;
-    public float damage;
-    
+    private float f_damage;
+    private float f_hp;
+
     //Dash
-    [SerializeField] private float f_dashSpeed;
-    [SerializeField] private float f_dashDuration;
+    [SerializeField] private float f_dashSpeed = 30f;
+    [SerializeField] private float f_dashDuration = 2f;
     
     //Camera
     public Camera mainCamera;
@@ -78,7 +80,6 @@ public class PlayerController : MonoBehaviour
             {
                 SceneManager.LoadScene("StaticBoss");
             }
-            
             if (Input.GetKey(KeyCode.F2))
             {
                 SceneManager.LoadScene("MainScene");
@@ -95,7 +96,6 @@ public class PlayerController : MonoBehaviour
                 gamemaster.hp++;
             }
         }
-        
     }
     
     private void LateUpdate()
@@ -108,10 +108,23 @@ public class PlayerController : MonoBehaviour
         else
         {
             m_shadowGO.SetActive(false);
-            
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "EnemyBullet")
+        {
+            f_damage = 5f;
+            StartCoroutine(Golpe());
+        }
+        if (other.tag == "Hp")
+        {
+            f_hp = 25f;
+            StartCoroutine(Heal());
+        }
+    }
+
     public void Jump()
     {
         if (player.isGrounded && Input.GetButtonDown("Jump"))
@@ -197,20 +210,29 @@ public class PlayerController : MonoBehaviour
     IEnumerator Golpe()
     {
         //Indicamos al score que hemos perdido HP
-        gamemaster.hp = gamemaster.hp - damage;
-        healthbar.SendMessage("TakeDamage", damage);
+        gamemaster.hp = gamemaster.hp - f_damage;
+        healthbar.SendMessage("TakeDamage", f_damage);
         if(gamemaster.hp <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
-        
         //Añadir Animacion Daño
+        yield return new WaitForSeconds(1.0f);
+    }
+    
+    //Heal
+    IEnumerator Heal()
+    {
+        gamemaster.hp = gamemaster.hp + f_hp;
+        healthbar.SendMessage("TakeLife", f_hp);
+        //Añadir Animacion Vida
         yield return new WaitForSeconds(1.0f);
     }
 
     //Corutina Dash
     IEnumerator Dash()
     {
+        //playerBody.AddForce(transform.forward * f_dashSpeed, ForceMode.Force);
         stamina.SendMessage("UseStamina", 20f);
         FindObjectOfType<AudioManager>().Play("Dash");
         yield return new WaitForSeconds(f_dashDuration);

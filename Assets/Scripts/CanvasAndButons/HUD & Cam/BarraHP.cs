@@ -23,12 +23,17 @@ public class BarraHP : MonoBehaviour
     {
         gamemaster.hp -= amount;
         healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
-
     }
     public void TakeLife(float amount)
     {
-        gamemaster.hp += amount;
+        if (gamemaster.hp + amount <= gamemaster.maxhp)
+        {
+            gamemaster.hp = gamemaster.maxhp;
+        }
+        else
+        {
+            gamemaster.hp += amount;
+        }
         healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
-
     }
 }

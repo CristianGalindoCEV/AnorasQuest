@@ -2940,6 +2940,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d38e9a887e58b4fb25a8175a240525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &2088289267 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2868756746996980028, guid: 331082425c039f5419f4c37addbcd296,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344188100211388139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2101347546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7971761318614048444, guid: b30f2d830388dd549bd22d0d52973ad5,
@@ -3576,6 +3582,11 @@ PrefabInstance:
       propertyPath: f_gravity
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
+        type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 2088289267}
     - target: {fileID: 1344188101819515890, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
       propertyPath: m_IsActive
@@ -5082,6 +5093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemHP
       objectReference: {fileID: 0}
+    - target: {fileID: 4670220018817260814, guid: 98e123e240d39e640844cdf68b543dcb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hp
+      objectReference: {fileID: 0}
     - target: {fileID: 5689294608070363914, guid: 98e123e240d39e640844cdf68b543dcb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5354,7 +5370,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000012452837
+      value: 0.000000117243324
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -5369,7 +5385,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000042200355
+      value: 0.0000000044217123
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
