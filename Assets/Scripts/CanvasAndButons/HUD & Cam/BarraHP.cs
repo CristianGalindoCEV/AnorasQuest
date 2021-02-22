@@ -26,7 +26,7 @@ public class BarraHP : MonoBehaviour
     }
     public void TakeLife(float amount)
     {
-        if (gamemaster.hp + amount <= gamemaster.maxhp)
+        if (gamemaster.hp + amount >= gamemaster.maxhp)
         {
             gamemaster.hp = gamemaster.maxhp;
         }

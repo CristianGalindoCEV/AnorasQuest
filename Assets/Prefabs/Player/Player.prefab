@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1422114104}
   - component: {fileID: 2868756746996980028}
   - component: {fileID: 1095354840}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -160,7 +160,6 @@ MonoBehaviour:
   f_speed: 10
   god: 0
   transtion: {fileID: 0}
-  damage: 0
   f_dashSpeed: 0
   f_dashDuration: 0
   mainCamera: {fileID: 0}

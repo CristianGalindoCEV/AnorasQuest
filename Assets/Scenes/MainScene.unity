@@ -2001,6 +2001,16 @@ PrefabInstance:
       propertyPath: gamemaster
       value: 
       objectReference: {fileID: 145288896}
+    - target: {fileID: 8483597320181476665, guid: 7fc49dfb19606b5488e4d90a6515901e,
+        type: 3}
+      propertyPath: isPlayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684455146596520862, guid: 7fc49dfb19606b5488e4d90a6515901e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc49dfb19606b5488e4d90a6515901e, type: 3}
 --- !u!4 &1388877400 stripped
