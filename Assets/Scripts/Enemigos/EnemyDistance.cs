@@ -36,7 +36,6 @@ public class EnemyDistance : MonoBehaviour
             if (dist > 15f)
             {
                 b_fight = false;
-                Debug.Log("salgo");
             }
 
             f_time += Time.deltaTime;
@@ -53,7 +52,6 @@ public class EnemyDistance : MonoBehaviour
         if (!b_fight)
         {
             hit = new Collider[10];
-
             Physics.OverlapSphereNonAlloc(transform.position, 10, hit, playerLayer);
             for (int i = 0; i < 10; i++)
             {
