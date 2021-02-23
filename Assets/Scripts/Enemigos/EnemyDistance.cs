@@ -14,12 +14,12 @@ public class EnemyDistance : MonoBehaviour
     public GameMaster gamemaster;
     public EnemyHealth enemyhealth;
     [SerializeField] private GameObject myBullet;
+    private Collider[] hit = new Collider[10];
+    public LayerMask playerLayer;
 
     //Rango
-    public Collider Detection;
-    private bool b_fight = false;
+    [SerializeField] private bool b_fight = false;
     private float f_time;
-
 
     //Idle
     [SerializeField] private float f_stop;
@@ -31,13 +31,37 @@ public class EnemyDistance : MonoBehaviour
     void Update()
     {
         if (b_fight == true)
-        {
+        {   
+            float dist = Vector3.Distance(transform.position, m_player.transform.position);
+            if (dist > 15f)
+            {
+                b_fight = false;
+                Debug.Log("salgo");
+            }
+
             f_time += Time.deltaTime;
             transform.LookAt(m_player);
-
-            if(f_time >= 2f)
+            if (f_time >= 3f)
             {
-                StartCoroutine(Attack());
+                StartCoroutine(Attacks());
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!b_fight)
+        {
+            hit = new Collider[10];
+
+            Physics.OverlapSphereNonAlloc(transform.position, 10, hit, playerLayer);
+            for (int i = 0; i < 10; i++)
+            {
+                if (hit[i] != null && hit[i].tag == "Player")
+                {
+                    // detecte el player
+                    b_fight = true;
+                }
             }
         }
     }
@@ -45,19 +69,6 @@ public class EnemyDistance : MonoBehaviour
     //Trigers
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && b_fight == false)
-        {
-            b_fight = true;
-            Detection.enabled = false;
-        }
-
-        if (other.tag == "Sword")
-        {
-            f_damage = gamemaster.swordDamage;
-            enemyhealth.healtbarUI.SetActive(true);
-            StartCoroutine(TakeDamage());
-        }
-
         if (other.tag == "Bullet")
         {
             f_damage = gamemaster.bulletDamage;
@@ -67,14 +78,14 @@ public class EnemyDistance : MonoBehaviour
     }
 
     //Ataque
-    IEnumerator Attack()
+    IEnumerator Attacks()
     {
+        Debug.Log("A");
         f_time = 0f;
         Instantiate(myBullet, transform.position, transform.rotation);
         //Animacion
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0f);
     }
-
     IEnumerator TakeDamage()
     {
         enemyhealth.health = enemyhealth.health - f_damage;

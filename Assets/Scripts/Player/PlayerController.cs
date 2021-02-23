@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(playerTransform.position, Vector3.down);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 10f, m_groundLayer))
+        if (Physics.Raycast(ray, out hit, 5f, m_groundLayer))
         {
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
