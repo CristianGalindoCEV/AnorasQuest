@@ -559,7 +559,6 @@ GameObject:
   - component: {fileID: 7977793195410221697}
   - component: {fileID: 7977793195410221710}
   - component: {fileID: 7977793195410221696}
-  - component: {fileID: 8684455146596520862}
   m_Layer: 0
   m_Name: Enemy(Distance)
   m_TagString: EnemyMele
@@ -576,7 +575,7 @@ Transform:
   m_GameObject: {fileID: 7977793195410221709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6916183367788036040}
   - {fileID: 5773433137933388144}
@@ -597,11 +596,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  points: []
   gamemaster: {fileID: 0}
   enemyhealth: {fileID: 8937444084744884007}
   myBullet: {fileID: 6726269270266870367, guid: d1bea5f484b7305459950e2a46a0f460,
     type: 3}
-  Detection: {fileID: 8684455146596520862}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  b_fight: 0
   f_stop: 0
 --- !u!114 &8937444084744884007
 MonoBehaviour:
@@ -673,19 +676,6 @@ CapsuleCollider:
   m_Height: 1.8517592
   m_Direction: 1
   m_Center: {x: 0, y: -0.0741204, z: 0.032321572}
---- !u!135 &8684455146596520862
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7977793195410221709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6311200750206742171
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class EnemyDistance : MonoBehaviour
     private float f_damage;
     public PlayerController playerController;
     private Transform m_player;
+    private float f_speed = 6;
+
+    //SpacePoints
+    public SpacePoint[] points;
+    private int i_currentPoint = 0;
 
     //Enemy
     public GameMaster gamemaster;
@@ -30,6 +35,22 @@ public class EnemyDistance : MonoBehaviour
     }
     void Update()
     {
+        if (!b_fight)
+        {
+            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.5f)
+            {
+                StartCoroutine(StopMove());
+                i_currentPoint++;
+                i_currentPoint %= points.Length;
+            }
+            else // Pasamos al siguiente punto
+            {
+                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                transform.LookAt(points[i_currentPoint].transform.position);
+
+            }
+        }
+        
         if (b_fight == true)
         {   
             float dist = Vector3.Distance(transform.position, m_player.transform.position);
@@ -78,7 +99,6 @@ public class EnemyDistance : MonoBehaviour
     //Ataque
     IEnumerator Attacks()
     {
-        Debug.Log("A");
         f_time = 0f;
         Instantiate(myBullet, transform.position, transform.rotation);
         //Animacion
@@ -88,6 +108,16 @@ public class EnemyDistance : MonoBehaviour
     {
         enemyhealth.health = enemyhealth.health - f_damage;
         yield return new WaitForSeconds(0f);
+    }
+    IEnumerator StopMove()
+    {
+        float f_stop;
+        //transform.rotation = Quaternion.Slerp(transform.rotation, (points[i_currentPoint].transform.rotation), Time.time * 1f);
+        f_stop = Random.Range(1f, 2.5f);
+        f_speed = 0;
+        //Idle Aimation
+        yield return new WaitForSeconds(f_stop);
+        f_speed = 6f;
     }
 }
 

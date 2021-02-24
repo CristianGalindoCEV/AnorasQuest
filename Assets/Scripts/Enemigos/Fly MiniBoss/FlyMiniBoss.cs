@@ -106,11 +106,6 @@ public class FlyMiniBoss : MonoBehaviour
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;
         }
-        if (other.tag == "Sword")
-        {
-            StartCoroutine(Damage());
-            damage = gamemaster.swordDamage;
-        }
     }
 
     IEnumerator StartRound()
