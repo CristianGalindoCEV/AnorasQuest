@@ -18,9 +18,11 @@ public class EnemyDistance : MonoBehaviour
     //Enemy
     public GameMaster gamemaster;
     public EnemyHealth enemyhealth;
+    private Collider m_enemyCollider;
     [SerializeField] private GameObject myBullet;
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
+    
 
     //Rango
     [SerializeField] private bool b_fight = false;
@@ -32,6 +34,7 @@ public class EnemyDistance : MonoBehaviour
     private void Awake()
     {
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
+        m_enemyCollider = gameObject.GetComponent<Collider>();
     }
     void Update()
     {
@@ -51,7 +54,7 @@ public class EnemyDistance : MonoBehaviour
             }
         }
         
-        if (b_fight == true)
+        if (b_fight == true && enemyhealth.health > 0)
         {   
             float dist = Vector3.Distance(transform.position, m_player.transform.position);
             if (dist > 15f)
@@ -107,6 +110,11 @@ public class EnemyDistance : MonoBehaviour
     IEnumerator TakeDamage()
     {
         enemyhealth.health = enemyhealth.health - f_damage;
+        if (enemyhealth.health <= 0)
+        {
+            m_enemyCollider.enabled = false;
+            yield return new WaitForSeconds(3f);
+        }
         yield return new WaitForSeconds(0f);
     }
     IEnumerator StopMove()
