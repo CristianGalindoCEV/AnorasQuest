@@ -30,9 +30,5 @@ public class WallBoss : MonoBehaviour
         {
             hp = hp - gameMaster.bulletDamage;
         }
-        if (other.tag == "Sword")
-        {
-            hp = hp - gameMaster.swordDamage;
-        }
     }
 }

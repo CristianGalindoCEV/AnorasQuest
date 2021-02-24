@@ -182,14 +182,12 @@ public class PlayerController : MonoBehaviour
         f_speed = 15f;
         gamemaster.bulletDamage = gamemaster.bulletGood;
         gamemaster.unlocked = true;
-        gamemaster.swordDamage = gamemaster.swordDamageGood;
     }
 
     public void NoGod()
     {
         f_speed = 8f;
         gamemaster.bulletDamage = gamemaster.bulletNoGood;
-        gamemaster.swordDamage = gamemaster.swordDamageNoGood;
         if(gamemaster.value == 1)
         {
             gamemaster.unlocked = true;

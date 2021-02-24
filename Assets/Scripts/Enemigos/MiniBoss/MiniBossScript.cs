@@ -75,12 +75,6 @@ public class MiniBossScript : MonoBehaviour
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;
         }
-        if (other.tag == "Sword")
-        {
-            StartCoroutine(Damage());
-            damage = gamemaster.swordDamage;
-        }
-
     }
 
     private void BossWall()

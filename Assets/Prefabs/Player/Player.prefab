@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &860182355
 Transform:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860182354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.636, y: 0.166, z: 0}
+  m_LocalPosition: {x: 0.636, y: 0.907, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1344188100929735338}
@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344188100929735376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.137, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6097880477768657904}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1422114104}
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 2868756746996980028}
   playerTransform: {fileID: 1344188100929735338}
   f_speed: 10
   god: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   f_dashSpeed: 0
   f_dashDuration: 0
   mainCamera: {fileID: 0}
-  f_gravity: 15
-  f_jumpForce: 8
+  f_gravity: 30
+  f_jumpForce: 15
   healthbar: {fileID: 0}
   gamemaster: {fileID: 0}
   stamina: {fileID: 0}
@@ -191,7 +191,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.46, z: 0}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!54 &2868756746996980028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 245433982260609194, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
@@ -314,8 +314,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 245433982260609195, guid: 7be7d33952e705a4da7230acc62b73ca, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be7d33952e705a4da7230acc62b73ca, type: 3}
 --- !u!1 &474383826768434376 stripped
 GameObject:

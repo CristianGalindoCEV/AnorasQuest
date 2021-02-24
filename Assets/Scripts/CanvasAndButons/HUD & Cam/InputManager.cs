@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
 {
    //Armas
     public Bauculo gunspawn;
+    private float f_cadence = 1f;
    
     //HUD
     public GameObject hud;
@@ -39,9 +40,11 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false)
+        f_cadence += Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f)
         {
             gunspawn.Fire();
+            f_cadence = 0f;
         }
         
         //Dash

@@ -93,11 +93,6 @@ public class FinalBoss : MonoBehaviour
             StartCoroutine(Damage());
             damage = gamemaster.bulletDamage;
         }
-        if (other.tag == "Sword" && b_startFight == true)
-        {
-            StartCoroutine(Damage());
-            damage = gamemaster.swordDamage;
-        }
     }
     IEnumerator StopMove() // Corutina para elegir un ataque y el tiempo para el proximo
     {

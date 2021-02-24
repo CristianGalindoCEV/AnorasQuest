@@ -68,13 +68,6 @@ public class EnemyMeele : MonoBehaviour
     //Trigers
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Sword")
-        {
-            damage = gamemaster.swordDamage;
-            enemyhealth.healtbarUI.SetActive(true);
-            StartCoroutine(TakeDamage());
-        }
-
         if (other.tag == "Bullet")
         {
             damage = gamemaster.bulletDamage;

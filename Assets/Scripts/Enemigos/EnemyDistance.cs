@@ -63,7 +63,9 @@ public class EnemyDistance : MonoBehaviour
             }
 
             f_time += Time.deltaTime;
-            transform.LookAt(m_player);
+            Vector3 loockAtPosition = m_player.position;
+            loockAtPosition.y = transform.position.y;
+            transform.LookAt(loockAtPosition);
             if (f_time >= 3f)
             {
                 StartCoroutine(Attacks());
