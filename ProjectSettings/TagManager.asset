@@ -13,6 +13,7 @@ TagManager:
   - BulletBoss
   - EnemyBullet
   - Hp
+  - Hand
   layers:
   - Default
   - TransparentFX

@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 5;
-    private float f_timeCounter = 0;
-    [SerializeField] private float dietime;
-
-    void Start()
-    {
-        
-    }
+    public float speed = 8f;
+    private float f_timeCounter = 0f;
+    private float dietime = 3f;
 
     void Update()
     {
@@ -27,5 +22,12 @@ public class Bullet : MonoBehaviour
         }
      //Destroy bullet
      if (f_timeCounter > dietime){Destroy(gameObject);}
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "EnemyMele")
+        {
+            Destroy(gameObject);
+        }
     }
 }

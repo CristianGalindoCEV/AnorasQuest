@@ -50,7 +50,6 @@ public class EnemyDistance : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
                 transform.LookAt(points[i_currentPoint].transform.position);
-
             }
         }
         
