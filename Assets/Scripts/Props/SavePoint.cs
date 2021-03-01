@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SavePoint : MonoBehaviour
 {
-    public GameMaster gameMaster;
+    public PlayerStats playerStats;
 
     private void Awake()
     {
@@ -15,8 +15,7 @@ public class SavePoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameMaster.playerPosition = other.transform.position;
-            gameMaster.SavePoint();
+            playerStats.playerPosition_stat = other.transform.position;
         }
     }
 }

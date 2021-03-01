@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Boton : MonoBehaviour
 {
-    private PlayerStats playerStats;
+    public PlayerStats playerStats;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class Boton : MonoBehaviour
 
     public void PulsaRetry()
     {
-        playerStats.revive = true;
+        playerStats.revive = 1;
         Debug.Log("Ponte true");
         SceneManager.LoadScene("MainScene");
     }

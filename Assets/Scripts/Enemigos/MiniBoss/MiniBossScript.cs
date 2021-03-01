@@ -21,7 +21,7 @@ public class MiniBossScript : MonoBehaviour
     
     //HP
     public MinibossHP minibosshp;
-    public GameMaster gamemaster;
+    public PlayerStats playerStats;
 
     void Start()
     {
@@ -73,7 +73,7 @@ public class MiniBossScript : MonoBehaviour
         if ( other.tag  == "Bullet" && b_startBatle == true)
         {
             StartCoroutine(Damage());
-            damage = gamemaster.bulletDamage;
+            damage = playerStats.bulletDamage_stat;
         }
     }
 

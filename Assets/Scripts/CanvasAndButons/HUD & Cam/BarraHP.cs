@@ -7,33 +7,33 @@ using UnityEngine.UI;
 public class BarraHP : MonoBehaviour
 {
     public Image healt;
-    public GameMaster gamemaster;
+    public PlayerStats playerStats;
     // Start is called before the first frame update
     void Start()
     {
-        //gamemaster.hp = gamemaster.maxhp;
+
     }
 
     void Update()
     {
-        healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
+        healt.fillAmount = playerStats.hp_stat / playerStats.maxhp_stat;
     }
 
     public void TakeDamage(float amount)
     {
-        gamemaster.hp -= amount;
-        healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
+        playerStats.hp_stat -= amount;
+        healt.fillAmount = playerStats.hp_stat / playerStats.maxhp_stat;
     }
     public void TakeLife(float amount)
     {
-        if (gamemaster.hp + amount >= gamemaster.maxhp)
+        if (playerStats.hp_stat + amount >= playerStats.maxhp_stat)
         {
-            gamemaster.hp = gamemaster.maxhp;
+            playerStats.hp_stat = playerStats.maxhp_stat;
         }
         else
         {
-            gamemaster.hp += amount;
+            playerStats.hp_stat += amount;
         }
-        healt.fillAmount = gamemaster.hp / gamemaster.maxhp;
+        healt.fillAmount = playerStats.hp_stat / playerStats.maxhp_stat;
     }
 }

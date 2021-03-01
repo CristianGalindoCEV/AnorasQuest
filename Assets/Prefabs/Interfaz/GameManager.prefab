@@ -41,23 +41,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4361428362036848086}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d8c3a0349f4080499a3d5979bd583e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlocked: 0
   inputManager: {fileID: 4361428362036848041}
   maxhp: 100
   hp: 100
-  swordDamage: 0
-  swordDamageGood: 0
-  swordDamageNoGood: 0
   bulletDamage: 0
   bulletGood: 100000
   bulletNoGood: 15
-  portal: 0
   playerStats: {fileID: 0}
+  playerPosition: {x: 0, y: 0, z: 0}
   value: 0
 --- !u!114 &4361428362036848041
 MonoBehaviour:
@@ -71,16 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae94bdee6c4ed444a7cd1c1aee346e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gun: {fileID: 0}
-  Espada: {fileID: 0}
-  bauculoItem: 0
-  swordItem: 1
   gunspawn: {fileID: 0}
   hud: {fileID: 0}
   pausemenu: {fileID: 0}
   mirilla: {fileID: 0}
   menuon: 0
-  gamemaster: {fileID: 4361428362036848040}
   menumanager: {fileID: 0}
   pauseManager: {fileID: 175899981}
 --- !u!114 &175899981

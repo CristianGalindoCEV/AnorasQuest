@@ -16,7 +16,7 @@ public class EnemyDistance : MonoBehaviour
     private int i_currentPoint = 0;
 
     //Enemy
-    public GameMaster gamemaster;
+    public PlayerStats playerStats;
     public EnemyHealth enemyhealth;
     private Collider m_enemyCollider;
     [SerializeField] private GameObject myBullet;
@@ -88,18 +88,16 @@ public class EnemyDistance : MonoBehaviour
             }
         }
     }
-
     //Trigers
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
         {
-            f_damage = gamemaster.bulletDamage;
+            f_damage = playerStats.bulletDamage_stat;
             enemyhealth.healtbarUI.SetActive(true);
             StartCoroutine(TakeDamage());
         }
     }
-
     //Ataque
     IEnumerator Attacks()
     {

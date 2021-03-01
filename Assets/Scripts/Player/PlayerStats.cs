@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+[CreateAssetMenu(fileName = "Anora", menuName = "Player")]
+public class PlayerStats : ScriptableObject
 {
     //public bool unlocked_weapon;
     public float maxhp_stat = 100;
@@ -13,22 +14,7 @@ public class PlayerStats : MonoBehaviour
     public int bulletNoGood_stat = 15;
 
     public Vector3 playerPosition_stat;
-    public bool revive;
+    public int revive = 0;
 
     public static PlayerStats inst;
-    
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        if (PlayerStats.inst == null)
-        {
-            PlayerStats.inst = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
 }

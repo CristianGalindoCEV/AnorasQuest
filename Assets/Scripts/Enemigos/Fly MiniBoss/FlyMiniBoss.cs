@@ -25,10 +25,10 @@ public class FlyMiniBoss : MonoBehaviour
     //Player
     public Transform player;
     private Vector3 m_attackposition;
+    public PlayerStats playerStats;
 
     //HP
     public MinibossHP minibosshp;
-    public GameMaster gamemaster;
     public float damage;
 
     //Easing
@@ -104,7 +104,7 @@ public class FlyMiniBoss : MonoBehaviour
         if (other.tag == "Bullet")
         {
             StartCoroutine(Damage());
-            damage = gamemaster.bulletDamage;
+            damage = playerStats.bulletDamage_stat; ;
         }
     }
 

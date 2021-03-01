@@ -13,7 +13,6 @@ public class InputManager : MonoBehaviour
     public GameObject pausemenu;
     public GameObject mirilla;
     public bool menuon;
-    public GameMaster gamemaster;
     public MenuManager menumanager;
     public PauseManager pauseManager;
 
@@ -86,7 +85,6 @@ public class InputManager : MonoBehaviour
                 menuon = false;
             }
         }
-
         //Cursor
         if (menuon == true)
         {

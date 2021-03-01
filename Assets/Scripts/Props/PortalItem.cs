@@ -7,7 +7,6 @@ using UnityEngine.Audio;
 public class PortalItem : MonoBehaviour
 {
     public PlayerController playercontroller;
-    public GameMaster gameMaster;
     private GameObject loading;
     public Animator tranistion;
     public CanvasGroup hud;
@@ -33,7 +32,6 @@ public class PortalItem : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         loading.SetActive(true);
-        gameMaster.SavePlayerStats();
         paused.TransitionTo(4f);
         bossName.SetActive(false);
 

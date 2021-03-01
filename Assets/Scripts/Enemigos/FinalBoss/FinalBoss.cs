@@ -23,7 +23,7 @@ public class FinalBoss : MonoBehaviour
 
     //HP
     public MinibossHP minibosshp;
-    public GameMaster gamemaster;
+    public PlayerStats playerStats;
     public float damage;
     public GameObject bullets;
 
@@ -91,7 +91,7 @@ public class FinalBoss : MonoBehaviour
         if (other.tag == "Bullet" && b_startFight == true)
         {
             StartCoroutine(Damage());
-            damage = gamemaster.bulletDamage;
+            damage = playerStats.bulletDamage_stat;
         }
     }
     IEnumerator StopMove() // Corutina para elegir un ataque y el tiempo para el proximo

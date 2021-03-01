@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallBoss : MonoBehaviour
 {
     private float hp = 200;
-    public GameMaster gameMaster;
+    public PlayerStats playerStats;
     public bool destroyWall = false;
     
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class WallBoss : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            hp = hp - gameMaster.bulletDamage;
+            hp = hp - playerStats.bulletDamage_stat;
         }
     }
 }

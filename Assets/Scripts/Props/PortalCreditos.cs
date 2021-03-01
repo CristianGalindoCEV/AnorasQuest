@@ -7,7 +7,6 @@ using UnityEngine.Audio;
 public class PortalCreditos : MonoBehaviour
 {
     public PlayerController playercontroller;
-    public GameMaster gameMaster;
     private GameObject loading;
     public Animator tranistion;
     public CanvasGroup hud;
@@ -32,7 +31,6 @@ public class PortalCreditos : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         loading.SetActive(true);
-        gameMaster.SavePlayerStats();
         paused.TransitionTo(4f);
 
         yield return new WaitForSeconds(4);

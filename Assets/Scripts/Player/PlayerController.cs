@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     //Player
     public CharacterController player;
+    public PlayerStats playerStats;
     public Rigidbody playerBody;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
    
     //Canvas
     public GameObject healthbar;
-    public GameMaster gamemaster;
     public GameObject stamina;
     public StaminaBar staminabar;
     
@@ -91,9 +91,9 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.N))
                 m_movePlayer.y -= 20;
 
-            while ( gamemaster.hp < gamemaster.maxhp)
+            while ( playerStats.hp_stat < playerStats.maxhp_stat)
             {
-                gamemaster.hp++;
+                playerStats.hp_stat++;
             }
         }
     }
@@ -180,19 +180,13 @@ public class PlayerController : MonoBehaviour
     public void God()
     {
         f_speed = 15f;
-        gamemaster.bulletDamage = gamemaster.bulletGood;
-        gamemaster.unlocked = true;
+        playerStats.bulletDamage_stat = playerStats.bulletGood_stat;
     }
 
     public void NoGod()
     {
         f_speed = 8f;
-        gamemaster.bulletDamage = gamemaster.bulletNoGood;
-        if(gamemaster.value == 1)
-        {
-            gamemaster.unlocked = true;
-        }
-        gamemaster.unlocked = false;
+        playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
     }
        
     //Dash
@@ -208,9 +202,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator Golpe()
     {
         //Indicamos al score que hemos perdido HP
-        gamemaster.hp = gamemaster.hp - f_damage;
+        playerStats.hp_stat = playerStats.hp_stat - f_damage;
         healthbar.SendMessage("TakeDamage", f_damage);
-        if(gamemaster.hp <= 0)
+        if(playerStats.hp_stat <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
@@ -221,7 +215,7 @@ public class PlayerController : MonoBehaviour
     //Heal
     IEnumerator Heal()
     {
-        gamemaster.hp = gamemaster.hp + f_hp;
+        playerStats.hp_stat = playerStats.hp_stat + f_hp;
         healthbar.SendMessage("TakeLife", f_hp);
         //Añadir Animacion Vida
         yield return new WaitForSeconds(1.0f);
