@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class Bauculo : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Bauculo : MonoBehaviour
     public float speed;
     private Transform firepoint;
     //Camera
-    public Camera mainCamera;
+    public CinemachineVirtualCamera aimCamera;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class Bauculo : MonoBehaviour
     }
     private void Update()
     {
-        firepoint.rotation = mainCamera.transform.rotation;
+        firepoint.rotation = aimCamera.transform.rotation;
     }
     public void Fire()
     {

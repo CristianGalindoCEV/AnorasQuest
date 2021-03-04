@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,13 +21,14 @@ public class PlayerController : MonoBehaviour
     public Animator transtion;
     private float f_damage;
     private float f_hp;
-
+    public bool aiming;
     //Dash
     [SerializeField] private float f_dashSpeed = 30f;
     [SerializeField] private float f_dashDuration = 2f;
     
     //Camera
     public Camera mainCamera;
+    public CinemachineVirtualCamera aimCamera;
     private Vector3 camForward;
     private Vector3 camRight;
 
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        aimCamera.enabled = false;
     }
 
     void Update()
@@ -62,8 +64,11 @@ public class PlayerController : MonoBehaviour
         camDirection();
         m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
         m_movePlayer = m_movePlayer * f_speed;
+        if (aiming == false)
+        {
+            player.transform.LookAt(player.transform.position + m_movePlayer);
+        }
 
-        player.transform.LookAt(player.transform.position + m_movePlayer);
         SetGravity();
         Jump();
 

@@ -40,7 +40,23 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         f_cadence += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f)
+        
+        
+        if (Input.GetButton("Fire2") && pauseManager.paused == false)
+        {
+            //m_playerController.mainCamera.enabled = false;
+            m_playerController.aimCamera.enabled = true;
+            m_playerController.aiming = true;
+            Debug.Log("Aiming");
+        } //try make aiming
+        else
+        {
+            m_playerController.mainCamera.enabled = true;
+            m_playerController.aimCamera.enabled = false;
+            m_playerController.aiming = false;
+        }
+        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f 
+            && m_playerController.aiming == true)
         {
             gunspawn.Fire();
             f_cadence = 0f;
