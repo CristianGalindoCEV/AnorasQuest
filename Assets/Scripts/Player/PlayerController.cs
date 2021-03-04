@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (aiming == false)
         {
             player.transform.LookAt(player.transform.position + m_movePlayer);
-        }
+        }//Evitar vovlerse loco al apuntar
 
         SetGravity();
         Jump();

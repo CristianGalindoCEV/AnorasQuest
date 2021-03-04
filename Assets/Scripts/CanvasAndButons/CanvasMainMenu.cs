@@ -11,7 +11,7 @@ public class CanvasMainMenu : MonoBehaviour
     public GameObject mainmenu;
     public GameObject loading;
     public bool b_optionson = false;
-
+    public PlayerStats playerStats;
 
     //Loading Animator
     public Animator transtion;
@@ -85,7 +85,12 @@ public class CanvasMainMenu : MonoBehaviour
 
     IEnumerator Play()
     {
-
+        //PlayerStats Reset
+        playerStats.maxhp_stat = 100;
+        playerStats.hp_stat = 100;
+        playerStats.bulletDamage_stat = 15;
+        playerStats.playerPosition_stat = new Vector3(0, 0, 0);
+        //Transition Scene
         i_number = Random.Range(1, 3);
 
         switch (i_number)

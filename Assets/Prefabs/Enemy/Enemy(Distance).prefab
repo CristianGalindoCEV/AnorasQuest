@@ -597,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   points: []
-  gamemaster: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   enemyhealth: {fileID: 8937444084744884007}
   myBullet: {fileID: 6726269270266870367, guid: d1bea5f484b7305459950e2a46a0f460,
     type: 3}
