@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         aimCamera.enabled = false;
+        transform.position = playerStats.playerPosition_stat;
+        
     }
 
     void Update()

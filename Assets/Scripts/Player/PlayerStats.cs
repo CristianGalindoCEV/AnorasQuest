@@ -14,7 +14,7 @@ public class PlayerStats : ScriptableObject
     public int bulletNoGood_stat = 15;
 
     public Vector3 playerPosition_stat;
-    public int revive = 0;
+    public bool revive = false;
 
     public static PlayerStats inst;
 }

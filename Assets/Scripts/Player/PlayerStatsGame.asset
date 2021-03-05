@@ -17,5 +17,5 @@ MonoBehaviour:
   bulletDamage_stat: 0
   bulletGood_stat: 100000
   bulletNoGood_stat: 15
-  playerPosition_stat: {x: 0, y: 0, z: 0}
+  playerPosition_stat: {x: -37.9, y: 3.8, z: 47.7}
   revive: 0

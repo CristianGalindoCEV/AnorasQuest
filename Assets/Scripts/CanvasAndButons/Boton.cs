@@ -11,12 +11,11 @@ public class Boton : MonoBehaviour
     void Start()
     {
         UnlockMouse();
-        playerStats = FindObjectOfType<PlayerStats>();
     }
 
     public void PulsaRetry()
     {
-        playerStats.revive = 1;
+        playerStats.revive = true;
         Debug.Log("Ponte true");
         SceneManager.LoadScene("MainScene");
     }

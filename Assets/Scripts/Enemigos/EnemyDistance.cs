@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyDistance : MonoBehaviour
 {
-
+    enum Patrol { MOVE, ROTATE}
+    Patrol patrol = Patrol.MOVE;
     //Player
     private float f_damage;
-    public PlayerController playerController;
     private Transform m_player;
     private float f_speed = 6;
 
     //SpacePoints
     public SpacePoint[] points;
     private int i_currentPoint = 0;
+    private Vector3 m_direction;
+    private Quaternion m_lookrotation;
 
     //Enemy
     public PlayerStats playerStats;
@@ -23,7 +26,6 @@ public class EnemyDistance : MonoBehaviour
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
     
-
     //Rango
     [SerializeField] private bool b_fight = false;
     private float f_time;
@@ -40,16 +42,33 @@ public class EnemyDistance : MonoBehaviour
     {
         if (!b_fight)
         {
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.5f)
+            switch(patrol)
             {
-                StartCoroutine(StopMove());
-                i_currentPoint++;
-                i_currentPoint %= points.Length;
-            }
-            else // Pasamos al siguiente punto
-            {
-                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
-                transform.LookAt(points[i_currentPoint].transform.position);
+                case Patrol.MOVE:
+                    {
+                        if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.5f)
+                        {
+                            patrol = Patrol.ROTATE;
+                            i_currentPoint++;
+                            i_currentPoint %= points.Length;
+                            StartCoroutine(StopMove());
+                            m_direction = (points[i_currentPoint].transform.position - transform.position).normalized;
+
+                            //create the rotation we need to be in to look at the target
+                            m_lookrotation = Quaternion.LookRotation(m_direction);
+                            transform.DORotate( m_lookrotation.eulerAngles, 1f).SetEase(Ease.InSine);
+                        }
+                        else // Pasamos al siguiente punto
+                        {
+                            transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                            transform.LookAt(points[i_currentPoint].transform.position);
+                        }
+                        break;
+                    }
+                case Patrol.ROTATE:
+                    {
+                        break;
+                    }
             }
         }
         
@@ -58,7 +77,7 @@ public class EnemyDistance : MonoBehaviour
             float dist = Vector3.Distance(transform.position, m_player.transform.position);
             if (dist > 15f)
             {
-                b_fight = false;
+                b_fight = false; //Player attack range? No
             }
 
             f_time += Time.deltaTime;
@@ -119,11 +138,12 @@ public class EnemyDistance : MonoBehaviour
     IEnumerator StopMove()
     {
         float f_stop;
-        //transform.rotation = Quaternion.Slerp(transform.rotation, (points[i_currentPoint].transform.rotation), Time.time * 1f);
-        f_stop = Random.Range(1f, 2.5f);
         f_speed = 0;
+        f_stop = Random.Range(1f, 2.5f);
+        
         //Idle Aimation
         yield return new WaitForSeconds(f_stop);
+        patrol = Patrol.MOVE;
         f_speed = 6f;
     }
 }
