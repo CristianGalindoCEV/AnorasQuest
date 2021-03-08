@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     private float f_damage;
     private float f_hp;
     public bool aiming;
-    //Dash
-    [SerializeField] private float f_dashSpeed = 30f;
-    [SerializeField] private float f_dashDuration = 2f;
     
     //Camera
     public Camera mainCamera;
@@ -39,8 +36,6 @@ public class PlayerController : MonoBehaviour
    
     //Canvas
     public GameObject healthbar;
-    public GameObject stamina;
-    public StaminaBar staminabar;
     
     //Shadow
     [SerializeField] GameObject m_shadowGO;
@@ -52,7 +47,6 @@ public class PlayerController : MonoBehaviour
     {
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
-        
     }
 
     void Update()
@@ -196,15 +190,6 @@ public class PlayerController : MonoBehaviour
         playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
     }
        
-    //Dash
-    public void CastDash()
-    {
-        if (staminabar.currentStamina >= 20)
-        {
-            StartCoroutine(Dash());
-        }
-    }
-
     //Corutina de golpe
     IEnumerator Golpe()
     {
@@ -226,14 +211,5 @@ public class PlayerController : MonoBehaviour
         healthbar.SendMessage("TakeLife", f_hp);
         //Añadir Animacion Vida
         yield return new WaitForSeconds(1.0f);
-    }
-
-    //Corutina Dash
-    IEnumerator Dash()
-    {
-        //playerBody.AddForce(transform.forward * f_dashSpeed, ForceMode.Force);
-        stamina.SendMessage("UseStamina", 20f);
-        FindObjectOfType<AudioManager>().Play("Dash");
-        yield return new WaitForSeconds(f_dashDuration);
     }
 }

@@ -40,6 +40,7 @@ public class EnemyDistance : MonoBehaviour
     }
     void Update()
     {
+        enemyhealth.slider.transform.LookAt(m_player);
         if (!b_fight)
         {
             switch(patrol)
@@ -84,18 +85,18 @@ public class EnemyDistance : MonoBehaviour
             Vector3 loockAtPosition = m_player.position;
             loockAtPosition.y = transform.position.y;
             transform.LookAt(loockAtPosition);
-            if (f_time >= 3f)
+            if (f_time >= 1.5f)
             {
                 StartCoroutine(Attacks());
             }
         }
     }
-
     private void FixedUpdate()
     {
         if (!b_fight)
         {
             hit = new Collider[10];
+            //Create area for detect player
             Physics.OverlapSphereNonAlloc(transform.position, 10, hit, playerLayer);
             for (int i = 0; i < 10; i++)
             {

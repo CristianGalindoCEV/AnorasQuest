@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp_stat: 100
   hp_stat: 100
-  bulletDamage_stat: 0
+  bulletDamage_stat: 15
   bulletGood_stat: 100000
   bulletNoGood_stat: 15
-  playerPosition_stat: {x: -37.9, y: 3.8, z: 47.7}
-  revive: 0
+  playerPosition_stat: {x: -34.716686, y: 3.2434294, z: 60.89107}
+  revive: 1

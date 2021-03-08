@@ -30,6 +30,7 @@ public class InputManager : MonoBehaviour
         //Canvas
         menuon = false;
         pausemenu.SetActive(false);
+        mirilla.SetActive(false);
 
         //Cursor
         Cursor.visible = (false);
@@ -47,25 +48,20 @@ public class InputManager : MonoBehaviour
             //m_playerController.mainCamera.enabled = false;
             m_playerController.aimCamera.enabled = true;
             m_playerController.aiming = true;
-            Debug.Log("Aiming");
+            mirilla.SetActive(true);
         } //try make aiming
         else
         {
             m_playerController.mainCamera.enabled = true;
             m_playerController.aimCamera.enabled = false;
             m_playerController.aiming = false;
+            mirilla.SetActive(false);
         }
         if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f 
             && m_playerController.aiming == true)
         {
             gunspawn.Fire();
             f_cadence = 0f;
-        }
-        
-        //Dash
-        if (Input.GetKeyDown(KeyCode.LeftControl) && pauseManager.paused == false && m_playerController.player.isGrounded)
-        {
-            m_playerController.CastDash();
         }
         
         //GOOD MODE
