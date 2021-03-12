@@ -14,6 +14,7 @@ public class FlyMiniBoss : MonoBehaviour
 
     //Boss
     public GameObject m_boss;
+    [SerializeField] private GameObject m_neck;
     [SerializeField] private float f_speed = 3;
     Transform my_transform;
     public GameObject insectPack;
@@ -38,6 +39,7 @@ public class FlyMiniBoss : MonoBehaviour
     void Start()
     {
         my_transform = transform;
+        m_neck = GameObject.Find("J_Neck");
     }
 
     // Update is called once per frame
@@ -94,6 +96,17 @@ public class FlyMiniBoss : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (b_startFight == true)
+        {
+            //Neck Rotation
+
+            Quaternion lookRotation = Quaternion.LookRotation(player.position - m_neck.transform.position);
+            m_neck.transform.rotation *= lookRotation;
+            //m_neck.transform.eulerAngles.y = Mathf.Clamp()
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player" && b_startFight == false)

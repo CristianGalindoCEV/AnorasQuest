@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2134490826350914755, guid: d7589e28236341148a2d58fabf04687d, type: 3}
   speed: 5
-  mainCamera: {fileID: 0}
+  aimCamera: {fileID: 0}
 --- !u!1 &1344188100929735376
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,14 +162,12 @@ MonoBehaviour:
   f_speed: 10
   god: 0
   transtion: {fileID: 0}
-  f_dashSpeed: 0
-  f_dashDuration: 0
+  aiming: 0
   mainCamera: {fileID: 0}
+  aimCamera: {fileID: 0}
   f_gravity: 30
   f_jumpForce: 15
   healthbar: {fileID: 0}
-  stamina: {fileID: 0}
-  staminabar: {fileID: 0}
   m_shadowGO: {fileID: 0}
   m_shadowTransform: {fileID: 0}
   m_groundLayer:
@@ -204,8 +202,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
