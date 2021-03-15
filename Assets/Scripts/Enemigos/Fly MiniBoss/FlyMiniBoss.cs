@@ -14,12 +14,15 @@ public class FlyMiniBoss : MonoBehaviour
 
     //Boss
     public GameObject m_boss;
-    [SerializeField] private GameObject m_neck;
-    [SerializeField] private float f_speed = 3;
-    Transform my_transform;
     public GameObject insectPack;
+    [SerializeField] private GameObject m_neck;
+    Transform my_transform;
+    private Animator m_anim;
+
     public Collider m_triger;
-    [SerializeField] private Collider m_collider;
+    private Collider m_collider;
+    
+    private float speed = 6;
     private int myRandom;
     private bool b_returnAttack = true; //Cuando el enemy ha vuelto a su punto depsues de atacar
 
@@ -33,13 +36,14 @@ public class FlyMiniBoss : MonoBehaviour
     public float damage;
 
     //Easing
-    [SerializeField]private float f_currentTime = 0;
+    private float f_currentTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         my_transform = transform;
         m_neck = GameObject.Find("J_Neck");
+        m_anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,7 +54,7 @@ public class FlyMiniBoss : MonoBehaviour
             f_currentTime += Time.deltaTime;
 
             // Loock Player
-            if (b_move == true)
+            if (b_move == true && minibosshp.hp > 0)
             {
                 Vector3 loockAtPosition = player.position;
                 loockAtPosition.x = transform.rotation.eulerAngles.y;
@@ -58,7 +62,7 @@ public class FlyMiniBoss : MonoBehaviour
             }
             
             //Miramos si hemos llegado al punto
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true) 
+            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true && minibosshp.hp > 0) 
             {
                 StartCoroutine(StopMove());
                 i_currentPoint++;
@@ -66,11 +70,11 @@ public class FlyMiniBoss : MonoBehaviour
             }
             else if (b_move == true) // Pasamos al siguiente punto
             {
-                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * f_speed);
+                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * speed);
             }
             
             //Generate Attack
-            if (f_currentTime >= 7f && b_returnAttack == true) 
+            if (f_currentTime >= 7f && b_returnAttack == true && minibosshp.hp > 0) 
             {
                 myRandom = Random.Range(1, 3);
                 switch (myRandom)
@@ -80,7 +84,7 @@ public class FlyMiniBoss : MonoBehaviour
                     break;
 
                     case 2:
-                    StartCoroutine(SecondAttack());
+                    StartCoroutine(FirtsAttack());
                     break;
                     
                     default:
@@ -88,6 +92,7 @@ public class FlyMiniBoss : MonoBehaviour
                     break;
                 }
             }
+            
             // Move attack 2
             if (b_move == false && myRandom == 2)
             {
@@ -111,7 +116,6 @@ public class FlyMiniBoss : MonoBehaviour
     {
         if(other.tag == "Player" && b_startFight == false)
         {
-            b_startFight = true;
             StartCoroutine(StartRound());           
         }
         if (other.tag == "Bullet")
@@ -123,28 +127,26 @@ public class FlyMiniBoss : MonoBehaviour
 
     IEnumerator StartRound()
     {
-        float initValue = my_transform.position.y;
-        float finalValue = my_transform.position.y + 10;
-        float currentValue = initValue;
-        float maxTime = 5f;
-
+        m_anim.SetBool("StartFigth", true);
         m_triger.enabled = false;
-        currentValue = Easing.CubicEaseIn(f_currentTime, initValue, finalValue - initValue, maxTime);
-        my_transform.position = new Vector3(my_transform.position.x,currentValue,my_transform.position.z);
-
         //Meter Audio
-        Debug.Log("Empieza la pelea");
-        yield return new WaitForSeconds(7f);
+        
+        yield return new WaitForSeconds(1.7f);
+        b_startFight = true;
+        m_anim.SetBool("Flying",true);
     }
     IEnumerator FirtsAttack() //This instance bullets
     {
-        Debug.Log("FirtsAttack");
+        m_anim.SetBool("Attack", true);
         Vector3 bulletPosition = transform.position;
         bulletPosition.z = transform.position.z + 1;
         Instantiate(insectPack, transform.position, transform.rotation);
         FindObjectOfType<AudioManager>().Play("FlyBossAttack");
         b_returnAttack = false;
-        yield return new WaitForSeconds(4f);
+        
+        yield return new WaitForSeconds(1.5f);
+        
+        m_anim.SetBool("Attack", false);
         f_currentTime = 0f;
         b_move = true;
         b_returnAttack = true;
@@ -164,22 +166,20 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator StopMove()
     {
         float f_stop;
-        
         f_stop = Random.Range(1f, 2.5f);
-        f_speed = 0;
-        
-        //Idle Aimation
+        speed = 0;
         yield return new WaitForSeconds(f_stop);
-        f_speed = 6f;
+        speed = 6f;
     }
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
         if(minibosshp.hp <= 0)
         {
+            m_anim.SetBool("DieMoth",true);
             b_startFight = false;
             m_collider.enabled = false;
-            f_speed = 0;
+            speed = 0;
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }
