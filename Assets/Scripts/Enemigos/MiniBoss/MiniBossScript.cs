@@ -5,15 +5,21 @@ using UnityEngine;
 public class MiniBossScript : MonoBehaviour
 {
     //Boss
-    private float f_TimeCounter = 0;
+
     [SerializeField] GameObject spikePrefab;
     [SerializeField] GameObject spikeCagePrefab;
-    [SerializeField] Transform player;
+    public Collider Mycollider;
+    private Transform m_player;
+    private Animator m_anim;
     private int randomNumber;
     public float damage;
-    private bool b_startBatle = false;
-    public Collider myStart;
-    
+    private float f_TimeCounter = 0;
+    private bool b_startBattle = false;
+
+    //Detect player
+    private Collider[] hit = new Collider[10];
+    public LayerMask playerLayer;
+
     //WallBoss
     private GameObject m_boss;
     public WallBoss wallBoss;
@@ -27,26 +33,35 @@ public class MiniBossScript : MonoBehaviour
     {
         m_boss = GameObject.Find("Miniboss_Static");
         m_bossWall = GameObject.Find("Wall");
+        m_anim = GetComponent<Animator>();
+        m_player = GameObject.Find("Player").transform;
     }
     void Update()
     {
-       if(b_startBatle == true)
+       if(b_startBattle == true)
         {
+            
             f_TimeCounter += Time.deltaTime;
 
             //Ataques
-            if (f_TimeCounter > 3 && minibosshp.hp > 0)
+            if (f_TimeCounter > 8 && minibosshp.hp > 0)
             {
                 f_TimeCounter = 0;
-                randomNumber = Random.Range(1, 10);
+                randomNumber = Random.Range(1, 3);
 
-                if (randomNumber < 6)
+                switch (randomNumber)
                 {
-                    SpikeAttack();
-                }
-                else
-                {
-                    SpikeCage();
+                    case 1:
+                        StartCoroutine(SpikeAttack());
+                        break;
+
+                    case 2:
+                        StartCoroutine(SpikeCage());
+                        break;
+
+                    default:
+                        print("Falla el switch");
+                        break;
                 }
             }
 
@@ -63,14 +78,27 @@ public class MiniBossScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!b_startBattle)
+        {
+            hit = new Collider[10];
+            //Create area for detect player
+            Physics.OverlapSphereNonAlloc(transform.position, 10, hit, playerLayer);
+            for (int i = 0; i < 10; i++)
+            {
+                if (hit[i] != null && hit[i].tag == "Player")
+                {
+                    // detecte el player
+                    b_startBattle = true;
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && b_startBatle == false)
-        {
-            b_startBatle = true;
-            myStart.enabled = false;
-        }
-        if ( other.tag  == "Bullet" && b_startBatle == true)
+        if ( other.tag  == "Bullet" && b_startBattle == true)
         {
             StartCoroutine(Damage());
             damage = playerStats.bulletDamage_stat;
@@ -85,24 +113,34 @@ public class MiniBossScript : MonoBehaviour
         }
     }
 
-    void SpikeAttack ()
+    IEnumerator SpikeCage()
     {
-        Instantiate(spikePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
-    }
+        Instantiate(spikeCagePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
+        m_anim.SetBool("Attack", true);
+        f_TimeCounter = 0;
 
-    void SpikeCage ()
+        yield return new WaitForSeconds(1.5f);
+        m_anim.SetBool("Attack", false);
+    }
+    IEnumerator SpikeAttack()
     {
-        Instantiate(spikeCagePrefab, new Vector3(player.transform.position.x, 0, player.transform.position.z), transform.rotation);
-    }
+        Instantiate(spikePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
+        m_anim.SetBool("Attack", true);
 
+        f_TimeCounter = 0;
+
+        yield return new WaitForSeconds(1.5f);
+        m_anim.SetBool("Attack", false);
+    }
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {
-            b_startBatle = false;
-            //m_collider.enabled = false;
-            yield return new WaitForSeconds(2.0f);
+            b_startBattle = false;
+            m_anim.SetBool("Dead",true);
+            Mycollider.enabled = false;
+            yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }
     }
