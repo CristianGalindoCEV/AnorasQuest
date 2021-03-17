@@ -44,7 +44,7 @@ public class MiniBossScript : MonoBehaviour
             f_TimeCounter += Time.deltaTime;
 
             //Ataques
-            if (f_TimeCounter > 8 && minibosshp.hp > 0)
+            if (f_TimeCounter > 6 && minibosshp.hp > 0)
             {
                 f_TimeCounter = 0;
                 randomNumber = Random.Range(1, 3);
@@ -75,6 +75,11 @@ public class MiniBossScript : MonoBehaviour
             {
                 m_boss.SetActive(false);
             }
+        }
+        
+       if (Input.GetKeyDown(KeyCode.C))
+        {
+            Damage();
         }
     }
 
@@ -126,7 +131,7 @@ public class MiniBossScript : MonoBehaviour
     {
         Instantiate(spikePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
         m_anim.SetBool("Attack", true);
-
+        
         f_TimeCounter = 0;
 
         yield return new WaitForSeconds(1.5f);
@@ -134,6 +139,8 @@ public class MiniBossScript : MonoBehaviour
     }
     IEnumerator Damage()
     {
+        damage = 2000;
+        Debug.Log("hola");
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {

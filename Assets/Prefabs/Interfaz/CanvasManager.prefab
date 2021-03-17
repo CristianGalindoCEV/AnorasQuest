@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1494651242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 10}
+  m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1494651244
 CanvasRenderer:
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 1612786399}
   - component: {fileID: 1612786398}
   - component: {fileID: 1612786397}
+  - component: {fileID: 692158659}
   m_Layer: 5
   m_Name: Button (resume)
   m_TagString: Untagged
@@ -551,6 +552,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &692158659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612786395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac0c6d554ea115478fe2e715399c05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selector: {fileID: 408522606575632072}
+  rectTransform: {fileID: 7179562453015956162}
+  m_startPosition: {x: 0, y: 0, z: 0}
+  myanimation: 0
 --- !u!1 &1714216653
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +714,7 @@ GameObject:
   - component: {fileID: 1723034685}
   - component: {fileID: 1723034684}
   - component: {fileID: 1723034683}
+  - component: {fileID: 1026552106}
   m_Layer: 5
   m_Name: 'Button (exit) '
   m_TagString: Untagged
@@ -816,6 +834,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1026552106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723034681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac0c6d554ea115478fe2e715399c05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selector: {fileID: 6883044825631865741}
+  rectTransform: {fileID: 7501624532976052810}
+  m_startPosition: {x: 0, y: 0, z: 0}
+  myanimation: 0
 --- !u!1 &1843298496
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +862,7 @@ GameObject:
   - component: {fileID: 1843298500}
   - component: {fileID: 1843298499}
   - component: {fileID: 1843298498}
+  - component: {fileID: 114584380}
   m_Layer: 5
   m_Name: Button (options)
   m_TagString: Untagged
@@ -947,6 +982,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &114584380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843298496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac0c6d554ea115478fe2e715399c05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selector: {fileID: 7840971738479014831}
+  rectTransform: {fileID: 1438776234025592459}
+  m_startPosition: {x: 0, y: 0, z: 0}
+  myanimation: 0
 --- !u!1 &478906153930360842
 GameObject:
   m_ObjectHideFlags: 0
@@ -7288,7 +7339,7 @@ RectTransform:
   m_GameObject: {fileID: 8024532376703245331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62243456, y: 0.62243456, z: 0.62243456}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 1612786396}
   m_RootOrder: 1
@@ -7716,11 +7767,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5624916550093460810, guid: fc353dc34064aaa4cbdc920dcf5ee205,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9002909057487640328, guid: fc353dc34064aaa4cbdc920dcf5ee205,
         type: 3}
       propertyPath: gamemaster
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9002909057487640328, guid: fc353dc34064aaa4cbdc920dcf5ee205,
+        type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94,
+        type: 2}
     - target: {fileID: 9002909057620045659, guid: fc353dc34064aaa4cbdc920dcf5ee205,
         type: 3}
       propertyPath: m_LocalPosition.x
