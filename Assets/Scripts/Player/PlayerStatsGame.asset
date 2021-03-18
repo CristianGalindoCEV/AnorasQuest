@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerStatsGame
   m_EditorClassIdentifier: 
   maxhp_stat: 100
-  hp_stat: 80
-  bulletDamage_stat: 15
+  hp_stat: 100
+  bulletDamage_stat: 5
   bulletGood_stat: 100000
-  bulletNoGood_stat: 15
+  bulletNoGood_stat: 5
   playerPosition_stat: {x: -34.580006, y: 3.2434294, z: 59.712627}
   revive: 1

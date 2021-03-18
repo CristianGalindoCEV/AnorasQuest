@@ -514,6 +514,36 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4985151378025391492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9015612131921695662}
+  m_Layer: 0
+  m_Name: CenterOfEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9015612131921695662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985151378025391492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.963, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 7977793195410221711}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7344264998945815735
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,11 +606,12 @@ Transform:
   m_GameObject: {fileID: 7977793195410221709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6916183367788036040}
   - {fileID: 6639946644919897718}
   - {fileID: 745266705}
+  - {fileID: 9015612131921695662}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -686,7 +717,7 @@ Animator:
   m_GameObject: {fileID: 7977793195410221709}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6322834d06ee0b84f8c847d7711a7d69, type: 3}
-  m_Controller: {fileID: 9100000, guid: 58a4ca8a57fa08e44ba5f8055ab95964, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d1c3bc661db2b8499dd9069ee0ddd3b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -771,7 +802,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 58a4ca8a57fa08e44ba5f8055ab95964, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6322834d06ee0b84f8c847d7711a7d69, type: 3}
 --- !u!4 &6639946644919897718 stripped

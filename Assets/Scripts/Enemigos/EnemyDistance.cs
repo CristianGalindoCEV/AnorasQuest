@@ -7,6 +7,7 @@ public class EnemyDistance : MonoBehaviour
 {
     enum Patrol { MOVE, ROTATE}
     Patrol patrol = Patrol.MOVE;
+    
     //Player
     private float f_damage;
     private Transform m_player;
@@ -19,6 +20,7 @@ public class EnemyDistance : MonoBehaviour
     private Quaternion m_lookrotation;
 
     //Enemy
+    private Animator m_animator;
     public PlayerStats playerStats;
     public EnemyHealth enemyhealth;
     private Collider m_enemyCollider;
@@ -35,6 +37,7 @@ public class EnemyDistance : MonoBehaviour
 
     private void Awake()
     {
+        m_animator = this.GetComponent<Animator>();
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         m_enemyCollider = gameObject.GetComponent<Collider>();
     }
@@ -123,27 +126,29 @@ public class EnemyDistance : MonoBehaviour
     {
         f_time = 0f;
         Instantiate(myBullet, transform.position, transform.rotation);
-        //Animacion
-        yield return new WaitForSeconds(0f);
+        m_animator.SetBool("Attack",true);
+        yield return new WaitForSeconds(0.5f);
+        m_animator.SetBool("Attack", false);
     }
     IEnumerator TakeDamage()
     {
         enemyhealth.health = enemyhealth.health - f_damage;
         if (enemyhealth.health <= 0)
         {
+            m_animator.SetBool("Death",true);
             m_enemyCollider.enabled = false;
-            yield return new WaitForSeconds(3f);
         }
         yield return new WaitForSeconds(0f);
     }
     IEnumerator StopMove()
     {
         float f_stop;
-        f_speed = 0;
-        f_stop = Random.Range(1f, 2.5f);
         
-        //Idle Aimation
+        f_speed = 0;
+        m_animator.SetBool("Stop", true);
+        f_stop = Random.Range(1.5f, 2.5f);
         yield return new WaitForSeconds(f_stop);
+        m_animator.SetBool("Stop", false);
         patrol = Patrol.MOVE;
         f_speed = 6f;
     }
