@@ -14,7 +14,6 @@ TagManager:
   - EnemyBullet
   - Hp
   - Hand
-  - MothBall
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerStatsGame
   m_EditorClassIdentifier: 
   maxhp_stat: 100
-  hp_stat: 100
+  hp_stat: 80
   bulletDamage_stat: 15
   bulletGood_stat: 100000
   bulletNoGood_stat: 15
