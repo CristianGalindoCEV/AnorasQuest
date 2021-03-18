@@ -58,12 +58,12 @@ public class MinibossHP : MonoBehaviour
     {
         while (m_disolve <= 1f)
         {
-            m_disolve += Time.deltaTime;
+            m_disolve += Time.deltaTime/2;
             m_materialProperty.SetFloat("_Disolve", m_disolve);
             m_renderer.SetPropertyBlock(m_materialProperty);
             yield return null;
         }
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }
