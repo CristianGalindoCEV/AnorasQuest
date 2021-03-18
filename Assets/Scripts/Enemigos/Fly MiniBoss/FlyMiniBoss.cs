@@ -6,25 +6,31 @@ public class FlyMiniBoss : MonoBehaviour
 {
     
     private bool b_startFight = false;
-    
+    enum Patrol { MOVE, ROTATE }
+    Patrol patrol = Patrol.MOVE;
+
+    //Detected
+    private Collider[] hit = new Collider[10];
+    public LayerMask playerLayer;
+
     //SpacePoints
     public SpacePoint [] points;
     private int i_currentPoint = 0;
-    private bool b_move = true; // Para saber cuando el enemy se mueve
 
     //Boss
     public GameObject m_boss;
     public GameObject insectPack;
+    public GameObject ballAttack;
     [SerializeField] private GameObject m_neck;
     Transform my_transform;
     private Animator m_anim;
 
-    public Collider m_triger;
     private Collider m_collider;
-    
-    private float speed = 6;
+
+    private bool b_figth = true;
+    private bool b_stopColision = false;
+    private float m_speed = 6;
     private int myRandom;
-    private bool b_returnAttack = true; //Cuando el enemy ha vuelto a su punto depsues de atacar
 
     //Player
     public Transform player;
@@ -52,29 +58,41 @@ public class FlyMiniBoss : MonoBehaviour
         if (b_startFight == true) 
         {
             f_currentTime += Time.deltaTime;
+            
+            switch(patrol)
+            {
+                case Patrol.MOVE:
+                    {
+                        //Miramos si hemos llegado al punto
+                        if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && minibosshp.hp > 0)
+                        {
+                            //patrol = Patrol.ROTATE;
+                            i_currentPoint++;
+                            i_currentPoint %= points.Length;
+                            StartCoroutine(StopMove());
+                        }
+                        else // Pasamos al siguiente punto
+                        {
+                            transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * m_speed);
+                        }
+                        break;
+                    }
+                case Patrol.ROTATE:
+                    {
+                        break;
+                    }
+            }
 
             // Loock Player
-            if (b_move == true && minibosshp.hp > 0)
+            if (minibosshp.hp > 0)
             {
                 Vector3 loockAtPosition = player.position;
                 loockAtPosition.x = transform.rotation.eulerAngles.y;
                 transform.LookAt(player);
             }
-            
-            //Miramos si hemos llegado al punto
-            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && b_move == true && minibosshp.hp > 0) 
-            {
-                StartCoroutine(StopMove());
-                i_currentPoint++;
-                i_currentPoint %= points.Length;
-            }
-            else if (b_move == true) // Pasamos al siguiente punto
-            {
-                transform.position = Vector3.MoveTowards(transform.position, points[i_currentPoint].transform.position, Time.deltaTime * speed);
-            }
-            
+
             //Generate Attack
-            if (f_currentTime >= 7f && b_returnAttack == true && minibosshp.hp > 0) 
+            if (f_currentTime >= 7f && minibosshp.hp > 0 && b_figth == true) 
             {
                 myRandom = Random.Range(1, 3);
                 switch (myRandom)
@@ -84,40 +102,48 @@ public class FlyMiniBoss : MonoBehaviour
                     break;
 
                     case 2:
-                    StartCoroutine(FirtsAttack());
+                    StartCoroutine(SecondAttack());
                     break;
                     
                     default:
                     print("Falla el switch");
                     break;
                 }
+                b_figth = false;
             }
-            
-            // Move attack 2
-            if (b_move == false && myRandom == 2)
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (!b_startFight && b_stopColision == false)
+        {
+            hit = new Collider[10];
+            //Create area for detect player
+            Physics.OverlapSphereNonAlloc(transform.position, 30, hit, playerLayer);
+            for (int i = 0; i < 10; i++)
             {
-                transform.position = Vector3.MoveTowards(transform.position,m_attackposition, Time.deltaTime * 15);
+                if (hit[i] != null && hit[i].tag == "Player")
+                {
+                    // detecte el player
+                    StartCoroutine(StartRound());
+                }
             }
         }
     }
 
     private void LateUpdate()
     {
-        if (b_startFight == true)
+       /* if (b_startFight == true)
         {
             //Neck Rotation
 
             Quaternion lookRotation = Quaternion.LookRotation(player.position - m_neck.transform.position);
             m_neck.transform.rotation *= lookRotation;
             //m_neck.transform.eulerAngles.y = Mathf.Clamp()
-        }
+        }*/
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && b_startFight == false)
-        {
-            StartCoroutine(StartRound());           
-        }
         if (other.tag == "Bullet")
         {
             StartCoroutine(Damage());
@@ -128,9 +154,9 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator StartRound()
     {
         m_anim.SetBool("StartFigth", true);
-        m_triger.enabled = false;
+        b_stopColision = true;
         //Meter Audio
-        
+
         yield return new WaitForSeconds(1.7f);
         b_startFight = true;
         m_anim.SetBool("Flying",true);
@@ -138,38 +164,40 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator FirtsAttack() //This instance bullets
     {
         m_anim.SetBool("Attack", true);
+        m_speed = 0;
         Vector3 bulletPosition = transform.position;
         bulletPosition.z = transform.position.z + 1;
         Instantiate(insectPack, transform.position, transform.rotation);
         FindObjectOfType<AudioManager>().Play("FlyBossAttack");
-        b_returnAttack = false;
         
         yield return new WaitForSeconds(1.5f);
-        
+        m_speed = 6;
         m_anim.SetBool("Attack", false);
         f_currentTime = 0f;
-        b_move = true;
-        b_returnAttack = true;
+        b_figth = true;
     }
     IEnumerator SecondAttack()
     {
-        Debug.Log("SecondAttack");
-        Vector3 attackposition = player.position;
-        b_move = false;
-        b_returnAttack = false;
-        yield return new WaitForSeconds(5f);
+        m_anim.SetBool("Attack", true);
+        m_speed = 0;
+        Vector3 bulletPosition = transform.position;
+        bulletPosition.y = transform.position.y + 10;
+        Instantiate(ballAttack, bulletPosition, transform.rotation);
+        FindObjectOfType<AudioManager>().Play("FlyBossAttack");
+
+        yield return new WaitForSeconds(2.5f);
+        m_speed = 6;
+        m_anim.SetBool("Attack", false);
         f_currentTime = 0f;
-        b_move = true;
-        yield return new WaitForSeconds(12f); // Enemy return to the point
-        b_returnAttack = true;
+        b_figth = true;
     }
     IEnumerator StopMove()
     {
         float f_stop;
         f_stop = Random.Range(1f, 2.5f);
-        speed = 0;
+        m_speed = 0;
         yield return new WaitForSeconds(f_stop);
-        speed = 6f;
+        m_speed = 6f;
     }
     IEnumerator Damage()
     {
@@ -179,7 +207,7 @@ public class FlyMiniBoss : MonoBehaviour
             m_anim.SetBool("DieMoth",true);
             b_startFight = false;
             m_collider.enabled = false;
-            speed = 0;
+            m_speed = 0;
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

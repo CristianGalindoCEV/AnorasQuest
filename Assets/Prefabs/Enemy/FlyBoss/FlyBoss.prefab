@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3427293181057189501}
   - component: {fileID: 3427293181057189474}
-  - component: {fileID: 3427293181057189502}
   - component: {fileID: 3427293181057189503}
   - component: {fileID: 4259081972003945614}
   - component: {fileID: 570602791162986347}
@@ -50,19 +49,6 @@ CapsuleCollider:
   m_Height: 7.7358847
   m_Direction: 1
   m_Center: {x: -0.095761895, y: 3.5594869, z: -0.070556164}
---- !u!135 &3427293181057189502
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427293181057189473}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 6
-  m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &3427293181057189503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,20 +61,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d847e1c182485744cb6a15c60494ba35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   points:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_boss: {fileID: 0}
-  f_speed: 3
   insectPack: {fileID: 0}
-  m_triger: {fileID: 3427293181057189502}
-  m_collider: {fileID: 0}
+  ballAttack: {fileID: 0}
+  m_neck: {fileID: 0}
   player: {fileID: 0}
   playerStats: {fileID: 0}
   minibosshp: {fileID: 0}
   damage: 0
-  f_currentTime: 0
 --- !u!114 &4259081972003945614
 MonoBehaviour:
   m_ObjectHideFlags: 0
