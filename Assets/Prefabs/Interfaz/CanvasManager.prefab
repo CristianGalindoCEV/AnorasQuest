@@ -7757,10 +7757,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7971761317649878444}
     m_Modifications:
+    - target: {fileID: 3087987337008291827, guid: fc353dc34064aaa4cbdc920dcf5ee205,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5624916550093460806, guid: fc353dc34064aaa4cbdc920dcf5ee205,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5624916550093460807, guid: fc353dc34064aaa4cbdc920dcf5ee205,
         type: 3}
@@ -7783,6 +7788,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94,
         type: 2}
+    - target: {fileID: 9002909057620045658, guid: fc353dc34064aaa4cbdc920dcf5ee205,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 9002909057620045659, guid: fc353dc34064aaa4cbdc920dcf5ee205,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -50,9 +50,9 @@ public class EnemyDistance : MonoBehaviour
             {
                 case Patrol.MOVE:
                     {
-                        if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.5f)
+                        if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 1f)
                         {
-                            patrol = Patrol.ROTATE;
+                            //patrol = Patrol.ROTATE;
                             i_currentPoint++;
                             i_currentPoint %= points.Length;
                             StartCoroutine(StopMove());

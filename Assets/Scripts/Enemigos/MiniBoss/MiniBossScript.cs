@@ -89,7 +89,7 @@ public class MiniBossScript : MonoBehaviour
         {
             hit = new Collider[10];
             //Create area for detect player
-            Physics.OverlapSphereNonAlloc(transform.position, 10, hit, playerLayer);
+            Physics.OverlapSphereNonAlloc(transform.position, 40, hit, playerLayer);
             for (int i = 0; i < 10; i++)
             {
                 if (hit[i] != null && hit[i].tag == "Player")
@@ -139,8 +139,6 @@ public class MiniBossScript : MonoBehaviour
     }
     IEnumerator Damage()
     {
-        damage = 2000;
-        Debug.Log("hola");
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {

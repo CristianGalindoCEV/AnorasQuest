@@ -8,7 +8,7 @@ using DG.Tweening;
 public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Image selector;
-
+    public PauseManager pauseManager;
     public RectTransform rectTransform;
     [SerializeField]private Vector3 m_startPosition;
     private float m_duration = 1f;
@@ -20,7 +20,12 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     void Start()
     {
         selector.enabled = false;
+        pauseManager = FindObjectOfType<PauseManager>();
         m_startPosition = rectTransform.position;
+    }
+    private void OnEnable()
+    {
+
     }
     private void Update()
     {
@@ -33,8 +38,7 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         selector.enabled = true;
-       
-        coso = rectTransform.DOMoveX(150f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
+        coso = rectTransform.DOMoveX(100f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
