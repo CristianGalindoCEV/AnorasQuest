@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 6322834d06ee0b84f8c847d7711a7d69
+guid: 6438122dc352d4144b89ecb9814798cd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Walk_Enemy
+    second: Dracau_Walk
   - first:
-      74: -2411337851961136471
-    second: Idle_Enemy
+      74: -6425123990904797203
+    second: Dracau_Idle
   - first:
-      74: -7259682542850783187
-    second: Attack_Enemy
+      74: 6363531913266567801
+    second: Dracau_Attack
   - first:
-      74: 1650429850941097716
-    second: Death_Enemy
+      74: -7257493843800967484
+    second: Dracau_Death
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,11 +44,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle_Enemy
+      name: Dracau_Idle
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 50
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -73,40 +73,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Walk_Enemy
+      name: Dracau_Attack
       takeName: Take 001
       internalID: 0
-      firstFrame: 60
-      lastFrame: 117
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Attack_Enemy
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 125
-      lastFrame: 155
+      firstFrame: 65
+      lastFrame: 134
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -131,10 +102,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Death_Enemy
+      name: Dracau_Death
       takeName: Take 001
       internalID: 0
-      firstFrame: 160
+      firstFrame: 140
       lastFrame: 185
       wrapMode: 0
       orientationOffsetY: 0
@@ -143,6 +114,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dracau_Walk
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 220
+      lastFrame: 299
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -210,7 +210,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: J_COG
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -218,7 +218,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
