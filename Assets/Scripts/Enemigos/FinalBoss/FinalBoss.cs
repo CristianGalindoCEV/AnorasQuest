@@ -158,8 +158,8 @@ public class FinalBoss : MonoBehaviour
         for (int i = 0; i <= 4; i++)
         {
             randomNumber = Random.Range (10,25);
-            newPosition = new Vector3(player.position.x + randomNumber, player.position.y + randomNumber, player.position.z + randomNumber);
-            Instantiate(Enemyes, transform.position, transform.rotation);
+            newPosition = new Vector3(player.position.x + randomNumber, -1, player.position.z + randomNumber);
+            Instantiate(Enemyes, newPosition, transform.rotation);
             
             //Audio enemigo instancia
             yield return new WaitForSeconds(2f);

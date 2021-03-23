@@ -477,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.026781002
+      value: -0.026781004
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -1526,6 +1526,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 916037583}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1313410926 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5622103437113016434, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5289900076703133674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1411603392 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
@@ -2266,12 +2272,6 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 1649286276}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2079343600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7971761317552776109, guid: b30f2d830388dd549bd22d0d52973ad5,
-    type: 3}
-  m_PrefabInstance: {fileID: 916037583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104638481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,12 +2494,18 @@ PrefabInstance:
         type: 3}
       propertyPath: Enemyes
       value: 
-      objectReference: {fileID: 2079343600}
+      objectReference: {fileID: 7977793195410221709, guid: fe13022385c58c34baad85b3428d3444,
+        type: 3}
     - target: {fileID: 5289900077283241108, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 691219079}
+    - target: {fileID: 5289900077283241108, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
+        type: 3}
+      propertyPath: m_collider
+      value: 
+      objectReference: {fileID: 1313410926}
     - target: {fileID: 5289900077283241111, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
         type: 3}
       propertyPath: m_Name
