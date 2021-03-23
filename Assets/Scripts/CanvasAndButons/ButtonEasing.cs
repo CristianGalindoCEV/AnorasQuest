@@ -23,10 +23,15 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         pauseManager = FindObjectOfType<PauseManager>();
         m_startPosition = rectTransform.position;
     }
-    private void OnEnable()
-    {
 
+    private void OnDisable()
+    {
+        coso.Kill();
+        rectTransform.position = m_startPosition;
+        myanimation = false;
+        selector.enabled = false;
     }
+
     private void Update()
     {
         if (selector.enabled == false)
