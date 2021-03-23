@@ -21,7 +21,6 @@ public class FlyMiniBoss : MonoBehaviour
     public GameObject m_boss;
     public GameObject insectPack;
     public GameObject ballAttack;
-    [SerializeField] private GameObject m_neck;
     Transform my_transform;
     private Animator m_anim;
 
@@ -48,7 +47,6 @@ public class FlyMiniBoss : MonoBehaviour
     void Start()
     {
         my_transform = transform;
-        m_neck = GameObject.Find("J_Neck");
         m_anim = GetComponent<Animator>();
     }
 
@@ -131,17 +129,6 @@ public class FlyMiniBoss : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
-    {
-       /* if (b_startFight == true)
-        {
-            //Neck Rotation
-
-            Quaternion lookRotation = Quaternion.LookRotation(player.position - m_neck.transform.position);
-            m_neck.transform.rotation *= lookRotation;
-            //m_neck.transform.eulerAngles.y = Mathf.Clamp()
-        }*/
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
