@@ -80,8 +80,10 @@ public class FinalBoss : MonoBehaviour
         if (minibosshp.hp > 0)
         {
             Vector3 loockAtPosition = player.position;
-            loockAtPosition.x = transform.rotation.eulerAngles.y;
-            transform.LookAt(player);
+            loockAtPosition.y = transform.position.y;
+
+            transform.LookAt(loockAtPosition);
+            
         }
         // Create attack
         if (f_currentTime >= 7f && minibosshp.hp > 0 && b_onAttack == false)
