@@ -17,6 +17,8 @@ public class FinalBoss : MonoBehaviour
     //Boss
     public GameObject bullets;
     public GameObject Enemyes;
+    public GameObject JE_Mouth;
+    private Animator m_animator;
 
     public float speed = 8f;
     private float f_currentTime = 0;
@@ -39,6 +41,7 @@ public class FinalBoss : MonoBehaviour
     void Start()
     {
         f_randomTimeAttack = Random.Range(3f,5f);
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -95,7 +98,7 @@ public class FinalBoss : MonoBehaviour
                     StartCoroutine(AttackOne());
                     break;
                 case 2:
-                    StartCoroutine(AttackTwo());
+                    StartCoroutine(AttackOne());
                     break;
                 default:
                     Debug.Log("Falla switch");
@@ -118,6 +121,7 @@ public class FinalBoss : MonoBehaviour
                 {
                     // detecte el player
                     b_startFight = true;
+                    m_animator.SetBool("Walk", true);
                 }
             }
         }
@@ -132,29 +136,38 @@ public class FinalBoss : MonoBehaviour
     }
     IEnumerator StopMove()
     {
+        m_animator.SetBool("Walk",false);
         float f_stop;
         f_stop = Random.Range(1f, 2.5f);
         speed = 0;
         yield return new WaitForSeconds(f_stop);
         speed = 8;
+        m_animator.SetBool("Walk", true);
     }
     IEnumerator AttackOne()
     {
-        for (int i = 0; i<=4; i++)
+        for (int i = 0; i<=3; i++)
         {
-            Instantiate(bullets, transform.position, transform.rotation);
+            m_animator.SetBool("Attack",true);
+            Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
             FindObjectOfType<AudioManager>().Play("BossShot");
             transform.LookAt(player);
+            
+            yield return new WaitForSeconds(1.8f);
+            m_animator.SetBool("Attack", false);
             yield return new WaitForSeconds(1f);
         }
+
         f_currentTime = 0;
         b_onAttack = false;
+        m_animator.SetBool("Attack",false);
     }
     IEnumerator AttackTwo()
     {
         Vector3 newPosition;
+        speed = 0f;
         float randomNumber;
-
+        m_animator.SetBool("Walk",false);
         for (int i = 0; i <= 4; i++)
         {
             randomNumber = Random.Range (10,25);
@@ -166,12 +179,15 @@ public class FinalBoss : MonoBehaviour
         }
         f_currentTime = 0;
         b_onAttack = false;
+        speed = 8f;
+        m_animator.SetBool("Wakl", true);
     }
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {
+            m_animator.SetBool("Death",true);
             m_collider.enabled = false;
             speed = 0;
             yield return new WaitForSeconds(1.0f);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletsFinalBoss : MonoBehaviour
 {
@@ -8,48 +9,35 @@ public class BulletsFinalBoss : MonoBehaviour
     private Transform m_player;
     private Vector3 playerVector;
 
-
-    //Easing
-    Vector3 initValue;
-    Vector3 finalValue;
-    Vector3 currentValue;
-    float maxTime = 4f;
-
     // Start is called before the first frame update
     void Start()
     {
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         playerVector = m_player.position;
-        
-        initValue = transform.position;
-        finalValue = playerVector;
-        currentValue = initValue;
     }
 
     // Update is called once per frame
     void Update()
     {
         f_timeCounter += Time.deltaTime;
-
-        currentValue.x = Easing.CubicEaseIn(f_timeCounter, initValue.x, finalValue.x - initValue.x, maxTime);
-        currentValue.y = Easing.CubicEaseIn(f_timeCounter, initValue.y, finalValue.y - initValue.y, maxTime);
-        currentValue.z = Easing.CubicEaseIn(f_timeCounter, initValue.z, finalValue.z - initValue.z, maxTime);
-        transform.position = new Vector3(currentValue.x, currentValue.y, currentValue.z);
-
-        if (f_timeCounter >= 5f)
-        {
-            Destroy(gameObject);
-        }
+        transform.LookAt(playerVector);
+        //transform.localScale = new Vector3 (1,1,10);
+        transform.DOScale(new Vector3 (1,1,150), 1f).SetDelay(1.1f);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Destroy(gameObject);
+            StartCoroutine(DestroyObject());
         }
         if (other.tag == "Ground")
         {
             Destroy(gameObject);
         }
+    }
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
