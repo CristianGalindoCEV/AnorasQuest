@@ -1,0 +1,751 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4100489097302506475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: text_columna1
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1034.2476
+    height: 1034.2474
+  guiRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 898.5864
+    y: 1789.3014
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1426.5864
+    y: 1261.3014
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 914.5864
+    y: 1277.3014
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 04e2512fc3af40e4c97e7fc40f9d09f4, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: d80fd90612427e34e952effda50aa956, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: columna_1
+    meshes:
+    - {fileID: 690106047850165013, guid: d3cbe2eddd9932e428173a29f8976312, type: 3}
+--- !u!114 &-3426993272127388590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: escalera
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 2063.1528
+    y: 0
+    width: 1015.9983
+    height: 1027.9983
+  guiRect:
+    serializedVersion: 2
+    x: 2048
+    y: 0
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 715.65967
+    y: 1757.5127
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1243.6597
+    y: 1229.5127
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 731.65967
+    y: 1245.5127
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: c09dd48c27077fe43b57e5d7027e6d93, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: b8779d9b1ad7e274093ca1a1701b98f9, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: escalera
+    meshes:
+    - {fileID: 8342159127421523248, guid: a6fccfc82dac1c746ae69f999718847d, type: 3}
+--- !u!114 &-1025412069545357873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: new Quad
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 3064.5515
+    width: 1017.65515
+    height: 1031.4485
+  guiRect:
+    serializedVersion: 2
+    x: 0
+    y: 3072
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 4903.4287
+    y: 5062.6675
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 5431.4287
+    y: 4534.6675
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 4919.4287
+    y: 4550.6675
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 0}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups: []
+--- !u!114 &-1000668248879069811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: columna_"
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 1031.2471
+    y: 0
+    width: 1015.49756
+    height: 1015.49756
+  guiRect:
+    serializedVersion: 2
+    x: 1024
+    y: 0
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 510.40967
+    y: 1695.0127
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1038.4097
+    y: 1167.0127
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 526.40967
+    y: 1183.0127
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: d2309613d252b7a45beacb3376fca592, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: 4c591feb68bc55f4da66c6fa12bc0eae, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: columna_2
+    meshes:
+    - {fileID: 3868671361854562809, guid: a7700eafdc851b348945ab4a941db863, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892d1a7aeb4cc284dbf62e69e125db52, type: 3}
+  m_Name: texturas_piedra
+  m_EditorClassIdentifier: 
+  textureQuads:
+  - {fileID: -4100489097302506475}
+  - {fileID: -1000668248879069811}
+  - {fileID: -3426993272127388590}
+  - {fileID: 7981077027824992377}
+  - {fileID: 7145946253252813007}
+  - {fileID: 660991891393977003}
+  - {fileID: 1228161307235699194}
+  - {fileID: 5190909369348787627}
+  - {fileID: 8696874244218002176}
+  - {fileID: 6019812500288678612}
+  - {fileID: 332484821887780002}
+  - {fileID: 4526699520823953789}
+  - {fileID: -1025412069545357873}
+  selectedTextureQuad: {fileID: 4526699520823953789}
+  showTextures: 1
+  exportSettings: {fileID: 11400000, guid: 568b36a10c4a1724b83e2df3adf5e6f0, type: 2}
+  textureAtlasSize: {x: 4096, y: 4096}
+  textureGroupRegistration:
+  - name: Albedo
+  - name: Normal
+  - name: metallic
+--- !u!114 &332484821887780002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: flor
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 2042.8572
+    y: 2050
+    width: 1014.95654
+    height: 1027.9999
+  guiRect:
+    serializedVersion: 2
+    x: 2048
+    y: 2048
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 1678.6399
+    y: 2332.2046
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 2206.64
+    y: 1804.2045
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 1694.6399
+    y: 1820.2045
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: a034ecf48ce4a234b8722c2feff9eff8, type: 3}
+  - name: Normal
+    texture: {fileID: 0}
+  - name: metallic
+    texture: {fileID: 0}
+  modelGroups:
+  - name: flor
+    meshes:
+    - {fileID: -7553716758358721678, guid: 9eb3cd91ae3f41a418cff6ac70d1bbd9, type: 3}
+--- !u!114 &660991891393977003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: wall
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 1031.5765
+    y: 1026.3134
+    width: 1038.5242
+    height: 1022.7346
+  guiRect:
+    serializedVersion: 2
+    x: 1024
+    y: 1024
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 663.8732
+    y: 2167.8906
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1191.8733
+    y: 1639.8907
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 679.8732
+    y: 1655.8907
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 69e7b8b85311d6244961b971953d63a8, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: bc8e569d0e02dd94cb4cea300f137a1b, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: wall
+    meshes:
+    - {fileID: 0}
+--- !u!114 &1228161307235699194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: templo
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 2038.1987
+    y: 1028.2609
+    width: 1028
+    height: 1019.3043
+  guiRect:
+    serializedVersion: 2
+    x: 2048
+    y: 1024
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 3309.8606
+    y: 2785.774
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 3837.8606
+    y: 2257.774
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 3325.8606
+    y: 2273.774
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: d8e846e426dd5a042a52eda59bcf9f24, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: 6690ce9199ea69744af914dcdec809de, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: templo
+    meshes:
+    - {fileID: 339549504226753718, guid: bd8f7f6eda5534442b55bdae0ac7ac26, type: 3}
+    - {fileID: 6788383922943872000, guid: 17b2b4b733ae95f47a3d4255bdab11a0, type: 3}
+    - {fileID: -7434549690534084444, guid: 65ff4b2592cf4a44d8415799503a370a, type: 3}
+    - {fileID: 4068373912626513877, guid: 7bad85da930d56b4ca1ff3b70670f943, type: 3}
+--- !u!114 &4526699520823953789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: coleccionable
+  m_EditorClassIdentifier: 
+  isSelected: 1
+  rect:
+    serializedVersion: 2
+    x: 3084.1492
+    y: 2035.7144
+    width: 1011.8508
+    height: 1036.6956
+  guiRect:
+    serializedVersion: 2
+    x: 3072
+    y: 2048
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 6089.6343
+    y: 4370.154
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 6617.6343
+    y: 3842.1538
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 6105.6343
+    y: 3858.1538
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 9b324b76c674f7a43a579d50bf6f5374, type: 3}
+  - name: Normal
+    texture: {fileID: 0}
+  - name: metallic
+    texture: {fileID: 0}
+  modelGroups:
+  - name: coleccionable
+    meshes:
+    - {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5190909369348787627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: baldosas
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 3065.0007
+    y: 1024.231
+    width: 1016.4617
+    height: 1028.0001
+  guiRect:
+    serializedVersion: 2
+    x: 3072
+    y: 1024
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 4546.118
+    y: 1342.9872
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 5074.118
+    y: 814.9872
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 4562.118
+    y: 830.9872
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 5245237b0becb5d4f81c05df35f1ae87, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: ae6c3d0043343634b87b678e7bed4c22, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: baldosas
+    meshes:
+    - {fileID: 6146093790778236840, guid: a0e97ad8c6e3d774b9654d5c2b6238b2, type: 3}
+--- !u!114 &6019812500288678612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: cristal
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 1035.2941
+    y: 2047.0591
+    width: 1032.3478
+    height: 1032.3477
+  guiRect:
+    serializedVersion: 2
+    x: 1024
+    y: 2048
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 654.63995
+    y: 2332.2046
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1182.6399
+    y: 1804.2045
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 670.63995
+    y: 1820.2045
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 5f8a7de4f787dff4288cab4e89b2830c, type: 3}
+  - name: Normal
+    texture: {fileID: 0}
+  - name: metallic
+    texture: {fileID: 2800000, guid: 6adbcc4a282d4cc469d1ea37bd7e291c, type: 3}
+  modelGroups:
+  - name: cristales
+    meshes:
+    - {fileID: 6329158148709259305, guid: 265f8cddefbe59944a0a27e0ac3d5cba, type: 3}
+--- !u!114 &7145946253252813007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: portal
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 15.789429
+    y: 1036.8396
+    width: 1017.47156
+    height: 1017.4717
+  guiRect:
+    serializedVersion: 2
+    x: 0
+    y: 1024
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 1378.6517
+    y: 2459.2942
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 1906.6517
+    y: 1931.2942
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 1394.6517
+    y: 1947.2942
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: 20fb0b9d5a815bd48bfde20d00bc9b6e, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: 4cb0bf26ce2ddd74aa38b95c6b45f1bd, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: portal
+    meshes:
+    - {fileID: -951608786083511892, guid: 9baba988c5767cc408517604307cf826, type: 3}
+--- !u!114 &7981077027824992377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: plataforma
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 3062.4917
+    y: 12.5
+    width: 1031.5701
+    height: 1010.1415
+  guiRect:
+    serializedVersion: 2
+    x: 3072
+    y: 0
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 4200.2886
+    y: 538.80426
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 4728.2886
+    y: 10.80426
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 4216.2886
+    y: 26.80426
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: a3bd9a2a5ad359241b958cb4fae94bed, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: 22dac378ccf93a64c84a6a99c204f7f2, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: plataforma
+    meshes:
+    - {fileID: 8377211728942078173, guid: 3c6419d7cafc1044a9f1696e6954a659, type: 3}
+--- !u!114 &8696874244218002176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad07a78750c7644b710e19e1a23d4a, type: 3}
+  m_Name: boton
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 11.7647705
+    y: 2058.8237
+    width: 1008
+    height: 1013
+  guiRect:
+    serializedVersion: 2
+    x: 0
+    y: 2048
+    width: 1024
+    height: 1024
+  debugMode: 0
+  dragRectHeight:
+    serializedVersion: 2
+    x: 1474.1184
+    y: 2366.9873
+    width: 64
+    height: 16
+  dragRectWidth:
+    serializedVersion: 2
+    x: 2002.1184
+    y: 1838.9872
+    width: 16
+    height: 64
+  dragRectPos:
+    serializedVersion: 2
+    x: 1490.1184
+    y: 1854.9872
+    width: 32
+    height: 32
+  textureGroups:
+  - name: Albedo
+    texture: {fileID: 2800000, guid: cb16f24bf036dc84e8240c05fbea6ced, type: 3}
+  - name: Normal
+    texture: {fileID: 2800000, guid: 6513e2334885a2547bcec9ea08490835, type: 3}
+  - name: New TextureGroup
+    texture: {fileID: 0}
+  modelGroups:
+  - name: boton
+    meshes:
+    - {fileID: -5076798556035486163, guid: 669e359a6264c2a458aa2891ba81bf83, type: 3}
