@@ -36,6 +36,8 @@ public class FinalBoss : MonoBehaviour
 
     //Player
     public Transform player;
+    private Vector3 m_playerposition;
+    private bool m_attacking =  false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +82,7 @@ public class FinalBoss : MonoBehaviour
         }
 
         // Loock Player
-        if (minibosshp.hp > 0)
+        if (minibosshp.hp > 0 && m_attacking == false)
         {
             Vector3 loockAtPosition = player.position;
             loockAtPosition.y = transform.position.y;
@@ -148,13 +150,18 @@ public class FinalBoss : MonoBehaviour
     {
         for (int i = 0; i<=3; i++)
         {
+            
+            m_attacking = true;
             m_animator.SetBool("Attack",true);
             Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
+            m_playerposition = player.transform.position;
+
             FindObjectOfType<AudioManager>().Play("BossShot");
-            transform.LookAt(player);
+            transform.LookAt(m_playerposition);
             
             yield return new WaitForSeconds(1.8f);
             m_animator.SetBool("Attack", false);
+            m_attacking = false;
             yield return new WaitForSeconds(1f);
         }
 
