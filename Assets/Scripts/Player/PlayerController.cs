@@ -9,12 +9,16 @@ public class PlayerController : MonoBehaviour
     //Player
     public CharacterController player;
     public PlayerStats playerStats;
+    public Animator animator;
     public Rigidbody playerBody;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
     public Transform playerTransform;
     private float f_horizontalMove;
     private float f_verticalMove;
+    private bool b_speedVertial;
+    private bool b_speedHorizontal;
+
     [SerializeField]private float f_speed;
 
     public bool god = false;
@@ -53,6 +57,33 @@ public class PlayerController : MonoBehaviour
     {
         f_horizontalMove = Input.GetAxis("Horizontal");
         f_verticalMove = Input.GetAxis("Vertical");
+
+        if (f_horizontalMove == 0)
+        {
+            b_speedHorizontal = false; //Player dont move horizontal
+        }
+        else
+        {
+            b_speedHorizontal = true;
+        }
+        
+        if (f_verticalMove == 0)
+        {
+            b_speedVertial = false; //Player dont move vertical
+        }
+        else
+        {
+            b_speedVertial = true;
+        }
+
+        if ( b_speedHorizontal == false && b_speedVertial == false) // If player dont move
+        {
+            animator.SetBool("Walk",false); // Idle
+        }
+        else
+        {
+            animator.SetBool("Walk", true); // Move
+        }
 
         m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
         m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
@@ -98,7 +129,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
     private void LateUpdate()
     {
         if (!player.isGrounded)
@@ -198,6 +228,9 @@ public class PlayerController : MonoBehaviour
         healthbar.SendMessage("TakeDamage", f_damage);
         if(playerStats.hp_stat <= 0)
         {
+            animator.SetBool("Death",true);
+            player.enabled = false;
+            yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("GameOver");
         }
         //Añadir Animacion Daño
