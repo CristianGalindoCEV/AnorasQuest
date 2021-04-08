@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
         f_speed = 15f;
         playerStats.bulletDamage_stat = playerStats.bulletGood_stat;
     }
-
+     
     public void NoGod()
     {
         f_speed = 8f;

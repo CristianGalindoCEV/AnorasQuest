@@ -6,10 +6,11 @@ using Cinemachine;
 
 public class Bauculo : MonoBehaviour
 {
-
+    public Animator animator;
     public GameObject bullet;
     public float speed;
     private Transform firepoint;
+    public PlayerController m_playerController;
     //Camera
     public CinemachineVirtualCamera aimCamera;
 
@@ -23,11 +24,22 @@ public class Bauculo : MonoBehaviour
     }
     public void Fire()
     {
-        Instantiate (bullet, firepoint.position, firepoint.rotation);
-        Debug.DrawRay(firepoint.position, firepoint.forward * 100, Color.red, 2f);
+        if (m_playerController.player.isGrounded == true) //Only Shot if u dont dont jump
+        {
+            StartCoroutine(Bullet());
+        }  
+    }
+    IEnumerator Bullet()
+    {
+        animator.SetBool("PlayMeleAttack", true);
+        Instantiate(bullet, firepoint.position, firepoint.rotation);
+        
+        /*Debug.DrawRay(firepoint.position, firepoint.forward * 100, Color.red, 2f);
         Ray ray = new Ray(firepoint.position, firepoint.forward);
-        //RaycastHit hitInfo;
-
+        RaycastHit hitInfo;*/
+        
         FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("PlayMeleAttack", false);
     }
 }

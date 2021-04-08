@@ -49,7 +49,7 @@ public class InputManager : MonoBehaviour
             m_playerController.aimCamera.enabled = true;
             m_playerController.aiming = true;
             mirilla.SetActive(true);
-        } //try make aiming
+        } //Aiming
         else
         {
             m_playerController.mainCamera.enabled = true;
@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
             mirilla.SetActive(false);
         }
         if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f 
-            && m_playerController.aiming == true)
+            && m_playerController.aiming == true)//Shoot
         {
             gunspawn.Fire();
             f_cadence = 0f;
