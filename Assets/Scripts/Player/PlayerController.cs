@@ -58,33 +58,6 @@ public class PlayerController : MonoBehaviour
         f_horizontalMove = Input.GetAxis("Horizontal");
         f_verticalMove = Input.GetAxis("Vertical");
 
-        if (f_horizontalMove == 0)
-        {
-            b_speedHorizontal = false; //Player dont move horizontal
-        }
-        else
-        {
-            b_speedHorizontal = true;
-        }
-        
-        if (f_verticalMove == 0)
-        {
-            b_speedVertial = false; //Player dont move vertical
-        }
-        else
-        {
-            b_speedVertial = true;
-        }
-
-        if ( b_speedHorizontal == false && b_speedVertial == false) // If player dont move
-        {
-            animator.SetBool("Walk",false); // Idle
-        }
-        else
-        {
-            animator.SetBool("Walk", true); // Move
-        }
-
         m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
         m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
 
@@ -128,6 +101,35 @@ public class PlayerController : MonoBehaviour
                 playerStats.hp_stat++;
             }
         }
+
+        //Animator
+        if (f_horizontalMove == 0)
+        {
+            b_speedHorizontal = false; //Player dont move horizontal
+        }
+        else
+        {
+            b_speedHorizontal = true;
+        }
+
+        if (f_verticalMove == 0)
+        {
+            b_speedVertial = false; //Player dont move vertical
+        }
+        else
+        {
+            b_speedVertial = true;
+        }
+
+        if (b_speedHorizontal == false && b_speedVertial == false) // If player dont move
+        {
+            animator.SetBool("Walk", false); // Idle
+        }
+        else
+        {
+            animator.SetBool("Walk", true); // Move
+        }
+        animator.SetBool("IsGrounded", player.isGrounded);
     }
     private void LateUpdate()
     {
@@ -200,7 +202,7 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(playerTransform.position, Vector3.down);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 5f, m_groundLayer))
+        if (Physics.Raycast(ray, out hit, 10f, m_groundLayer))
         {
             m_shadowTransform.position = hit.point;
             m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
