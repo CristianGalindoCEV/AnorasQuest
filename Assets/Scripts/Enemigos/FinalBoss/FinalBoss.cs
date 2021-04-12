@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class FinalBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        f_randomTimeAttack = Random.Range(3f,5f);
+        f_randomTimeAttack = Random.Range(7f,10f);
         m_animator = GetComponent<Animator>();
     }
 
@@ -87,32 +88,35 @@ public class FinalBoss : MonoBehaviour
             Vector3 loockAtPosition = player.position;
             loockAtPosition.y = transform.position.y;
 
-            transform.LookAt(loockAtPosition);
-            
+            transform.LookAt(loockAtPosition); 
         }
         // Create attack
-        if (f_currentTime >= 7f && minibosshp.hp > 0 && b_onAttack == false)
+        if (f_currentTime >= f_randomTimeAttack && minibosshp.hp > 0 && b_onAttack == false)
         {
-            i_myattack = Random.Range(1, 3);
+            i_myattack = Random.Range(1, 4);
             switch (i_myattack)
             {
                 case 1:
-                    StartCoroutine(AttackOne());
-                    break;
                 case 2:
                     StartCoroutine(AttackOne());
                     break;
+                
+                case 3:
+                    StartCoroutine(AttackTwo());
+                    break;
+                
                 default:
                     Debug.Log("Falla switch");
                     break;
             }
-            f_randomTimeAttack = Random.Range(3f, 5f);
+            f_randomTimeAttack = Random.Range(7f, 10f);
             b_onAttack = true;
         }
     }
     private void FixedUpdate()
     {
-        if (!b_startFight)
+        // Star battle if detect player
+        if (!b_startFight) 
         {
             hit = new Collider[10];
             //Create area for detect player
@@ -149,24 +153,26 @@ public class FinalBoss : MonoBehaviour
     IEnumerator AttackOne()
     {
         for (int i = 0; i<=3; i++)
-        {
-            
+        {   
             m_attacking = true;
-            m_animator.SetBool("Attack",true);
-            Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
+            m_animator.SetBool("Attack",true); // Start Animation Attack
             m_playerposition = player.transform.position;
             
+            yield return new WaitForSeconds(1.2f); //Animation instance ready
             Vector3 loockAtPosition = player.position;
             loockAtPosition.y = transform.position.y;
-            transform.LookAt(loockAtPosition);
+            transform.DOLookAt(loockAtPosition, 0.2f).SetEase(Ease.InSine);
             
+            yield return new WaitForSeconds(0.4f); //Instace
+            Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
             FindObjectOfType<AudioManager>().Play("BossShot");
-            yield return new WaitForSeconds(1.8f);
+           
+            yield return new WaitForSeconds(0.6f); //Stop amimation
             m_animator.SetBool("Attack", false);
-            m_attacking = false;
-            yield return new WaitForSeconds(1f);
+            
+            yield return new WaitForSeconds(1f);//Relax Time to next attack
         }
-
+        m_attacking = false;
         f_currentTime = 0;
         b_onAttack = false;
         m_animator.SetBool("Attack",false);
@@ -177,7 +183,7 @@ public class FinalBoss : MonoBehaviour
         speed = 0f;
         float randomNumber;
         m_animator.SetBool("Walk",false);
-        for (int i = 0; i <= 4; i++)
+        for (int i = 0; i <= 1; i++)//For if u need increment total spawn enemys
         {
             randomNumber = Random.Range (10,25);
             newPosition = new Vector3(player.position.x + randomNumber, -1, player.position.z + randomNumber);

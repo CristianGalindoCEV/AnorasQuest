@@ -655,27 +655,27 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0024045913
+      value: -0.0051860483
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99576503
+      value: 0.98154193
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0877605
+      value: -0.18927571
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.027283434
+      value: -0.026893694
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.413714
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -1035,7 +1035,7 @@ PrefabInstance:
     - target: {fileID: 4934782671799360600, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_text
-      value: Draceno
+      value: Dracau
       objectReference: {fileID: 0}
     - target: {fileID: 4934782671799360600, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -1046,6 +1046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSizeBase
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934782671799360600, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7971761317649878444, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2393,6 +2398,16 @@ PrefabInstance:
       propertyPath: m_renderer
       value: 
       objectReference: {fileID: 5289900076703133676}
+    - target: {fileID: 4341649878529171775, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99817276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341649878529171775, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.060424525
+      objectReference: {fileID: 0}
     - target: {fileID: 5289900077283241064, guid: 3e6908ecc00a94b468d0b91e21e0e87d,
         type: 3}
       propertyPath: m_LocalPosition.x
