@@ -11,13 +11,16 @@ public class PlayerController : MonoBehaviour
     public PlayerStats playerStats;
     public Animator animator;
     public Rigidbody playerBody;
+    public GameObject J_Lumbar;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
+    private Vector3 m_normalPosition;
     public Transform playerTransform;
     private float f_horizontalMove;
     private float f_verticalMove;
     private bool b_speedVertial;
     private bool b_speedHorizontal;
+
 
     [SerializeField]private float f_speed;
 
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
+        m_normalPosition = J_Lumbar.transform.position;
     }
 
     void Update()
@@ -68,6 +72,12 @@ public class PlayerController : MonoBehaviour
         {
             player.transform.LookAt(player.transform.position + m_movePlayer);
         }//Evitar vovlerse loco al apuntar
+        
+        //Move Vertical to shot
+        if (aiming == true)
+        {
+           
+        }
 
         SetGravity();
         Jump();
@@ -149,6 +159,11 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "EnemyBullet")
         {
             f_damage = 5f;
+            StartCoroutine(Golpe());
+        }
+        if (other.tag == "Bicho")
+        {
+            f_damage = 1f;
             StartCoroutine(Golpe());
         }
         if (other.tag == "Hp")
@@ -234,7 +249,7 @@ public class PlayerController : MonoBehaviour
             player.enabled = false;
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("GameOver");
-        }
+        }//Die
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
     }

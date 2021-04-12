@@ -9,11 +9,11 @@ TagManager:
   - PlayerStats
   - Sword
   - Wall
-  - Insect
   - BulletBoss
   - EnemyBullet
   - Hp
   - Hand
+  - Bicho
   layers:
   - Default
   - TransparentFX

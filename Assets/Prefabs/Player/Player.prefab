@@ -129,6 +129,7 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   animator: {fileID: 1095354840}
   playerBody: {fileID: 2868756746996980028}
+  J_Lumbar: {fileID: 3988197472144912649}
   playerTransform: {fileID: 1344188100929735338}
   f_speed: 10
   god: 0
@@ -370,6 +371,12 @@ PrefabInstance:
 --- !u!4 &5642956059904198652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: acefcdac7acc095459a2147087f9b6b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5315786734691622935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3988197472144912649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9123619559575245086, guid: acefcdac7acc095459a2147087f9b6b4,
     type: 3}
   m_PrefabInstance: {fileID: 5315786734691622935}
   m_PrefabAsset: {fileID: 0}
