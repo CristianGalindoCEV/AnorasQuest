@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81a20cd9120a78340851eb10926b5c4b
+guid: acefcdac7acc095459a2147087f9b6b4
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -306,7 +306,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: J_COG
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
