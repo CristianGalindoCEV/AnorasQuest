@@ -60,7 +60,7 @@ public class FinalBoss : MonoBehaviour
                     case Patrol.MOVE:
                         {
                              //Miramos si hemos llegado al punto
-                            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.2f && minibosshp.hp > 0)
+                            if (Vector3.Distance(transform.position, points[i_currentPoint].transform.position) < 0.5f && minibosshp.hp > 0)
                             {
                                 //patrol = Patrol.ROTATE;
                                 i_currentPoint++;
@@ -155,10 +155,12 @@ public class FinalBoss : MonoBehaviour
             m_animator.SetBool("Attack",true);
             Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
             m_playerposition = player.transform.position;
-
-            FindObjectOfType<AudioManager>().Play("BossShot");
-            transform.LookAt(m_playerposition);
             
+            Vector3 loockAtPosition = player.position;
+            loockAtPosition.y = transform.position.y;
+            transform.LookAt(loockAtPosition);
+            
+            FindObjectOfType<AudioManager>().Play("BossShot");
             yield return new WaitForSeconds(1.8f);
             m_animator.SetBool("Attack", false);
             m_attacking = false;
