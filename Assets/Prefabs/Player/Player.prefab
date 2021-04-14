@@ -77,6 +77,23 @@ MonoBehaviour:
   speed: 5
   m_playerController: {fileID: 0}
   aimCamera: {fileID: 0}
+--- !u!1818360608 &4159242676470725590
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474383826768434376}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!1 &1344188100929735376
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,37 +235,37 @@ PrefabInstance:
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.53961587
+      value: -0.53961617
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3893868
+      value: 0.38938686
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.61847866
+      value: -0.6184785
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.41794354
+      value: 0.41794342
       objectReference: {fileID: 0}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
@@ -285,7 +302,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5000004
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 245433982260609196, guid: 7be7d33952e705a4da7230acc62b73ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7be7d33952e705a4da7230acc62b73ca, type: 3}
 --- !u!1 &474383826768434376 stripped
 GameObject:
