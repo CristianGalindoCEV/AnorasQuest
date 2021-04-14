@@ -32,14 +32,12 @@ public class Bauculo : MonoBehaviour
     IEnumerator Bullet()
     {
         animator.SetBool("PlayMeleAttack", true);
+        
+        yield return new WaitForSeconds(0.2f);
         Instantiate(bullet, firepoint.position, firepoint.rotation);
-        
-        /*Debug.DrawRay(firepoint.position, firepoint.forward * 100, Color.red, 2f);
-        Ray ray = new Ray(firepoint.position, firepoint.forward);
-        RaycastHit hitInfo;*/
-        
         FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
-        yield return new WaitForSeconds(0.5f);
+        
+        yield return new WaitForSeconds(0.4f);
         animator.SetBool("PlayMeleAttack", false);
     }
 }
