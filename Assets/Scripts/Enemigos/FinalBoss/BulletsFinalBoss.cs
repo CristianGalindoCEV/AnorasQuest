@@ -8,6 +8,7 @@ public class BulletsFinalBoss : MonoBehaviour
     private float f_timeCounter = 0;
     private Transform m_player;
     public Vector3 playerVector;
+    public GameObject fire;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class BulletsFinalBoss : MonoBehaviour
     {
         f_timeCounter += Time.deltaTime;
         transform.LookAt(playerVector);
+        fire.transform.LookAt(playerVector);
         //Scale Object 
         transform.DOScale(new Vector3 (1,1,150), 1f).OnComplete(DestroyThisObject);
     }
@@ -33,5 +35,6 @@ public class BulletsFinalBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+        Destroy(fire);
     }
 }
