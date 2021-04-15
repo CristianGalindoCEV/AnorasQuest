@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public GameObject J_Arm_R;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
-    private Vector3 m_normalPosition;
     public Transform playerTransform;
     private float f_horizontalMove;
     private float f_verticalMove;
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour
     
     //Camera
     public Camera mainCamera;
-    public CinemachineVirtualCamera aimCamera;
+    public Camera aimCamera;
     private Vector3 camForward;
     private Vector3 camRight;
 
@@ -52,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
-        m_normalPosition = J_Arm_R.transform.position;
     }
 
     void Update()
@@ -74,7 +72,7 @@ public class PlayerController : MonoBehaviour
         //Move Vertical to shot
         if (aiming == true)
         {
-            J_Arm_R.transform.localEulerAngles = aimCamera.transform.localEulerAngles;
+            //J_Arm_R.transform.localEulerAngles.y = aimCamera.transform.localEulerAngles.y;
         }
 
         SetGravity();
@@ -110,12 +108,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Animators
         animator.SetFloat("SpeedX", f_horizontalMove);
         animator.SetFloat("SpeedY", f_verticalMove);
         animator.SetBool("IsGrounded", player.isGrounded);
         animator.SetFloat("VelocityY", m_movePlayer.y);
         
-        //Debug.Log(player.isGrounded);
     }
     private void LateUpdate()
     {
@@ -177,14 +175,28 @@ public class PlayerController : MonoBehaviour
     //Camera
     void camDirection()
     {
-        camForward = mainCamera.transform.forward;
-        camRight = mainCamera.transform.right;
+        if (aiming == false)
+        {
+            camForward = mainCamera.transform.forward;
+            camRight = mainCamera.transform.right;
 
-        camForward.y = 0;
-        camRight.y = 0;
+            camForward.y = 0;
+            camRight.y = 0;
 
-        camForward = camForward.normalized;
-        camRight = camRight.normalized;
+            camForward = camForward.normalized;
+            camRight = camRight.normalized;
+        }
+        else if( aiming == true)
+        {
+            camForward = aimCamera.transform.forward;
+            camRight = aimCamera.transform.right;
+
+            camForward.y = 0;
+            camRight.y = 0;
+
+            camForward = camForward.normalized;
+            camRight = camRight.normalized;
+        }
     }
 
     //Shadow Raycast
