@@ -9,19 +9,18 @@ public class Bauculo : MonoBehaviour
     public Animator animator;
     public GameObject bullet;
     public float speed;
-   [SerializeField] private Transform firepoint;
+    private Transform firepoint;
     public PlayerController m_playerController;
     //Camera
-    //public Camera aimCamera;
+    public CinemachineVirtualCamera aimCamera;
 
     void Start()
     {
         firepoint = GameObject.FindGameObjectWithTag("Hand").transform;
-
     }
     private void Update()
     {
-        firepoint.rotation = m_playerController.aimCamera.transform.rotation;
+        firepoint.rotation = aimCamera.transform.rotation;
     }
     public void Fire()
     {
@@ -33,7 +32,7 @@ public class Bauculo : MonoBehaviour
     IEnumerator Bullet()
     {
         animator.SetBool("PlayMeleAttack", true);
-              
+        
         yield return new WaitForSeconds(0.2f);
         Instantiate(bullet, firepoint.position, firepoint.rotation);
         FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
