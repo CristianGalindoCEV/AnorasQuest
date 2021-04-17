@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37793598, g: 0.6875552, b: 0.8765883, a: 1}
+  m_IndirectSpecularColor: {r: 0.1179264, g: 0.43047026, b: 0.7418769, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3779,37 +3779,37 @@ PrefabInstance:
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.20946208
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.006407991
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.029899335
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97733855
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.79096
+      value: 69.4192
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.25956
+      value: 13.56156
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.156204
+      value: 47.068428
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3819,12 +3819,12 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.029760294
+      value: 0.029760314
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.007025455
+      value: -0.00702546
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -4262,18 +4262,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6bece6d3020ad34b8b1de244222ef93, type: 3}
---- !u!114 &1395968905 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 374674000394813919, guid: 4286bca1715b53946b03e660c6a6fa27,
-    type: 3}
-  m_PrefabInstance: {fileID: 1290951809}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1402734994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2960925946346001545, guid: a6bece6d3020ad34b8b1de244222ef93,
@@ -4545,7 +4533,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wallPortal
       value: 
-      objectReference: {fileID: 92939604}
+      objectReference: {fileID: 661636927}
     - target: {fileID: 848868217103543413, guid: 110d819d876e53c4eaf3ac05577ffd4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6807,7 +6795,7 @@ PrefabInstance:
         type: 3}
       propertyPath: aimCamera
       value: 
-      objectReference: {fileID: 1395968905}
+      objectReference: {fileID: 0}
     - target: {fileID: 190423499721695693, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
       propertyPath: m_playerController
@@ -6892,7 +6880,7 @@ PrefabInstance:
         type: 3}
       propertyPath: aimCamera
       value: 
-      objectReference: {fileID: 1395968905}
+      objectReference: {fileID: 0}
     - target: {fileID: 1344188100929735383, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
       propertyPath: J_Arm_R
