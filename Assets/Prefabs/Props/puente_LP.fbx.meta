@@ -3,7 +3,22 @@ guid: 59e600eebd5d93f4f8c22d851f350689
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cuerdas_principales
+    second: {fileID: 2100000, guid: 269ca415ef7f2804c8b05682810a5ab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: poste
+    second: {fileID: 2100000, guid: 47dabd07a4784f947a425a4ffbd4032e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tablones
+    second: {fileID: 2100000, guid: 390e9a5050aa6e44980a26c8d1a1a747, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
