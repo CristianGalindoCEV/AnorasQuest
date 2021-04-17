@@ -11,8 +11,6 @@ public class Bauculo : MonoBehaviour
     public float speed;
     private Transform firepoint;
     public PlayerController m_playerController;
-    //Camera
-    public CinemachineVirtualCamera aimCamera;
 
     void Start()
     {
@@ -20,7 +18,7 @@ public class Bauculo : MonoBehaviour
     }
     private void Update()
     {
-        firepoint.rotation = aimCamera.transform.rotation;
+        firepoint.rotation = m_playerController.aimCamera.transform.rotation;
     }
     public void Fire()
     {
