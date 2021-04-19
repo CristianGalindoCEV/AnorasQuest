@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 972ac97c279af3c479f4faf1cd7e989a
+guid: fa1cf79bbd81e7141a1d9bf04429f10d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -10,8 +10,14 @@ ModelImporter:
       74: 6720303635017113406
     second: Attack
   - first:
-      74: -998496362607748373
-    second: Death
+      74: 4348485665485846014
+    second: Death_Draceno
+  - first:
+      74: -216779926482830692
+    second: Idle_Draceno
+  - first:
+      74: -6748073033502383464
+    second: Attack_Draceno
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -41,7 +47,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Idle_Draceno
       takeName: Take 001
       internalID: 0
       firstFrame: 1
@@ -70,7 +76,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: Attack
+      name: Attack_Draceno
       takeName: Take 001
       internalID: 0
       firstFrame: 85
@@ -99,7 +105,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 1
     - serializedVersion: 16
-      name: Death
+      name: Death_Draceno
       takeName: Take 001
       internalID: 0
       firstFrame: 125
