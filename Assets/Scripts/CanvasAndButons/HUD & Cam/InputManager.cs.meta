@@ -3,7 +3,14 @@ guid: 7ae94bdee6c4ed444a7cd1c1aee346e7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gunspawn: {instanceID: 0}
+  - hud: {instanceID: 0}
+  - pausemenu: {instanceID: 0}
+  - mirilla: {instanceID: 0}
+  - menumanager: {instanceID: 0}
+  - pauseManager: {instanceID: 0}
+  - playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

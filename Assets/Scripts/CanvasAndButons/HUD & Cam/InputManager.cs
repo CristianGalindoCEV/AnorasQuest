@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
 
     //Player
     private PlayerController m_playerController;
-
+    public PlayerStats playerStats;
     //Cursor
     private bool m_islocked;
 
@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
             m_playerController.aiming = false;
             mirilla.SetActive(false);
         }
-        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > 1f 
+        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > playerStats.timeShot 
             && m_playerController.aiming == true)//Shoot
         {
             gunspawn.Fire();

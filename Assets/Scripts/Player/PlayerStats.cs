@@ -12,6 +12,7 @@ public class PlayerStats : ScriptableObject
     public int bulletDamage_stat;
     public int bulletGood_stat = 100000;
     public int bulletNoGood_stat = 15;
+    public float timeShot = 1f;
 
     public Vector3 playerPosition_stat;
     public bool revive = false;

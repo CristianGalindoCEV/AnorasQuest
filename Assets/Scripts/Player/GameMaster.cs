@@ -14,7 +14,6 @@ public class GameMaster : MonoBehaviour
     
     public int bulletDamage;
     public int bulletGood;
-    public int bulletNoGood;
     
     public PlayerStats playerStats;
 
@@ -29,34 +28,17 @@ public class GameMaster : MonoBehaviour
        
         bulletDamage = playerStats.bulletDamage_stat;
         bulletGood = playerStats.bulletGood_stat;
-        bulletNoGood = playerStats.bulletNoGood_stat;
 
         m_playerObject = GameObject.FindWithTag("Player");
-/*
-        if (playerStats.revive == true)
-        {
-            PlayerRevive();
-        }
-*/
     }
     void Start()
     {
-        bulletDamage = bulletNoGood;
-    }
-    private void OnEnable()
-    {
-        /*
-        if (playerStats.revive == true)
+        if (bulletDamage <= 0)
         {
-            m_playerObject.transform.position = playerPosition;
-            Debug.Log("Hola");
+            Debug.LogError("Bullet not start damge PlayerStats");
         }
-        */
     }
-    private void Update()
-    {
 
-    }
     public void SavePlayerStats()
     {
         playerStats.maxhp_stat = maxhp;
@@ -64,7 +46,6 @@ public class GameMaster : MonoBehaviour
         
         playerStats.bulletDamage_stat = bulletDamage;
         playerStats.bulletGood_stat = bulletGood;
-        playerStats.bulletNoGood_stat = bulletNoGood;
     }
     public void UnlockWeapon()
     {
@@ -77,7 +58,6 @@ public class GameMaster : MonoBehaviour
 
         playerStats.bulletDamage_stat = bulletDamage;
         playerStats.bulletGood_stat = bulletGood;
-        playerStats.bulletNoGood_stat = bulletNoGood;
 
         playerStats.playerPosition_stat = playerPosition;
     }

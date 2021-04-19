@@ -14,11 +14,9 @@ public class PlayerController : MonoBehaviour
     public GameObject J_Arm_R;
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
-    private Vector3 m_normalPosition;
     public Transform playerTransform;
     private float f_horizontalMove;
     private float f_verticalMove;
-
 
     [SerializeField]private float f_speed;
 
@@ -52,7 +50,6 @@ public class PlayerController : MonoBehaviour
     {
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
-        m_normalPosition = J_Arm_R.transform.position;
     }
 
     void Update()
@@ -247,7 +244,7 @@ public class PlayerController : MonoBehaviour
     }
     
     //Heal
-    IEnumerator Heal()
+    public IEnumerator Heal()
     {
         playerStats.hp_stat = playerStats.hp_stat + f_hp;
         healthbar.SendMessage("TakeLife", f_hp);

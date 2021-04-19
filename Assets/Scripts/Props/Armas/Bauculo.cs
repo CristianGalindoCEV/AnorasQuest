@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
 
 public class Bauculo : MonoBehaviour
 {
     public Animator animator;
     public GameObject bullet;
-    public float speed;
+    public float Bulletspeed = 20f;
     private Transform firepoint;
     public PlayerController m_playerController;
 

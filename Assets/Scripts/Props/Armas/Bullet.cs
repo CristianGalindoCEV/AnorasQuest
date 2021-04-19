@@ -1,20 +1,24 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 8f;
+    public Bauculo bauculo;
     private float f_timeCounter = 0f;
     private float dietime = 3f;
 
+    private void Start()
+    {
+        bauculo = FindObjectOfType<Bauculo>();
+    }
     void Update()
     {
      f_timeCounter += Time.deltaTime;
 
-     if (speed != 0)
+     if (bauculo.Bulletspeed != 0)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * bauculo.Bulletspeed * Time.deltaTime);
         }
         else
         {

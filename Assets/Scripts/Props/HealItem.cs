@@ -9,7 +9,7 @@ public class HealItem : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //playercontroller.HealItem();
+            playercontroller.Heal();
             Destroy(gameObject);
         }
     }

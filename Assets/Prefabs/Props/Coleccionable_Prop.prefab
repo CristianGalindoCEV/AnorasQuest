@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7404517381190219482}
   - component: {fileID: 7231638074112201077}
   - component: {fileID: 413087291719763790}
+  - component: {fileID: 6257736176623477349}
   m_Layer: 0
   m_Name: Coleccionable_Prop
   m_TagString: Untagged
@@ -59,6 +60,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 30
+--- !u!114 &6257736176623477349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511771532239065870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf10e9af290eda0448136817797d2258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDamage: 0
+  IsCadence: 0
+  IsTimeShot: 0
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  bullet: {fileID: 0}
+  inputManager: {fileID: 0}
 --- !u!1001 &2747338693350281633
 PrefabInstance:
   m_ObjectHideFlags: 0
