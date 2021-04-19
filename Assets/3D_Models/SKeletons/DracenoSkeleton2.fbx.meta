@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 972ac97c279af3c479f4faf1cd7e989a
+guid: fa1cf79bbd81e7141a1d9bf04429f10d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -10,7 +10,7 @@ ModelImporter:
       74: 6720303635017113406
     second: Attack
   - first:
-      74: -998496362607748373
+      74: 4348485665485846014
     second: Death
   externalObjects: {}
   materials:
