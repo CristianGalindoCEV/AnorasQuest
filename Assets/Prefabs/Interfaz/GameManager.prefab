@@ -52,6 +52,7 @@ MonoBehaviour:
   menuon: 0
   menumanager: {fileID: 0}
   pauseManager: {fileID: 175899981}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
 --- !u!114 &175899981
 MonoBehaviour:
   m_ObjectHideFlags: 0

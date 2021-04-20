@@ -123,6 +123,6 @@ public class CanvasMainMenu : MonoBehaviour
         
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("BIgLevel");
     }
 }

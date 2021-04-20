@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 12c6f44bbd4eef541a925ea029b57f07
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 7769f33fb4fa2e5458344a36556ad760
+    path: Assets/Scenes/BIgLevel.unity
+    guid: 676620e5531557b4985525ca0ff9f498
   - enabled: 1
     path: Assets/Scenes/FlyBoss.unity
     guid: efc40aeb978c7c24ea6542c1f1cad624
