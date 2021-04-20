@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &557746512
 Transform:
@@ -55,7 +55,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &449119349246754812
 Transform:
@@ -164,7 +164,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6643525027284136617
 Transform:
@@ -293,6 +293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gemas_checkpoint_3D
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f3f8ceda87dd94b929eb3c2b2181b9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f3f8ceda87dd94b929eb3c2b2181b9, type: 3}
 --- !u!4 &6609089273335960039 stripped
@@ -372,6 +377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: branca_checkpoint_3D (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1958672e144f011498d093951a6c8cb4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1958672e144f011498d093951a6c8cb4, type: 3}
@@ -453,6 +463,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gemas_checkpoint_3D (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f3f8ceda87dd94b929eb3c2b2181b9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f3f8ceda87dd94b929eb3c2b2181b9, type: 3}
 --- !u!4 &6609089273231143793 stripped
@@ -532,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tronco_checkpoint_3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5c29536777792249896157e6f2b0ba3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c29536777792249896157e6f2b0ba3, type: 3}
@@ -613,6 +633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gemas_checkpoint_3D (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f3f8ceda87dd94b929eb3c2b2181b9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f3f8ceda87dd94b929eb3c2b2181b9, type: 3}
 --- !u!4 &6609089272772344809 stripped
@@ -692,6 +717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: branca_checkpoint_3D (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1958672e144f011498d093951a6c8cb4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1958672e144f011498d093951a6c8cb4, type: 3}
@@ -773,6 +803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: branca_checkpoint_3D
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1958672e144f011498d093951a6c8cb4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1958672e144f011498d093951a6c8cb4, type: 3}
 --- !u!4 &6609089271525514921 stripped
@@ -853,6 +888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: branca_checkpoint_3D (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1958672e144f011498d093951a6c8cb4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1958672e144f011498d093951a6c8cb4, type: 3}
 --- !u!4 &6609089271492625029 stripped
@@ -932,6 +972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gemas_checkpoint_3D (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f3f8ceda87dd94b929eb3c2b2181b9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54f3f8ceda87dd94b929eb3c2b2181b9, type: 3}

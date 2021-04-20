@@ -159,6 +159,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: columna3_3D (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5be9f6f982ae0e4b8c554b99f003c22,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5be9f6f982ae0e4b8c554b99f003c22, type: 3}
 --- !u!4 &2189506595689676965 stripped
@@ -238,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: columna3_3D (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5be9f6f982ae0e4b8c554b99f003c22,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5be9f6f982ae0e4b8c554b99f003c22, type: 3}
@@ -319,6 +329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: columna3_3D (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5be9f6f982ae0e4b8c554b99f003c22,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5be9f6f982ae0e4b8c554b99f003c22, type: 3}
 --- !u!4 &3798356384523571737 stripped
@@ -398,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: columna3_3D (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5be9f6f982ae0e4b8c554b99f003c22,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5be9f6f982ae0e4b8c554b99f003c22, type: 3}
@@ -479,6 +499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: techo_columna3_3D
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 96c5ab51eca2a3c4394f9546bf09fdf7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c5ab51eca2a3c4394f9546bf09fdf7, type: 3}
 --- !u!4 &3798356383844419415 stripped
@@ -558,6 +583,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: columna3_3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5be9f6f982ae0e4b8c554b99f003c22,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5be9f6f982ae0e4b8c554b99f003c22, type: 3}

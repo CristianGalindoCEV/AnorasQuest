@@ -75,7 +75,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9eb3cd91ae3f41a418cff6ac70d1bbd9,
         type: 3}
       propertyPath: m_Name
-      value: Flor_3D
+      value: Flor_3D Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9eb3cd91ae3f41a418cff6ac70d1bbd9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eb3cd91ae3f41a418cff6ac70d1bbd9, type: 3}

@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4876044081109805725
 Transform:
@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: altar_templo_3D
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17b2b4b733ae95f47a3d4255bdab11a0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17b2b4b733ae95f47a3d4255bdab11a0, type: 3}
 --- !u!4 &7141980528827727951 stripped
@@ -272,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: base_templo_3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bad85da930d56b4ca1ff3b70670f943,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bad85da930d56b4ca1ff3b70670f943, type: 3}
@@ -353,6 +363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: columna_templo_3D (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd8f7f6eda5534442b55bdae0ac7ac26,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8f7f6eda5534442b55bdae0ac7ac26, type: 3}
 --- !u!4 &7141980527858646558 stripped
@@ -432,6 +447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: techo_templo_3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65ff4b2592cf4a44d8415799503a370a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65ff4b2592cf4a44d8415799503a370a, type: 3}
@@ -513,6 +533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: columna_templo_3D (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd8f7f6eda5534442b55bdae0ac7ac26,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8f7f6eda5534442b55bdae0ac7ac26, type: 3}
 --- !u!4 &7141980527505594751 stripped
@@ -593,6 +618,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: columna_templo_3D
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd8f7f6eda5534442b55bdae0ac7ac26,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8f7f6eda5534442b55bdae0ac7ac26, type: 3}
 --- !u!4 &7141980527405613767 stripped
@@ -672,6 +702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: columna_templo_3D (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd8f7f6eda5534442b55bdae0ac7ac26,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8f7f6eda5534442b55bdae0ac7ac26, type: 3}
