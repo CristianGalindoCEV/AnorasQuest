@@ -5,22 +5,22 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonEasingPause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Image selector;
-    public PauseManager pauseManager;
+    private PauseManager m_pauseManager;
     public RectTransform rectTransform;
-    [SerializeField]private Vector3 m_startPosition;
+    [SerializeField] private Vector3 m_startPosition;
     private float m_duration = 1f;
     Tween coso;
 
-    [SerializeField]private bool myanimation = false;
+    [SerializeField] private bool myanimation = false;
 
     // Start is called before the first frame update
     void Start()
     {
         selector.enabled = false;
-        pauseManager = FindObjectOfType<PauseManager>();
+        m_pauseManager = FindObjectOfType<PauseManager>();
         m_startPosition = rectTransform.position;
     }
 
@@ -43,7 +43,7 @@ public class ButtonEasing : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         selector.enabled = true;
-        coso = rectTransform.DOMoveX(-3f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
+        coso = rectTransform.DOMoveX(140f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
