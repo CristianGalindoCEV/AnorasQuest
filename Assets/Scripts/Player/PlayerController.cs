@@ -41,8 +41,6 @@ public class PlayerController : MonoBehaviour
     public GameObject healthbar;
     
     //Shadow
-    [SerializeField] GameObject m_shadowGO;
-    [SerializeField] Transform m_shadowTransform;
     [SerializeField] LayerMask m_groundLayer;
 
     // Start is called before the first frame update
@@ -104,18 +102,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsGrounded", player.isGrounded);
         animator.SetFloat("VelocityY", m_movePlayer.y);
         
-    }
-    private void LateUpdate()
-    {
-        if (!player.isGrounded)
-        {
-            m_shadowGO.SetActive(true);
-            RaycastGround();
-        }
-        else
-        {
-            m_shadowGO.SetActive(false);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -186,20 +172,6 @@ public class PlayerController : MonoBehaviour
 
             camForward = camForward.normalized;
             camRight = camRight.normalized;
-        }
-    }
-
-    //Shadow Raycast
-    
-    void RaycastGround()
-    {
-        Ray ray = new Ray(playerTransform.position, Vector3.down);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 10f, m_groundLayer))
-        {
-            m_shadowTransform.position = hit.point;
-            m_shadowTransform.localRotation = Quaternion.FromToRotation(m_shadowTransform.up, hit.normal) * m_shadowTransform.localRotation;
         }
     }
     
