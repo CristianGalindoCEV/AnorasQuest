@@ -212,3 +212,45 @@ MonoBehaviour:
     maxDistance: 0
     loop: 0
     source: {fileID: 0}
+  - name: FlameBoss
+    clip: {fileID: 8300000, guid: d424f1b0ab39b06488fef65791af3e9c, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.5
+    maxPitch: 1
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ChekpointSound
+    clip: {fileID: 8300000, guid: 14f1a0ca5503a5e49aae8bd7f02cab37, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.5
+    maxPitch: 1
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Collector
+    clip: {fileID: 8300000, guid: e8e60d9f08db03f4f8bac50461a84822, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.5
+    maxPitch: 1
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
