@@ -165,7 +165,7 @@ public class FinalBoss : MonoBehaviour
             
             yield return new WaitForSeconds(0.4f); //Instace
             Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
-            FindObjectOfType<AudioManager>().Play("BossShot");
+            FindObjectOfType<AudioManager>().Play("FlameBoss");
            
             yield return new WaitForSeconds(0.6f); //Stop amimation
             m_animator.SetBool("Attack", false);
