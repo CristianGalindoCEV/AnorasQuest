@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour
     public bool menuon;
     public MenuManager menumanager;
     public PauseManager pauseManager;
+    public AudioListener mainListner;
+    public AudioListener aimListner;
 
     //Player
     private PlayerController m_playerController;
@@ -35,6 +37,10 @@ public class InputManager : MonoBehaviour
         //Cursor
         Cursor.visible = (false);
         Cursor.lockState = CursorLockMode.Locked;
+
+        //Listeners
+        aimListner = GameObject.Find("AimCamera").GetComponent<AudioListener>();
+        mainListner = GameObject.Find("MainCamera").GetComponent<AudioListener>();
     }
 
     // Update is called once per frame
@@ -45,15 +51,23 @@ public class InputManager : MonoBehaviour
         
         if (Input.GetButton("Fire2") && pauseManager.paused == false)
         {
-            //m_playerController.mainCamera.enabled = false;
+            aimListner.enabled = true;
+            mainListner.enabled = false;
+
+            m_playerController.mainCamera.enabled = false;
             m_playerController.aimCamera.enabled = true;
+            
             m_playerController.aiming = true;
             mirilla.SetActive(true);
         } //Aiming
         else
         {
+            aimListner.enabled = false;
+            mainListner.enabled = true;
+
             m_playerController.mainCamera.enabled = true;
             m_playerController.aimCamera.enabled = false;
+            
             m_playerController.aiming = false;
             mirilla.SetActive(false);
         }

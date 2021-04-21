@@ -7,8 +7,8 @@ public class aimCam: MonoBehaviour
     private const float Y_ANGLE_MIN = -60f;
     private const float Y_ANGLE_MAX = 60f;
 
-    private const float X_ANGLE_MIN = 0f;
-    private const float X_ANGLE_MAX = 0f;
+    private const float X_ANGLE_MIN = -360f;
+    private const float X_ANGLE_MAX = 360f;
 
     public Transform loockAt;
     public Transform camTransfom;
@@ -34,10 +34,10 @@ public class aimCam: MonoBehaviour
     }
     private void LateUpdate()
     {
-        Vector3 dir = new Vector3(0, 0, -distance);
+        Vector3 dir = new Vector3( 0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransfom.position = loockAt.position + rotation * dir;
         camTransfom.LookAt(loockAt.position);
-        
+        //camTransfom.rotation =  Quaternion.Euler(loockAt.rotation.x, camTransfom.rotation.y, camTransfom.rotation.z);
     }
 }

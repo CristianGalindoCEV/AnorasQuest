@@ -63,16 +63,8 @@ public class PlayerController : MonoBehaviour
         camDirection();
         m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
         m_movePlayer = m_movePlayer * f_speed;
-        if (aiming == false)
-        {
-            player.transform.LookAt(player.transform.position + m_movePlayer);
-        }//Evitar vovlerse loco al apuntar
         
-        //Move Vertical to shot
-        if (aiming == true)
-        {
-            //J_Arm_R.transform.localEulerAngles = aimCamera.transform.localEulerAngles;
-        }
+        player.transform.LookAt(player.transform.position + m_movePlayer); // Player move with camera
 
         SetGravity();
         Jump();
@@ -112,7 +104,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsGrounded", player.isGrounded);
         animator.SetFloat("VelocityY", m_movePlayer.y);
         
-        //Debug.Log(player.isGrounded);
     }
     private void LateUpdate()
     {
@@ -196,7 +187,6 @@ public class PlayerController : MonoBehaviour
             camForward = camForward.normalized;
             camRight = camRight.normalized;
         }
-
     }
 
     //Shadow Raycast
