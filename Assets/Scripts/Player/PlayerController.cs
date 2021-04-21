@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour
             f_damage = 7f;
             StartCoroutine(Golpe());
         }
+        if(other.tag == "Spine")
+        {
+            f_damage = 3f;
+            StartCoroutine(Golpe());
+        }
         //ITEMS
         if (other.tag == "Hp")
         {
