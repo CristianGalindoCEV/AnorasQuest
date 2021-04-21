@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2864791648292172607}
   m_Layer: 8
   m_Name: Espina_Prop
-  m_TagString: Untagged
+  m_TagString: Spine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
