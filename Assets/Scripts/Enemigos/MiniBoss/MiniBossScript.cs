@@ -56,7 +56,7 @@ public class MiniBossScript : MonoBehaviour
                         break;
 
                     case 2:
-                        StartCoroutine(SpikeCage());
+                        StartCoroutine(SpikeAttack());
                         break;
 
                     default:

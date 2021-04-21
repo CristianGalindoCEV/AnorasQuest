@@ -10,9 +10,12 @@ public class SpikeScript : MonoBehaviour
     private void Start()
     {
         //m_player = GameObject.Find("Player");
+        
     }
     private void OnEnable()
     {
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Spike");
+
         //transform.position = new Vector3 (m_player.transform.position.x, m_player.transform.position.y - 2, m_player.transform.position.z);
     }
     // Update is called once per frame

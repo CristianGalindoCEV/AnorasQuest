@@ -75,8 +75,8 @@ MonoBehaviour:
   - name: Attack_1
     clip: {fileID: 8300000, guid: 9021f9b63c487ff439f4387a90427ece, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 1
     pitch: 1
     outputMixer: Sonidos
@@ -89,8 +89,8 @@ MonoBehaviour:
   - name: Dash
     clip: {fileID: 8300000, guid: cfbed8d3eb9ace649b716d9467acb97d, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 1
     pitch: 1
     outputMixer: Sonidos
@@ -103,8 +103,8 @@ MonoBehaviour:
   - name: MagicShot
     clip: {fileID: 8300000, guid: 4aafdaf1b8c03e34d9a3eaa8d83ab4af, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 1
     pitch: 1
     outputMixer: Sonidos
@@ -117,8 +117,8 @@ MonoBehaviour:
   - name: MonsterRoar
     clip: {fileID: 8300000, guid: 0d1ce17f67cde004eb2e0baf6de0d818, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.3
     pitch: 1
     outputMixer: Sonidos
@@ -131,8 +131,8 @@ MonoBehaviour:
   - name: MainSceneBGM
     clip: {fileID: 8300000, guid: b4e42cd4b3a7f694ca094aa2c31aef5e, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.2
     pitch: 1
     outputMixer: Musica
@@ -145,8 +145,8 @@ MonoBehaviour:
   - name: UnlockPortal
     clip: {fileID: 8300000, guid: 60e75a3272bc3f147bc561b9f41f0f28, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.6
     pitch: 1
     outputMixer: Sonidos
@@ -159,8 +159,8 @@ MonoBehaviour:
   - name: BossShot
     clip: {fileID: 8300000, guid: 39a4f82358181194b858ed3ef5210620, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.3
     pitch: 1
     outputMixer: Sonidos
@@ -173,8 +173,8 @@ MonoBehaviour:
   - name: FlyBossAttack
     clip: {fileID: 8300000, guid: e5f4cd9a07930e1408e1e487215a9780, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.6
     pitch: 1
     outputMixer: Sonidos
@@ -184,11 +184,25 @@ MonoBehaviour:
     maxDistance: 0
     loop: 0
     source: {fileID: 0}
-  - name: Collector
-    clip: {fileID: 8300000, guid: e8e60d9f08db03f4f8bac50461a84822, type: 3}
+  - name: Spike
+    clip: {fileID: 8300000, guid: 1825acab529aa734b866aec905a7b0ec, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.5
+    maxPitch: 1
+    volume: 0.6
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: WaterSplash
+    clip: {fileID: 8300000, guid: 7c215ff962d58ed45819d2f8c3bef938, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.5
+    maxPitch: 1
     volume: 0.6
     pitch: 1
     outputMixer: Sonidos

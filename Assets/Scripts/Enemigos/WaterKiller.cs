@@ -20,6 +20,7 @@ public class WaterKiller : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().PlayRandomPitch("WaterSplash");
             SceneManager.LoadScene("GameOver");
         }
     }
