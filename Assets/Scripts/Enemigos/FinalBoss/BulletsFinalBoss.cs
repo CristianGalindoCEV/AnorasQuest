@@ -9,12 +9,14 @@ public class BulletsFinalBoss : MonoBehaviour
     private Transform m_player;
     public Vector3 playerVector;
     public GameObject fire;
+    public Collider mycollider;
 
     // Start is called before the first frame update
     void Start()
     {
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         playerVector = m_player.position;
+        
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class BulletsFinalBoss : MonoBehaviour
         transform.LookAt(playerVector);
         fire.transform.LookAt(playerVector);
         //Scale Object 
-        transform.DOScale(new Vector3 (1,1,150), 1f).OnComplete(DestroyThisObject);
+        mycollider.transform.DOScale(new Vector3 (1,1,50), 1f).OnComplete(DestroyThisObject);
     }
 
     private void DestroyThisObject ()
