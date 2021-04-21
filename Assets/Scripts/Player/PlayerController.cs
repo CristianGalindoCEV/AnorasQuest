@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //BULLETS
         if (other.tag == "EnemyBullet")
         {
             f_damage = 5f;
@@ -116,6 +117,12 @@ public class PlayerController : MonoBehaviour
             f_damage = 1f;
             StartCoroutine(Golpe());
         }
+        if(other.tag == "FinalBullet")
+        {
+            f_damage = 7f;
+            StartCoroutine(Golpe());
+        }
+        //ITEMS
         if (other.tag == "Hp")
         {
             f_hp = 25f;

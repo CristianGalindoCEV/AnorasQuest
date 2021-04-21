@@ -185,7 +185,7 @@ public class FinalBoss : MonoBehaviour
         m_animator.SetBool("Walk",false);
         for (int i = 0; i <= 1; i++)//For if u need increment total spawn enemys
         {
-            randomNumber = Random.Range (10,25);
+            randomNumber = Random.Range (3,6);
             newPosition = new Vector3(player.position.x + randomNumber, -1, player.position.z + randomNumber);
             Instantiate(Enemyes, newPosition, transform.rotation);
             
