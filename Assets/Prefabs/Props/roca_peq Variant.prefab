@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8078951571223887429, guid: b583e88c2b15f3f45beb718a6561268a,
         type: 3}
       propertyPath: m_Name
-      value: roca_peq
+      value: roca_peq Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8788087029503884812, guid: b583e88c2b15f3f45beb718a6561268a,
         type: 3}
@@ -66,21 +66,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9081523033440889339, guid: b583e88c2b15f3f45beb718a6561268a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20.510584
-      objectReference: {fileID: 0}
-    - target: {fileID: 9081523033440889339, guid: b583e88c2b15f3f45beb718a6561268a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 20.510584
-      objectReference: {fileID: 0}
-    - target: {fileID: 9081523033440889339, guid: b583e88c2b15f3f45beb718a6561268a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20.510584
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b583e88c2b15f3f45beb718a6561268a, type: 3}

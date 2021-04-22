@@ -18,5 +18,5 @@ MonoBehaviour:
   bulletGood_stat: 100000
   bulletNoGood_stat: 15
   timeShot: 1
-  playerPosition_stat: {x: -3, y: 10, z: 35}
+  playerPosition_stat: {x: 92.28, y: 13.22, z: 75.16}
   revive: 0
