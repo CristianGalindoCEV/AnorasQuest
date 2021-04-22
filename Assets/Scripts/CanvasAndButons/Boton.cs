@@ -17,7 +17,7 @@ public class Boton : MonoBehaviour
     {
         playerStats.revive = true;
         Debug.Log("Ponte true");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("BIgLevel");
     }
 
     public void PulsaExit()
@@ -26,7 +26,7 @@ public class Boton : MonoBehaviour
     }
     public void PulsaPlay()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("BIgLevel");
     }
     public void ExitToMenu()
     {

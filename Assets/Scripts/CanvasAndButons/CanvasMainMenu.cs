@@ -89,7 +89,9 @@ public class CanvasMainMenu : MonoBehaviour
         playerStats.maxhp_stat = 100;
         playerStats.hp_stat = 100;
         playerStats.bulletDamage_stat = 15;
-        playerStats.playerPosition_stat = new Vector3(0, 0, 0);
+        playerStats.playerPosition_stat = new Vector3(92, 11, 75);
+        playerStats.tutorial = false;
+        
         //Transition Scene
         i_number = Random.Range(1, 3);
 
