@@ -102,7 +102,7 @@ public class FinalBoss : MonoBehaviour
                     break;
                 
                 case 3:
-                    StartCoroutine(AttackOne());
+                    StartCoroutine(AttackTwo());
                     break;
                 
                 default:
