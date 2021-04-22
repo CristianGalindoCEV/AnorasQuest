@@ -413,8 +413,6 @@ MonoBehaviour:
   f_gravity: 30
   f_jumpForce: 15
   healthbar: {fileID: 0}
-  m_shadowGO: {fileID: 0}
-  m_shadowTransform: {fileID: 0}
   m_groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -635,11 +633,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7650410356314597811, guid: acefcdac7acc095459a2147087f9b6b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc39051559006a54db235cb1fc86a0e5, type: 2}
     - target: {fileID: 919132149155446097, guid: acefcdac7acc095459a2147087f9b6b4,
         type: 3}
       propertyPath: m_Name
       value: AnoraSkeleton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4339067327977844455, guid: acefcdac7acc095459a2147087f9b6b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc39051559006a54db235cb1fc86a0e5, type: 2}
+    - target: {fileID: 6700983731367285707, guid: acefcdac7acc095459a2147087f9b6b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e72e1fbdc8858bf4e8ca7498f744485f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acefcdac7acc095459a2147087f9b6b4, type: 3}
 --- !u!4 &5642956059904198652 stripped
