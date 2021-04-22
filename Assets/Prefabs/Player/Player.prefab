@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 385799493}
   - component: {fileID: 385799492}
   - component: {fileID: 385799491}
-  - component: {fileID: 8388725521632894606}
   m_Layer: 9
   m_Name: AimCamera
   m_TagString: Untagged
@@ -163,23 +162,6 @@ MonoBehaviour:
   camTransfom: {fileID: 385799494}
   cam: {fileID: 385799490}
   distance: 1.5
---- !u!114 &8388725521632894606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385799489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: c6a1d18f9e9768949bb3d58f2d4a86c1, type: 2}
 --- !u!1 &466331762
 GameObject:
   m_ObjectHideFlags: 0
