@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: OrbEnemy
+  m_Name: OrbAnora
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 0}
   m_Children:
@@ -218,7 +218,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":1.0,"g":0.2862745523452759,"b":0.33366936445236208,"a":0.0}'
+      m_SerializableObject: '{"r":0.44945621490478518,"g":1.0,"b":0.2862745523452759,"a":0.0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.25
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -258,7 +258,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OrbEnemy
+  m_Name: OrbAnora
   m_Graph: {fileID: 114350483966674976}
   m_ShaderSources:
   - compute: 1
@@ -658,7 +658,7 @@ VisualEffectResource:
       = index;\r\n#endif\r\n#endif\r\n\t}\r\n}\r\n"
   - compute: 0
     name: '[System 2]Output ParticleStrip Quad'
-    source: "Shader \"Hidden/VFX/OrbEnemy/System 2/Output ParticleStrip Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
+    source: "Shader \"Hidden/VFX/OrbAnora/System 2/Output ParticleStrip Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
       Off\r\n\t\t\r\n\t\tTags { \"Queue\"=\"Transparent\" \"IgnoreProjector\"=\"True\"
       \"RenderType\"=\"Transparent\" }\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tBlend
       SrcAlpha One\n\t\tZTest LEqual\n\t\tZWrite Off\n\t\tCull Off\n\t\t\n\t\n\t\t\t\n\t\tHLSLINCLUDE\n\t\t\n\t\t#define
@@ -1228,7 +1228,7 @@ VisualEffectResource:
       = index;\r\n#endif\r\n#endif\r\n\t}\r\n}\r\n"
   - compute: 0
     name: '[System 3]Output Particle Quad'
-    source: "Shader \"Hidden/VFX/OrbEnemy/System 3/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
+    source: "Shader \"Hidden/VFX/OrbAnora/System 3/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
       Off\r\n\t\t\r\n\t\tTags { \"Queue\"=\"Transparent\" \"IgnoreProjector\"=\"True\"
       \"RenderType\"=\"Transparent\" }\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tBlend
       SrcAlpha One\n\t\tZTest LEqual\n\t\tZWrite Off\n\t\tCull Off\n\t\t\n\t\n\t\t\t\n\t\tHLSLINCLUDE\n\t\t\n\t\t#define
@@ -1851,7 +1851,7 @@ VisualEffectResource:
       = index;\r\n#endif\r\n#endif\r\n\t}\r\n}\r\n"
   - compute: 0
     name: '[System 4]Output Particle Quad'
-    source: "Shader \"Hidden/VFX/OrbEnemy/System 4/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
+    source: "Shader \"Hidden/VFX/OrbAnora/System 4/Output Particle Quad\"\n{\r\n\tSubShader\r\n\t{\t\r\n\t\tCull
       Off\r\n\t\t\r\n\t\tTags { \"Queue\"=\"Transparent\" \"IgnoreProjector\"=\"True\"
       \"RenderType\"=\"Transparent\" }\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\tBlend
       SrcAlpha One\n\t\tZTest LEqual\n\t\tZWrite Off\n\t\tCull Off\n\t\t\n\t\n\t\t\t\n\t\tHLSLINCLUDE\n\t\t\n\t\t#define
@@ -2671,11 +2671,11 @@ VisualEffectResource:
         - m_ExpressionIndex: 3
           m_Value: 0.01
         - m_ExpressionIndex: 5
-          m_Value: 1
+          m_Value: 0.25
         - m_ExpressionIndex: 11
           m_Value: 10
         - m_ExpressionIndex: 12
-          m_Value: 1.5
+          m_Value: 0.46
         - m_ExpressionIndex: 14
           m_Value: 2
         - m_ExpressionIndex: 15
@@ -2723,7 +2723,7 @@ VisualEffectResource:
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 8
-          m_Value: {x: 1, y: 0.28627455, z: 0.33366936, w: 0}
+          m_Value: {x: 0.44945621, y: 1, z: 0.28627455, w: 0}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 0
@@ -2875,7 +2875,7 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 5.2705884, g: 10.603922, b: 11.984314, a: 1}
-            key1: {r: 2.9960785, g: 1.977016, b: 0.26666665, a: 0.9577465}
+            key1: {r: 0.20754719, g: 4, b: 3.515706, a: 0.9577465}
             key2: {r: 0, g: 0, b: 0, a: 0.29411766}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6905,7 +6905,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":1.0,"g":0.2862745523452759,"b":0.33366936445236208,"a":0.0}'
+      m_SerializableObject: '{"r":0.44945621490478518,"g":1.0,"b":0.2862745523452759,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -7477,7 +7477,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.25
     m_Space: 2147483647
   m_Property:
     name: o
@@ -8477,7 +8477,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.5
+      m_SerializableObject: 0.46
     m_Space: 2147483647
   m_Property:
     name: b
@@ -11887,7 +11887,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":5.270588397979736,"g":10.603921890258789,"b":11.98431396484375,"a":1.0},"time":0.0},{"color":{"r":2.9960784912109377,"g":1.9770159721374512,"b":0.2666666507720947,"a":1.0},"time":0.18260471522808076}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.9577465057373047,"time":0.42352941632270815},{"alpha":0.29411765933036806,"time":0.7353017330169678},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":5.270588397979736,"g":10.603921890258789,"b":11.98431396484375,"a":1.0},"time":0.0},{"color":{"r":0.20754718780517579,"g":4.0,"b":3.5157060623168947,"a":1.0},"time":0.18260471522808076}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.9577465057373047,"time":0.42352941632270815},{"alpha":0.29411765933036806,"time":0.7353017330169678},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
