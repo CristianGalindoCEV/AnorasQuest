@@ -138,13 +138,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-    enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-    nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-    in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
-    facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-    luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+  m_text: 'Brought alive by the guardians of Dalanor, Anora has to save the kingdom
+    by the horrible monster Draacau, who has possessed both guardians, took their
+    powers and set the forest into chaos.
 
 
 
@@ -643,11 +639,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-    enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-    nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit
-    in vulputate velit esse \n\n\n"
+  m_text: 'Draacau, the horrible monster who put Dalanor into chaos and possessed
+    the guardians. His enourmus teeth and claws will make your battle very difficult.
+    Make sure to collect all the collectable items to be stronger!
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97b2191965e5e254785d2a25a42a7b56, type: 2}
   m_sharedMaterial: {fileID: -4923861355240853725, guid: 97b2191965e5e254785d2a25a42a7b56,
@@ -781,9 +779,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-    enim ad minim \n\n\n\n"
+  m_text: 'Naag Etts are the loyal  Dracaau minions. Their fierce claws  might make
+    you a lot of damage!
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97b2191965e5e254785d2a25a42a7b56, type: 2}
   m_sharedMaterial: {fileID: -4923861355240853725, guid: 97b2191965e5e254785d2a25a42a7b56,
