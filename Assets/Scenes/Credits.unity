@@ -725,8 +725,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 147254144}
-  i_speed: 30
-  maxTime: 55
+  i_speed: 40
+  maxTime: 40
 --- !u!4 &1551053387
 Transform:
   m_ObjectHideFlags: 0
