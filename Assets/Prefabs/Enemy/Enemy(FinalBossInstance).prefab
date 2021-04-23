@@ -594,11 +594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ac6bcaf00f42d498c88e510af8cf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 50
+  maxHealth: 50
   healtbarUI: {fileID: 745266704}
   slider: {fileID: 2066794560}
-  m_renderer: {fileID: 0}
+  m_renderer: {fileID: 8406813376651045649}
   m_burn: {fileID: 7344264998945815735}
 --- !u!114 &767414709211076301
 MonoBehaviour:
@@ -743,6 +743,12 @@ PrefabInstance:
 --- !u!4 &6156439688397150861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 043a26a2b7ccaec4c8d5a6eac9511859,
+    type: 3}
+  m_PrefabInstance: {fileID: 5979276423334608230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8406813376651045649 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2761172780261283447, guid: 043a26a2b7ccaec4c8d5a6eac9511859,
     type: 3}
   m_PrefabInstance: {fileID: 5979276423334608230}
   m_PrefabAsset: {fileID: 0}

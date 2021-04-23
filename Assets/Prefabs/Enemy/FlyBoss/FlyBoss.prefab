@@ -63,18 +63,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   points:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_boss: {fileID: 0}
-  insectPack: {fileID: 0}
-  ballAttack: {fileID: 0}
-  m_neck: {fileID: 0}
+  m_boss: {fileID: 3427293181057189473}
+  insectPack: {fileID: 7980996316112434645, guid: fa5f3ff516cd0e04a8c09b8f42d6eb0b,
+    type: 3}
+  ballAttack: {fileID: 8154651404456314428, guid: a354bc508bca54c48a985c59fb49cc04,
+    type: 3}
   player: {fileID: 0}
-  playerStats: {fileID: 0}
-  minibosshp: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  minibosshp: {fileID: 4259081972003945614}
   damage: 0
 --- !u!114 &4259081972003945614
 MonoBehaviour:
@@ -89,9 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossBar: {fileID: 0}
-  maxHp: 2000
+  maxHp: 900
   hp: 0
-  m_renderer: {fileID: 0}
+  m_renderer: {fileID: 7357944843889194809}
 --- !u!95 &570602791162986347
 Animator:
   serializedVersion: 3
@@ -214,6 +215,12 @@ PrefabInstance:
 --- !u!4 &1654287075992154892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a29febd88ee49a049b71fb0c5b7693a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260880531893343463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7357944843889194809 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -620608410972593186, guid: a29febd88ee49a049b71fb0c5b7693a1,
     type: 3}
   m_PrefabInstance: {fileID: 1260880531893343463}
   m_PrefabAsset: {fileID: 0}
