@@ -65,7 +65,7 @@ public class MiniBossScript : MonoBehaviour
                 }
             }
 
-            if (wallBoss.destroyWall == false && minibosshp.hp <= 1000)
+            if (wallBoss.destroyWall == false && minibosshp.hp <= 600)
             {
                 minibosshp.hp = 1000;
                 BossWall();
