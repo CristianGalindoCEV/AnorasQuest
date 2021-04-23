@@ -84,6 +84,6 @@ public class PortalItem : MonoBehaviour
         yield return new WaitForSeconds(4);
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("BIgLevel");
     }
 }
