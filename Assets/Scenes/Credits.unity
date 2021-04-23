@@ -177,25 +177,103 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit morbi pharetra,
-    vel et netus montes sapien cursus ultricies tellus facilisis mauris, vivamus
-    maecenas quam commodo nulla laoreet eros ullamcorper. Fermentum tristique leo
-    dictumst tempor sem varius imperdiet ac natoque sagittis, lobortis tempus donec
-    sodales lectus vulputate risus torquent sociosqu, condimentum cum congue arcu
-    accumsan laoreet a erat volutpat. Malesuada proin nulla dictumst suspendisse
-    mus habitant fusce per turpis diam nibh, ligula inceptos nascetur eu condimentum
-    augue odio congue libero hendrerit, maecenas molestie sociosqu blandit sem conubia
-    cursus a non enim.
+  m_text: '___________________Credits__________________
 
 
+    Characters concepts:
 
-    Egestas sociis nibh platea pretium sodales conubia
-    eros, dictum lectus ullamcorper nulla elementum blandit primis sociosqu, tempor
-    quam fringilla aliquam et euismod. Dignissim nisi et parturient habitant penatibus
-    sem viverra magnis, aptent id vitae ullamcorper a cursus commodo at, porttitor
-    ridiculus inceptos mi platea tortor luctus. Velit taciti himenaeos vulputate
-    ornare nec et ligula facilisi curabitur sodales purus, hac litora dictum imperdiet
-    sem consequat massa non mus.'
+
+    Moth
+    Concept - Alicia Grillo
+
+    Draceno Concept - Alicia Grillo
+
+    Draacau Concept
+    - Pol Domingo
+
+    Naag Ett Concept - Pol Domingo
+
+
+    Props Concepts:
+
+
+    General
+    - Andrea Bermudez
+
+    Trees - Alicia Grillo
+
+    Bushes - Alicia Grillo
+
+
+    3D
+    Modelling Characters:
+
+
+    Anora - Pol Domingo
+
+    Moth -Alicia Grillo
+
+    Draceno
+    - Alicia Grillo
+
+    Naag Ett - Pol Domingo
+
+    Draacau - Pol Domingo
+
+
+    3D
+    Rigging and Animations:
+
+    Pol Domingo
+
+
+    3D Modelling Props:
+
+
+    General
+    - Andrea Bermudez
+
+    Trees - Alicia Grillo
+
+
+    Texturing:
+
+
+    Props - Andrea
+    Bermudez
+
+    Moth - Andrea Bermudez
+
+    Draceno - Andrea Bermudez
+
+    Anora
+    - Pol Domingo
+
+    Naag Ett - Pol Domingo
+
+    Draacau - Pol Domingo
+
+
+    Programming
+    and bug fixing:
+
+    Cristian Galindo
+
+
+    Sound:
+
+    Pol Domingo
+
+
+    Particles:
+
+    Cristian
+    Galindo
+
+    Pol Domingo
+
+
+    ___________Thanks for playing__________'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97b2191965e5e254785d2a25a42a7b56, type: 2}
   m_sharedMaterial: {fileID: -4923861355240853725, guid: 97b2191965e5e254785d2a25a42a7b56,
