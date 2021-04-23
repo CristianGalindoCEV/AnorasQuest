@@ -200,47 +200,40 @@ MonoBehaviour:
     General
     - Andrea Bermudez
 
-    Trees - Alicia Grillo
 
-    Bushes - Alicia Grillo
-
-
-    3D
-    Modelling Characters:
+    3D Modelling Characters:
 
 
     Anora - Pol Domingo
 
-    Moth -Alicia Grillo
+    Moth
+    -Alicia Grillo
 
-    Draceno
-    - Alicia Grillo
+    Draceno - Alicia Grillo
 
     Naag Ett - Pol Domingo
 
-    Draacau - Pol Domingo
+    Draacau
+    - Pol Domingo
 
 
-    3D
-    Rigging and Animations:
+    3D Rigging and Animations:
 
     Pol Domingo
 
 
-    3D Modelling Props:
+    3D Modelling
+    Props:
 
 
-    General
+    General - Andrea Bermudez
+
+
+    Texturing & Shaders:
+
+
+    Props
     - Andrea Bermudez
-
-    Trees - Alicia Grillo
-
-
-    Texturing:
-
-
-    Props - Andrea
-    Bermudez
 
     Moth - Andrea Bermudez
 
@@ -253,6 +246,10 @@ MonoBehaviour:
 
     Draacau - Pol Domingo
 
+    Bauculo
+    - Cristian Galindo
+
+    Shaders - Pol Domingo & Cristian Galindo
 
     Programming
     and bug fixing:
@@ -729,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 147254144}
   i_speed: 30
-  f_timer: 0
+  maxTime: 55
 --- !u!4 &1551053387
 Transform:
   m_ObjectHideFlags: 0

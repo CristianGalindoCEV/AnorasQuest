@@ -8,7 +8,8 @@ public class CreditsScene : MonoBehaviour
     public Transform text;
     private float f_push = -110;
     [SerializeField] private int i_speed = 30;
-    [SerializeField]private float f_timer = 0;
+    private float f_timer = 0;
+    public float maxTime;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class CreditsScene : MonoBehaviour
 
         f_timer += Time.deltaTime;
 
-        if (f_timer >= 40)
+        if (f_timer >= maxTime)
         {
             SceneManager.LoadScene("MainMenu");
         }
