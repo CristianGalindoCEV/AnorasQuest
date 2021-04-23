@@ -204,6 +204,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Golpe()
     {
         //Indicamos al score que hemos perdido HP
+        FindObjectOfType<AudioManager>().PlayRandomPitch("DamageAnora");
         playerStats.hp_stat = playerStats.hp_stat - f_damage;
         healthbar.SendMessage("TakeDamage", f_damage);
         if(playerStats.hp_stat <= 0)
@@ -223,6 +224,7 @@ public class PlayerController : MonoBehaviour
         playerStats.hp_stat = playerStats.hp_stat + f_hp;
         healthbar.SendMessage("TakeLife", f_hp);
         //Añadir Animacion Vida
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Heal");
         yield return new WaitForSeconds(1.0f);
     }
 }
