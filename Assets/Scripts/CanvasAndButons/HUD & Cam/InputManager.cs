@@ -15,8 +15,8 @@ public class InputManager : MonoBehaviour
     public bool menuon;
     public MenuManager menumanager;
     public PauseManager pauseManager;
-    public AudioListener mainListner;
-    public AudioListener aimListner;
+    private AudioListener mainListner;
+    private AudioListener aimListner;
 
     //Player
     private PlayerController m_playerController;
