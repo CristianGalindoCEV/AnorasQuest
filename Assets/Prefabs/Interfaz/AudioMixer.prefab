@@ -257,7 +257,7 @@ MonoBehaviour:
   - name: DamageAnora
     clip: {fileID: 8300000, guid: 99e77baaa71bd9e4ca5bb0e976e92bc7, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0.5
+    minPitch: 0.9
     maxPitch: 1
     volume: 0.6
     pitch: 1
