@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Disolve_Morph
+  m_Name: Disolve_Moth
   m_Shader: {fileID: -6465566751694194690, guid: 2dfcab0f851a08241b12b9ec61dbf9c5,
     type: 3}
   m_ShaderKeywords: 
@@ -34,11 +34,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo_:
-        m_Texture: {fileID: 2800000, guid: a937739747b2ccf47847e64327176d36, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75c7eb73869953642bf009053deb768d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - NormalMap_:
-        m_Texture: {fileID: 2800000, guid: c9dfa13046e57f84087040fc846adf87, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0e02bf8cbe6d45544a6369739f063188, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Smothness_:
@@ -99,7 +99,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_9CDEF10B: {r: 0, g: 7.529412, b: 16, a: 0}
+    - Color_9CDEF10B: {r: 0.36796093, g: 2.2671142, b: 0.11869708, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
