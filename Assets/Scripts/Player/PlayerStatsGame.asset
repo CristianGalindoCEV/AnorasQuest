@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp_stat: 100
   hp_stat: 100
-  bulletDamage_stat: 15
+  bulletDamage_stat: 80
   bulletGood_stat: 100000
   bulletNoGood_stat: 15
-  timeShot: 0.7
-  playerPosition_stat: {x: 92, y: 11, z: 75}
+  timeShot: 1
+  playerPosition_stat: {x: -5.5, y: 4.5, z: 30}
   revive: 0
   tutorial: 0

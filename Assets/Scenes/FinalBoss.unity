@@ -3828,7 +3828,7 @@ PrefabInstance:
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.1870659
+      value: 0.18706588
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3868,7 +3868,7 @@ PrefabInstance:
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040091738
+      value: -0.040091734
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3893,7 +3893,7 @@ PrefabInstance:
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18706588
+      value: 0.18706587
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -4555,32 +4555,13 @@ PrefabInstance:
       propertyPath: portal3
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f, type: 3}
+    - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
+        type: 3}
+      propertyPath: bossName
+      value: 
+      objectReference: {fileID: 916037584}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39cffee9570fc1641be85a74f998968f, type: 3}
---- !u!1 &708502157 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4447274108020852934, guid: 39cffee9570fc1641be85a74f998968f,
-    type: 3}
-  m_PrefabInstance: {fileID: 708502156}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &708502158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708502157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 484898f3639e8194dab3d352504305cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playercontroller: {fileID: 1411603392}
-  tranistion: {fileID: 1297117443}
-  hud: {fileID: 1873499443}
-  paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-  nopaused: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
 --- !u!4 &708502159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4447274108020852931, guid: 39cffee9570fc1641be85a74f998968f,
@@ -5923,8 +5904,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9093405983362157496, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_Name
+      value: BossName
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30f2d830388dd549bd22d0d52973ad5, type: 3}
+--- !u!1 &916037584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9093405983362157496, guid: b30f2d830388dd549bd22d0d52973ad5,
+    type: 3}
+  m_PrefabInstance: {fileID: 916037583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &916037586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1320012878427755687, guid: b30f2d830388dd549bd22d0d52973ad5,
