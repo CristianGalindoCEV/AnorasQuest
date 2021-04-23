@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 185735659}
   - component: {fileID: 185735658}
   m_Layer: 0
-  m_Name: Image 1
+  m_Name: Image_Anora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 845084091}
   - component: {fileID: 845084090}
   m_Layer: 0
-  m_Name: Text 1
+  m_Name: Text_Anora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 3193780674364437982}
   - component: {fileID: 4814362802198529431}
   m_Layer: 0
-  m_Name: Image 2
+  m_Name: Image_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 8384088552330850341}
   - component: {fileID: 16227698646610723}
   m_Layer: 0
-  m_Name: Image 3
+  m_Name: Image_FinalBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 3925485002320835551}
   - component: {fileID: 3030037318726865946}
   m_Layer: 0
-  m_Name: Text 3
+  m_Name: Text_FinalBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 6278641630060313585}
   - component: {fileID: 4657976390181000397}
   m_Layer: 0
-  m_Name: Text 2
+  m_Name: Text_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
