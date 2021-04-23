@@ -34,14 +34,13 @@ public class CanvasMainMenu : MonoBehaviour
         mainmenu.SetActive(true);
         options.SetActive(false);
 
-        m_text1 = GameObject.Find("Text 1");
-        m_text2 = GameObject.Find("Text 2");
-        m_text3 = GameObject.Find("Text 3");
-        m_image1 = GameObject.Find("Image 1");
-        m_image2 = GameObject.Find("Image 2");
-        m_image3 = GameObject.Find("Image 3");
+        m_text1 = GameObject.Find("Text_Anora");
+        m_text2 = GameObject.Find("Text_Enemy");
+        m_text3 = GameObject.Find("Text_FinalBoss");
+        m_image1 = GameObject.Find("Image_Anora");
+        m_image2 = GameObject.Find("Image_Enemy");
+        m_image3 = GameObject.Find("Image_FinalBoss");
         
-
         m_image1.SetActive(false);
         m_text1.SetActive(false);
         m_image2.SetActive(false);
@@ -51,7 +50,6 @@ public class CanvasMainMenu : MonoBehaviour
 
        FindObjectOfType<AudioManager>().Play("MenuBGM");
     }
-
 
     public void PulsaOpciones()
     {
@@ -81,7 +79,6 @@ public class CanvasMainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Button");
         StartCoroutine(Play());
     }
-
 
     IEnumerator Play()
     {
