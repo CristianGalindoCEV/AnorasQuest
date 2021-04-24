@@ -67,7 +67,7 @@ public class MiniBossScript : MonoBehaviour
 
             if (wallBoss.destroyWall == false && minibosshp.hp <= 600)
             {
-                minibosshp.hp = 1000;
+                minibosshp.hp = 600;
                 BossWall();
             }
 
@@ -120,6 +120,7 @@ public class MiniBossScript : MonoBehaviour
 
     IEnumerator SpikeCage()
     {
+        
         Instantiate(spikeCagePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
         m_anim.SetBool("Attack", true);
         f_TimeCounter = 0;
@@ -129,7 +130,9 @@ public class MiniBossScript : MonoBehaviour
     }
     IEnumerator SpikeAttack()
     {
-        Instantiate(spikePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
+        Vector3 myPlayerPosition = m_player.transform.position;
+        yield return new WaitForSeconds(1f);
+        Instantiate(spikePrefab, new Vector3(myPlayerPosition.x, 0, myPlayerPosition.z), transform.rotation);
         m_anim.SetBool("Attack", true);
         
         f_TimeCounter = 0;
