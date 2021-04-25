@@ -195,6 +195,7 @@ public class FlyMiniBoss : MonoBehaviour
             b_startFight = false;
             m_collider.enabled = false;
             m_speed = 0;
+            playerStats.FlyBoss = true;
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

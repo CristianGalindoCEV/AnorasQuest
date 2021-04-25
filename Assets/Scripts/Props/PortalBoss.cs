@@ -10,6 +10,10 @@ public class PortalBoss : MonoBehaviour
     private GameObject m_loading;
     public Animator tranistion;
     public CanvasGroup hud;
+    
+    //MapPase
+    public PlayerStats playerStats;
+    public GameObject thisPortal;
 
     //Audio
     public AudioMixerSnapshot paused;
@@ -42,6 +46,11 @@ public class PortalBoss : MonoBehaviour
         m_text2.SetActive(false);
         m_image3.SetActive(false);
         m_text3.SetActive(false);
+
+        if (playerStats.FlyBoss == true)
+        {
+            thisPortal.SetActive(false);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

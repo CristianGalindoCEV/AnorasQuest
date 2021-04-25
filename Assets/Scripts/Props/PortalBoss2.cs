@@ -11,6 +11,10 @@ public class PortalBoss2 : MonoBehaviour
     public Animator tranistion;
     public CanvasGroup hud;
 
+    //MapPase
+    public PlayerStats playerStats;
+    public GameObject thisPortal;
+
     //Audio
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot nopaused;
@@ -23,6 +27,7 @@ public class PortalBoss2 : MonoBehaviour
     public GameObject m_image1;
     public GameObject m_image2;
     public GameObject m_image3;
+
     private void Start()
     {
         loading = GameObject.Find("loadingScreen");
@@ -42,6 +47,11 @@ public class PortalBoss2 : MonoBehaviour
         m_text2.SetActive(false);
         m_image3.SetActive(false);
         m_text3.SetActive(false);
+
+        if(playerStats.StaticBoss == true)
+        {
+            thisPortal.SetActive(false);
+        }
        
     }
     private void OnTriggerEnter(Collider other)

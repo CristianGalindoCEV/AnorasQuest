@@ -5,7 +5,6 @@ using UnityEngine;
 public class MiniBossScript : MonoBehaviour
 {
     //Boss
-
     [SerializeField] GameObject spikePrefab;
     [SerializeField] GameObject spikeCagePrefab;
     public Collider Mycollider;
@@ -148,6 +147,7 @@ public class MiniBossScript : MonoBehaviour
             b_startBattle = false;
             m_anim.SetBool("Dead",true);
             Mycollider.enabled = false;
+            playerStats.StaticBoss = true;
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

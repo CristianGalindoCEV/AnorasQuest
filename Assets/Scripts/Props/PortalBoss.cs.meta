@@ -3,7 +3,20 @@ guid: 06ae177c57825954385a61a4b4d17c8b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playercontroller: {instanceID: 0}
+  - tranistion: {instanceID: 0}
+  - hud: {instanceID: 0}
+  - playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  - thisPortal: {instanceID: 0}
+  - paused: {instanceID: 0}
+  - nopaused: {instanceID: 0}
+  - m_text1: {instanceID: 0}
+  - m_text2: {instanceID: 0}
+  - m_text3: {instanceID: 0}
+  - m_image1: {instanceID: 0}
+  - m_image2: {instanceID: 0}
+  - m_image3: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
