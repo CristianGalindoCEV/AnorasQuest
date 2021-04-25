@@ -14,6 +14,8 @@ public class PortalBoss : MonoBehaviour
     //MapPase
     public PlayerStats playerStats;
     public GameObject thisPortal;
+    public GameObject myWall;
+    public GameObject myButton;
 
     //Audio
     public AudioMixerSnapshot paused;
@@ -50,6 +52,8 @@ public class PortalBoss : MonoBehaviour
         if (playerStats.FlyBoss == true)
         {
             thisPortal.SetActive(false);
+            myWall.SetActive(false);
+            myButton.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)

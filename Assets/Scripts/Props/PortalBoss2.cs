@@ -14,6 +14,8 @@ public class PortalBoss2 : MonoBehaviour
     //MapPase
     public PlayerStats playerStats;
     public GameObject thisPortal;
+    public GameObject myWall;
+    public GameObject myButton;
 
     //Audio
     public AudioMixerSnapshot paused;
@@ -51,6 +53,8 @@ public class PortalBoss2 : MonoBehaviour
         if(playerStats.StaticBoss == true)
         {
             thisPortal.SetActive(false);
+            myWall.SetActive(false);
+            myButton.SetActive(false);
         }
        
     }

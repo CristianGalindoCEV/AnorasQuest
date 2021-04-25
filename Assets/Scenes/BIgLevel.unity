@@ -14006,6 +14006,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110d819d876e53c4eaf3ac05577ffd4a, type: 3}
+--- !u!1 &775824194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 848868217103543410, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 775824193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &790896887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27646,6 +27652,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110d819d876e53c4eaf3ac05577ffd4a, type: 3}
+--- !u!1 &1533589876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 848868217103543410, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1533589875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1533668488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6643525027284136617, guid: 647ee1066de24e6438808db338b7e2f2,
@@ -28307,6 +28319,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d468adbff0e96f247a85cd5809a220c5, type: 3}
+--- !u!1 &1573253347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3692037436724150207, guid: d468adbff0e96f247a85cd5809a220c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1573253346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1573266799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7651891802365866783, guid: 814c32e0db403724591b4b65455accea,
@@ -29596,6 +29614,8 @@ MonoBehaviour:
   hud: {fileID: 1731720297}
   playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   thisPortal: {fileID: 1663998402}
+  myWall: {fileID: 2124963191}
+  myButton: {fileID: 775824194}
   paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
   nopaused: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
   m_text1: {fileID: 339066509}
@@ -36165,6 +36185,8 @@ MonoBehaviour:
   hud: {fileID: 1731720297}
   playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   thisPortal: {fileID: 1995540338}
+  myWall: {fileID: 1573253347}
+  myButton: {fileID: 1533589876}
   paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
   nopaused: {fileID: 24500006, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
   m_text1: {fileID: 339066509}
@@ -37959,6 +37981,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d468adbff0e96f247a85cd5809a220c5, type: 3}
+--- !u!1 &2124963191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3692037436724150207, guid: d468adbff0e96f247a85cd5809a220c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2124963190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2128953805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7651891802365866783, guid: 814c32e0db403724591b4b65455accea,
