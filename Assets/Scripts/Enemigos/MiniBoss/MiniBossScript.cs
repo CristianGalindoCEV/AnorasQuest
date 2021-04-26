@@ -1,21 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MiniBossScript : MonoBehaviour
 {
     //Boss
     [SerializeField] GameObject spikePrefab;
-    [SerializeField] GameObject spikeCagePrefab;
     public Collider Mycollider;
-    private Transform m_player;
     private Animator m_anim;
+    public GameObject bossName;
+
     private int randomNumber;
     public float damage;
     private float f_TimeCounter = 0;
     private bool b_startBattle = false;
 
-    //Detect player
+    //Player
+    private Transform m_player;
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
 
@@ -27,7 +29,10 @@ public class MiniBossScript : MonoBehaviour
     //HP
     public MinibossHP minibosshp;
     public PlayerStats playerStats;
-
+   
+    //Audio
+    public AudioMixerSnapshot paused;
+    
     void Start()
     {
         m_boss = GameObject.Find("Miniboss_Static");
@@ -116,17 +121,6 @@ public class MiniBossScript : MonoBehaviour
             m_bossWall.transform.Translate(Vector3.up * Time.deltaTime);
         }
     }
-
-    IEnumerator SpikeCage()
-    {
-        
-        Instantiate(spikeCagePrefab, new Vector3(m_player.transform.position.x, 0, m_player.transform.position.z), transform.rotation);
-        m_anim.SetBool("Attack", true);
-        f_TimeCounter = 0;
-
-        yield return new WaitForSeconds(1.5f);
-        m_anim.SetBool("Attack", false);
-    }
     IEnumerator SpikeAttack()
     {
         Vector3 myPlayerPosition = m_player.transform.position;
@@ -144,10 +138,19 @@ public class MiniBossScript : MonoBehaviour
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {
+            //Die animation + Shader
             b_startBattle = false;
             m_anim.SetBool("Dead",true);
             Mycollider.enabled = false;
             playerStats.StaticBoss = true;
+            
+            //HUD Disappear
+            bossName.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+            
+            //AudioFade
+            paused.TransitionTo(1.5f);
+
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

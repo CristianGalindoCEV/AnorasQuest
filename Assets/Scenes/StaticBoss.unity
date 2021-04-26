@@ -2239,12 +2239,12 @@ PrefabInstance:
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00043828294
+      value: -0.0004382661
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000093932256
+      value: 0.000093928655
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -2279,12 +2279,12 @@ PrefabInstance:
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00043830485
+      value: -0.00043824417
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00009393697
+      value: 0.000093923976
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -4807,6 +4807,17 @@ PrefabInstance:
       propertyPath: Mycollider
       value: 
       objectReference: {fileID: 1753074493}
+    - target: {fileID: 6605089018259211202, guid: 6fda7b7a369261a4ebcb50093564bb52,
+        type: 3}
+      propertyPath: paused
+      value: 
+      objectReference: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a,
+        type: 2}
+    - target: {fileID: 6605089018259211202, guid: 6fda7b7a369261a4ebcb50093564bb52,
+        type: 3}
+      propertyPath: bossName
+      value: 
+      objectReference: {fileID: 1511921572}
     - target: {fileID: 6605089018259211203, guid: 6fda7b7a369261a4ebcb50093564bb52,
         type: 3}
       propertyPath: m_IsTrigger

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Audio;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class FinalBoss : MonoBehaviour
     public LayerMask playerLayer;
 
     //Boss
+    public GameObject bossName;
     public GameObject bullets;
     public GameObject Enemyes;
     public GameObject JE_Mouth;
@@ -39,6 +41,9 @@ public class FinalBoss : MonoBehaviour
     public Transform player;
     private Vector3 m_playerposition;
     private bool m_attacking =  false;
+    
+    //Audio
+    public AudioMixerSnapshot paused;
 
     // Start is called before the first frame update
     void Start()
@@ -202,9 +207,20 @@ public class FinalBoss : MonoBehaviour
         minibosshp.hp = minibosshp.hp - damage;
         if (minibosshp.hp <= 0)
         {
+            //Die animation + Shader
             m_animator.SetBool("Death",true);
             m_collider.enabled = false;
+            b_startFight = false;
+            m_collider.enabled = false;
             speed = 0;
+            
+            //HUD Disappear
+            bossName.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+
+            //AudioFade
+            paused.TransitionTo(1.5f);
+
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

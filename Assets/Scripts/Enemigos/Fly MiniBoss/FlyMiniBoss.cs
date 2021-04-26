@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class FlyMiniBoss : MonoBehaviour
 {
     
     private bool b_startFight = false;
-    enum Patrol { MOVE, ROTATE }
-    Patrol patrol = Patrol.MOVE;
 
     //Detected
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
+    enum Patrol { MOVE, ROTATE }
+    Patrol patrol = Patrol.MOVE;
 
     //SpacePoints
     public SpacePoint [] points;
@@ -19,9 +19,10 @@ public class FlyMiniBoss : MonoBehaviour
 
     //Boss
     public GameObject m_boss;
+    public GameObject bossName;
     public GameObject insectPack;
     public GameObject ballAttack;
-    Transform my_transform;
+    private Transform my_transform;
     private Animator m_anim;
 
     private Collider m_collider;
@@ -42,7 +43,10 @@ public class FlyMiniBoss : MonoBehaviour
 
     //Easing
     private float f_currentTime = 0;
-
+   
+    //Audio
+    public AudioMixerSnapshot paused;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -191,11 +195,20 @@ public class FlyMiniBoss : MonoBehaviour
         minibosshp.hp = minibosshp.hp - damage;
         if(minibosshp.hp <= 0)
         {
+            //Die animation + Shader
             m_anim.SetBool("DieMoth",true);
             b_startFight = false;
             m_collider.enabled = false;
             m_speed = 0;
             playerStats.FlyBoss = true;
+
+            //HUD Disappear
+            bossName.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+
+            //AudioFade
+            paused.TransitionTo(1.5f);
+            
             yield return new WaitForSeconds(1.0f);
             m_boss.SetActive(false);
         }

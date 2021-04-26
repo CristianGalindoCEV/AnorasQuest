@@ -13,7 +13,6 @@ public class PortalItem : MonoBehaviour
     public GameObject bossName;
 
     //Audio
-    public AudioMixerSnapshot paused;
     public AudioMixerSnapshot nopaused;
 
     //loading random
@@ -51,7 +50,7 @@ public class PortalItem : MonoBehaviour
     }
     IEnumerator Play()
     {
-        i_number = Random.Range(1, 3);
+        i_number = Random.Range(1, 4);
 
         switch (i_number)
         {
@@ -78,12 +77,14 @@ public class PortalItem : MonoBehaviour
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         loading.SetActive(true);
-        paused.TransitionTo(4f);
         bossName.SetActive(false);
 
         yield return new WaitForSeconds(4);
+        
+        //AudioUnfade
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
+        
         SceneManager.LoadScene("BIgLevel");
     }
 }
