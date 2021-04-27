@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524987247579069145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arbusto_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,6 +73,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: arbusto_foliage (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024256014724491685, guid: 814c32e0db403724591b4b65455accea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7651891802365866783, guid: 814c32e0db403724591b4b65455accea,
         type: 3}

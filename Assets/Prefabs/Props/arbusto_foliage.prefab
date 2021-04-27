@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7651891802365866783}
   - component: {fileID: 6746146607348235450}
   - component: {fileID: 8825885188209920112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arbusto_foliage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

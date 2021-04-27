@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3553078835242381249}
   - component: {fileID: 4658835692832948960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arbol1_Prop
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -61,6 +61,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 462842363876091903, guid: 3f557092aa39ecb459d984f3169fbed5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 947875788343377221, guid: 3f557092aa39ecb459d984f3169fbed5,
         type: 3}
@@ -122,10 +127,20 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3796627700651324914, guid: 3f557092aa39ecb459d984f3169fbed5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8726071999813420443, guid: 3f557092aa39ecb459d984f3169fbed5,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726071999813420443, guid: 3f557092aa39ecb459d984f3169fbed5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f557092aa39ecb459d984f3169fbed5, type: 3}

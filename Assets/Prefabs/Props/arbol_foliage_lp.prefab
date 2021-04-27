@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 947875788343377221}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arbol_foliage_lp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1181828009805414705}
   - component: {fileID: 8759277411466576296}
   - component: {fileID: 1576742761791447447}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foliage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5716753937472487259}
   - component: {fileID: 3183949957917769468}
   - component: {fileID: 4114296157348465265}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tronco_arbol_lp_GEO
   m_TagString: Untagged
   m_Icon: {fileID: 0}

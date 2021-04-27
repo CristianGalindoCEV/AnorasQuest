@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8437840988846934606}
   - component: {fileID: 6441140480112287267}
   - component: {fileID: 6399243495874359109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ruinas_Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe9206e5977775040b8407f60742b0fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9206e5977775040b8407f60742b0fa, type: 3}

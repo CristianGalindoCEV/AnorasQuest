@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7361849275657165019}
   - component: {fileID: 3817864102050814103}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arbusto_Prop
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -121,6 +121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c3182fe8d58c4a48962a722eed5b470,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3182fe8d58c4a48962a722eed5b470, type: 3}

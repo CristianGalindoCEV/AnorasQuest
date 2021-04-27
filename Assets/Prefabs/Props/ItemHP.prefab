@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5842268248370255623}
   - component: {fileID: 2832794310036085337}
   - component: {fileID: 5003306751473383550}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle Rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4775,7 +4775,7 @@ GameObject:
   - component: {fileID: 3982909750751618459}
   - component: {fileID: 2315656494809986418}
   - component: {fileID: 396711013055720165}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ItemHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,6 +4903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: corazon
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24837505472e4ad48887b1a7d2695d41,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24837505472e4ad48887b1a7d2695d41, type: 3}
