@@ -282,3 +282,31 @@ MonoBehaviour:
     maxDistance: 0
     loop: 0
     source: {fileID: 0}
+  - name: NuggetIdleSound
+    clip: {fileID: 8300000, guid: 76cd6280394b6ce4c8faead115feb28c, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.8
+    maxPitch: 1
+    volume: 0.438
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: NuggetAttackSound
+    clip: {fileID: 8300000, guid: 924ed78e1c031434cb0a12c8bda391d3, type: 3}
+    audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
+    minPitch: 0.8
+    maxPitch: 1
+    volume: 0.438
+    pitch: 1
+    outputMixer: Sonidos
+    spatialBlend: 0
+    rolloffMode: 0
+    dopplerLevel: 0
+    maxDistance: 0
+    loop: 0
+    source: {fileID: 0}
