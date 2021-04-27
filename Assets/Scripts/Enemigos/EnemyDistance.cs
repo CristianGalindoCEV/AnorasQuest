@@ -88,7 +88,7 @@ public class EnemyDistance : MonoBehaviour
             Vector3 loockAtPosition = m_player.position;
             loockAtPosition.y = transform.position.y;
             transform.LookAt(loockAtPosition);
-            if (f_time >= 1.5f)
+            if (f_time >= 2f)
             {
                 StartCoroutine(Attacks());
             }
@@ -107,6 +107,7 @@ public class EnemyDistance : MonoBehaviour
                 {
                     // detecte el player
                     b_fight = true;
+                    FindObjectOfType<AudioManager>().PlayRandomPitch("NuggetIdleSound");
                 }
             }
         }
@@ -127,6 +128,7 @@ public class EnemyDistance : MonoBehaviour
         f_time = 0f;
         Instantiate(myBullet, transform.position, transform.rotation);
         m_animator.SetBool("Attack",true);
+        FindObjectOfType<AudioManager>().PlayRandomPitch("NuggetAttackSound");
         yield return new WaitForSeconds(0.5f);
         m_animator.SetBool("Attack", false);
     }
