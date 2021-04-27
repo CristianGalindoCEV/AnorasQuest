@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8732416018137292286}
   - component: {fileID: 7150404297926269768}
   - component: {fileID: 1534126645030703540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Portal_Shader (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 5659026614170777556}
   - component: {fileID: 5493679741663034801}
   - component: {fileID: 4447274108020852935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Portal_Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,6 @@ MonoBehaviour:
   tranistion: {fileID: 0}
   hud: {fileID: 0}
   bossName: {fileID: 0}
-  paused: {fileID: 0}
   nopaused: {fileID: 0}
 --- !u!1 &5717706257636685738
 GameObject:
@@ -325,7 +324,7 @@ GameObject:
   - component: {fileID: 1219949290691416058}
   - component: {fileID: 5549441518531917377}
   - component: {fileID: 5504163894834129039}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Portal_Shader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9baba988c5767cc408517604307cf826,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9baba988c5767cc408517604307cf826, type: 3}

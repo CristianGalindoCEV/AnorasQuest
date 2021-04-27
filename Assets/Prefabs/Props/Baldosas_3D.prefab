@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4232295912911670830}
   - component: {fileID: 942370666366042507}
   - component: {fileID: 3095959113602954561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Baldosas_3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

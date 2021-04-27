@@ -18,6 +18,8 @@ MonoBehaviour:
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 1
-  playerPosition_stat: {x: -5.5, y: 4.5, z: 30}
-  revive: 0
+  playerPosition_stat: {x: -23.95067, y: 2.0934296, z: 56.53708}
+  revive: 1
   tutorial: 0
+  FlyBoss: 0
+  StaticBoss: 0
