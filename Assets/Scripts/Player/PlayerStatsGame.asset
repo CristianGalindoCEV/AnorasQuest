@@ -18,7 +18,7 @@ MonoBehaviour:
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 1
-  playerPosition_stat: {x: 92, y: 11, z: 75}
+  playerPosition_stat: {x: 93, y: 11, z: 75}
   revive: 1
   tutorial: 1
   FlyBoss: 0

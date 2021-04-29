@@ -204,6 +204,7 @@ public class PlayerController : MonoBehaviour
         if(playerStats.hp_stat <= 0)
         {
             animator.SetBool("Death",true);
+            Debug.Log("mierda");
             player.enabled = false;
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("GameOver");
