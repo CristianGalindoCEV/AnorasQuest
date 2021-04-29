@@ -51,17 +51,20 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        f_horizontalMove = Input.GetAxis("Horizontal");
-        f_verticalMove = Input.GetAxis("Vertical");
+        if (playerStats.hp_stat > 0)
+        {
+            f_horizontalMove = Input.GetAxis("Horizontal");
+            f_verticalMove = Input.GetAxis("Vertical");
 
-        m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
-        m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
+            m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
+            m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
 
-        camDirection();
-        m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
-        m_movePlayer = m_movePlayer * f_speed;
-        
-        player.transform.LookAt(player.transform.position + m_movePlayer); // Player move with camera
+            camDirection();
+            m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
+            m_movePlayer = m_movePlayer * f_speed;
+
+            player.transform.LookAt(player.transform.position + m_movePlayer); // Player move with camera
+        }
 
         SetGravity();
         Jump();
@@ -201,14 +204,15 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayRandomPitch("DamageAnora");
         playerStats.hp_stat = playerStats.hp_stat - f_damage;
         healthbar.SendMessage("TakeDamage", f_damage);
+       
         if(playerStats.hp_stat <= 0)
         {
             animator.SetBool("Death",true);
-            Debug.Log("mierda");
-            player.enabled = false;
-            yield return new WaitForSeconds(1.0f);
+            //player.enabled = false;
+            yield return new WaitForSeconds(5.0f);
             SceneManager.LoadScene("GameOver");
         }//Die
+        
         //Añadir Animacion Daño
         yield return new WaitForSeconds(1.0f);
     }

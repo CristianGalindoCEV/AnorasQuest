@@ -565,7 +565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selector: {fileID: 408522606575632072}
-  pauseManager: {fileID: 0}
   rectTransform: {fileID: 7179562453015956162}
   m_startPosition: {x: 0, y: 0, z: 0}
   myanimation: 0
@@ -848,7 +847,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selector: {fileID: 6883044825631865741}
-  pauseManager: {fileID: 0}
   rectTransform: {fileID: 7501624532976052810}
   m_startPosition: {x: 0, y: 0, z: 0}
   myanimation: 0
@@ -997,7 +995,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selector: {fileID: 7840971738479014831}
-  pauseManager: {fileID: 0}
   rectTransform: {fileID: 1438776234025592459}
   m_startPosition: {x: 0, y: 0, z: 0}
   myanimation: 0

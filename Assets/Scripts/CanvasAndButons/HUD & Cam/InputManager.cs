@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class InputManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class InputManager : MonoBehaviour
    
     //HUD
     public GameObject hud;
+    public CanvasGroup deadBackground;
     public GameObject pausemenu;
     public GameObject mirilla;
     public bool menuon;
@@ -33,6 +35,7 @@ public class InputManager : MonoBehaviour
         menuon = false;
         pausemenu.SetActive(false);
         mirilla.SetActive(false);
+        deadBackground.enabled = false;
 
         //Cursor
         Cursor.visible = (false);
@@ -48,7 +51,7 @@ public class InputManager : MonoBehaviour
     {
         f_cadence += Time.deltaTime;
         
-        
+        //Shoting   
         if (Input.GetButton("Fire2") && pauseManager.paused == false)
         {
             aimListner.enabled = true;
@@ -111,6 +114,7 @@ public class InputManager : MonoBehaviour
                 menuon = false;
             }
         }
+
         //Cursor
         if (menuon == true)
         {
@@ -122,5 +126,10 @@ public class InputManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = (false);
         }
+    }
+    public void PlayerDeathFade()
+    {
+        deadBackground.enabled = true;
+        deadBackground.DOFade(1, 1).SetEase(Ease.InSine);
     }
 }
