@@ -71,6 +71,7 @@ public class Boton : MonoBehaviour
 
     IEnumerator Play()
     {
+        loadingScreen.SetActive(true);
         playerStats.hp_stat = playerStats.maxhp_stat;
         //playerStats.bulletDamage_stat = 15;
         playerStats.playerPosition_stat = new Vector3(92, 11, 75);
@@ -112,6 +113,7 @@ public class Boton : MonoBehaviour
     }
     IEnumerator ExitMenu()
     {
+        loadingScreen.SetActive(true);
         //Transition Scene
         i_number = Random.Range(1, 3);
 
