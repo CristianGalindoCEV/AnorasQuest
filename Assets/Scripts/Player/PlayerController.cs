@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public bool god = false;
     public Animator transtion;
     private float f_damage;
-    private float f_hp;
     public bool aiming;
     
     //Camera
@@ -128,11 +127,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Golpe());
         }
         //ITEMS
-        if (other.tag == "Hp")
-        {
-            f_hp = 25f;
-            StartCoroutine(Heal());
-        }
     }
 
     public void Jump()
@@ -215,16 +209,6 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }//Die
         //Añadir Animacion Daño
-        yield return new WaitForSeconds(1.0f);
-    }
-    
-    //Heal
-    public IEnumerator Heal()
-    {
-        playerStats.hp_stat = playerStats.hp_stat + f_hp;
-        healthbar.SendMessage("TakeLife", f_hp);
-        //Añadir Animacion Vida
-        FindObjectOfType<AudioManager>().PlayRandomPitch("Heal");
         yield return new WaitForSeconds(1.0f);
     }
 }

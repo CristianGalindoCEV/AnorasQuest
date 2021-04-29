@@ -4832,6 +4832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playercontroller: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  healthbar: {fileID: 0}
+  f_hp: 25
 --- !u!1001 &2216625235733850720
 PrefabInstance:
   m_ObjectHideFlags: 0
