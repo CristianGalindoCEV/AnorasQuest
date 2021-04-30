@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public PlayerStats playerStats;
     public Animator animator;
     public Rigidbody playerBody;
-    public GameObject J_Arm_R;
+    private InputManager m_inputManager;
+
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
     public Transform playerTransform;
@@ -45,8 +46,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_inputManager = FindObjectOfType<InputManager>();
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
+
+        //Develop Code
+        if (playerStats.hp_stat <= 0)
+        {
+            Debug.Log("Put hp on PlayerStats");
+        }
     }
 
     void Update()
@@ -208,7 +216,9 @@ public class PlayerController : MonoBehaviour
         if(playerStats.hp_stat <= 0)
         {
             animator.SetBool("Death",true);
-            //player.enabled = false;
+            m_inputManager.PlayerDeathFade(); // Death fade transition
+            player.enabled = false; // Collider player
+            
             yield return new WaitForSeconds(5.0f);
             SceneManager.LoadScene("GameOver");
         }//Die

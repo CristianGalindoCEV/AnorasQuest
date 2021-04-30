@@ -35,7 +35,7 @@ public class Bauculo : MonoBehaviour
                 lookAt = hit.point;
 
                 StartCoroutine(Bullet());
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
             }
 
         }  

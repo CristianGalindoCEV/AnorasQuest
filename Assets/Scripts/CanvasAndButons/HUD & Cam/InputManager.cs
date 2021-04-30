@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
         menuon = false;
         pausemenu.SetActive(false);
         mirilla.SetActive(false);
-        deadBackground.enabled = false;
+        //deadBackground.enabled = false;
 
         //Cursor
         Cursor.visible = (false);
@@ -129,7 +129,8 @@ public class InputManager : MonoBehaviour
     }
     public void PlayerDeathFade()
     {
+        Debug.Log("FadeGobrrr");
         deadBackground.enabled = true;
-        deadBackground.DOFade(1, 1).SetEase(Ease.InSine);
+        deadBackground.DOFade(1, 2).SetEase(Ease.InSine);
     }
 }
