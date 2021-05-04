@@ -22,7 +22,7 @@ public class PlayerStats : ScriptableObject
     //Tutorial
     public bool tutorial = false;
 
-    //BosesCompleted
+    //Boss Completed = Desapear portal main map
     public bool FlyBoss;
     public bool StaticBoss;
 

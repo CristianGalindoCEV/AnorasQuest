@@ -26,6 +26,7 @@ public class MejoraItem : MonoBehaviour
         if (other.tag == "Player" && IsDamage == true)
         {
             playerStats.bulletDamage_stat = +i_attackPower;
+            playerStats.bulletNoGood_stat = +i_attackPower;
         }
         
         if (other.tag == "Player" && IsCadence == true)

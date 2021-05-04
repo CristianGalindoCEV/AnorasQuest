@@ -24,7 +24,7 @@ public class MiniBossScript : MonoBehaviour
     //WallBoss
     private GameObject m_boss;
     public WallBoss wallBoss;
-    private GameObject m_bossWall;
+    public GameObject bossWall;
     
     //HP
     public MinibossHP minibosshp;
@@ -36,9 +36,9 @@ public class MiniBossScript : MonoBehaviour
     void Start()
     {
         m_boss = GameObject.Find("Miniboss_Static");
-        m_bossWall = GameObject.Find("Wall");
         m_anim = GetComponent<Animator>();
         m_player = GameObject.Find("Player").transform;
+        bossName.SetActive(true);
     }
     void Update()
     {
@@ -73,11 +73,6 @@ public class MiniBossScript : MonoBehaviour
             {
                 minibosshp.hp = 600;
                 BossWall();
-            }
-
-            if (minibosshp.hp <= 0)
-            {
-                m_boss.SetActive(false);
             }
         }
         
@@ -116,9 +111,9 @@ public class MiniBossScript : MonoBehaviour
 
     private void BossWall()
     {
-        if (m_bossWall.transform.position.y <= -0.1f)
+        if (bossWall.transform.position.y <= -0.1f)
         {
-            m_bossWall.transform.Translate(Vector3.up * Time.deltaTime);
+            bossWall.transform.Translate(Vector3.up * Time.deltaTime);
         }
     }
     IEnumerator SpikeAttack()
@@ -151,7 +146,7 @@ public class MiniBossScript : MonoBehaviour
             //AudioFade
             paused.TransitionTo(1.5f);
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(10.0f);
             m_boss.SetActive(false);
         }
     }

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunspawn: {fileID: 0}
   hud: {fileID: 0}
+  deadBackground: {fileID: 0}
   pausemenu: {fileID: 0}
   mirilla: {fileID: 0}
   menuon: 0

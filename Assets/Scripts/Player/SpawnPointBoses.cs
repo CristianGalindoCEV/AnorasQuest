@@ -9,7 +9,14 @@ public class SpawnPointBoses : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerStats.playerPosition_stat = position;
+        if (playerStats.FlyBoss == false && playerStats.StaticBoss == false) // If u don't kill any boss
+        {
+            playerStats.playerPosition_stat = position;
+        }
+        else
+        {
+            position = playerStats.playerPosition_stat;
+        }
     }
 
     // Update is called once per frame

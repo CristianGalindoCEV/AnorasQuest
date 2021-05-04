@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc1e729589a7294280843e79d7b7b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
   destroyWall: 0
 --- !u!1 &6605089018259211201
 GameObject:
@@ -217,18 +217,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1ad3a2e5ec9e48a6d495c9e53d747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spikePrefab: {fileID: 8579976944536929613, guid: ca5ceeab8b8a1a94f95b45f481e5b5f2,
+  spikePrefab: {fileID: 5881674984014740386, guid: 3aa854547712816489665268b21a20b8,
     type: 3}
-  spikeCagePrefab: {fileID: 8579976944536929613, guid: fb73909ff8230fd41b9193ea6a8e36dc,
-    type: 3}
-  Mycollider: {fileID: 0}
+  Mycollider: {fileID: 5417376717154003181}
+  bossName: {fileID: 0}
   damage: 30
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
   wallBoss: {fileID: 1221726748}
-  minibosshp: {fileID: 0}
-  playerStats: {fileID: 0}
+  bossWall: {fileID: 1221726742}
+  minibosshp: {fileID: 2183683389817230419}
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  paused: {fileID: -3991078203333138736, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
 --- !u!114 &2183683389817230419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,9 +243,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossBar: {fileID: 0}
-  maxHp: 2000
+  maxHp: 700
   hp: 0
-  m_renderer: {fileID: 0}
+  m_renderer: {fileID: 8640740745996496610}
+  m_disolve: -1
 --- !u!95 &8450891167985265958
 Animator:
   serializedVersion: 3
@@ -254,7 +256,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6605089018259211201}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 972ac97c279af3c479f4faf1cd7e989a, type: 3}
+  m_Avatar: {fileID: 9000000, guid: fa1cf79bbd81e7141a1d9bf04429f10d, type: 3}
   m_Controller: {fileID: 9100000, guid: d9b297dfb0b39d04cb990c9711ae301a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -531,6 +533,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1735577751559473255, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: de8371f5d5b64ce4da41b2927d80d1a0, type: 2}
+    - target: {fileID: -1735577751559473255, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: de8371f5d5b64ce4da41b2927d80d1a0, type: 2}
+    - target: {fileID: -1735577751559473255, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: de8371f5d5b64ce4da41b2927d80d1a0, type: 2}
     - target: {fileID: 919132149155446097, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
         type: 3}
       propertyPath: m_Name
@@ -541,6 +558,12 @@ PrefabInstance:
 --- !u!4 &1695983122503040656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1154028538725439867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8640740745996496610 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1735577751559473255, guid: fa1cf79bbd81e7141a1d9bf04429f10d,
     type: 3}
   m_PrefabInstance: {fileID: 1154028538725439867}
   m_PrefabAsset: {fileID: 0}
