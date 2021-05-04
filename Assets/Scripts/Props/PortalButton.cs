@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PortalButton : MonoBehaviour
 {
     public Transform wallPortal;
@@ -20,14 +21,14 @@ public class PortalButton : MonoBehaviour
     float button_currentValue;
     float button_maxTime = 2f;
 
-    //Visual Effects
-    public GameObject smokes;
+   
+   // public VisualEffect vfxSmoke;
+    public GameObject vfxSmoke;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        smokes.SetActive(false);
         upPortal = wallPortal.transform.position;
         m_transform = transform;
 
@@ -67,15 +68,17 @@ public class PortalButton : MonoBehaviour
             pulse = true;
             FindObjectOfType<AudioManager>().Play("UnlockPortal");
             StartCoroutine(Destroy());
+            
         }
     }
 
     public IEnumerator Destroy()
     {
-        smokes.SetActive(true);
-        yield return new WaitForSeconds(3.0f);
+        Instantiate(vfxSmoke, transform.position, transform.rotation);
+        yield return new WaitForSeconds(4.0f);
         Destroy(gameObject);
         yield return new WaitForSeconds(1.0f);
+        
     }
 
 }
