@@ -6666,6 +6666,11 @@ PrefabInstance:
       objectReference: {fileID: 1812837941}
     - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
+      propertyPath: deadBackground
+      value: 
+      objectReference: {fileID: 1672925377}
+    - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
+        type: 3}
       propertyPath: pausemenu
       value: 
       objectReference: {fileID: 2069974529}
@@ -6679,11 +6684,6 @@ PrefabInstance:
       propertyPath: menumanager
       value: 
       objectReference: {fileID: 1451286949}
-    - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
-        type: 3}
-      propertyPath: deadBackground
-      value: 
-      objectReference: {fileID: 1672925377}
     - target: {fileID: 4361428362036848086, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
       propertyPath: m_Name
