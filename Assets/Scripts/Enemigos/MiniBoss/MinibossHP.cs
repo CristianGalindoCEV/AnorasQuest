@@ -13,7 +13,7 @@ public class MinibossHP : MonoBehaviour
     //Disolve
     public Renderer m_renderer;
     private MaterialPropertyBlock m_materialProperty;
-    private float m_disolve = -1f;
+    [SerializeField] private float m_disolve = -1f;
     private bool b_activateDisolve = false;
 
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class MinibossHP : MonoBehaviour
             m_renderer.SetPropertyBlock(m_materialProperty);
             yield return null;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
 }

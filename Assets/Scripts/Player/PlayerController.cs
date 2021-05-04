@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         m_inputManager = FindObjectOfType<InputManager>();
         aimCamera.enabled = false;
         transform.position = playerStats.playerPosition_stat;
+        playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
 
         //Develop Code
         if (playerStats.hp_stat <= 0)
