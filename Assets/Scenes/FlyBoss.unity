@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: dc5b9db213946e245b23f406dde8b0c3,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -497,7 +497,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hud
       value: 
-      objectReference: {fileID: 1728147798}
+      objectReference: {fileID: 0}
     - target: {fileID: 4447274108020852935, guid: 39cffee9570fc1641be85a74f998968f,
         type: 3}
       propertyPath: paused
@@ -1281,7 +1281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mirilla
       value: 
-      objectReference: {fileID: 1728147774}
+      objectReference: {fileID: 0}
     - target: {fileID: 4361428362036848041, guid: 6179173dcc021784f8d90e17e3ca03cf,
         type: 3}
       propertyPath: deadBackground
@@ -2154,6 +2154,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2355054273564989165, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4104367771992241127, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2219,6 +2224,16 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 55.509598
       objectReference: {fileID: 0}
+    - target: {fileID: 5139035157693127541, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414150287061828579, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5664883418511164637, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -2233,6 +2248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211814435780129748, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7971761317649878444, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2304,6 +2324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7971761318012454820, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7971761318809899196, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -2319,6 +2344,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7971761318824515033, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7971761318856404747, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2333,6 +2363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossName
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093405983362157496, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30f2d830388dd549bd22d0d52973ad5, type: 3}
@@ -2351,12 +2386,6 @@ MonoBehaviour:
 --- !u!1 &1728147773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7971761318614048444, guid: b30f2d830388dd549bd22d0d52973ad5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1728147771}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1728147774 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1494651241, guid: b30f2d830388dd549bd22d0d52973ad5,
     type: 3}
   m_PrefabInstance: {fileID: 1728147771}
   m_PrefabAsset: {fileID: 0}
@@ -2381,12 +2410,6 @@ GameObject:
 --- !u!224 &1728147780 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1320012878560161008, guid: b30f2d830388dd549bd22d0d52973ad5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1728147771}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1728147798 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 5586823300749856692, guid: b30f2d830388dd549bd22d0d52973ad5,
     type: 3}
   m_PrefabInstance: {fileID: 1728147771}
   m_PrefabAsset: {fileID: 0}
