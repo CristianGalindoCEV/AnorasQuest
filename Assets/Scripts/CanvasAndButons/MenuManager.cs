@@ -9,11 +9,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public PlayerStats PlayerStats;
+
+    //Bufs UI Interface
+    public GameObject Buff_Damage;
+    public GameObject Buff_Cadence;
+    public GameObject Buff_SpedBullet;
+
+    //Audio
     public AudioMixer audioMixer;
+    
+    //UI Panels
     public GameObject optionsmenu;
     public GameObject panelresolution;
     public GameObject panelsound;
     public GameObject panelgraphics;
+
     public TMP_Dropdown resolutionDropdown;
     public InputManager inputmanager;
     public PauseManager pausemanager;
@@ -21,13 +32,18 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        //Menu UI
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
         optionsmenu.SetActive(false);
-        
-        
 
+        //UI Bufs
+        Buff_SpedBullet.SetActive(false);
+        Buff_Damage.SetActive(false);
+        Buff_Cadence.SetActive(false);
+
+        //Resolution Options
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
@@ -60,6 +76,19 @@ public class MenuManager : MonoBehaviour
             panelgraphics.SetActive(false);
             panelresolution.SetActive(false);
             panelsound.SetActive(false);
+        }
+        //Buffs UI
+        if (PlayerStats.CadenceBuf == true)
+        {
+            Buff_Cadence.SetActive(false);
+        }
+        if(PlayerStats.DamageBuf == true)
+        {
+            Buff_Damage.SetActive(true);
+        }
+        if(PlayerStats.SpeedBulletBuf == true)
+        {
+            Buff_SpedBullet.SetActive(true);
         }
     }
 

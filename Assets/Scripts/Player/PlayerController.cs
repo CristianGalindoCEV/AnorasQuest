@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
                 playerStats.hp_stat++;
             }
         }
+
         //Animators
         animator.SetFloat("SpeedX", f_horizontalMove);
         animator.SetFloat("SpeedY", f_verticalMove);

@@ -8,7 +8,12 @@ public class PlayerStats : ScriptableObject
     //HP
     public float maxhp_stat = 100;
     public float hp_stat = 100;
-   
+
+    //Bufs UI Image Bufs
+    public bool DamageBuf = false;
+    public bool CadenceBuf = false;
+    public bool SpeedBulletBuf = false;
+
     //Bullets
     public int bulletDamage_stat;
     public int bulletGood_stat = 100000;

@@ -8,6 +8,9 @@ public class MejoraItem : MonoBehaviour
     public bool IsCadence;
     public bool IsTimeShot;
 
+    //Image Bufs Interface
+
+
     private int i_attackPower = 80;
     private float f_cadence = 10;
     public PlayerStats playerStats;
@@ -27,16 +30,19 @@ public class MejoraItem : MonoBehaviour
         {
             playerStats.bulletDamage_stat = +i_attackPower;
             playerStats.bulletNoGood_stat = +i_attackPower;
+            playerStats.DamageBuf = true;
         }
         
         if (other.tag == "Player" && IsCadence == true)
         {
             bauculo.Bulletspeed =+ f_cadence;
+            playerStats.CadenceBuf = true;
         }
 
         if (other.tag == "Player" && IsTimeShot == true)
         {
             playerStats.timeShot = 0.7f;
+            playerStats.SpeedBulletBuf = true;
         }
     }
 }
