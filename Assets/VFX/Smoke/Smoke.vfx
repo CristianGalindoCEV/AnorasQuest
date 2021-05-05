@@ -39,10 +39,10 @@ MonoBehaviour:
     collapsed: 0
   uiBounds:
     serializedVersion: 2
-    x: -381
+    x: -320
     y: -361
-    width: 1612
-    height: 2801
+    width: 1551
+    height: 2802
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,7 +62,6 @@ MonoBehaviour:
   - {fileID: 8926484042661615823}
   - {fileID: 8926484042661615854}
   - {fileID: 8926484042661614556}
-  - {fileID: 8926484042661615869}
   - {fileID: 8926484042661615870}
   - {fileID: 8926484042661614626}
   - {fileID: 8926484042661614628}
@@ -305,7 +304,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.6196078658103943,"time":0.47058823704719546},{"alpha":0.0,"time":0.7000076174736023},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.47058823704719546},{"alpha":0.0,"time":0.7000076174736023},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -605,7 +604,7 @@ VisualEffectResource:
       PARTICLE_PER_STRIP_COUNT);\r\n            InitStripAttributes(index, attributes,
       stripData);\r\n#endif\r\n\t\t\t\r\n\t\t\t{\n\t\t\t    uint tmp_bf = attributes.particleId
       ^ asuint(uniform_a);\n\t\t\t    float tmp_bg = FixedRand(tmp_bf);\n\t\t\t   
-      float tmp_bi = tmp_bg * (float)18;\n\t\t\t    float tmp_bj = (float)-9 + tmp_bi;\n\t\t\t   
+      float tmp_bi = tmp_bg * (float)22;\n\t\t\t    float tmp_bj = (float)-11 + tmp_bi;\n\t\t\t   
       float tmp_bm = tmp_bg * (float)0.400000036;\n\t\t\t    float tmp_bn = (float)0.800000012
       + tmp_bm;\n\t\t\t    float tmp_bp = max(tmp_bn, (float)0);\n\t\t\t    Turbulence_18D(attributes.position, 
       /*inout */attributes.velocity, attributes.mass, float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1),
@@ -646,8 +645,8 @@ VisualEffectResource:
       stripData = GetStripDataFromParticleIndex(index, PARTICLE_PER_STRIP_COUNT);\r\n       
       InitStripAttributes(index, attributes, stripData);\r\n#endif\r\n\t\t\r\n\t\t{\n\t\t   
       uint tmp_bf = attributes.particleId ^ asuint(uniform_a);\n\t\t    float tmp_bg
-      = FixedRand(tmp_bf);\n\t\t    float tmp_bi = tmp_bg * (float)18;\n\t\t    float
-      tmp_bj = (float)-9 + tmp_bi;\n\t\t    float tmp_bm = tmp_bg * (float)0.400000036;\n\t\t   
+      = FixedRand(tmp_bf);\n\t\t    float tmp_bi = tmp_bg * (float)22;\n\t\t    float
+      tmp_bj = (float)-11 + tmp_bi;\n\t\t    float tmp_bm = tmp_bg * (float)0.400000036;\n\t\t   
       float tmp_bn = (float)0.800000012 + tmp_bm;\n\t\t    float tmp_bp = max(tmp_bn,
       (float)0);\n\t\t    Turbulence_18D(attributes.position,  /*inout */attributes.velocity,
       attributes.mass, float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1), float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1),
@@ -1563,9 +1562,9 @@ VisualEffectResource:
         - m_ExpressionIndex: 16
           m_Value: 0.8
         - m_ExpressionIndex: 19
-          m_Value: 18
+          m_Value: 22
         - m_ExpressionIndex: 20
-          m_Value: -9
+          m_Value: -11
         - m_ExpressionIndex: 22
           m_Value: 0
         - m_ExpressionIndex: 29
@@ -1599,7 +1598,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 35
           m_Value: {x: 10, y: 15}
         - m_ExpressionIndex: 44
-          m_Value: {x: 0, y: 1}
+          m_Value: {x: 0, y: 0}
       m_Vector3f:
         m_Array:
         - m_ExpressionIndex: 11
@@ -1702,7 +1701,7 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 1, g: 1, b: 1, a: 0}
-            key1: {r: 1, g: 1, b: 1, a: 0.61960787}
+            key1: {r: 1, g: 1, b: 1, a: 1}
             key2: {r: 0, g: 0, b: 0, a: 0}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3306,7 +3305,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.6196078658103943,"time":0.47058823704719546},{"alpha":0.0,"time":0.7000076174736023},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.47058823704719546},{"alpha":0.0,"time":0.7000076174736023},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -4499,7 +4498,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":1.0}'
+      m_SerializableObject: '{"x":0.0,"y":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Delay
@@ -7313,27 +7312,6 @@ MonoBehaviour:
       m_RegexMaxLength: 0
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661615869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa71feae8df37b6479bb8bc6ab99f797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: -381, y: 126}
-  m_UICollapsed: 0
-  m_UISuperCollapsed: 0
-  m_InputSlots: []
-  m_OutputSlots: []
-  m_Subgraph: {fileID: 5371698745253816930, guid: bfbffac5b9e601347ae9feb5d51931eb,
-    type: 3}
 --- !u!114 &8926484042661615870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9283,7 +9261,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: -9
+      m_SerializableObject: -11
     m_Space: 2147483647
   m_Property:
     name: min
@@ -9323,7 +9301,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 9
+      m_SerializableObject: 11
     m_Space: 2147483647
   m_Property:
     name: max
