@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp_stat: 100
   hp_stat: 100
+  DamageBuf: 0
+  CadenceBuf: 0
+  SpeedBulletBuf: 0
   bulletDamage_stat: 80
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 1
-  playerPosition_stat: {x: -5.5, y: 4.5, z: 30}
+  playerPosition_stat: {x: 93, y: 11, z: 75}
   revive: 0
-  tutorial: 0
+  tutorial: 1
   FlyBoss: 0
   StaticBoss: 0
