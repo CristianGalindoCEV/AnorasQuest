@@ -42,7 +42,7 @@ MonoBehaviour:
     x: -381
     y: -437
     width: 1520
-    height: 2877
+    height: 2878
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1878,7 +1878,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 56
           m_Value: 1
         - m_ExpressionIndex: 59
-          m_Value: 4.31
+          m_Value: 47.59
         - m_ExpressionIndex: 60
           m_Value: 0.9141652
         - m_ExpressionIndex: 63
@@ -6477,7 +6477,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4.31
+      m_SerializableObject: 47.59
     m_Space: 2147483647
   m_Property:
     name: lacunarity

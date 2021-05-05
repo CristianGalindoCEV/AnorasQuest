@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 
 public class FootstepSound : MonoBehaviour
 {
-    [SerializeField] VisualEffect vfxSmoke;
+    VisualEffect vfxSmoke;
     void Start()
     {
         vfxSmoke = GetComponent<VisualEffect>();
