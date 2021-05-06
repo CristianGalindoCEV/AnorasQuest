@@ -233,7 +233,7 @@ MonoBehaviour:
     max: 200
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: 70
+    m_Value: 65.3
     min: -200
     max: 200
   greenOutRedIn:
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 369.95
+    m_Value: 97.5
     min: 0
   gaussianEnd:
     m_OverrideState: 1
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_Value: 0.83
   contrast:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: -5.9
     min: -100
     max: 100
   colorFilter:
@@ -467,7 +467,7 @@ MonoBehaviour:
     min: -180
     max: 180
   saturation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 7
     min: -100
     max: 100
