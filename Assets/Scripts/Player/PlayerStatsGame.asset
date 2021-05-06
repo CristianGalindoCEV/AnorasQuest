@@ -23,6 +23,6 @@ MonoBehaviour:
   timeShot: 1
   playerPosition_stat: {x: 93, y: 11, z: 75}
   revive: 0
-  tutorial: 1
+  tutorial: 0
   FlyBoss: 0
   StaticBoss: 0
