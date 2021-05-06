@@ -81,9 +81,9 @@ public class Tutorial : MonoBehaviour
     IEnumerator MyShotTutorial()
     {
         yield return new WaitForSeconds(1.5f);
-        Debug.Log("hola"); //Aqui Hay un problema
+
         menuManager.UiTextAnimation();
-        menuManager.ControlText.SetText("RIGTH CLICK to aim" + "LEFT CLICK shot ( only when aiming )"); // Add Text 
+        menuManager.ControlText.SetText("RIGHT CLICK to aim" + "LEFT CLICK shoot ( only when aiming )"); // Add Text 
 
         yield return new WaitForSeconds(1.5f);
 

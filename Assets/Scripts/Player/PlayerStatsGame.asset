@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerStatsGame
   m_EditorClassIdentifier: 
   maxhp_stat: 100
-  hp_stat: 90
-  DamageBuf: 0
+  hp_stat: 100
+  DamageBuf: 1
   CadenceBuf: 0
   SpeedBulletBuf: 0
   bulletDamage_stat: 80

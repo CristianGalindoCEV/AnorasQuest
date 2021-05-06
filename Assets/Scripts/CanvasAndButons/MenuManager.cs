@@ -20,9 +20,9 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI ControlText;
 
     //Bufs UI Interface
-    public GameObject Buff_Damage;
-    public GameObject Buff_Cadence;
-    public GameObject Buff_SpedBullet;
+    public Image Buff_Damage;
+    public Image Buff_Cadence;
+    public Image Buff_SpedBullet;
 
     //Audio
     public AudioMixer audioMixer;
@@ -51,10 +51,38 @@ public class MenuManager : MonoBehaviour
         panelsound.SetActive(false);
         optionsmenu.SetActive(false);
 
-        //UI Bufs
-        Buff_SpedBullet.SetActive(false);
-        Buff_Damage.SetActive(false);
-        Buff_Cadence.SetActive(false);
+        //UI Speed Buf
+        if (PlayerStats.SpeedBulletBuf == false)
+        {
+            Buff_SpedBullet.enabled = false;
+        }
+        else
+        {
+            Buff_SpedBullet.enabled = true;
+            Buff_SpedBullet.DOFade(1, 0f).SetEase(Ease.OutSine);
+        }
+       
+        //UI Damage Buf
+        if (PlayerStats.DamageBuf == false)
+        {
+            Buff_Damage.enabled = false;
+        }
+        else
+        {
+            Buff_Damage.enabled = true;
+            Buff_Damage.DOFade(1, 0f).SetEase(Ease.OutSine);
+        }
+        
+        //UI Cadende Buff
+        if (PlayerStats.CadenceBuf == false)
+        {
+            Buff_Cadence.enabled = false;
+        }
+        else
+        {
+            Buff_Cadence.enabled = true;
+            Buff_Cadence.DOFade(1, 0f).SetEase(Ease.OutSine);
+        }
 
         //Resolution Options
         resolutions = Screen.resolutions;
@@ -89,19 +117,6 @@ public class MenuManager : MonoBehaviour
             panelgraphics.SetActive(false);
             panelresolution.SetActive(false);
             panelsound.SetActive(false);
-        }
-        //Buffs UI
-        if (PlayerStats.CadenceBuf == true)
-        {
-            Buff_Cadence.SetActive(false);
-        }
-        if(PlayerStats.DamageBuf == true)
-        {
-            Buff_Damage.SetActive(true);
-        }
-        if(PlayerStats.SpeedBulletBuf == true)
-        {
-            Buff_SpedBullet.SetActive(true);
         }
     }
 
@@ -190,6 +205,23 @@ public class MenuManager : MonoBehaviour
         panelsound.SetActive(false);
     }
 
+    //UI Bufs Animations
+    public void UnlockedDamage()
+    {
+        Buff_Damage.enabled = true;
+        Buff_Damage.DOFade(1, 1f).SetEase(Ease.OutSine);
+    }
+    public void UnlockedSpeed()
+    {
+        Buff_SpedBullet.enabled = true;
+        Buff_SpedBullet.DOFade(1, 1f).SetEase(Ease.OutSine);
+    }
+    public void UnlockedCadence()
+    {
+        Buff_Cadence.enabled = true;
+        Buff_Cadence.DOFade(1, 1f).SetEase(Ease.OutSine);
+    }
+
     public void UiTextAnimation() // Animation when notificate ingame
     {
         //Reset Positions
@@ -211,6 +243,7 @@ public class MenuManager : MonoBehaviour
         Background_Icon.enabled = true;
         ControlText.enabled = true;
 
+        //MeteAquiElAudio
         Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
         Icon_R.transform.DOMoveX(1365, 2f).SetEase(Ease.OutQuint);
         Background_Icon.transform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);

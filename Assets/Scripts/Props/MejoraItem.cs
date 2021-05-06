@@ -9,18 +9,18 @@ public class MejoraItem : MonoBehaviour
     public bool IsTimeShot;
 
     //Image Bufs Interface
-
+    public PlayerStats playerStats;
+    private Bauculo bauculo;
+    private MenuManager menuManager;
 
     private int i_attackPower = 80;
     private float f_cadence = 10;
-    public PlayerStats playerStats;
-    public Bauculo bauculo;
-    public InputManager inputManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        inputManager = FindObjectOfType<InputManager>();
         bauculo = FindObjectOfType<Bauculo>();
+        menuManager = FindObjectOfType<MenuManager>();
     }
 
     // Update is called once per frame
@@ -31,18 +31,21 @@ public class MejoraItem : MonoBehaviour
             playerStats.bulletDamage_stat = +i_attackPower;
             playerStats.bulletNoGood_stat = +i_attackPower;
             playerStats.DamageBuf = true;
+            menuManager.UnlockedDamage(); //Animation
         }
         
         if (other.tag == "Player" && IsCadence == true)
         {
             bauculo.Bulletspeed =+ f_cadence;
             playerStats.CadenceBuf = true;
+            menuManager.UnlockedCadence(); // Animation
         }
 
         if (other.tag == "Player" && IsTimeShot == true)
         {
             playerStats.timeShot = 0.7f;
             playerStats.SpeedBulletBuf = true;
+            menuManager.UnlockedSpeed(); // Animation
         }
     }
 }
