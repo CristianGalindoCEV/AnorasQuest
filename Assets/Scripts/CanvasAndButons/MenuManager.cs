@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     
     public Image Icon_L;
     public Image Icon_R;
+    public Image Background_Icon;
 
     //Bufs UI Interface
     public GameObject Buff_Damage;
@@ -41,6 +42,7 @@ public class MenuManager : MonoBehaviour
         //UI Notification
         Icon_L.enabled = false;
         Icon_R.enabled = false;
+        Background_Icon.enabled = false;
 
         //Menu UI
         panelgraphics.SetActive(false);
@@ -193,16 +195,20 @@ public class MenuManager : MonoBehaviour
 
         Icon_L.enabled = false;
         Icon_R.enabled = false;
-        Debug.Log("Ho");
+        Background_Icon.enabled = false;
+
         Icon_L.rectTransform.position = new Vector3(910, 150, 0);
         Icon_R.rectTransform.position = new Vector3(910, 150, 0);
+        Background_Icon.rectTransform.localScale = new Vector3(0, 1, 1);
 
         //Start
 
         Icon_L.enabled = true;
         Icon_R.enabled = true;
+        Background_Icon.enabled = true;
 
         Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
-        Icon_R.transform.DOMoveX(1350, 2f).SetEase(Ease.OutQuint);
+        Icon_R.transform.DOMoveX(1365, 2f).SetEase(Ease.OutQuint);
+        Background_Icon.transform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);
     }
 }
