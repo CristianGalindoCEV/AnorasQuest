@@ -23,9 +23,10 @@ public class WallTextAnimation : MonoBehaviour
         menuManager.UiTextAnimation();
         menuManager.ControlText.SetText("You need to find a button");
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         menuManager.ControlText.SetText("None");
+        menuManager.ControlText.enabled = false;
         menuManager.Icon_L.enabled = false;
         menuManager.Icon_R.enabled = false;
         menuManager.Background_Icon.enabled = false;
