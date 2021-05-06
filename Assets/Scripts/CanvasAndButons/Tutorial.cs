@@ -121,6 +121,7 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(2f);
         menuManager.Icon_L.enabled = false;
         menuManager.Icon_R.enabled = false;
+        menuManager.Background_Icon.enabled = false;
         ShotTutorial.enabled = false;
         playerStats.tutorial = true;
     }
