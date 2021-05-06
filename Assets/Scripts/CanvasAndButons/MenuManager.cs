@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     public Image Icon_L;
     public Image Icon_R;
     public Image Background_Icon;
+    public TextMeshProUGUI ControlText;
 
     //Bufs UI Interface
     public GameObject Buff_Damage;
@@ -192,23 +193,28 @@ public class MenuManager : MonoBehaviour
     public void UiTextAnimation() // Animation when notificate ingame
     {
         //Reset Positions
-
+        
+        ControlText.DOFade(0f, 0f);
         Icon_L.enabled = false;
         Icon_R.enabled = false;
         Background_Icon.enabled = false;
+        ControlText.enabled = false;
 
         Icon_L.rectTransform.position = new Vector3(910, 150, 0);
         Icon_R.rectTransform.position = new Vector3(910, 150, 0);
         Background_Icon.rectTransform.localScale = new Vector3(0, 1, 1);
-
+        
         //Start
-
+        
         Icon_L.enabled = true;
         Icon_R.enabled = true;
         Background_Icon.enabled = true;
+        ControlText.enabled = true;
 
         Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
         Icon_R.transform.DOMoveX(1365, 2f).SetEase(Ease.OutQuint);
         Background_Icon.transform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);
+
+        ControlText.DOFade(1f, 2f).SetEase(Ease.OutQuint).SetDelay(1f);
     }
 }

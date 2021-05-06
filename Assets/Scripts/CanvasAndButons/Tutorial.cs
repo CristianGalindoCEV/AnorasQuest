@@ -10,10 +10,6 @@ public class Tutorial : MonoBehaviour
     public PlayerStats playerStats;
     public MenuManager menuManager;
 
-    public TextMeshProUGUI ControlTutorial;
-    public TextMeshProUGUI JumpTutorial;
-    public TextMeshProUGUI ShotTutorial;
-
     private bool b_start = false;
     private bool b_move = false;
     private bool b_jump = false;
@@ -22,12 +18,6 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        //Tutorial
-        ControlTutorial.enabled = false;
-        JumpTutorial.enabled = false;
-        ShotTutorial.enabled = false;
-
         if (playerStats.tutorial == false)
         {
             StartCoroutine(MoveTutorial());
@@ -52,7 +42,6 @@ public class Tutorial : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(MyShotTutorial());
-                Debug.Log("Shot");
             }
         }
         if(b_jump == true && b_shot == false) //ShotTutorial
@@ -72,15 +61,10 @@ public class Tutorial : MonoBehaviour
     IEnumerator MoveTutorial()
     {
         //yield return new WaitForSeconds(1.5f);
-
         menuManager.UiTextAnimation();
-        ControlTutorial.enabled = true;
+        menuManager.ControlText.SetText("W, A, S ,D TO MOVE"); // Add Text
 
-        yield return new WaitForSeconds(0.5f);
-
-        ControlTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
-
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         b_start = true;
     }
@@ -88,41 +72,30 @@ public class Tutorial : MonoBehaviour
     IEnumerator MyJumpTutorial()
     {
         yield return new WaitForSeconds(1.5f);
-
+        
         menuManager.UiTextAnimation();
-
-        JumpTutorial.enabled = true;
-        ControlTutorial.enabled = false;
+        menuManager.ControlText.SetText("SPACE for jump"); // Add Text 
 
         yield return new WaitForSeconds(0.5f);
-
-        JumpTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
     }
     IEnumerator MyShotTutorial()
     {
         yield return new WaitForSeconds(1.5f);
-
+        Debug.Log("hola"); //Aqui Hay un problema
         menuManager.UiTextAnimation();
+        menuManager.ControlText.SetText("RIGTH CLICK to aim" + "LEFT CLICK shot ( only when aiming )"); // Add Text 
 
-        ShotTutorial.enabled = true;
-        JumpTutorial.enabled = false;
-
-        yield return new WaitForSeconds(0.5f);
-
-        ShotTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
-
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         b_jump = true;
     }
     IEnumerator MyEndTutorial()
     {
-
         yield return new WaitForSeconds(2f);
+        menuManager.ControlText.SetText("None"); // Add Text 
         menuManager.Icon_L.enabled = false;
         menuManager.Icon_R.enabled = false;
         menuManager.Background_Icon.enabled = false;
-        ShotTutorial.enabled = false;
         playerStats.tutorial = true;
     }
 }
