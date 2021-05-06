@@ -8,14 +8,9 @@ using DG.Tweening;
 public class Tutorial : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public TextMeshProUGUI ControlTutorial;
-    public TextMeshProUGUI JumpTutorial;
-    public TextMeshProUGUI ShotTutorial;
+    public MenuManager menuManager;
 
-    public Image Icon_L;
-    public Image Icon_R;
-
-
+    private bool b_start = false;
     private bool b_move = false;
     private bool b_jump = false;
     private bool b_shot = false;
@@ -23,15 +18,6 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UI
-        Icon_L.enabled = false;
-        Icon_R.enabled = false;
-        
-        //Tutorial
-        ControlTutorial.enabled = false;
-        JumpTutorial.enabled = false;
-        ShotTutorial.enabled = false;
-
         if (playerStats.tutorial == false)
         {
             StartCoroutine(MoveTutorial());
@@ -43,7 +29,7 @@ public class Tutorial : MonoBehaviour
     }
     private void Update()
     {
-        if(b_move == false) //MoveTutorial
+        if(b_move == false && b_start == true) //MoveTutorial
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
@@ -53,7 +39,7 @@ public class Tutorial : MonoBehaviour
         }
         if(b_move == true && b_jump == false) //JumpTutorial
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(MyShotTutorial());
             }
@@ -74,90 +60,42 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator MoveTutorial()
     {
-        //Reset Positions
-        ControlTutorial.enabled = true;
-        Icon_L.enabled = false;
-        Icon_R.enabled = false;
+        //yield return new WaitForSeconds(1.5f);
+        menuManager.UiTextAnimation();
+        menuManager.ControlText.SetText("W, A, S ,D TO MOVE"); // Add Text
 
-        Icon_L.rectTransform.position = new Vector3(910, 150, 0);
-        Icon_R.rectTransform.position = new Vector3(910, 150, 0);
+        yield return new WaitForSeconds(1.5f);
 
-        yield return new WaitForSeconds(0.1f);
-
-        //Start
-
-        Icon_L.enabled = true;
-        Icon_R.enabled = true;
-
-        Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
-        Icon_R.transform.DOMoveX(1350, 2f).SetEase(Ease.OutQuint);
-        
-        yield return new WaitForSeconds(0.5f);
-        
-        ControlTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
-
+        b_start = true;
     }
 
     IEnumerator MyJumpTutorial()
     {
-        //Reset Positions
+        yield return new WaitForSeconds(1.5f);
         
-        Icon_L.enabled = false;
-        Icon_R.enabled = false;
-
-        Icon_L.rectTransform.position = new Vector3(910, 150, 0);
-        Icon_R.rectTransform.position = new Vector3(910, 150, 0);
-
-        yield return new WaitForSeconds(0.1f);
-        
-        //Start
-
-        Icon_L.enabled = true;
-        Icon_R.enabled = true;
-        JumpTutorial.enabled = true;
-        ControlTutorial.enabled = false;
-
-        Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
-        Icon_R.transform.DOMoveX(1350, 2f).SetEase(Ease.OutQuint);
+        menuManager.UiTextAnimation();
+        menuManager.ControlText.SetText("SPACE for jump"); // Add Text 
 
         yield return new WaitForSeconds(0.5f);
-
-        JumpTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
     }
     IEnumerator MyShotTutorial()
     {
-        //Reset Positions
-        
-        Icon_L.enabled = false;
-        Icon_R.enabled = false;
-        
-        Icon_L.rectTransform.position = new Vector3 (910,150,0);
-        Icon_R.rectTransform.position = new Vector3(910, 150, 0);
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("hola"); //Aqui Hay un problema
+        menuManager.UiTextAnimation();
+        menuManager.ControlText.SetText("RIGTH CLICK to aim" + "LEFT CLICK shot ( only when aiming )"); // Add Text 
 
-        yield return new WaitForSeconds(0.1f);
-        
-        //Start
+        yield return new WaitForSeconds(1.5f);
 
-        Icon_L.enabled = true;
-        Icon_R.enabled = true;
-        ShotTutorial.enabled = true;
-        JumpTutorial.enabled = false;
-
-        Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
-        Icon_R.transform.DOMoveX(1350, 2f).SetEase(Ease.OutQuint);
-
-        yield return new WaitForSeconds(0.5f);
-
-        ShotTutorial.DOFade(1f, 1f).SetEase(Ease.OutQuint);
         b_jump = true;
     }
     IEnumerator MyEndTutorial()
     {
-
-        yield return new WaitForSeconds(1f);
-        Icon_L.enabled = false;
-        Icon_R.enabled = false;
-        ShotTutorial.enabled = false;
+        yield return new WaitForSeconds(2f);
+        menuManager.ControlText.SetText("None"); // Add Text 
+        menuManager.Icon_L.enabled = false;
+        menuManager.Icon_R.enabled = false;
+        menuManager.Background_Icon.enabled = false;
         playerStats.tutorial = true;
     }
 }

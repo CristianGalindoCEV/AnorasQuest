@@ -4,12 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class MenuManager : MonoBehaviour
 {
     public PlayerStats PlayerStats;
+
+    //UI Notification
+    
+    public Image Icon_L;
+    public Image Icon_R;
+    public Image Background_Icon;
+    public TextMeshProUGUI ControlText;
 
     //Bufs UI Interface
     public GameObject Buff_Damage;
@@ -32,6 +40,11 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        //UI Notification
+        Icon_L.enabled = false;
+        Icon_R.enabled = false;
+        Background_Icon.enabled = false;
+
         //Menu UI
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
@@ -101,6 +114,7 @@ public class MenuManager : MonoBehaviour
             audioMixer.SetFloat("MainVolume", -60);
         }
     }
+    
     public void SetVolumeMusic(float sliderValue)
     {
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
@@ -109,6 +123,7 @@ public class MenuManager : MonoBehaviour
             audioMixer.SetFloat("MusicVol", -60);
         }
     }
+   
     public void SetVolumeSound(float sliderValue)
     {
         audioMixer.SetFloat("SoundsVol", Mathf.Log10(sliderValue) * 20);
@@ -117,6 +132,7 @@ public class MenuManager : MonoBehaviour
             audioMixer.SetFloat("SoundsVol", -60);
         }
     }
+   
     //Botones de los settings
     public void SetQuality (int qualityIndex)
     {
@@ -129,7 +145,6 @@ public class MenuManager : MonoBehaviour
     }
 
     //Menu pause buttons
-
     public void PulsaResume()
     {
         inputmanager.pausemenu.SetActive(false);
@@ -173,5 +188,33 @@ public class MenuManager : MonoBehaviour
         panelgraphics.SetActive(true);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
+    }
+
+    public void UiTextAnimation() // Animation when notificate ingame
+    {
+        //Reset Positions
+        
+        ControlText.DOFade(0f, 0f);
+        Icon_L.enabled = false;
+        Icon_R.enabled = false;
+        Background_Icon.enabled = false;
+        ControlText.enabled = false;
+
+        Icon_L.rectTransform.position = new Vector3(910, 150, 0);
+        Icon_R.rectTransform.position = new Vector3(910, 150, 0);
+        Background_Icon.rectTransform.localScale = new Vector3(0, 1, 1);
+        
+        //Start
+        
+        Icon_L.enabled = true;
+        Icon_R.enabled = true;
+        Background_Icon.enabled = true;
+        ControlText.enabled = true;
+
+        Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
+        Icon_R.transform.DOMoveX(1365, 2f).SetEase(Ease.OutQuint);
+        Background_Icon.transform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);
+
+        ControlText.DOFade(1f, 2f).SetEase(Ease.OutQuint).SetDelay(1f);
     }
 }

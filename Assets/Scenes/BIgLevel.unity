@@ -19905,18 +19905,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 479188043}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1100746269 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3437979072487402608, guid: b30f2d830388dd549bd22d0d52973ad5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1731720296}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1102963997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c2c5f788172d82740af40c4450645f10,
@@ -23261,7 +23249,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19530736
+      value: 0.19530737
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -23271,7 +23259,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.12100206
+      value: -0.121002056
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -23356,7 +23344,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16095906
+      value: 0.16095908
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -28852,11 +28840,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  menuManager: {fileID: 1451286949}
   ControlTutorial: {fileID: 1367590070}
   JumpTutorial: {fileID: 433343508}
   ShotTutorial: {fileID: 621332100}
-  Icon_L: {fileID: 1951990622}
-  Icon_R: {fileID: 1100746269}
 --- !u!4 &1629246445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3553078835242381249, guid: d86a919c06194d3428e0d38da8a88862,
@@ -30468,6 +30455,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1769529922}
     m_Modifications:
+    - target: {fileID: 7971761317627839301, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971761317627839301, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     - target: {fileID: 7971761317649878444, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30533,6 +30530,11 @@ PrefabInstance:
       propertyPath: pausemanager
       value: 
       objectReference: {fileID: 1018609271}
+    - target: {fileID: 7971761317649878445, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: Icon_L
+      value: 
+      objectReference: {fileID: 1951990622}
     - target: {fileID: 7971761317649878447, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_Name
