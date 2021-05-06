@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class Bauculo : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class Bauculo : MonoBehaviour
     public PlayerController m_playerController;
     Vector3 lookAt;
     public LayerMask layerMask;
+    [SerializeField] VisualEffect vfxSpark;
 
     void Start()
     {
         //firepoint = GameObject.FindGameObjectWithTag("Hand").transform;
+        
     }
     private void Update()
     {
@@ -47,7 +50,8 @@ public class Bauculo : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Instantiate(bullet, firepoint.position, Quaternion.LookRotation(lookAt - firepoint.position));
         FindObjectOfType<AudioManager>().PlayRandomPitch("MagicShot");
-        
+        vfxSpark.SendEvent("Spark");
+
         yield return new WaitForSeconds(0.4f);
         animator.SetBool("PlayMeleAttack", false);
     }
