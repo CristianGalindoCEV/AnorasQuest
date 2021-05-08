@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
    //Bauculo
     public Bauculo gunspawn;
     private float f_cadence = 1f;
+    private bool b_audioRedy = false;
 
     //HUD
     public GameObject hud;
@@ -23,6 +24,7 @@ public class InputManager : MonoBehaviour
     //Player
     private PlayerController m_playerController;
     public PlayerStats playerStats;
+    
     //Cursor
     private bool m_islocked;
 
@@ -51,7 +53,7 @@ public class InputManager : MonoBehaviour
     {
         f_cadence += Time.deltaTime;
         
-        //Shoting   
+        //Aiming 
         if (Input.GetButton("Fire2") && pauseManager.paused == false)
         {
             aimListner.enabled = true;
@@ -62,7 +64,8 @@ public class InputManager : MonoBehaviour
             
             m_playerController.aiming = true;
             mirilla.SetActive(true);
-        } //Aiming
+        } 
+        //Not Aiming
         else
         {
             aimListner.enabled = false;
@@ -74,12 +77,21 @@ public class InputManager : MonoBehaviour
             m_playerController.aiming = false;
             mirilla.SetActive(false);
         }
+        //Shoting
         if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > playerStats.timeShot && m_playerController.aiming == true)//Shoot
         {
             gunspawn.Fire();
             f_cadence = 0f;
+            b_audioRedy = false;
         }
-        
+        //Audio Ready when you can shot
+        if(f_cadence >= playerStats.timeShot && b_audioRedy == false)
+        {
+            //Meter audio
+            Debug.Log("Hola");
+            b_audioRedy = true;
+        }
+
         //GOOD MODE
         if (Input.GetKeyUp(KeyCode.F10))
         {
