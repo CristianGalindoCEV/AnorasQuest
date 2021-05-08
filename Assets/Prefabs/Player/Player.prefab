@@ -681,6 +681,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 311
   vfxSpark: {fileID: 462862522}
+  BauculoMaterial: {fileID: 5898335437203357760}
+  m_transition: 0
 --- !u!1 &1344188100929735376
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +854,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 245433982260609197, guid: 7be7d33952e705a4da7230acc62b73ca,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c89b40a11c52734585a3edc7e3f89bb, type: 2}
     - target: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -939,6 +946,12 @@ GameObject:
 --- !u!4 &474383826768434381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 245433982260609199, guid: 7be7d33952e705a4da7230acc62b73ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 428595661194990690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5898335437203357760 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6064578140705379362, guid: 7be7d33952e705a4da7230acc62b73ca,
     type: 3}
   m_PrefabInstance: {fileID: 428595661194990690}
   m_PrefabAsset: {fileID: 0}

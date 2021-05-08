@@ -5,10 +5,10 @@ using DG.Tweening;
 
 public class InputManager : MonoBehaviour
 {
-   //Armas
+   //Bauculo
     public Bauculo gunspawn;
     private float f_cadence = 1f;
-   
+
     //HUD
     public GameObject hud;
     public CanvasGroup deadBackground;
@@ -74,8 +74,7 @@ public class InputManager : MonoBehaviour
             m_playerController.aiming = false;
             mirilla.SetActive(false);
         }
-        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > playerStats.timeShot 
-            && m_playerController.aiming == true)//Shoot
+        if (Input.GetButtonDown("Fire1") && pauseManager.paused == false && f_cadence > playerStats.timeShot && m_playerController.aiming == true)//Shoot
         {
             gunspawn.Fire();
             f_cadence = 0f;

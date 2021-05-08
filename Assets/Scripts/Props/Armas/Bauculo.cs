@@ -18,10 +18,14 @@ public class Bauculo : MonoBehaviour
     public LayerMask layerMask;
     [SerializeField] VisualEffect vfxSpark;
 
+    //Material
+    public Renderer BauculoMaterial;
+    private MaterialPropertyBlock m_materialProperty;
+    [SerializeField] private float m_transition = 0f;
+
     void Start()
     {
         //firepoint = GameObject.FindGameObjectWithTag("Hand").transform;
-        
     }
     private void Update()
     {
@@ -29,6 +33,12 @@ public class Bauculo : MonoBehaviour
     }
     public void Fire()
     {
+        m_materialProperty = new MaterialPropertyBlock();
+        m_transition = 0;
+        m_materialProperty.SetFloat("_VectorGradient", m_transition);
+        
+        StartCoroutine(UpdateOpacityCadence());
+
         if (m_playerController.player.isGrounded == true) //Only Shot if u dont dont jump
         {
             Ray ray = aimCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
@@ -40,7 +50,6 @@ public class Bauculo : MonoBehaviour
                 StartCoroutine(Bullet());
                 //Debug.Log(hit.transform.name);
             }
-
         }  
     }
     IEnumerator Bullet()
@@ -54,5 +63,15 @@ public class Bauculo : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
         animator.SetBool("PlayMeleAttack", false);
+    }
+    private IEnumerator UpdateOpacityCadence()
+    {
+        while (m_transition <= 1f)
+        {
+            m_transition += Time.deltaTime;
+            m_materialProperty.SetFloat("_VectorGradient", m_transition);
+            BauculoMaterial.SetPropertyBlock(m_materialProperty);
+            yield return null;
+        }
     }
 }
