@@ -18,6 +18,7 @@ public class FinalBoss : MonoBehaviour
 
     //Boss
     public GameObject bossName;
+    public GameObject bossHP;
     public GameObject bullets;
     public GameObject Enemyes;
     public GameObject JE_Mouth;
@@ -176,6 +177,10 @@ public class FinalBoss : MonoBehaviour
             m_animator.SetBool("Attack", false);
             
             yield return new WaitForSeconds(1f);//Relax Time to next attack
+            if (minibosshp.hp <= 0)
+            {
+                break;
+            }
         }
         m_attacking = false;
         f_currentTime = 0;
@@ -216,12 +221,13 @@ public class FinalBoss : MonoBehaviour
             
             //HUD Disappear
             bossName.SetActive(false);
+            bossHP.SetActive(false);
             minibosshp.bossBar.enabled = false;
 
             //AudioFade
             paused.TransitionTo(1.5f);
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(3.5f);
             m_boss.SetActive(false);
         }
     }
