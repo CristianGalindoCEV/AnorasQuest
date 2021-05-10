@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.VFX;
 public class FlyMiniBoss : MonoBehaviour
 {
     
@@ -46,12 +47,17 @@ public class FlyMiniBoss : MonoBehaviour
    
     //Audio
     public AudioMixerSnapshot paused;
-    
+    private AudioSource flyAudio;
+
+    [SerializeField] VisualEffect vfxSparkImpact;
+
     // Start is called before the first frame update
     void Start()
     {
         my_transform = transform;
         m_anim = GetComponent<Animator>();
+        flyAudio = GetComponent<AudioSource>();
+                
     }
 
     // Update is called once per frame
@@ -146,9 +152,8 @@ public class FlyMiniBoss : MonoBehaviour
     {
         m_anim.SetBool("StartFigth", true);
         b_stopColision = true;
-        //Meter Audio
-
         yield return new WaitForSeconds(1.7f);
+        flyAudio.Play();
         b_startFight = true;
         m_anim.SetBool("Flying",true);
     }
@@ -193,7 +198,9 @@ public class FlyMiniBoss : MonoBehaviour
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
-        if(minibosshp.hp <= 0)
+        vfxSparkImpact.SendEvent("SparkImpact");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
+        if (minibosshp.hp <= 0)
         {
             //Die animation + Shader
             m_anim.SetBool("DieMoth",true);

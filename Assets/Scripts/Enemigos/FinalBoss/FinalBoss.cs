@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Audio;
+using UnityEngine.VFX;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -46,11 +47,14 @@ public class FinalBoss : MonoBehaviour
     //Audio
     public AudioMixerSnapshot paused;
 
+    private VisualEffect vfxSparkImpact;
+
     // Start is called before the first frame update
     void Start()
     {
         f_randomTimeAttack = Random.Range(7f,10f);
         m_animator = GetComponent<Animator>();
+        vfxSparkImpact = GetComponent<VisualEffect>();
     }
 
     // Update is called once per frame
@@ -210,9 +214,12 @@ public class FinalBoss : MonoBehaviour
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
+        vfxSparkImpact.SendEvent("SparkImpact");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (minibosshp.hp <= 0)
         {
             //Die animation + Shader
+            FindObjectOfType<AudioManager>().PlayRandomPitch("MonsterRoar");
             m_animator.SetBool("Death",true);
             m_collider.enabled = false;
             b_startFight = false;

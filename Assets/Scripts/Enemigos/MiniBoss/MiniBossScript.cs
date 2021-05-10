@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.VFX;
 
 public class MiniBossScript : MonoBehaviour
 {
@@ -32,13 +33,16 @@ public class MiniBossScript : MonoBehaviour
    
     //Audio
     public AudioMixerSnapshot paused;
-    
+
+    private VisualEffect vfxSparkImpact;
+
     void Start()
     {
         m_boss = GameObject.Find("Miniboss_Static");
         m_anim = GetComponent<Animator>();
         m_player = GameObject.Find("Player").transform;
         bossName.SetActive(true);
+        vfxSparkImpact = GetComponent<VisualEffect>();
     }
     void Update()
     {
@@ -131,6 +135,8 @@ public class MiniBossScript : MonoBehaviour
     IEnumerator Damage()
     {
         minibosshp.hp = minibosshp.hp - damage;
+        vfxSparkImpact.SendEvent("SparkImpact");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (minibosshp.hp <= 0)
         {
             //Die animation + Shader

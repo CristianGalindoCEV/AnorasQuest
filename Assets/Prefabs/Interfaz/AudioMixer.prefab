@@ -77,7 +77,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.5
     maxPitch: 1
-    volume: 1
+    volume: 0.249
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.8
     maxPitch: 1.2
-    volume: 1
+    volume: 0.578
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.5
     maxPitch: 1
-    volume: 0.6
+    volume: 0.175
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.5
     maxPitch: 1
-    volume: 0.6
+    volume: 0.317
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.5
     maxPitch: 1
-    volume: 0.6
+    volume: 0.217
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.8
     maxPitch: 1
-    volume: 0.438
+    volume: 0.271
     pitch: 1
     outputMixer: Sonidos
     spatialBlend: 0
