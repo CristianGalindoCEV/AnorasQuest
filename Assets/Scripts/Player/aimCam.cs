@@ -10,6 +10,7 @@ public class aimCam: MonoBehaviour
     public Transform loockAt;
     public Transform camTransform;
     public Transform playerTransform;
+    public Transform mainCamera;
 
     Quaternion playerRotation;
     Quaternion cameraRotation;
@@ -35,6 +36,10 @@ public class aimCam: MonoBehaviour
             currentY = Input.GetAxis("Mouse Y") * f_mouseSensivility;
 
             currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+        }
+        else if (playerController.aiming == false)
+        {
+            //Añadir funcion para tener la misma posicion que la camara de apuntado
         }
     }
     private void LateUpdate()

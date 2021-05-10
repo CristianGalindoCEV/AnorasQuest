@@ -93,6 +93,7 @@ public class Tutorial : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         menuManager.ControlText.SetText("None"); // Add Text 
+        menuManager.ControlText.enabled = false;
         menuManager.Icon_L.enabled = false;
         menuManager.Icon_R.enabled = false;
         menuManager.Background_Icon.enabled = false;
