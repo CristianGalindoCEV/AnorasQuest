@@ -45,6 +45,7 @@ public class PortalFinal : MonoBehaviour
         if (other.tag == "Player")
         {
             StartCoroutine(Play());
+            //Meter Audio
         }
     }
     IEnumerator Play()
@@ -77,7 +78,13 @@ public class PortalFinal : MonoBehaviour
         hud.alpha = 0;
         loading.SetActive(true);
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1f);
+        //PlayerEneable
+        playercontroller.speed = 0;
+        playercontroller.player.enabled = false;
+
+        yield return new WaitForSeconds(3f);
+
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("Credits");

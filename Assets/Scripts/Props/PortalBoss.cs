@@ -6,7 +6,9 @@ using UnityEngine.Audio;
 
 public class PortalBoss : MonoBehaviour
 {
+    //Player
     public PlayerController playercontroller;
+
     private GameObject m_loading;
     public Animator tranistion;
     public CanvasGroup hud;
@@ -33,15 +35,6 @@ public class PortalBoss : MonoBehaviour
     {
         m_loading = GameObject.Find("loadingScreen");
 
-        /*
-        m_text1 = GameObject.Find("Text_Anora");
-        m_text2 = GameObject.Find("Text_Enemy");
-        m_text3 = GameObject.Find("Text_FinalBoss");
-        m_image1 = GameObject.Find("Image_Anora");
-        m_image2 = GameObject.Find("Image_Enemy");
-        m_image3 = GameObject.Find("Image_FinalBoss");
-        */
-
         m_image1.SetActive(false);
         m_text1.SetActive(false);
         m_image2.SetActive(false);
@@ -61,12 +54,13 @@ public class PortalBoss : MonoBehaviour
         if (other.tag == "Player")
         {
             StartCoroutine(Play());
+            //Meter Audio
         }
     }
     IEnumerator Play()
     {
+        //Chose random image
         i_number = Random.Range(1, 3);
-
         switch (i_number)
         {
             case 1:
@@ -89,13 +83,20 @@ public class PortalBoss : MonoBehaviour
                 break;
         }
 
+        //Start Transition
         tranistion.SetBool("PressPlay", true);
         hud.alpha = 0;
         m_loading.SetActive(true);
-       
+
         paused.TransitionTo(4f);
         Cursor.visible = false;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1f);
+        //PlayerEneable
+        playercontroller.speed = 0;
+        playercontroller.player.enabled = false;
+
+        yield return new WaitForSeconds(3f);
+
         nopaused.TransitionTo(0.1f);
         FindObjectOfType<AudioManager>().Stop("MenuBGM");
         SceneManager.LoadScene("StaticBoss");

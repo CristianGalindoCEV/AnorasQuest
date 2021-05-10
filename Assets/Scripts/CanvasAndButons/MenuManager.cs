@@ -222,6 +222,7 @@ public class MenuManager : MonoBehaviour
         Buff_Cadence.DOFade(1, 1f).SetEase(Ease.OutSine);
     }
 
+    //Text Animation UI
     public void UiTextAnimation() // Animation when notificate ingame
     {
         //Reset Positions

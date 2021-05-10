@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float f_horizontalMove;
     private float f_verticalMove;
 
-    [SerializeField]private float f_speed;
+    public float speed = 10f;
 
     public bool god = false;
     public Animator transtion;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
             camDirection();
             m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
-            m_movePlayer = m_movePlayer * f_speed;
+            m_movePlayer = m_movePlayer * speed;
 
             player.transform.LookAt(player.transform.position + m_movePlayer); // Player move with camera
         }
@@ -197,13 +197,13 @@ public class PlayerController : MonoBehaviour
     //GOOD MODE
     public void God()
     {
-        f_speed = 15f;
+        speed = 15f;
         playerStats.bulletDamage_stat = playerStats.bulletGood_stat;
     }
      
     public void NoGod()
     {
-        f_speed = 8f;
+        speed = 8f;
         playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
     }
        

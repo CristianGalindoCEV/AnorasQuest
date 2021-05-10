@@ -737,7 +737,7 @@ MonoBehaviour:
   animator: {fileID: 1095354840}
   playerBody: {fileID: 2868756746996980028}
   playerTransform: {fileID: 1344188100929735338}
-  f_speed: 10
+  speed: 10
   god: 0
   transtion: {fileID: 0}
   aiming: 0

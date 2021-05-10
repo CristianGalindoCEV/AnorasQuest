@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
    //Bauculo
     public Bauculo gunspawn;
     private float f_cadence = 1f;
-    private bool b_audioRedy = false;
+    private bool b_audioRedy = true;
 
     //HUD
     public GameObject hud;
@@ -88,7 +88,6 @@ public class InputManager : MonoBehaviour
         if(f_cadence >= playerStats.timeShot && b_audioRedy == false)
         {
             //Meter audio
-            Debug.Log("Hola");
             b_audioRedy = true;
         }
 
