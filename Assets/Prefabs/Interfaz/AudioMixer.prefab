@@ -72,8 +72,8 @@ MonoBehaviour:
     maxDistance: 0
     loop: 0
     source: {fileID: 0}
-  - name: Attack_1
-    clip: {fileID: 8300000, guid: 9021f9b63c487ff439f4387a90427ece, type: 3}
+  - name: Impact
+    clip: {fileID: 8300000, guid: d56a6514bd869214aa26179989827ef1, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
     minPitch: 0.5
     maxPitch: 1
@@ -86,11 +86,11 @@ MonoBehaviour:
     maxDistance: 0
     loop: 0
     source: {fileID: 0}
-  - name: Dash
+  - name: Jump
     clip: {fileID: 8300000, guid: cfbed8d3eb9ace649b716d9467acb97d, type: 3}
     audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
-    minPitch: 0.5
-    maxPitch: 1
+    minPitch: 0.8
+    maxPitch: 1.2
     volume: 1
     pitch: 1
     outputMixer: Sonidos

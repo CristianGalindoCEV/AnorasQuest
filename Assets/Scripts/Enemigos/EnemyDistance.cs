@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.VFX;
 
 public class EnemyDistance : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class EnemyDistance : MonoBehaviour
     [SerializeField] private GameObject myBullet;
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
-    
+    private VisualEffect vfxSparkImpact;
+
     //Rango
     [SerializeField] private bool b_fight = false;
     private float f_time;
@@ -40,6 +42,7 @@ public class EnemyDistance : MonoBehaviour
         m_animator = this.GetComponent<Animator>();
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         m_enemyCollider = gameObject.GetComponent<Collider>();
+        vfxSparkImpact = GetComponent<VisualEffect>();
     }
     void Update()
     {
@@ -135,6 +138,8 @@ public class EnemyDistance : MonoBehaviour
     IEnumerator TakeDamage()
     {
         enemyhealth.health = enemyhealth.health - f_damage;
+        vfxSparkImpact.SendEvent("SparkImpact");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (enemyhealth.health <= 0)
         {
             m_animator.SetBool("Death",true);
