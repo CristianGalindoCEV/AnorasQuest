@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallTextAnimation : MonoBehaviour
 {
     private MenuManager menuManager;
+    private bool b_AnimationPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class WallTextAnimation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && b_AnimationPlaying == false)
         {
             StartCoroutine(NeedButton());
         }
@@ -21,10 +22,12 @@ public class WallTextAnimation : MonoBehaviour
     IEnumerator NeedButton()
     {
         menuManager.UiTextAnimation();
+        b_AnimationPlaying = true;
         menuManager.ControlText.SetText("You need to find a button");
 
         yield return new WaitForSeconds(5f);
 
+        b_AnimationPlaying = false;
         menuManager.ControlText.SetText("None");
         menuManager.ControlText.enabled = false;
         menuManager.Icon_L.enabled = false;

@@ -23,6 +23,6 @@ MonoBehaviour:
   DamageBuf: 0
   CadenceBuf: 0
   SpeedBulletBuf: 0
-  tutorial: 0
+  tutorial: 1
   FlyBoss: 0
   StaticBoss: 0

@@ -744,7 +744,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   aimCamera: {fileID: 385799490}
   f_gravity: 30
-  f_jumpForce: 15
+  f_jumpForce: 13
   healthbar: {fileID: 0}
   m_groundLayer:
     serializedVersion: 2
