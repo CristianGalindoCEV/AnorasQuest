@@ -87,6 +87,11 @@ public class MainMenuManager : MonoBehaviour
         RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
         RenderSettings.ambientIntensity = sliderValue;
     }
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
 
     public void SetFullscreen (bool isFullscreen)
     {

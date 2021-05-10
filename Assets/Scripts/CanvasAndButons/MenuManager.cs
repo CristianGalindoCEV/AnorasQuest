@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     public InputManager inputmanager;
     public PauseManager pausemanager;
+    
     Resolution[] resolutions;
 
     void Start()
@@ -105,7 +106,6 @@ public class MenuManager : MonoBehaviour
         }
 
         resolutionDropdown.AddOptions(options);
-        
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
@@ -157,6 +157,12 @@ public class MenuManager : MonoBehaviour
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetResolution (int resolutionIndex)
+    {
+        Resolution resolution = resolutions [resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     //Menu pause buttons
