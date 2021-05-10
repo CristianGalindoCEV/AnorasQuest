@@ -12,7 +12,8 @@ public class EnemyDistanceBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_player = GameObject.FindGameObjectWithTag("Player").transform;
+        m_player = GameObject.FindGameObjectWithTag("COG").transform;
+        transform.LookAt(m_player);
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class EnemyDistanceBullet : MonoBehaviour
         f_timeCounter += Time.deltaTime;
         if (speed != 0)
         {
+
             transform.Translate(Vector3.forward * speed * Time.deltaTime); // Follow player
         }
         else
