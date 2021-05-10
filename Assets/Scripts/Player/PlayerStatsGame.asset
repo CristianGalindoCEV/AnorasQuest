@@ -18,7 +18,7 @@ MonoBehaviour:
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 0.7
-  playerPosition_stat: {x: 93, y: 11, z: 75}
+  playerPosition_stat: {x: -7.5, y: 0, z: 67}
   revive: 0
   DamageBuf: 0
   CadenceBuf: 0
