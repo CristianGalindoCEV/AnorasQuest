@@ -16,6 +16,10 @@ public class MenuManager : MonoBehaviour
     
     public Image Icon_L;
     public Image Icon_R;
+    [SerializeField]
+    private RectTransform finalPosR;
+    [SerializeField]
+    private RectTransform finalPosL;
     public Image Background_Icon;
     public TextMeshProUGUI ControlText;
 
@@ -239,8 +243,8 @@ public class MenuManager : MonoBehaviour
         Background_Icon.enabled = false;
         ControlText.enabled = false;
 
-        Icon_L.rectTransform.position = new Vector3(910, 150, 0);
-        Icon_R.rectTransform.position = new Vector3(910, 150, 0);
+        Icon_L.rectTransform.localPosition = new Vector3(0, 0, 0);
+        Icon_R.rectTransform.localPosition = new Vector3(0, 0, 0);
         Background_Icon.rectTransform.localScale = new Vector3(0, 1, 1);
         
         //Start
@@ -251,9 +255,9 @@ public class MenuManager : MonoBehaviour
         ControlText.enabled = true;
 
         //MeteAquiElAudio
-        Icon_L.transform.DOMoveX(450, 2f).SetEase(Ease.OutQuint);
-        Icon_R.transform.DOMoveX(1365, 2f).SetEase(Ease.OutQuint);
-        Background_Icon.transform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);
+        Icon_L.rectTransform.DOAnchorPosX(-450, 2f).SetEase(Ease.OutQuint);
+        Icon_R.rectTransform.DOAnchorPosX(450, 2f).SetEase(Ease.OutQuint);
+        Background_Icon.rectTransform.DOScaleX(0.45f, 2f).SetEase(Ease.OutQuint);
 
         ControlText.DOFade(1f, 2f).SetEase(Ease.OutQuint).SetDelay(1f);
     }

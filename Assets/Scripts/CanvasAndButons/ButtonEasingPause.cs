@@ -43,7 +43,7 @@ public class ButtonEasingPause : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerEnter(PointerEventData eventData)
     {
         selector.enabled = true;
-        coso = rectTransform.DOMoveX(140f, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
+        coso = rectTransform.DOAnchorPosX(-70, m_duration).SetEase(Ease.InOutCubic).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
