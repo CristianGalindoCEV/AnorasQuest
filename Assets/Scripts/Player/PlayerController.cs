@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("JumpStart");
             f_fallVelocity = f_jumpForce;
             m_movePlayer.y = f_fallVelocity;
+            FindObjectOfType<AudioManager>().PlayRandomPitch("Jump");
         }
     }
 
