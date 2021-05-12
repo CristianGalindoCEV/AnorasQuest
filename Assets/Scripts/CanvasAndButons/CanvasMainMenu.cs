@@ -87,7 +87,13 @@ public class CanvasMainMenu : MonoBehaviour
         playerStats.hp_stat = 100;
         playerStats.bulletDamage_stat = 15;
         playerStats.playerPosition_stat = new Vector3(92, 11, 75);
+        
         playerStats.tutorial = false;
+        playerStats.FlyBoss = false;
+        playerStats.StaticBoss = false;
+        playerStats.CadenceBuf = false;
+        playerStats.DamageBuf = false;
+        playerStats.SpeedBulletBuf = false;
         
         //Transition Scene
         i_number = Random.Range(1, 3);

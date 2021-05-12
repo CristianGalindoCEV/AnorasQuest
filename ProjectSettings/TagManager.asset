@@ -18,6 +18,7 @@ TagManager:
   - Spine
   - Ground
   - COG
+  - Boss
   layers:
   - Default
   - TransparentFX

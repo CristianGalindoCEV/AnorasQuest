@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4124548437610552016}
   m_Layer: 0
   m_Name: FinalBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   maxHp: 4000
   hp: 0
   m_renderer: {fileID: 1065939413940870433}
+  m_disolve: -1
 --- !u!114 &5289900077283241108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   bossName: {fileID: 0}
+  bossHP: {fileID: 0}
   bullets: {fileID: 7684221789316444911, guid: 3e281ff606531af4392d55c450f5ee32, type: 3}
   Enemyes: {fileID: 7977793195410221709, guid: fe13022385c58c34baad85b3428d3444, type: 3}
   JE_Mouth: {fileID: 0}
