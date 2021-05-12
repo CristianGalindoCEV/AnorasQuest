@@ -8,7 +8,8 @@ public class MiniBossScript : MonoBehaviour
 {
     //Boss
     [SerializeField] GameObject spikePrefab;
-    public Collider Mycollider;
+    public Collider MycolliderTrigger;
+    public Collider MycolliderNoTrigger;
     private Animator m_anim;
     public GameObject bossName;
 
@@ -142,7 +143,8 @@ public class MiniBossScript : MonoBehaviour
             //Die animation + Shader
             b_startBattle = false;
             m_anim.SetBool("Dead",true);
-            Mycollider.enabled = false;
+            MycolliderTrigger.enabled = false;
+            MycolliderNoTrigger.enabled = false;
             playerStats.StaticBoss = true;
             
             //HUD Disappear
