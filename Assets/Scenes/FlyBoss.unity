@@ -1721,6 +1721,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1728147771}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1144772421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9166570754763626653, guid: b30f2d830388dd549bd22d0d52973ad5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1728147771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1220075614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1723034681, guid: b30f2d830388dd549bd22d0d52973ad5,
@@ -3039,22 +3045,22 @@ PrefabInstance:
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97605866
+      value: 0.9760586
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20918769
+      value: -0.20918767
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.012486139
+      value: -0.012486145
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.05825966
+      value: -0.05825969
       objectReference: {fileID: 0}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3069,17 +3075,17 @@ PrefabInstance:
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20918772
+      value: -0.20918769
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.012486135
+      value: -0.01248615
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.058259636
+      value: -0.058259714
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555052679702, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3114,7 +3120,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.013689282
+      value: -0.013689283
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3124,7 +3130,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.22934473
+      value: -0.22934471
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3199,7 +3205,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011281781
+      value: -0.011281782
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3214,7 +3220,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.05850484
+      value: -0.058504842
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3513,6 +3519,16 @@ PrefabInstance:
       propertyPath: m_collider
       value: 
       objectReference: {fileID: 133446501}
+    - target: {fileID: 3427293181057189503, guid: a613d37eb3acf6a43b3033682dccb8d0,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1144772421}
+    - target: {fileID: 3427293181057189503, guid: a613d37eb3acf6a43b3033682dccb8d0,
+        type: 3}
+      propertyPath: HP_Bar
+      value: 
+      objectReference: {fileID: 423091605}
     - target: {fileID: 4259081972003945614, guid: a613d37eb3acf6a43b3033682dccb8d0,
         type: 3}
       propertyPath: bossBar

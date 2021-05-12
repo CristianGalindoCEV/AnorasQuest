@@ -23,6 +23,8 @@ public class FlyMiniBoss : MonoBehaviour
     public GameObject bossName;
     public GameObject insectPack;
     public GameObject ballAttack;
+    public GameObject HP_Bar;
+    public GameObject icon;
     private Transform my_transform;
     private Animator m_anim;
 
@@ -125,6 +127,7 @@ public class FlyMiniBoss : MonoBehaviour
     {
         if (!b_startFight && b_stopColision == false)
         {
+            m_collider.enabled = false;
             hit = new Collider[10];
             //Create area for detect player
             Physics.OverlapSphereNonAlloc(transform.position, 30, hit, playerLayer);
@@ -155,6 +158,7 @@ public class FlyMiniBoss : MonoBehaviour
         yield return new WaitForSeconds(1.7f);
         flyAudio.Play();
         b_startFight = true;
+        m_collider.enabled = true;
         m_anim.SetBool("Flying",true);
     }
     IEnumerator FirtsAttack() //This instance bullets
@@ -212,11 +216,12 @@ public class FlyMiniBoss : MonoBehaviour
             //HUD Disappear
             bossName.SetActive(false);
             minibosshp.bossBar.enabled = false;
-
+            icon.SetActive(false);
+            HP_Bar.SetActive(false);
             //AudioFade
             paused.TransitionTo(1.5f);
             
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(3.0f);
             m_boss.SetActive(false);
         }
     }
