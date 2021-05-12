@@ -26,7 +26,7 @@ public class FlyMiniBoss : MonoBehaviour
     private Transform my_transform;
     private Animator m_anim;
 
-    private Collider m_collider;
+    public CapsuleCollider m_collider;
 
     private bool b_figth = true;
     private bool b_stopColision = false;

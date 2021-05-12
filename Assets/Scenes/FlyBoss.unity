@@ -496,6 +496,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &133446501 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 3427293181057189474, guid: a613d37eb3acf6a43b3033682dccb8d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3427293179683836012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &133446502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3427293181057189501, guid: a613d37eb3acf6a43b3033682dccb8d0,
@@ -1112,9 +1118,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 280042814, guid: 331082425c039f5419f4c37addbcd296, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 385799489, guid: 331082425c039f5419f4c37addbcd296, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 385799491, guid: 331082425c039f5419f4c37addbcd296, type: 3}
+      propertyPath: mainCamera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 385799492, guid: 331082425c039f5419f4c37addbcd296, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -1127,6 +1141,14 @@ PrefabInstance:
     - target: {fileID: 385799492, guid: 331082425c039f5419f4c37addbcd296, type: 3}
       propertyPath: m_Dithering
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462862521, guid: 331082425c039f5419f4c37addbcd296, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 720030058, guid: 331082425c039f5419f4c37addbcd296, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 190423499721695693, guid: 331082425c039f5419f4c37addbcd296,
         type: 3}
@@ -1482,7 +1504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979397862}
   - component: {fileID: 979397863}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: SkyRaycastShot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,7 +1873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292950163}
   - component: {fileID: 1292950164}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: SkyRaycastShot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298796861}
   - component: {fileID: 1298796862}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: SkyRaycastShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2595,6 +2617,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94,
         type: 2}
+    - target: {fileID: 1320012878427755686, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1320012878560161009, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2629,6 +2656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541923258993260743, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1882425538833923486, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2723,7 +2755,7 @@ PrefabInstance:
     - target: {fileID: 5414150287061828579, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5664883418511164637, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2740,15 +2772,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6796933072131522273, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7211814435780129748, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7971761317627839323, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7971761317649878444, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2824,6 +2861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971761318510498497, guid: b30f2d830388dd549bd22d0d52973ad5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7971761318809899196, guid: b30f2d830388dd549bd22d0d52973ad5,
         type: 3}
@@ -2919,7 +2961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1740576695}
   - component: {fileID: 1740576696}
-  m_Layer: 10
+  m_Layer: 4
   m_Name: SkyRaycastShot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3157,7 +3199,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011281779
+      value: -0.011281781
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3172,7 +3214,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.05850482
+      value: -0.05850484
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -3466,6 +3508,11 @@ PrefabInstance:
       propertyPath: vfxSparkImpact
       value: 
       objectReference: {fileID: 318231438}
+    - target: {fileID: 3427293181057189503, guid: a613d37eb3acf6a43b3033682dccb8d0,
+        type: 3}
+      propertyPath: m_collider
+      value: 
+      objectReference: {fileID: 133446501}
     - target: {fileID: 4259081972003945614, guid: a613d37eb3acf6a43b3033682dccb8d0,
         type: 3}
       propertyPath: bossBar

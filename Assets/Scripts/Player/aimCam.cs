@@ -19,10 +19,6 @@ public class aimCam: MonoBehaviour
     private float currentX = 0f;
     private float currentY = 0f;
     [SerializeField] private float f_mouseSensivility = 2f;
-    [SerializeField] private Transform normalCameraTransform;
-
-    public bool justAiming;
-    public bool wasAiming;
 
     public PlayerController playerController;
 
@@ -34,28 +30,12 @@ public class aimCam: MonoBehaviour
     }
     private void Update()
     {
-        wasAiming = playerController.aiming;
-        justAiming = false;
-
         if (playerController.aiming == true)
         {
             currentX = Input.GetAxis("Mouse X") * f_mouseSensivility;
             currentY = Input.GetAxis("Mouse Y") * f_mouseSensivility;
 
             currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
-
-            if (!wasAiming)
-                justAiming = true;
-        }
-        else if (playerController.aiming == false)
-        {
-            //Añadir funcion para tener la misma posicion que la camara de apuntado
-        }
-
-        if (justAiming)
-        {
-            Debug.Log("loooooooo");
-            playerRotation = playerTransform.localRotation;
         }
     }
 
