@@ -12,6 +12,7 @@ public class MiniBossScript : MonoBehaviour
     public Collider MycolliderNoTrigger;
     private Animator m_anim;
     public GameObject bossName;
+    public GameObject Icon_boss;
 
     private int randomNumber;
     public float damage;
@@ -150,6 +151,7 @@ public class MiniBossScript : MonoBehaviour
             //HUD Disappear
             bossName.SetActive(false);
             minibosshp.bossBar.enabled = false;
+            Icon_boss.SetActive(false);
             
             //AudioFade
             paused.TransitionTo(1.5f);

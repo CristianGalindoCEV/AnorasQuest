@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Anora", menuName = "Player")]
 public class PlayerStats : ScriptableObject
 {
+    //Game Audio Settings
+    public bool gameStart = false; //Control audio settings if dont start game (Don't touch) important build game this setting false
+
     //HP
     public float maxhp_stat = 100;
     public float hp_stat = 100;

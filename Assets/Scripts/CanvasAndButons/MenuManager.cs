@@ -13,13 +13,8 @@ public class MenuManager : MonoBehaviour
     public PlayerStats PlayerStats;
 
     //UI Notification
-    
     public Image Icon_L;
     public Image Icon_R;
-    [SerializeField]
-    private RectTransform finalPosR;
-    [SerializeField]
-    private RectTransform finalPosL;
     public Image Background_Icon;
     public TextMeshProUGUI ControlText;
 
@@ -29,6 +24,9 @@ public class MenuManager : MonoBehaviour
     public Image Buff_SpedBullet;
 
     //Audio
+    public Slider musicSlider;
+    public Slider mainVolumeSlider;
+    public Slider soundSlider;
     public AudioMixer audioMixer;
     
     //UI Panels
@@ -89,6 +87,16 @@ public class MenuManager : MonoBehaviour
             Buff_Cadence.DOFade(1, 0f).SetEase(Ease.OutSine);
         }
 
+        //GetAudioOptions
+        float MainVolume = PlayerPrefs.GetFloat("MainVol");
+        mainVolumeSlider.value = MainVolume;
+
+        float MusicVolume = PlayerPrefs.GetFloat("MusicVol");
+        musicSlider.value = MusicVolume;
+
+        float SoundVolume = PlayerPrefs.GetFloat("SoundVol");
+        soundSlider.value = SoundVolume;
+
         //Resolution Options
         resolutions = Screen.resolutions;
 
@@ -128,6 +136,7 @@ public class MenuManager : MonoBehaviour
     public void SetVolume(float sliderValue)
     {
         audioMixer.SetFloat("MainVolume", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MainVol", sliderValue);
         if (sliderValue == 0)
         {
             audioMixer.SetFloat("MainVolume", -60);
@@ -137,6 +146,8 @@ public class MenuManager : MonoBehaviour
     public void SetVolumeMusic(float sliderValue)
     {
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MusicVol", sliderValue);
+        
         if (sliderValue == 0)
         {
             audioMixer.SetFloat("MusicVol", -60);
@@ -146,6 +157,7 @@ public class MenuManager : MonoBehaviour
     public void SetVolumeSound(float sliderValue)
     {
         audioMixer.SetFloat("SoundsVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("SoundVol", sliderValue);
         if (sliderValue == 0)
         {
             audioMixer.SetFloat("SoundsVol", -60);
