@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 
 public class PortalButton : MonoBehaviour
 {
+    public PlayableDirector myAnimation;
     public Transform wallPortal;
     private bool pulse = false;
     private Transform m_transform;
@@ -65,6 +67,7 @@ public class PortalButton : MonoBehaviour
     {
         if(other.tag == "Player" && pulse == false)
         {
+            //myAnimation.Play();
             pulse = true;
             FindObjectOfType<AudioManager>().Play("UnlockPortal");
             StartCoroutine(Destroy());
