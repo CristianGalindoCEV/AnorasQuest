@@ -72,7 +72,6 @@ public class Tutorial : MonoBehaviour
     IEnumerator MyJumpTutorial()
     {
         yield return new WaitForSeconds(1.5f);
-        
         menuManager.UiTextAnimation();
         menuManager.ControlText.SetText("SPACE for jump"); // Add Text 
 
@@ -80,14 +79,10 @@ public class Tutorial : MonoBehaviour
     }
     IEnumerator MyShotTutorial()
     {
-        yield return new WaitForSeconds(1.5f);
-
-        menuManager.UiTextAnimation();
-        menuManager.ControlText.SetText("RIGHT CLICK to aim" + "LEFT CLICK shoot ( only when aiming )"); // Add Text 
-
-        yield return new WaitForSeconds(1.5f);
-
         b_jump = true;
+        yield return new WaitForSeconds(1.5f);
+        menuManager.UiTextAnimation();
+        menuManager.ControlText.SetText("RIGHT CLICK to aim" + " " + "LEFT CLICK shoot ( only when aiming )"); // Add Text 
     }
     IEnumerator MyEndTutorial()
     {
