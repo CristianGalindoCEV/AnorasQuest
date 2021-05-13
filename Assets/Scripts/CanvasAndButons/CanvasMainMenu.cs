@@ -120,6 +120,7 @@ public class CanvasMainMenu : MonoBehaviour
                 break;
         }
 
+        playerStats.gameStart = true;
         transtion.SetBool("PressPlay" ,true);
         mainmenu.SetActive(false);
         paused.TransitionTo(4f);

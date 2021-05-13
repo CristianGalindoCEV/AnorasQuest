@@ -8434,6 +8434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630901db12a5738439fe09e866ce80cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  musicSlider: {fileID: 1623690557}
+  mainVolumeSlider: {fileID: 378018243}
+  soundSlider: {fileID: 1378681168}
   audioMixer: {fileID: 24100000, guid: e7b21aeda801325478e4355da1d1dd4a, type: 2}
   panelresolution: {fileID: 1649479745}
   panelsound: {fileID: 516395195}

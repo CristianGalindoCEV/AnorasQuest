@@ -8,7 +8,15 @@ using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public PlayerStats playerStats;
+
+    //Audio
+    public Slider musicSlider;
+    public Slider mainVolumeSlider;
+    public Slider soundSlider;
     public AudioMixer audioMixer;
+
+    //UI
     public GameObject panelresolution;
     public GameObject panelsound;
     public GameObject panelgraphics;
@@ -21,10 +29,31 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
+        //Menu UI
         panelgraphics.SetActive(false);
         panelresolution.SetActive(false);
         panelsound.SetActive(false);
 
+        //GetAudioOptions
+        if (playerStats.gameStart == true)
+        {
+            float MainVolume = PlayerPrefs.GetFloat("MainVol");
+            mainVolumeSlider.value = MainVolume;
+
+            float MusicVolume = PlayerPrefs.GetFloat("MusicVol");
+            musicSlider.value = MusicVolume;
+
+            float SoundVolume = PlayerPrefs.GetFloat("SoundVol");
+            soundSlider.value = SoundVolume;
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("MainVol", 1);
+            PlayerPrefs.SetFloat("MusicVol", 1);
+            PlayerPrefs.SetFloat("SoundVol", 1);
+        }
+
+        //Set Resolution
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
@@ -52,8 +81,9 @@ public class MainMenuManager : MonoBehaviour
     //Sound Voids
     public void SetVolume (float sliderValue)
     {
-        audioMixer.SetFloat("MainVolume", Mathf.Log10 (sliderValue) * 20);
-        if(sliderValue == 0)
+        audioMixer.SetFloat("MainVolume", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MainVol", sliderValue);
+        if (sliderValue == 0)
         {
             audioMixer.SetFloat("MainVolume", -60);
         }
@@ -61,6 +91,8 @@ public class MainMenuManager : MonoBehaviour
     public void SetVolumeMusic(float sliderValue)
     {
         audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MusicVol", sliderValue);
+
         if (sliderValue == 0)
         {
             audioMixer.SetFloat("MusicVol", -60);
@@ -69,6 +101,7 @@ public class MainMenuManager : MonoBehaviour
     public void SetVolumeSound(float sliderValue)
     {
         audioMixer.SetFloat("SoundsVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("SoundVol", sliderValue);
         if (sliderValue == 0)
         {
             audioMixer.SetFloat("SoundsVol", -60);
