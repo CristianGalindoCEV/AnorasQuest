@@ -101,5 +101,4 @@ public class PortalButton : MonoBehaviour
         yield return new WaitForSeconds(9f);
         Destroy(gameObject); 
     }
-
 }
