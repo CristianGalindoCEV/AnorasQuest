@@ -213,6 +213,14 @@ public class FlyMiniBoss : MonoBehaviour
             playerCam.enabled = false;
             aimCam.enabled = false;
             inputManager.animationPlayed = true;
+
+            //HUD Disappear
+            bossName.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+            icon.SetActive(false);
+            HP_Bar.SetActive(false);
+
+            yield return new WaitForSeconds(3f);
             
             //Die animation + Shader
             m_anim.SetBool("DieMoth",true);
@@ -220,19 +228,13 @@ public class FlyMiniBoss : MonoBehaviour
             m_collider.enabled = false;
             m_speed = 0;
             playerStats.FlyBoss = true;
-
-            //HUD Disappear
-            bossName.SetActive(false);
-            minibosshp.bossBar.enabled = false;
-            icon.SetActive(false);
-            HP_Bar.SetActive(false);
             
             //AudioFade
             paused.TransitionTo(1.5f);
             
             yield return new WaitForSeconds(3.0f);
-            aimCam.enabled = true;
             playerCam.enabled = true;
+            aimCam.enabled = true;
             deathcam.enabled = false;
             
             yield return new WaitForSeconds(1.5f);

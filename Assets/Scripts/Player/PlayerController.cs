@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (playerStats.hp_stat > 0)
+        if (playerStats.hp_stat > 0 && m_inputManager.animationPlayed == false)
         {
             f_horizontalMove = Input.GetAxis("Horizontal");
             f_verticalMove = Input.GetAxis("Vertical");
