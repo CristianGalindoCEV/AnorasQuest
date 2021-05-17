@@ -374,8 +374,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1614362642}
-  - {fileID: 1832263026}
+  - {fileID: 956116733}
   m_Father: {fileID: 1769529922}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15075,6 +15074,26 @@ PrefabInstance:
       propertyPath: wallPortal
       value: 
       objectReference: {fileID: 1280681646}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica1_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1730960217}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1018609272}
     - target: {fileID: 848868217103543413, guid: 110d819d876e53c4eaf3ac05577ffd4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18407,6 +18426,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6bece6d3020ad34b8b1de244222ef93, type: 3}
+--- !u!1 &956116732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956116733}
+  m_Layer: 0
+  m_Name: Animatica1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &956116733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956116732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1614362642}
+  - {fileID: 1832263026}
+  m_Father: {fileID: 8245328}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &959908786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24567,7 +24618,7 @@ PrefabInstance:
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19530733
+      value: 0.19530731
       objectReference: {fileID: 0}
     - target: {fileID: 8656674555095396096, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -24667,7 +24718,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.160959
+      value: 0.16095899
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -24682,7 +24733,7 @@ PrefabInstance:
     - target: {fileID: 8656674556240874477, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8346981
+      value: 0.83469796
       objectReference: {fileID: 0}
     - target: {fileID: 8656674556536435736, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
@@ -29001,6 +29052,31 @@ PrefabInstance:
       propertyPath: wallPortal
       value: 
       objectReference: {fileID: 661636927}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica1_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: myAnimation
+      value: 
+      objectReference: {fileID: 1614362645}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1730960217}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1018609272}
     - target: {fileID: 848868217103543413, guid: 110d819d876e53c4eaf3ac05577ffd4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30482,7 +30558,7 @@ GameObject:
   - component: {fileID: 1614362645}
   - component: {fileID: 1614362644}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: VirtualCamera(Animatica1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30500,7 +30576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1745801037}
-  m_Father: {fileID: 8245328}
+  m_Father: {fileID: 956116733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359}
 --- !u!114 &1614362643
@@ -30510,7 +30586,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614362641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -30569,7 +30645,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 4751c2d89bcd54842b7825ba7f0da334, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 3
+  m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 3499027711821071001, guid: 4751c2d89bcd54842b7825ba7f0da334, type: 2}
@@ -32676,6 +32752,26 @@ PrefabInstance:
       propertyPath: wallPortal
       value: 
       objectReference: {fileID: 1413078148}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica1_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1730960217}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: animatica_cam
+      value: 
+      objectReference: {fileID: 1614362643}
+    - target: {fileID: 848868217103543412, guid: 110d819d876e53c4eaf3ac05577ffd4a,
+        type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1018609272}
     - target: {fileID: 848868217103543413, guid: 110d819d876e53c4eaf3ac05577ffd4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34742,7 +34838,7 @@ GameObject:
   - component: {fileID: 1832263026}
   - component: {fileID: 1832263027}
   m_Layer: 0
-  m_Name: DollyTrack1
+  m_Name: DollyTrack1(Animatica1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34759,7 +34855,7 @@ Transform:
   m_LocalPosition: {x: 84.2095, y: 11.985583, z: 183.82442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8245328}
+  m_Father: {fileID: 956116733}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1832263027

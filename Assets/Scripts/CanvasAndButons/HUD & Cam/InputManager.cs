@@ -15,11 +15,12 @@ public class InputManager : MonoBehaviour
     public CanvasGroup deadBackground;
     public GameObject pausemenu;
     public GameObject mirilla;
-    public bool menuon;
     public MenuManager menumanager;
     public PauseManager pauseManager;
     private AudioListener mainListner;
     private AudioListener aimListner;
+    public bool menuon;
+    public bool animationPlayed = false; // Control cameras when start animation ingame
 
     //Player
     private PlayerController m_playerController;
@@ -54,7 +55,7 @@ public class InputManager : MonoBehaviour
         f_cadence += Time.deltaTime;
         
         //Aiming 
-        if (Input.GetButton("Fire2") && pauseManager.paused == false)
+        if (Input.GetButton("Fire2") && pauseManager.paused == false && animationPlayed == false)
         {
             aimListner.enabled = true;
             mainListner.enabled = false;

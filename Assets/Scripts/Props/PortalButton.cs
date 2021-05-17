@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using Cinemachine;
 
 
 public class PortalButton : MonoBehaviour
 {
+    //Controlers
     public PlayableDirector myAnimation;
+    public PlayerController playerController;
+    public InputManager inputManager;
+    public CinemachineVirtualCamera animatica_cam;
+
+    //Portal
     public Transform wallPortal;
     private bool pulse = false;
-    private Transform m_transform;
 
+    //Easing
     float currentTime = 0;
     float initValue;
     float finalValue;
@@ -23,16 +30,14 @@ public class PortalButton : MonoBehaviour
     float button_currentValue;
     float button_maxTime = 2f;
 
-   
    // public VisualEffect vfxSmoke;
     public GameObject vfxSmoke;
-
 
     // Start is called before the first frame update
     void Start()
     {
+        animatica_cam.enabled = false;
         upPortal = wallPortal.transform.position;
-        m_transform = transform;
 
         initValue = upPortal.y;
         finalValue = upPortal.y - 15;
@@ -67,21 +72,34 @@ public class PortalButton : MonoBehaviour
     {
         if(other.tag == "Player" && pulse == false)
         {
-            //myAnimation.Play();
             pulse = true;
             FindObjectOfType<AudioManager>().Play("UnlockPortal");
             StartCoroutine(Destroy());
-            
+            StartCoroutine(Cinematic());
         }
     }
+    IEnumerator Cinematic()
+    {
+        playerController.speed = 0f; // Dont move 
+        inputManager.animationPlayed = true;
 
+        myAnimation.Play(); // Start animatic
+        animatica_cam.enabled = true;
+        
+        yield return new WaitForSeconds(6f);
+
+        animatica_cam.enabled = false;
+        myAnimation.Stop();//Finish
+
+        yield return new WaitForSeconds(2f);
+        playerController.speed = 10f; // Move
+        inputManager.animationPlayed = false;
+    }
     public IEnumerator Destroy()
     {
         Instantiate(vfxSmoke, transform.position, transform.rotation);
-        yield return new WaitForSeconds(4.0f);
-        Destroy(gameObject);
-        yield return new WaitForSeconds(1.0f);
-        
+        yield return new WaitForSeconds(9f);
+        Destroy(gameObject); 
     }
 
 }
