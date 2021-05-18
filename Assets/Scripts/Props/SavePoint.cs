@@ -15,7 +15,7 @@ public class SavePoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerStats.playerPosition_stat = other.transform.position;
+            playerStats.savepoint_Position = other.transform.position;
         }
     }
 }

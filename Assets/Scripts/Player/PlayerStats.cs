@@ -20,6 +20,7 @@ public class PlayerStats : ScriptableObject
 
     //Respawn
     public Vector3 playerPosition_stat;
+    public Vector3 savepoint_Position;
     public bool revive = false;
 
     //Bufs UI Image Bufs

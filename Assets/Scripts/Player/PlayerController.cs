@@ -48,7 +48,15 @@ public class PlayerController : MonoBehaviour
     {
         m_inputManager = FindObjectOfType<InputManager>();
         aimCamera.enabled = false;
-        transform.position = playerStats.playerPosition_stat;
+        if (playerStats.FlyBoss == false && playerStats.StaticBoss == false)
+        {
+            transform.position = playerStats.playerPosition_stat;
+        }
+        else
+        {
+            transform.position = playerStats.savepoint_Position;
+        }
+
         playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
 
         //Develop Code

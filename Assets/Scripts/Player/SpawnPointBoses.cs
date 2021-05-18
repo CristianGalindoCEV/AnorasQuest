@@ -22,7 +22,6 @@ public class SpawnPointBoses : MonoBehaviour
     void Start()
     {
         playerStats.playerPosition_stat = position;
-        player.transform.position = position;
         StartCoroutine(Animation());
     }
 

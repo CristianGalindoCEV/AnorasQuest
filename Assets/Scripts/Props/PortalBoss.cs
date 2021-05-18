@@ -90,7 +90,8 @@ public class PortalBoss : MonoBehaviour
 
         paused.TransitionTo(4f);
         Cursor.visible = false;
-        yield return new WaitForSeconds(1f);
+       
+        yield return new WaitForSeconds(0.5f);
         //PlayerEneable
         playercontroller.speed = 0;
         playercontroller.player.enabled = false;

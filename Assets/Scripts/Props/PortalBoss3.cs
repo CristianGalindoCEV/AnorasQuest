@@ -27,15 +27,6 @@ public class PortalBoss3 : MonoBehaviour
     {
         loading = GameObject.Find("loadingScreen");
 
-        /*
-        m_text1 = GameObject.Find("Text_Anora");
-        m_text2 = GameObject.Find("Text_Enemy");
-        m_text3 = GameObject.Find("Text_FinalBoss");
-        m_image1 = GameObject.Find("Image_Anora");
-        m_image2 = GameObject.Find("Image_Enemy");
-        m_image3 = GameObject.Find("Image_FinalBoss");
-        */
-
         m_image1.SetActive(false);
         m_text1.SetActive(false);
         m_image2.SetActive(false);
@@ -82,7 +73,7 @@ public class PortalBoss3 : MonoBehaviour
         loading.SetActive(true);
         paused.TransitionTo(4f);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         //PlayerEneable
         playercontroller.speed = 0;
         playercontroller.player.enabled = false;

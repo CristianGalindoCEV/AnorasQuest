@@ -88,7 +88,8 @@ public class PortalBoss2 : MonoBehaviour
         loading.SetActive(true);
         paused.TransitionTo(4f);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        
         //PlayerEneable
         playercontroller.speed = 0;
         playercontroller.player.enabled = false;

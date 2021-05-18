@@ -17,7 +17,7 @@ public class SpawnPointBigLevel : MonoBehaviour
         }
         else
         {
-            position = playerStats.playerPosition_stat;
+            position = playerStats.savepoint_Position;
         }
     }
 }
