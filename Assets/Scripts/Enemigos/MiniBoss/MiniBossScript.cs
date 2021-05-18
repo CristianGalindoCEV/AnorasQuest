@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.VFX;
+using Cinemachine;
 
 public class MiniBossScript : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class MiniBossScript : MonoBehaviour
     public Collider MycolliderTrigger;
     public Collider MycolliderNoTrigger;
     private Animator m_anim;
+    public CinemachineVirtualCamera deathcam;
     public GameObject bossName;
     public GameObject Icon_boss;
+    public GameObject boss_hpBar;
 
     private int randomNumber;
     public float damage;
@@ -23,6 +26,10 @@ public class MiniBossScript : MonoBehaviour
     private Transform m_player;
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
+    public Camera aimCam;
+    public CinemachineFreeLook playerCam;
+    public InputManager inputManager;
+    public PlayerController playerController;
 
     //WallBoss
     private GameObject m_boss;
@@ -48,7 +55,7 @@ public class MiniBossScript : MonoBehaviour
     }
     void Update()
     {
-       if(b_startBattle == true)
+       if(b_startBattle == true && minibosshp.hp > 0)
         {
             
             f_TimeCounter += Time.deltaTime;
@@ -141,6 +148,23 @@ public class MiniBossScript : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (minibosshp.hp <= 0)
         {
+            //Cameras
+            deathcam.enabled = true;
+            playerCam.enabled = false;
+            aimCam.enabled = false;
+            inputManager.animationPlayed = true;
+
+            //Player
+            playerController.speed = 0f;
+
+            //HUD Disappear
+            bossName.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+            Icon_boss.SetActive(false);
+            boss_hpBar.SetActive(false);
+           
+            yield return new WaitForSeconds(3f);
+            
             //Die animation + Shader
             b_startBattle = false;
             m_anim.SetBool("Dead",true);
@@ -148,15 +172,21 @@ public class MiniBossScript : MonoBehaviour
             MycolliderNoTrigger.enabled = false;
             playerStats.StaticBoss = true;
             
-            //HUD Disappear
-            bossName.SetActive(false);
-            minibosshp.bossBar.enabled = false;
-            Icon_boss.SetActive(false);
-            
             //AudioFade
             paused.TransitionTo(1.5f);
 
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(3.0f);
+
+            playerCam.enabled = true;
+            aimCam.enabled = true;
+            deathcam.enabled = false;
+            
+            yield return new WaitForSeconds(1.5f);
+
+            //Player
+            playerController.speed = 10f;
+
+            inputManager.animationPlayed = false;
             m_boss.SetActive(false);
         }
     }

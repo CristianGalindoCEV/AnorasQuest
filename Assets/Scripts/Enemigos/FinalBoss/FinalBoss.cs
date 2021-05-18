@@ -263,7 +263,7 @@ public class FinalBoss : MonoBehaviour
             //Player
             playerController.speed = 10f;
 
-            inputManager.animationPlayed = true;
+            inputManager.animationPlayed = false;
            
             m_boss.SetActive(false);
         }
