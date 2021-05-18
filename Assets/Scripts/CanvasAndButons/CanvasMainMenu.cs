@@ -85,8 +85,9 @@ public class CanvasMainMenu : MonoBehaviour
         //PlayerStats Reset
         playerStats.maxhp_stat = 100;
         playerStats.hp_stat = 100;
-        playerStats.bulletDamage_stat = 15;
+        playerStats.bulletDamage_stat = 30;
         playerStats.playerPosition_stat = new Vector3(92, 11, 75);
+        playerStats.savepoint_Position = new Vector3(0, 0, 0);
         playerStats.timeShot = 1f;
 
         playerStats.tutorial = false;
