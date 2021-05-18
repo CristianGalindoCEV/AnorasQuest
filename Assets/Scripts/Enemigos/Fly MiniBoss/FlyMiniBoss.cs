@@ -37,6 +37,7 @@ public class FlyMiniBoss : MonoBehaviour
     //Player
     public Transform player;
     public PlayerStats playerStats;
+    public PlayerController playerController;
     public Camera aimCam;
     public CinemachineFreeLook playerCam;
     public InputManager inputManager;
@@ -212,6 +213,9 @@ public class FlyMiniBoss : MonoBehaviour
             playerCam.enabled = false;
             aimCam.enabled = false;
             inputManager.animationPlayed = true;
+            
+            //Player
+            playerController.speed = 0f;
 
             //HUD Disappear
             bossName.SetActive(false);
@@ -232,11 +236,16 @@ public class FlyMiniBoss : MonoBehaviour
             paused.TransitionTo(1.5f);
             
             yield return new WaitForSeconds(3.0f);
+           
             playerCam.enabled = true;
             aimCam.enabled = true;
             deathcam.enabled = false;
             
             yield return new WaitForSeconds(1.5f);
+            
+            //Player
+            playerController.speed = 10f;
+
             inputManager.animationPlayed = true;
             m_boss.SetActive(false);
         }

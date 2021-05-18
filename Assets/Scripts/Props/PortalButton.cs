@@ -81,6 +81,7 @@ public class PortalButton : MonoBehaviour
     IEnumerator Cinematic()
     {
         playerController.speed = 0f; // Dont move 
+        inputManager.animationPlayed = true;
         //Animator(Player parar animacion)
 
         myAnimation.Play(); // Start animatic
@@ -93,6 +94,7 @@ public class PortalButton : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         playerController.speed = 10f; // Move
+        inputManager.animationPlayed = false;
         //Animator(Player Volver animacion)
     }
     public IEnumerator Destroy()

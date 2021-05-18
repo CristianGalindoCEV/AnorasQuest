@@ -42,7 +42,7 @@ public class PortalBoss : MonoBehaviour
         m_image3.SetActive(false);
         m_text3.SetActive(false);
 
-        if (playerStats.FlyBoss == true)
+        if (playerStats.StaticBoss == true)
         {
             thisPortal.SetActive(false);
             myWall.SetActive(false);

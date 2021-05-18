@@ -60,14 +60,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (playerStats.hp_stat > 0 && m_inputManager.animationPlayed == false)
+        if (playerStats.hp_stat > 0)
         {
             f_horizontalMove = Input.GetAxis("Horizontal");
             f_verticalMove = Input.GetAxis("Vertical");
 
             m_playerInput = new Vector3(f_horizontalMove, 0, f_verticalMove);
             m_playerInput = Vector3.ClampMagnitude(m_playerInput, 1);
-
+           
             camDirection();
             m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
             m_movePlayer = m_movePlayer * speed;

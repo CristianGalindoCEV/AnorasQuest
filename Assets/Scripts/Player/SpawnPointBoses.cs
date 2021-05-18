@@ -16,18 +16,13 @@ public class SpawnPointBoses : MonoBehaviour
     //Position
     public PlayerStats playerStats;
     public Vector3 position;
-   
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (playerStats.FlyBoss == false && playerStats.StaticBoss == false) // If u don't kill any boss
-        {
-            playerStats.playerPosition_stat = position;
-        }
-        else
-        {
-            position = playerStats.playerPosition_stat;
-        }
+        playerStats.playerPosition_stat = position;
+        player.transform.position = position;
         StartCoroutine(Animation());
     }
 

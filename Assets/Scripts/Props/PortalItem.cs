@@ -80,12 +80,11 @@ public class PortalItem : MonoBehaviour
         loading.SetActive(true);
         bossName.SetActive(false);
 
-        yield return new WaitForSeconds(1f);
         //PlayerEneable
         playercontroller.speed = 0;
         playercontroller.player.enabled = false;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
         //AudioUnfade
         nopaused.TransitionTo(0.1f);

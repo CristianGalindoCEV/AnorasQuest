@@ -34,15 +34,6 @@ public class PortalBoss2 : MonoBehaviour
     {
         loading = GameObject.Find("loadingScreen");
 
-        /*
-        m_text1 = GameObject.Find("Text_Anora");
-        m_text2 = GameObject.Find("Text_Enemy");
-        m_text3 = GameObject.Find("Text_FinalBoss");
-        m_image1 = GameObject.Find("Image_Anora");
-        m_image2 = GameObject.Find("Image_Enemy");
-        m_image3 = GameObject.Find("Image_FinalBoss");
-        */
-
         m_image1.SetActive(false);
         m_text1.SetActive(false);
         m_image2.SetActive(false);
@@ -50,7 +41,7 @@ public class PortalBoss2 : MonoBehaviour
         m_image3.SetActive(false);
         m_text3.SetActive(false);
 
-        if(playerStats.StaticBoss == true)
+        if(playerStats.FlyBoss == true)
         {
             thisPortal.SetActive(false);
             myWall.SetActive(false);
