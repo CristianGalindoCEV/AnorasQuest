@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Audio;
 using UnityEngine.VFX;
-
+using Cinemachine;
 public class FinalBoss : MonoBehaviour
 {
     //SpacePoints
@@ -19,10 +19,12 @@ public class FinalBoss : MonoBehaviour
 
     //Boss
     public GameObject bossName;
+    public GameObject Icon_boss;
     public GameObject bossHP;
     public GameObject bullets;
     public GameObject Enemyes;
     public GameObject JE_Mouth;
+    public CinemachineVirtualCamera deathcam;
     private Animator m_animator;
 
     public float speed = 8f;
@@ -41,7 +43,11 @@ public class FinalBoss : MonoBehaviour
 
     //Player
     public Transform player;
+    public InputManager inputManager;
+    public PlayerController playerController;
     private Vector3 m_playerposition;
+    public Camera aimCam;
+    public CinemachineFreeLook playerCam;
     private bool m_attacking =  false;
     
     //Audio
@@ -60,7 +66,7 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (b_startFight == true)
+        if (b_startFight == true && minibosshp.hp > 0)
         {
             f_currentTime += Time.deltaTime;
            
@@ -218,6 +224,23 @@ public class FinalBoss : MonoBehaviour
         FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (minibosshp.hp <= 0)
         {
+            //Cameras
+            deathcam.enabled = true;
+            playerCam.enabled = false;
+            aimCam.enabled = false;
+            inputManager.animationPlayed = true;
+
+            //Player
+            playerController.speed = 0f;
+
+            //HUD Disappear
+            bossName.SetActive(false);
+            Icon_boss.SetActive(false);
+            bossHP.SetActive(false);
+            minibosshp.bossBar.enabled = false;
+            
+            yield return new WaitForSeconds(3f);
+            
             //Die animation + Shader
             FindObjectOfType<AudioManager>().PlayRandomPitch("MonsterRoar");
             m_animator.SetBool("Death",true);
@@ -225,16 +248,23 @@ public class FinalBoss : MonoBehaviour
             b_startFight = false;
             m_collider.enabled = false;
             speed = 0;
-            
-            //HUD Disappear
-            bossName.SetActive(false);
-            bossHP.SetActive(false);
-            minibosshp.bossBar.enabled = false;
 
             //AudioFade
             paused.TransitionTo(1.5f);
 
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(3.0f);
+
+            playerCam.enabled = true;
+            aimCam.enabled = true;
+            deathcam.enabled = false;
+           
+            yield return new WaitForSeconds(1.5f);
+            
+            //Player
+            playerController.speed = 10f;
+
+            inputManager.animationPlayed = true;
+           
             m_boss.SetActive(false);
         }
     }

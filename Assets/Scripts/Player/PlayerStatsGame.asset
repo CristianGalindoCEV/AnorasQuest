@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStart: 0
   maxhp_stat: 100
-  hp_stat: 100
+  hp_stat: 80
   bulletDamage_stat: 80
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 1
-  playerPosition_stat: {x: 0, y: 3, z: 40}
-  savepoint_Position: {x: 167.2301, y: 19.907295, z: 166.74219}
+  playerPosition_stat: {x: -6, y: 0, z: 81}
+  savepoint_Position: {x: 0, y: 0, z: 0}
   revive: 0
   DamageBuf: 0
   CadenceBuf: 0
   SpeedBulletBuf: 0
   tutorial: 0
-  FlyBoss: 1
+  FlyBoss: 0
   StaticBoss: 0
