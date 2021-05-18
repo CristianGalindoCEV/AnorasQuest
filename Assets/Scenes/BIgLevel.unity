@@ -29132,7 +29132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1531959365}
-  - component: {fileID: 1531959364}
+  - component: {fileID: 1531959366}
   m_Layer: 0
   m_Name: -------SPAWNCONTROLLER-------
   m_TagString: Untagged
@@ -29140,20 +29140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1531959364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531959363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21892921694b6294992382edc3767eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
-  position: {x: 93, y: 11, z: 75}
 --- !u!4 &1531959365
 Transform:
   m_ObjectHideFlags: 0
@@ -29168,6 +29154,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531959366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531959363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dc3a29514edce43a19fbf925ba22e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
+  position: {x: 93, y: 11, z: 75}
 --- !u!1001 &1532265220
 PrefabInstance:
   m_ObjectHideFlags: 0

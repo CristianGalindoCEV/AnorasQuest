@@ -25,7 +25,6 @@ public class FlyMiniBoss : MonoBehaviour
     public GameObject ballAttack;
     public GameObject HP_Bar;
     public GameObject icon;
-    private Transform my_transform;
     private Animator m_anim;
     public CinemachineVirtualCamera deathcam;
     public CapsuleCollider m_collider;
@@ -58,7 +57,6 @@ public class FlyMiniBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        my_transform = transform;
         m_anim = GetComponent<Animator>();
         flyAudio = GetComponent<AudioSource>();
         deathcam.enabled = false;
@@ -67,7 +65,7 @@ public class FlyMiniBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (b_startFight == true) 
+        if (b_startFight == true && minibosshp.hp > 0) 
         {
             f_currentTime += Time.deltaTime;
             
@@ -127,6 +125,7 @@ public class FlyMiniBoss : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //Only use while dont figth
         if (!b_startFight && b_stopColision == false)
         {
             m_collider.enabled = false;
