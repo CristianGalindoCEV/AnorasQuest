@@ -8,6 +8,7 @@ public class SpawnPointBoses : MonoBehaviour
 {
     //Animation
     public Camera aimCamera;
+    public CinemachineVirtualCamera animationCam;
     public CinemachineFreeLook playerCamera;
     public PlayableDirector director;
     public PlayerController playerController;
@@ -38,6 +39,7 @@ public class SpawnPointBoses : MonoBehaviour
         aimCamera.enabled = true;
         playerCamera.enabled = true;
         yield return new WaitForSeconds(1f);
+        animationCam.enabled = false;
         playerController.speed = 10f;
         inputManager.animationPlayed = false;
     }
