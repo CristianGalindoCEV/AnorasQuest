@@ -16,8 +16,8 @@ public class aimCam: MonoBehaviour
     Quaternion cameraRotation;
 
     public float distance;
-    private float currentX = 0f;
-    private float currentY = 0f;
+    [SerializeField] private float currentX = 0f;
+    [SerializeField] private float currentY = 0f;
     [SerializeField] private float f_mouseSensivility = 2f;
 
     public PlayerController playerController;
@@ -43,18 +43,28 @@ public class aimCam: MonoBehaviour
     {
         if (playerController.aiming == true)
         {
-            /*
-            Vector3 dir = new Vector3(0, 0, -distance);
-            Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-            camTransfom.position = loockAt.position + rotation * dir;
-            camTransfom.LookAt(loockAt.position);
-            */
-
             cameraRotation *= Quaternion.Euler(-currentY, 0, 0);
             playerRotation *= Quaternion.Euler(0, currentX, 0);
 
             camTransform.localRotation = cameraRotation;
             playerTransform.localRotation = playerRotation;
+            
+            //camTransform.localRotation = ClampRotationArroundXAxis(cameraRotation);
         }
+    }
+
+    Quaternion ClampRotationArroundXAxis(Quaternion q)
+    {
+        q.x /= q.w;
+        q.y /= q.w;
+        q.z /= q.w;
+
+        float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.x);
+
+        angleX = Mathf.Clamp(angleX, Y_ANGLE_MIN, Y_ANGLE_MAX);
+
+        q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
+
+        return q;
     }
 }
