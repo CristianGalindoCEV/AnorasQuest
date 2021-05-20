@@ -35,7 +35,7 @@ public class aimCam: MonoBehaviour
             currentX = Input.GetAxis("Mouse X") * f_mouseSensivility;
             currentY = Input.GetAxis("Mouse Y") * f_mouseSensivility;
 
-            currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+            //currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
         }
     }
 
@@ -49,7 +49,7 @@ public class aimCam: MonoBehaviour
             camTransform.localRotation = cameraRotation;
             playerTransform.localRotation = playerRotation;
             
-            //camTransform.localRotation = ClampRotationArroundXAxis(cameraRotation);
+            camTransform.localRotation = ClampRotationArroundXAxis(cameraRotation);
         }
     }
 
@@ -58,6 +58,7 @@ public class aimCam: MonoBehaviour
         q.x /= q.w;
         q.y /= q.w;
         q.z /= q.w;
+        q.w = 1.0f;
 
         float angleX = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.x);
 
