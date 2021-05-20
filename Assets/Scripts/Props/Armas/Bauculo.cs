@@ -33,14 +33,16 @@ public class Bauculo : MonoBehaviour
     }
     public void Fire()
     {
-        m_materialProperty = new MaterialPropertyBlock();
-        m_transition = 0;
-        m_materialProperty.SetFloat("_VectorGradient", m_transition);
-        
-        StartCoroutine(UpdateOpacityCadence());
-
         if (m_playerController.player.isGrounded == true) //Only Shot if u dont dont jump
         {
+            //Material Change
+            m_materialProperty = new MaterialPropertyBlock();
+            m_transition = 0;
+            m_materialProperty.SetFloat("_VectorGradient", m_transition);
+
+            StartCoroutine(UpdateOpacityCadence());
+
+            //Shot Raycat
             Ray ray = aimCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
