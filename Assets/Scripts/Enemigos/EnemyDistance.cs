@@ -47,7 +47,7 @@ public class EnemyDistance : MonoBehaviour
     void Update()
     {
         enemyhealth.slider.transform.LookAt(m_player);
-        if (!b_fight)
+        if (!b_fight && enemyhealth.health > 0)
         {
             switch(patrol)
             {
