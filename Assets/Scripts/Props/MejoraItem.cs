@@ -21,6 +21,20 @@ public class MejoraItem : MonoBehaviour
     {
         bauculo = FindObjectOfType<Bauculo>();
         menuManager = FindObjectOfType<MenuManager>();
+
+        //PlayerStats Instance
+        if (IsCadence == true && playerStats.CadenceBuf == true)
+        {
+            Destroy(gameObject);
+        }
+        if (IsDamage == true && playerStats.DamageBuf == true)
+        {
+            Destroy(gameObject);
+        }
+        if (IsTimeShot == true && playerStats.SpeedBulletBuf == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
