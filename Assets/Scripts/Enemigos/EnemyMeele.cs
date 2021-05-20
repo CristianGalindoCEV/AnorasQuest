@@ -32,36 +32,40 @@ public class EnemyMeele : MonoBehaviour
     }
     void Update()
     {
-        //Miramos si hemos llegado al punto actual
-        if(Vector3.Distance(transform.position, puntos[currentPoint].transform.position)< 2f){
-            StartCoroutine(StopMove());
-            currentPoint++;
-            currentPoint %= puntos.Length;
-        }
-
-        //Detecta Player
-        if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance && enemyhealth.health > 0)
+        if (enemyhealth.health > 0)
         {
-            rangeDistance = rangeDistanceMax;    
-            transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
-            
-            Vector3 loockAtPosition = player.position;
-            loockAtPosition.y = transform.position.y;
-            transform.LookAt(loockAtPosition);
-        }
+            //Miramos si hemos llegado al punto actual
+            if (Vector3.Distance(transform.position, puntos[currentPoint].transform.position) < 2f)
+            {
+                StartCoroutine(StopMove());
+                currentPoint++;
+                currentPoint %= puntos.Length;
+            }
 
-        //Patrulla siguiente punto
-        else
-        {
-            transform.LookAt(puntos[currentPoint].transform.position);
-            rangeDistance = rangeDistanceMin;
-            transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
-        }
+            //Detecta Player
+            if (Mathf.Abs(Vector3.Distance(player.position, transform.position)) < rangeDistance && enemyhealth.health > 0)
+            {
+                rangeDistance = rangeDistanceMax;
+                transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * speedChase);
 
-        if (enemyhealth.health <= 0)
-        {
-            m_collider.enabled = false;
-            m_speed = 0f;
+                Vector3 loockAtPosition = player.position;
+                loockAtPosition.y = transform.position.y;
+                transform.LookAt(loockAtPosition);
+            }
+
+            //Patrulla siguiente punto
+            else
+            {
+                transform.LookAt(puntos[currentPoint].transform.position);
+                rangeDistance = rangeDistanceMin;
+                transform.position = Vector3.MoveTowards(transform.position, puntos[currentPoint].transform.position, Time.deltaTime * m_speed);
+            }
+
+            if (enemyhealth.health <= 0)
+            {
+                m_collider.enabled = false;
+                m_speed = 0f;
+            }
         }
     }
 
