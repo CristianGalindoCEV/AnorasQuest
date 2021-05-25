@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class aimCam: MonoBehaviour
 {
-    private const float Y_ANGLE_MIN = -60f;
-    private const float Y_ANGLE_MAX = 60f;
+    private const float Y_ANGLE_MIN = -90f;
+    private const float Y_ANGLE_MAX = 90;
 
     public Transform loockAt;
     public Transform camTransform;
@@ -36,20 +36,25 @@ public class aimCam: MonoBehaviour
             currentY = Input.GetAxis("Mouse Y") * f_mouseSensivility;
 
             //currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
-        }
-    }
 
-    private void LateUpdate()
-    {
-        if (playerController.aiming == true)
-        {
             cameraRotation *= Quaternion.Euler(-currentY, 0, 0);
             playerRotation *= Quaternion.Euler(0, currentX, 0);
+
+            cameraRotation = ClampRotationArroundXAxis(cameraRotation);
 
             camTransform.localRotation = cameraRotation;
             playerTransform.localRotation = playerRotation;
             
-            camTransform.localRotation = ClampRotationArroundXAxis(cameraRotation);
+            
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Vector3 rot = mainCamera.eulerAngles;
+            rot.x = 0;
+            rot.z = 0;
+
+            playerRotation = Quaternion.Euler(rot);
         }
     }
 
@@ -65,6 +70,9 @@ public class aimCam: MonoBehaviour
         angleX = Mathf.Clamp(angleX, Y_ANGLE_MIN, Y_ANGLE_MAX);
 
         q.x = Mathf.Tan(0.5f * Mathf.Deg2Rad * angleX);
+
+        q.y = 0;
+        q.z = 0;
 
         return q;
     }
