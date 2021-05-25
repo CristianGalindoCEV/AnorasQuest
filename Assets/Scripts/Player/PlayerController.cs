@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
             m_movePlayer = m_playerInput.x * camRight + m_playerInput.z * camForward;
             m_movePlayer = m_movePlayer * speed;
 
+            if(aiming == false)
             player.transform.LookAt(player.transform.position + m_movePlayer); // Player move with camera
         }
 
