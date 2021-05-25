@@ -304,7 +304,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.23694589734077454,"g":0.349056601524353,"b":0.21569064259529115,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.4313725531101227,"time":0.0},{"alpha":0.6196078658103943,"time":0.7382314801216126},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.5094339847564697,"g":0.5094339847564697,"b":0.5094339847564697,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.4313725531101227,"time":0.0},{"alpha":0.6196078658103943,"time":0.7382314801216126},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -1701,7 +1701,7 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 1, g: 1, b: 1, a: 0.43137255}
-            key1: {r: 0.2369459, g: 0.3490566, b: 0.21569064, a: 0.61960787}
+            key1: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.61960787}
             key2: {r: 0, g: 0, b: 0, a: 0}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3302,7 +3302,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.23694589734077454,"g":0.349056601524353,"b":0.21569064259529115,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.4313725531101227,"time":0.0},{"alpha":0.6196078658103943,"time":0.7382314801216126},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.5094339847564697,"g":0.5094339847564697,"b":0.5094339847564697,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.4313725531101227,"time":0.0},{"alpha":0.6196078658103943,"time":0.7382314801216126},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: o
