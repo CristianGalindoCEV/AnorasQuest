@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Rigidbody playerBody;
     private InputManager m_inputManager;
+    public GameObject myspawnPoint;
 
     private Vector3 m_playerInput;
     private Vector3 m_movePlayer;
@@ -48,15 +49,14 @@ public class PlayerController : MonoBehaviour
     {
         m_inputManager = FindObjectOfType<InputManager>();
         aimCamera.enabled = false;
-        if (playerStats.FlyBoss == false && playerStats.StaticBoss == false)
-        {
-            transform.position = playerStats.playerPosition_stat;
-        }
-        else
+        
+        //Spawn
+        if (playerStats.FlyBoss == true || playerStats.StaticBoss == true && SceneManager.GetActiveScene().name == "BIg Level")
         {
             transform.position = playerStats.savepoint_Position;
         }
-
+        transform.position = myspawnPoint.transform.position;
+        
         playerStats.bulletDamage_stat = playerStats.bulletNoGood_stat;
 
         //Develop Code

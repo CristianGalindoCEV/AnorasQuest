@@ -14,15 +14,9 @@ public class SpawnPointBoses : MonoBehaviour
     public PlayerController playerController;
     public InputManager inputManager;
 
-    //Position
-    public PlayerStats playerStats;
-    public Vector3 position;
-    public GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
-        playerStats.playerPosition_stat = position;
         StartCoroutine(Animation());
     }
 
