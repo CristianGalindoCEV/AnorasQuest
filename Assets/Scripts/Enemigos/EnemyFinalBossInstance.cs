@@ -10,6 +10,7 @@ public class EnemyFinalBossInstance : MonoBehaviour
     private Transform m_player;
 
     //Enemy
+    private MinibossHP m_minibosshp;
     private Animator m_animator;
     public PlayerStats playerStats;
     public EnemyHealth enemyhealth;
@@ -25,6 +26,7 @@ public class EnemyFinalBossInstance : MonoBehaviour
 
     private void Awake()
     {
+        m_minibosshp = FindObjectOfType<MinibossHP>();
         m_animator = this.GetComponent<Animator>();
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         m_enemyCollider = gameObject.GetComponent<Collider>();
@@ -38,9 +40,13 @@ public class EnemyFinalBossInstance : MonoBehaviour
         loockAtPosition.y = transform.position.y;
         transform.LookAt(loockAtPosition);
             
-        if (f_time >= 3f)
+        if (f_time >= 3f && enemyhealth.health > 0 && m_minibosshp.hp > 0)
         {
             StartCoroutine(Attacks());
+        }
+        if (m_minibosshp.hp < 0)
+        {
+            Destroy(this.gameObject);
         }
     }
     //Trigers

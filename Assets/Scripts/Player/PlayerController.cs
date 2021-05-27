@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour
     {
         m_inputManager = FindObjectOfType<InputManager>();
         aimCamera.enabled = false;
-        
         //Spawn
         if (playerStats.FlyBoss == true || playerStats.StaticBoss == true && SceneManager.GetActiveScene().name == "BIg Level")
         {
@@ -121,8 +120,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("SpeedX", f_horizontalMove);
         animator.SetFloat("SpeedY", f_verticalMove);
         animator.SetBool("IsGrounded", player.isGrounded);
-        animator.SetFloat("VelocityY", m_movePlayer.y);
-        
+        animator.SetFloat("VelocityY", m_movePlayer.y);  
     }
 
     private void OnTriggerEnter(Collider other)
@@ -138,8 +136,9 @@ public class PlayerController : MonoBehaviour
             f_damage = 1f;
             StartCoroutine(Golpe());
         }
-        if(other.tag == "FinalBullet")
+        if(other.tag == "FireBullet")
         {
+            other.gameObject.SetActive(false);
             f_damage = 7f;
             StartCoroutine(Golpe());
         }

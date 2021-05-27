@@ -26,7 +26,7 @@ public class BulletsFinalBoss : MonoBehaviour
         transform.LookAt(playerVector);
         fire.transform.LookAt(playerVector);
         //Scale Object 
-        mycollider.transform.DOScale(new Vector3 (1,1,50), 1f).OnComplete(DestroyThisObject);
+        mycollider.transform.DOScale(new Vector3 (2,2,50), 1f).OnComplete(DestroyThisObject);
     }
 
     private void DestroyThisObject ()

@@ -30,6 +30,7 @@ public class aimCam: MonoBehaviour
     }
     private void Update()
     {
+        //Clamp Aim Camera
         if (playerController.aiming == true)
         {
             currentX = Input.GetAxis("Mouse X") * f_mouseSensivility;
@@ -44,10 +45,9 @@ public class aimCam: MonoBehaviour
 
             camTransform.localRotation = cameraRotation;
             playerTransform.localRotation = playerRotation;
-            
-            
         }
 
+        //Situate AimCamera
         if (Input.GetButtonDown("Fire2"))
         {
             Vector3 rot = mainCamera.eulerAngles;

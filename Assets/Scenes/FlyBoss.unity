@@ -3238,6 +3238,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 352052843}
     m_Modifications:
+    - target: {fileID: 1325596191, guid: 4286bca1715b53946b03e660c6a6fa27, type: 3}
+      propertyPath: loockAt
+      value: 
+      objectReference: {fileID: 583953247}
+    - target: {fileID: 1325596191, guid: 4286bca1715b53946b03e660c6a6fa27, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 583953247}
     - target: {fileID: 8656674554903917017, guid: 4286bca1715b53946b03e660c6a6fa27,
         type: 3}
       propertyPath: m_LocalRotation.x

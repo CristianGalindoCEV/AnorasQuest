@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStart: 0
   maxhp_stat: 100
-  hp_stat: 100
-  bulletDamage_stat: 30
+  hp_stat: 58
+  bulletDamage_stat: 80
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
   timeShot: 1
