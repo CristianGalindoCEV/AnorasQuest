@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656674554903917023}
-  m_LocalRotation: {x: 0.17814183, y: 0.5149666, z: -0.110367, w: 0.8312004}
+  m_LocalRotation: {x: -0.016082343, y: 0.9611741, z: -0.26943323, w: -0.057372026}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656674555095396102}
-  m_LocalRotation: {x: 0.19530731, y: 0.51257193, z: -0.121001795, w: 0.8273353}
+  m_LocalRotation: {x: -0.01726635, y: 0.9553916, z: -0.2892693, w: -0.05702687}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2, z: -4}
+  m_FollowOffset: {x: 0, y: 2, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2, z: -4}
+  m_FollowOffset: {x: 0, y: 2, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -456,7 +456,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656674556240874467}
-  m_LocalRotation: {x: 0.16095899, y: 0.5171335, z: -0.09972144, w: 0.83469796}
+  m_LocalRotation: {x: -0.014895534, y: 0.9665271, z: -0.24955006, w: -0.057691567}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656674556536435736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.40436, y: 12.94056, z: 37.794174}
+  m_LocalPosition: {x: -18.057167, y: 5.0395603, z: 7.6265526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8656674555095396096}
@@ -632,12 +632,12 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 0
   m_Orbits:
-  - m_Height: 3.5
-    m_Radius: 6
   - m_Height: 2
     m_Radius: 4
-  - m_Height: 1
-    m_Radius: 6
+  - m_Height: 2
+    m_Radius: 3
+  - m_Height: -0.6
+    m_Radius: 4
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 8656674555095396097}
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2, z: -4}
+  m_FollowOffset: {x: 0, y: 2, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -839,37 +839,37 @@ PrefabInstance:
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.40436
+      value: -9.324032
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.94056
+      value: 4.859046
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 37.794174
+      value: 41.512672
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17814182
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.51496667
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.11036702
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.83120036
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5247227340789690004, guid: c07c46c449bde0942a0bae6bdf3072c8,
         type: 3}
