@@ -169,25 +169,28 @@ public class FinalBoss : MonoBehaviour
     IEnumerator AttackOne()
     {
         for (int i = 0; i<=3; i++)
-        {   
-            m_attacking = true;
-            m_animator.SetBool("Attack",true); // Start Animation Attack
-            m_playerposition = player.transform.position;
-            
-            yield return new WaitForSeconds(1.2f); //Animation instance ready
-            Vector3 loockAtPosition = player.position;
-            loockAtPosition.y = transform.position.y;
-            transform.DOLookAt(loockAtPosition, 0.2f).SetEase(Ease.InSine);
-            
-            yield return new WaitForSeconds(0.4f); //Instace
-            Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
-            FindObjectOfType<AudioManager>().Play("FlameBoss");
-           
-            yield return new WaitForSeconds(0.6f); //Stop amimation
-            m_animator.SetBool("Attack", false);
-            
-            yield return new WaitForSeconds(1f);//Relax Time to next attack
-            if (minibosshp.hp <= 0)
+        {
+            if (minibosshp.hp > 0)
+            {
+                m_attacking = true;
+                m_animator.SetBool("Attack", true); // Start Animation Attack
+                m_playerposition = player.transform.position;
+
+                yield return new WaitForSeconds(1.2f); //Animation instance ready
+                Vector3 loockAtPosition = player.position;
+                loockAtPosition.y = transform.position.y;
+                transform.DOLookAt(loockAtPosition, 0.2f).SetEase(Ease.InSine);
+
+                yield return new WaitForSeconds(0.4f); //Instace
+                Instantiate(bullets, JE_Mouth.transform.position, transform.rotation);
+                FindObjectOfType<AudioManager>().Play("FlameBoss");
+
+                yield return new WaitForSeconds(0.6f); //Stop amimation
+                m_animator.SetBool("Attack", false);
+
+                yield return new WaitForSeconds(1f);//Relax Time to next attack
+            }
+            else
             {
                 break;
             }

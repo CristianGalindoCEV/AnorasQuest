@@ -30,6 +30,9 @@ public class PortalBoss2 : MonoBehaviour
     public GameObject m_image2;
     public GameObject m_image3;
 
+    //GameObjects desaper if you win the boss
+    public GameObject [] Crystals;
+
     private void Start()
     {
         loading = GameObject.Find("loadingScreen");
@@ -46,8 +49,12 @@ public class PortalBoss2 : MonoBehaviour
             thisPortal.SetActive(false);
             myWall.SetActive(false);
             myButton.SetActive(false);
+
+            for (int i = 0; i < Crystals.Length; i++)
+            {
+                Crystals[i].SetActive(false);
+            }
         }
-       
     }
     private void OnTriggerEnter(Collider other)
     {

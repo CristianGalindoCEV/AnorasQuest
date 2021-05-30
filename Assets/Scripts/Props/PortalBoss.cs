@@ -18,7 +18,10 @@ public class PortalBoss : MonoBehaviour
     public GameObject thisPortal;
     public GameObject myWall;
     public GameObject myButton;
-
+   
+    //GameObjects desaper if you win the boss
+    public GameObject[] Crystals;
+    
     //Audio
     public AudioMixerSnapshot paused;
     public AudioMixerSnapshot nopaused;
@@ -47,6 +50,11 @@ public class PortalBoss : MonoBehaviour
             thisPortal.SetActive(false);
             myWall.SetActive(false);
             myButton.SetActive(false);
+
+            for(int i = 0; i < Crystals.Length; i++)
+            {
+                Crystals[i].SetActive(false);
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
