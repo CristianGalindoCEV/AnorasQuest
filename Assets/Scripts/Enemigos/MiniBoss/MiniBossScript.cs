@@ -127,7 +127,7 @@ public class MiniBossScript : MonoBehaviour
         if (bossWall.transform.position.y <= -0.1f)
         {
             bossWall.transform.Translate(Vector3.up * Time.deltaTime);
-            wallBoss.bossBar.enabled = true;
+            wallBoss.WallSlider.SetActive(true);
             wallBoss.gameObject.SetActive(true);
         }
     }
@@ -148,10 +148,11 @@ public class MiniBossScript : MonoBehaviour
         Vector3 myPlayerPosition = m_player.transform.position;
         yield return new WaitForSeconds(1f);
 
-        for (int i = 0; i < 7; i++) // Generate all spikes
+        for (int i = 0; i < 12; i++) // Generate all spikes
         {
-            float randomNumber = Random.Range(-15, 15);
-            Instantiate(spikePrefab, new Vector3(myPlayerPosition.x + randomNumber, -6, myPlayerPosition.z + randomNumber), transform.rotation);
+            float randomNumberX = Random.Range(-12, 12);
+            float randomNumberZ = Random.Range(-12, 12);
+            Instantiate(spikePrefab, new Vector3(myPlayerPosition.x + randomNumberX, myPlayerPosition.y, myPlayerPosition.z + randomNumberZ), transform.rotation);
         }
         m_anim.SetBool("Attack", true);
 

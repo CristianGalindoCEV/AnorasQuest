@@ -11,11 +11,12 @@ public class WallBoss : MonoBehaviour
     public bool destroyWall = false;
     public bool startWall = false;
     public Slider bossBar;
+    public GameObject WallSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        bossBar.enabled = false;
+        WallSlider.SetActive(false);
         hp = maxHP;
         this.gameObject.SetActive(false);
     }
@@ -27,8 +28,8 @@ public class WallBoss : MonoBehaviour
 
         if (hp <= 0 )
         {
-            bossBar.enabled = false;
-            Destroy(gameObject);
+            WallSlider.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 

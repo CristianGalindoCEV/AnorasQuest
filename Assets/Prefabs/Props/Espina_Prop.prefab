@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8734074976595681332}
   - component: {fileID: 5514299593795293935}
   - component: {fileID: 3193450341914825415}
-  - component: {fileID: 2864791648292172607}
+  - component: {fileID: 5961367139097780838}
   m_Layer: 8
   m_Name: Espina_Prop
   m_TagString: Spine
@@ -55,12 +55,12 @@ BoxCollider:
   m_GameObject: {fileID: 5881674984014740386}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 4.4498, z: 1}
   m_Center: {x: 0, y: 0.058920622, z: 0}
---- !u!65 &2864791648292172607
-BoxCollider:
+--- !u!136 &5961367139097780838
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -69,9 +69,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 4.73, z: 1}
-  m_Center: {x: 0, y: 0.19, z: 0}
+  m_Radius: 0.84910375
+  m_Height: 6.1773815
+  m_Direction: 1
+  m_Center: {x: 0.46056193, y: 0.47536874, z: 0}
 --- !u!1001 &1690135905284229561
 PrefabInstance:
   m_ObjectHideFlags: 0

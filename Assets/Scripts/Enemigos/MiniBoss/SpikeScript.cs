@@ -25,6 +25,6 @@ public class SpikeScript : MonoBehaviour
         if (TimeCounter < 1.3f){
             transform.Translate(Vector3.up * Time.deltaTime);
         }
-        if (TimeCounter > 3){Destroy(gameObject);}     
+        if (TimeCounter > 4){Destroy(gameObject);}     
     }
 }
