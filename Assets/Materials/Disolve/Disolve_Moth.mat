@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Smothness_:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: bfacf83129c850b42ba2abafe478fab5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
