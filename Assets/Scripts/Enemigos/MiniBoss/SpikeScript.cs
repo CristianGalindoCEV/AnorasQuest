@@ -6,6 +6,7 @@ public class SpikeScript : MonoBehaviour
 {
     private float TimeCounter = 0;
     private GameObject m_player;
+    public Collider myTrigger;
 
     private void Start()
     {
@@ -26,5 +27,12 @@ public class SpikeScript : MonoBehaviour
             transform.Translate(Vector3.up * Time.deltaTime);
         }
         if (TimeCounter > 4){Destroy(gameObject);}     
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            myTrigger.enabled = false;
+        }
     }
 }

@@ -145,7 +145,6 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "Spine")
         {
             f_damage = 3f;
-            Debug.Log("aaa");
             StartCoroutine(Golpe());
         }
         //ITEMS
