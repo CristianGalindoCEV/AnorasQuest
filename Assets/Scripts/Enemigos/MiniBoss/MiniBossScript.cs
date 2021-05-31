@@ -61,7 +61,7 @@ public class MiniBossScript : MonoBehaviour
             f_TimeCounter += Time.deltaTime;
 
             //Ataques
-            if (f_TimeCounter > 6 && minibosshp.hp > 0)
+            if (f_TimeCounter > 4 && minibosshp.hp > 0)
             {
                 f_TimeCounter = 0;
                 randomNumber = Random.Range(1, 3);
@@ -73,7 +73,7 @@ public class MiniBossScript : MonoBehaviour
                         break;
 
                     case 2:
-                        StartCoroutine(SpikeAttack());
+                        StartCoroutine(SpikeMapAttack());
                         break;
 
                     default:
@@ -127,6 +127,8 @@ public class MiniBossScript : MonoBehaviour
         if (bossWall.transform.position.y <= -0.1f)
         {
             bossWall.transform.Translate(Vector3.up * Time.deltaTime);
+            wallBoss.WallSlider.SetActive(true);
+            wallBoss.gameObject.SetActive(true);
         }
     }
     IEnumerator SpikeAttack()
@@ -138,6 +140,23 @@ public class MiniBossScript : MonoBehaviour
         
         f_TimeCounter = 0;
 
+        yield return new WaitForSeconds(1.5f);
+        m_anim.SetBool("Attack", false);
+    }
+    IEnumerator SpikeMapAttack()
+    {
+        Vector3 myPlayerPosition = m_player.transform.position;
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < 12; i++) // Generate all spikes
+        {
+            float randomNumberX = Random.Range(-12, 12);
+            float randomNumberZ = Random.Range(-12, 12);
+            Instantiate(spikePrefab, new Vector3(myPlayerPosition.x + randomNumberX, myPlayerPosition.y, myPlayerPosition.z + randomNumberZ), transform.rotation);
+        }
+        m_anim.SetBool("Attack", true);
+
+        f_TimeCounter = 0;
         yield return new WaitForSeconds(1.5f);
         m_anim.SetBool("Attack", false);
     }
