@@ -16,7 +16,11 @@ public class Tutorial : MonoBehaviour
     private bool b_animation = false;
     public CinemachineVirtualCamera firtsCamAnimation; // Firts cam animated intro
     public CinemachineVirtualCamera finalCamAnimation; // Last cam animated intro
+    public CinemachineFreeLook playerCamera;
     public PlayerController playerController;
+    public GameObject Player;
+    public GameObject FakePlayer;
+    public GameObject HUD;
     [SerializeField] private float f_animationTime;
 
     //Tutorial
@@ -32,11 +36,15 @@ public class Tutorial : MonoBehaviour
         {
             firtsCamAnimation.enabled = true; //Animation Camera
             playerController.speed = 0f; // Fix because can press inputs to move
+            Player.SetActive(false);
+            HUD.SetActive(false);
+            FakePlayer.SetActive(true);
             
             //Eneable cameras
             playerController.aimCamera.enabled = false;
-            playerController.mainCamera.enabled = false;
-            
+            playerCamera.enabled = false;
+            inputManager.animationPlayed = true; //Cant aim
+
             StartCoroutine(StartAnimation());
         }
         
@@ -44,6 +52,7 @@ public class Tutorial : MonoBehaviour
         {
             //Hacer que se paaguen las camaras de animation
             firtsCamAnimation.enabled = false;
+            FakePlayer.SetActive(false);
             b_animation = true;
             this.enabled = false;
         }
@@ -80,17 +89,19 @@ public class Tutorial : MonoBehaviour
     //Animation Voids
     IEnumerator StartAnimation()
     {
-        inputManager.animationPlayed = true; //Cant aim
 
         yield return new WaitForSeconds(f_animationTime);
+        Player.SetActive(true);
+        HUD.SetActive(true);
         StartCoroutine(MoveTutorial());
 
+        FakePlayer.SetActive(false);
         finalCamAnimation.enabled = false;
         inputManager.animationPlayed = false; // Can Aim
         b_animation = true;
         firtsCamAnimation.enabled = false;
         playerController.aimCamera.enabled = true;
-        playerController.mainCamera.enabled = true;
+        playerCamera.enabled = true;
     }
 
     //Tutorial Voids
