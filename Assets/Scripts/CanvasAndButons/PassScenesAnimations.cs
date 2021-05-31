@@ -45,7 +45,7 @@ public class PassScenesAnimations : MonoBehaviour
         }
         if (Animation_3 == true)
         {
-            SceneManager.LoadScene("BigLevel");
+            SceneManager.LoadScene("BIg Level");
         }
     }
 }
