@@ -33,7 +33,7 @@ public class FadeInFadeOut : MonoBehaviour
         whiteFade.canvasRenderer.SetAlpha(1.0f);
         whiteFade.CrossFadeAlpha(0, 2, false);
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene("IntroAnimation");
+        SceneManager.LoadScene("MainMenu");
 
     }
 
