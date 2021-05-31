@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 using Cinemachine;
+using UnityEngine.Playables;
 
 public class Tutorial : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Tutorial : MonoBehaviour
 
     //Animation
     private bool b_animation = false;
+    public PlayableDirector playableDirector;
     public CinemachineVirtualCamera firtsCamAnimation; // Firts cam animated intro
     public CinemachineVirtualCamera finalCamAnimation; // Last cam animated intro
     public CinemachineFreeLook playerCamera;
@@ -89,8 +91,10 @@ public class Tutorial : MonoBehaviour
     //Animation Voids
     IEnumerator StartAnimation()
     {
+        playableDirector.Play(); //Start animation
 
         yield return new WaitForSeconds(f_animationTime);
+        playableDirector.Stop(); // Stop animation
         Player.SetActive(true);
         HUD.SetActive(true);
         StartCoroutine(MoveTutorial());
