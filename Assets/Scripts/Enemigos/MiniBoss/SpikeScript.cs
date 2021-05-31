@@ -22,7 +22,7 @@ public class SpikeScript : MonoBehaviour
     void Update()
     {
         TimeCounter += Time.deltaTime;
-        if (TimeCounter < 2){
+        if (TimeCounter < 1.3f){
             transform.Translate(Vector3.up * Time.deltaTime);
         }
         if (TimeCounter > 3){Destroy(gameObject);}     
