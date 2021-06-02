@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.VFX;
 
 public class EnemyFinalBossInstance : MonoBehaviour
 {  
@@ -16,7 +17,8 @@ public class EnemyFinalBossInstance : MonoBehaviour
     public EnemyHealth enemyhealth;
     private Collider m_enemyCollider;
     [SerializeField] private GameObject myBullet;
-    
+    private VisualEffect vfxSparkImpact;
+
     //Rango
     [SerializeField] private bool b_fight = false;
     private float f_time;
@@ -30,6 +32,7 @@ public class EnemyFinalBossInstance : MonoBehaviour
         m_animator = this.GetComponent<Animator>();
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         m_enemyCollider = gameObject.GetComponent<Collider>();
+        vfxSparkImpact = GetComponent<VisualEffect>();
     }
     void Update()
     {
@@ -65,12 +68,15 @@ public class EnemyFinalBossInstance : MonoBehaviour
         f_time = 0f;
         Instantiate(myBullet, transform.position, transform.rotation);
         m_animator.SetBool("Attack",true);
+        FindObjectOfType<AudioManager>().PlayRandomPitch("NuggetAttackSound");
         yield return new WaitForSeconds(0.5f);
         m_animator.SetBool("Attack", false);
     }
     IEnumerator TakeDamage()
     {
         enemyhealth.health = enemyhealth.health - f_damage;
+        vfxSparkImpact.SendEvent("SparkImpact");
+        FindObjectOfType<AudioManager>().PlayRandomPitch("Impact");
         if (enemyhealth.health <= 0)
         {
             m_animator.SetBool("Death",true);

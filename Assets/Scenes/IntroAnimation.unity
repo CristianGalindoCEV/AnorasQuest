@@ -13039,6 +13039,14 @@ PlayableDirector:
     value: {fileID: 397897624}
   - key: {fileID: -3288574939604078562, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
     value: {fileID: 288205082}
+  - key: {fileID: 7830052488198524946, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
+  - key: {fileID: -6081204455422770381, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
+  - key: {fileID: 7134885301479542077, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
+  - key: {fileID: -3293855600181596546, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
   m_ExposedReferences:
     m_References:
     - a98b2bacdced78a42ba942de1ee437be: {fileID: 2038525227}
@@ -13089,7 +13097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616287170}
   m_LocalRotation: {x: 0.12044741, y: 0.18353756, z: -0.020125298, w: 0.97539806}
-  m_LocalPosition: {x: -1.1894836, y: 16.48732, z: -209.86841}
+  m_LocalPosition: {x: -1.1894836, y: 16.48732, z: -29.368408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1413524155}
@@ -17193,6 +17201,7 @@ GameObject:
   - component: {fileID: 2038525229}
   - component: {fileID: 2038525228}
   - component: {fileID: 2038525234}
+  - component: {fileID: 2038525233}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -17323,13 +17332,109 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038525227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.477482, y: 11.41, z: -22.09822}
+  m_LocalRotation: {x: 0.00000060820764, y: 0.16013265, z: -0.00000009866715, w: 0.98709553}
+  m_LocalPosition: {x: -11.029999, y: 10.05, z: -20.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 117744579}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2038525233
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038525227}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &2038525234
 Animator:
   serializedVersion: 3
