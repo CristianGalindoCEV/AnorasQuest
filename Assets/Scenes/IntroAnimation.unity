@@ -3398,7 +3398,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397897624}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -13043,6 +13043,10 @@ PlayableDirector:
     value: {fileID: 2038525233}
   - key: {fileID: -6081204455422770381, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
     value: {fileID: 2038525233}
+  - key: {fileID: 7134885301479542077, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
+  - key: {fileID: -3293855600181596546, guid: f77e859afc72d814b9ac69e4a9fe4c98, type: 2}
+    value: {fileID: 2038525233}
   m_ExposedReferences:
     m_References:
     - a98b2bacdced78a42ba942de1ee437be: {fileID: 2038525227}
@@ -13093,7 +13097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616287170}
   m_LocalRotation: {x: 0.12044741, y: 0.18353756, z: -0.020125298, w: 0.97539806}
-  m_LocalPosition: {x: -1.1894836, y: 16.48732, z: -209.86841}
+  m_LocalPosition: {x: -1.1894836, y: 16.48732, z: -29.368408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1413524155}
@@ -17328,8 +17332,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038525227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.477482, y: 11.41, z: -22.09822}
+  m_LocalRotation: {x: 0.00000060820764, y: 0.16013265, z: -0.00000009866715, w: 0.98709553}
+  m_LocalPosition: {x: -11.029999, y: 10.05, z: -20.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 117744579}
