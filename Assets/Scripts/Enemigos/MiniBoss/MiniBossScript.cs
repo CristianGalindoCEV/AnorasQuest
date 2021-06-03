@@ -82,16 +82,12 @@ public class MiniBossScript : MonoBehaviour
                 }
             }
 
+            //Start Wall
             if (wallBoss.destroyWall == false && minibosshp.hp <= 600)
             {
                 minibosshp.hp = 600;
                 BossWall();
             }
-        }
-        
-       if (Input.GetKeyDown(KeyCode.C))
-        {
-            Damage();
         }
     }
 
@@ -133,32 +129,38 @@ public class MiniBossScript : MonoBehaviour
     }
     IEnumerator SpikeAttack()
     {
-        Vector3 myPlayerPosition = m_player.transform.position;
-        yield return new WaitForSeconds(1f);
-        Instantiate(spikePrefab, new Vector3(myPlayerPosition.x, 0, myPlayerPosition.z), transform.rotation);
-        m_anim.SetBool("Attack", true);
-        
-        f_TimeCounter = 0;
+        if (minibosshp.hp > 0)
+        {
+            Vector3 myPlayerPosition = m_player.transform.position;
+            yield return new WaitForSeconds(1f);
+            Instantiate(spikePrefab, new Vector3(myPlayerPosition.x, 0, myPlayerPosition.z), transform.rotation);
+            m_anim.SetBool("Attack", true);
 
-        yield return new WaitForSeconds(1.5f);
-        m_anim.SetBool("Attack", false);
+            f_TimeCounter = 0;
+
+            yield return new WaitForSeconds(1.5f);
+            m_anim.SetBool("Attack", false);
+        }
     }
     IEnumerator SpikeMapAttack()
     {
-        Vector3 myPlayerPosition = m_player.transform.position;
-        yield return new WaitForSeconds(1f);
-
-        for (int i = 0; i < 12; i++) // Generate all spikes
+        if(minibosshp.hp > 0)
         {
-            float randomNumberX = Random.Range(-12, 12);
-            float randomNumberZ = Random.Range(-12, 12);
-            Instantiate(spikePrefab, new Vector3(myPlayerPosition.x + randomNumberX, myPlayerPosition.y, myPlayerPosition.z + randomNumberZ), transform.rotation);
-        }
-        m_anim.SetBool("Attack", true);
+            Vector3 myPlayerPosition = m_player.transform.position;
+            yield return new WaitForSeconds(1f);
 
-        f_TimeCounter = 0;
-        yield return new WaitForSeconds(1.5f);
-        m_anim.SetBool("Attack", false);
+            for (int i = 0; i < 12; i++) // Generate all spikes
+            {
+                float randomNumberX = Random.Range(-12, 12);
+                float randomNumberZ = Random.Range(-12, 12);
+                Instantiate(spikePrefab, new Vector3(myPlayerPosition.x + randomNumberX, myPlayerPosition.y, myPlayerPosition.z + randomNumberZ), transform.rotation);
+            }
+            m_anim.SetBool("Attack", true);
+
+            f_TimeCounter = 0;
+            yield return new WaitForSeconds(1.5f);
+            m_anim.SetBool("Attack", false);
+        }
     }
     IEnumerator Damage()
     {
@@ -209,5 +211,4 @@ public class MiniBossScript : MonoBehaviour
             m_boss.SetActive(false);
         }
     }
-
 }
