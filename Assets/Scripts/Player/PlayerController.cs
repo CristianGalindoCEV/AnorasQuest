@@ -146,8 +146,7 @@ public class PlayerController : MonoBehaviour
         {
             f_damage = 3f;
             StartCoroutine(Golpe());
-        }
-        //ITEMS
+        } 
     }
 
     public void Jump()

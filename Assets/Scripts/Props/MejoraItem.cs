@@ -12,6 +12,8 @@ public class MejoraItem : MonoBehaviour
     public PlayerStats playerStats;
     private Bauculo bauculo;
     private MenuManager menuManager;
+    public GameObject mymesh;
+    public Collider mytrigger;
 
     private int i_attackPower = 80;
     private float f_cadence = 10;
@@ -46,6 +48,7 @@ public class MejoraItem : MonoBehaviour
             playerStats.bulletNoGood_stat = +i_attackPower;
             playerStats.DamageBuf = true;
             menuManager.UnlockedDamage(); //Animation
+            StartCoroutine(StartAnimation());
         }
         
         if (other.tag == "Player" && IsCadence == true)
@@ -53,6 +56,7 @@ public class MejoraItem : MonoBehaviour
             bauculo.Bulletspeed =+ f_cadence;
             playerStats.CadenceBuf = true;
             menuManager.UnlockedCadence(); // Animation
+            StartCoroutine(StartAnimation());
         }
 
         if (other.tag == "Player" && IsTimeShot == true)
@@ -60,6 +64,37 @@ public class MejoraItem : MonoBehaviour
             playerStats.timeShot = 0.7f;
             playerStats.SpeedBulletBuf = true;
             menuManager.UnlockedSpeed(); // Animation
+            StartCoroutine(StartAnimation());
         }
+    }
+    IEnumerator StartAnimation()
+    {
+        menuManager.UiTextAnimation();
+
+        mymesh.SetActive(false);
+        mytrigger.enabled = false;
+
+        if (IsDamage == true)
+        {
+            menuManager.ControlText.SetText("Damage Buff"); // Add Text 
+        }
+        if (IsCadence == true)
+        {
+            menuManager.ControlText.SetText("Speed bullet"); // Add Text 
+        }
+        if (IsTimeShot == true)
+        {
+            menuManager.ControlText.SetText("Fast shots"); // Add Text 
+        }
+
+        yield return new WaitForSeconds(4f);
+        
+        menuManager.ControlText.SetText("None"); // Add Text 
+        menuManager.ControlText.enabled = false;
+        menuManager.Icon_L.enabled = false;
+        menuManager.Icon_R.enabled = false;
+        menuManager.Background_Icon.enabled = false;
+        
+        Destroy(gameObject);
     }
 }

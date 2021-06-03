@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using DG.Tweening;
 using Cinemachine;
 using UnityEngine.Playables;
 
@@ -107,7 +104,6 @@ public class Tutorial : MonoBehaviour
         firtsCamAnimation.enabled = false;
         playerController.aimCamera.enabled = true;
         playerCamera.enabled = true;
-        Debug.Log("pasa");
     }
 
     //Tutorial Voids

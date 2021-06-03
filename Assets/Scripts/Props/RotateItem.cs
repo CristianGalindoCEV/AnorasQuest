@@ -22,7 +22,7 @@ public class RotateItem : MonoBehaviour
         if (other.tag == "Player")
         {
             FindObjectOfType<AudioManager>().Play("Collector");
-            Destroy(gameObject);
+            
         }
     }
 }

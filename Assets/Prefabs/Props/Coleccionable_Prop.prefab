@@ -76,8 +76,8 @@ MonoBehaviour:
   IsCadence: 0
   IsTimeShot: 0
   playerStats: {fileID: 11400000, guid: d20674f2c152ed84c947f98e6a49ba94, type: 2}
-  bauculo: {fileID: 0}
-  inputManager: {fileID: 0}
+  mymesh: {fileID: 3090006102190419184}
+  mytrigger: {fileID: 7231638074112201077}
 --- !u!1001 &2747338693350281633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +157,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e97ad8c6e3d774b9654d5c2b6238b2, type: 3}
+--- !u!1 &3090006102190419184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a0e97ad8c6e3d774b9654d5c2b6238b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2747338693350281633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2425813476806571594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a0e97ad8c6e3d774b9654d5c2b6238b2,
