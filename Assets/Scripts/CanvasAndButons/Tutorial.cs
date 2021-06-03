@@ -37,7 +37,6 @@ public class Tutorial : MonoBehaviour
         if (playerStats.tutorial == false) // Tutorial no complete
         {
             firtsCamAnimation.enabled = true; //Animation Camera
-            playerController.speed = 0f; // Fix because can press inputs to move
             Player.SetActive(false);
             HUD.SetActive(false);
             FakePlayer.SetActive(true);
@@ -94,9 +93,11 @@ public class Tutorial : MonoBehaviour
         playableDirector.Play(); //Start animation
 
         yield return new WaitForSeconds(f_animationTime);
+       
         playableDirector.Stop(); // Stop animation
         Player.SetActive(true);
         HUD.SetActive(true);
+        
         StartCoroutine(MoveTutorial());
 
         FakePlayer.SetActive(false);
@@ -106,6 +107,7 @@ public class Tutorial : MonoBehaviour
         firtsCamAnimation.enabled = false;
         playerController.aimCamera.enabled = true;
         playerCamera.enabled = true;
+        Debug.Log("pasa");
     }
 
     //Tutorial Voids
