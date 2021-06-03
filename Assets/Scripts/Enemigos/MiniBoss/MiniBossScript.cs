@@ -211,5 +211,4 @@ public class MiniBossScript : MonoBehaviour
             m_boss.SetActive(false);
         }
     }
-
 }
