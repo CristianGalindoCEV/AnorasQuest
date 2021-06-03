@@ -25,12 +25,6 @@ public class WallBoss : MonoBehaviour
     void Update()
     {
         bossBar.value = CalculateHealth();
-
-        if (hp <= 0 )
-        {
-            WallSlider.SetActive(false);
-            this.gameObject.SetActive(false);
-        }
     }
 
     float CalculateHealth()
@@ -43,6 +37,12 @@ public class WallBoss : MonoBehaviour
         if (other.tag == "Bullet")
         {
             hp = hp - playerStats.bulletDamage_stat;
+            if (hp <= 0)
+            {
+                WallSlider.SetActive(false);
+                this.gameObject.SetActive(false);
+                destroyWall = true;
+            }
         }
     }
 }
