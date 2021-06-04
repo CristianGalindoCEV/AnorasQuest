@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStart: 0
   maxhp_stat: 100
-  hp_stat: 82
+  hp_stat: 100
   bulletDamage_stat: 80
   bulletGood_stat: 100000
   bulletNoGood_stat: 80
@@ -25,6 +25,6 @@ MonoBehaviour:
   DamageBuf: 0
   CadenceBuf: 0
   SpeedBulletBuf: 0
-  tutorial: 0
+  tutorial: 1
   FlyBoss: 0
   StaticBoss: 1

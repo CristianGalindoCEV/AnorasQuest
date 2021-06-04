@@ -17,6 +17,9 @@ public class FinalBoss : MonoBehaviour
     private Collider[] hit = new Collider[10];
     public LayerMask playerLayer;
 
+    //AreaEnemysSpawn
+    public GameObject[] SpawnPoint;
+
     //Boss
     public GameObject bossName;
     public GameObject Icon_boss;
@@ -109,15 +112,15 @@ public class FinalBoss : MonoBehaviour
         // Create attack
         if (f_currentTime >= f_randomTimeAttack && minibosshp.hp > 0 && b_onAttack == false)
         {
-            i_myattack = Random.Range(1, 4);
+            i_myattack = Random.Range(1, 3);
+            
             switch (i_myattack)
             {
                 case 1:
-                case 2:
                     StartCoroutine(AttackOne());
                     break;
                 
-                case 3:
+                case 2:
                     StartCoroutine(AttackTwo());
                     break;
                 
@@ -204,17 +207,23 @@ public class FinalBoss : MonoBehaviour
     {
         Vector3 newPosition;
         speed = 0f;
-        float randomNumber;
+        int myArraynumber;
+        
         m_animator.SetBool("Walk",false);
-        for (int i = 0; i <= 1; i++)//For if u need increment total spawn enemys
+        
+        for (int i = 0; i <= 3; i++)//For if u need increment total spawn enemys
         {
-            randomNumber = Random.Range (3,6);
-            newPosition = new Vector3(player.position.x + randomNumber, -1, player.position.z + randomNumber);
+            myArraynumber = Random.Range (0,SpawnPoint.Length);
+
+            //NewPosition take random array spawnpoint
+            newPosition = SpawnPoint[myArraynumber].transform.position;
+
             Instantiate(Enemyes, newPosition, transform.rotation);
             
             //Audio enemigo instancia
             yield return new WaitForSeconds(2f);
         }
+
         f_currentTime = 0;
         b_onAttack = false;
         speed = 8f;
