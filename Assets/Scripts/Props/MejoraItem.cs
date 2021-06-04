@@ -80,11 +80,11 @@ public class MejoraItem : MonoBehaviour
         }
         if (IsCadence == true)
         {
-            menuManager.ControlText.SetText("Speed bullet"); // Add Text 
+            menuManager.ControlText.SetText("Fast bullet"); // Add Text 
         }
         if (IsTimeShot == true)
         {
-            menuManager.ControlText.SetText("Fast shots"); // Add Text 
+            menuManager.ControlText.SetText("Fast reload"); // Add Text 
         }
 
         yield return new WaitForSeconds(4f);
