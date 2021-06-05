@@ -15,6 +15,7 @@ public class Tutorial : MonoBehaviour
     public PlayableDirector playableDirector;
     public CinemachineVirtualCamera firtsCamAnimation; // Firts cam animated intro
     public CinemachineVirtualCamera finalCamAnimation; // Last cam animated intro
+    public CinemachineVirtualCamera[] allanimaticCameras;
     public CinemachineFreeLook playerCamera;
     public PlayerController playerController;
     public GameObject Player;
@@ -48,7 +49,7 @@ public class Tutorial : MonoBehaviour
         
         if (playerStats.tutorial == true)
         {
-            //Hacer que se paaguen las camaras de animation
+            //Hacer que se paguen las camaras de animation
             firtsCamAnimation.enabled = false;
             FakePlayer.SetActive(false);
             b_animation = true;
@@ -94,16 +95,21 @@ public class Tutorial : MonoBehaviour
         playableDirector.Stop(); // Stop animation
         Player.SetActive(true);
         HUD.SetActive(true);
-        
-        StartCoroutine(MoveTutorial());
+
+        for (int i = 0; i < allanimaticCameras.Length; i++)
+        {
+            allanimaticCameras[i].enabled = false;
+        }
 
         FakePlayer.SetActive(false);
         finalCamAnimation.enabled = false;
         inputManager.animationPlayed = false; // Can Aim
         b_animation = true;
         firtsCamAnimation.enabled = false;
-        playerController.aimCamera.enabled = true;
+        //playerController.aimCamera.enabled = true;
         playerCamera.enabled = true;
+
+        StartCoroutine(MoveTutorial());
     }
 
     //Tutorial Voids

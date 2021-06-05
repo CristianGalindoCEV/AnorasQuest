@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour
         pausemenu.SetActive(false);
         mirilla.SetActive(false);
         //deadBackground.enabled = false;
-
+        pauseManager.paused = false;
         //Cursor
         Cursor.visible = (false);
         Cursor.lockState = CursorLockMode.Locked;
