@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LogoScene.unity
     guid: 19cc1d9d1cf42cb4aa243e47e79ef91d
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 12c6f44bbd4eef541a925ea029b57f07
+  - enabled: 1
     path: Assets/Scenes/IntroAnimation.unity
     guid: bc7629c60e480a0488bf44adc8d04817
   - enabled: 1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro3.unity
     guid: 275e2d031861a8447bd78e753408ad0c
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 12c6f44bbd4eef541a925ea029b57f07
   - enabled: 1
     path: Assets/Scenes/BIgLevel.unity
     guid: 676620e5531557b4985525ca0ff9f498
